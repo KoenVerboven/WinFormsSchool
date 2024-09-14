@@ -22,6 +22,8 @@ namespace WinFormsSchool
             labelCourses.Font = new Font(Font, FontStyle.Italic);
             dataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridViewCourses.Visible = false;
+            panelYellow.BackColor = Color.Yellow;
+            panelYellow.BorderStyle = BorderStyle.FixedSingle;
         }
 
         public void LoadSelectedStudent(int selectedStudentId)
@@ -64,6 +66,8 @@ namespace WinFormsSchool
                     {
                         labelCourses.Text = "No Courses found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
                         dataGridViewCourses.Visible = false;
+                        panelYellow.Visible = false;
+                        labelYellow.Visible = false;
                     }
                 }
                 

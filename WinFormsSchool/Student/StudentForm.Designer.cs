@@ -56,6 +56,8 @@
             labelNationalRegisterNumber = new Label();
             labelRegistrationDate = new Label();
             textBoxRegistrationDate = new TextBox();
+            panelYellow = new Panel();
+            labelYellow = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
             SuspendLayout();
             // 
@@ -286,11 +288,30 @@
             textBoxRegistrationDate.Size = new Size(345, 27);
             textBoxRegistrationDate.TabIndex = 49;
             // 
+            // panelYellow
+            // 
+            panelYellow.BackColor = SystemColors.ControlLightLight;
+            panelYellow.Location = new Point(39, 663);
+            panelYellow.Name = "panelYellow";
+            panelYellow.Size = new Size(22, 23);
+            panelYellow.TabIndex = 50;
+            // 
+            // labelYellow
+            // 
+            labelYellow.AutoSize = true;
+            labelYellow.Location = new Point(67, 666);
+            labelYellow.Name = "labelYellow";
+            labelYellow.Size = new Size(302, 20);
+            labelYellow.TabIndex = 51;
+            labelYellow.Text = "-> courses that are currently still in progress ";
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1049, 653);
+            ClientSize = new Size(1049, 718);
+            Controls.Add(labelYellow);
+            Controls.Add(panelYellow);
             Controls.Add(textBoxRegistrationDate);
             Controls.Add(labelRegistrationDate);
             Controls.Add(textBoxNationality);
@@ -356,5 +377,7 @@
         private Label labelNationalRegisterNumber;
         private Label labelRegistrationDate;
         private TextBox textBoxRegistrationDate;
+        private Panel panelYellow;
+        private Label labelYellow;
     }
 }

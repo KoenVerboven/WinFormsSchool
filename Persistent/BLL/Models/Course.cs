@@ -19,7 +19,7 @@ namespace AppCode.BLL.Models
             if (CourseTestGrade != null && MinimumGradeToPassTheCourse != null)
             {
                 
-                if (CourseTestGrade > MinimumGradeToPassTheCourse)
+                if (CourseTestGrade >= MinimumGradeToPassTheCourse)
                 {
                     return true;
                 }
