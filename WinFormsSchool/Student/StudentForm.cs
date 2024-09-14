@@ -45,7 +45,7 @@ namespace WinFormsSchool
                     textBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
                     textBoxRegistrationDate.Text = selectedStudent.RegistrationDate.ToString("dd/MM/yyyy");
 
-                    if (selectedStudent.EnrolledCourse != null) //veel van deze code moet misschien in de BLL ??????????????????
+                    if (selectedStudent.EnrolledCourse != null)
                     {
                         labelCourses.Text = selectedStudent.EnrolledCourse.Count + " course(s) found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
                         dataGridViewCourses.DataSource = ((selectedStudent.EnrolledCourse).ToList().OrderByDescending(p => p.StartDate)).ToList();
@@ -70,13 +70,13 @@ namespace WinFormsSchool
             }
             catch (ArgumentOutOfRangeException)
             {
-                string ErrorText = "Student with Id " + selectedStudentId + " doesn't exist";
-                MessageBox.Show(ErrorText, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                MessageBox.Show("Student with Id " + selectedStudentId + " doesn't exist", "ErrorMessage",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception oEx)
             {
-                string ErrorText = oEx.Message;
-                MessageBox.Show(ErrorText, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -13,8 +13,6 @@ namespace WinFormsSchool
             Width = 1100;
             Teacher = new TeacherBLL();
         }
-
-
         public void LoadSelectedTeacher(int selectedTeacherId)
         {
             try
@@ -43,17 +41,15 @@ namespace WinFormsSchool
             }
             catch (FormatException)
             {
-                string ErrorText = selectedTeacherId + " is not nummeric";
+                MessageBox.Show(selectedTeacherId + " is not nummeric", "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (ArgumentOutOfRangeException)
             {
-                 string ErrorText = "Teacher with Id " + selectedTeacherId + " doesn't exist";
-                 MessageBox.Show(ErrorText, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 MessageBox.Show("Teacher with Id " + selectedTeacherId + " doesn't exist", "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception oEx)
             {
-                string ErrorText = oEx.Message;
-                MessageBox.Show(ErrorText, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
   

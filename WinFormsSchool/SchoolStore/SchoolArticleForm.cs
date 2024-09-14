@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.BLLClasses;
+using AppCode.BLL.Models;
 
 
 namespace WinFormsSchool
@@ -56,13 +57,12 @@ namespace WinFormsSchool
             }
             catch (ArgumentOutOfRangeException)
             {
-                string ErrorText = "Article with ArticleId " + selectedArticleId + " doesn't exist";
-                MessageBox.Show(ErrorText, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Article with ArticleId " + selectedArticleId + " doesn't exist", 
+                                 "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception oEx)
             {
-                string ErrorText = oEx.Message;
-                MessageBox.Show(ErrorText, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
        
