@@ -1,0 +1,87 @@
+﻿Programmeur:
+------------
+Verboven Koen 
+Vosselaar
+België
+
+Versie:
+---------
+Dit programma is geprogrammeerd in Visual Studio Community 2022
+Version 17.7.4
+Target framework:
+.NET8.0
+
+Tip:
+-----
+Als u een form in design-mode ziet op het scherm,
+klik dan op F7 om naar de code-behind te gaan.
+
+Person.cs
+---------
+ public class Student : Person
+    {
+        public DateTime RegistrationDate { get; set; }
+
+        public List<Course> EnrolledCourse { get; set; } // Class Relation ---> Aggregation
+    }
+
+
+GeneralEnums.cs
+----------------
+Bevat Enums die door gans het programma kunnen gebruikt worden.
+Het zijn dus algemene Enums die overal gebruikt kunnen worden.
+
+De Enums SaleryCategorie,HighestDegree en StudyDirection zijn meer specifiek
+en worden daarom in de Teacher class gedefineerd
+
+
+Article.cs
+----------
+De naam van een classe begint steeds met een hoofletter!
+
+public decimal? ArticlePrice { get; set; }
+ArticlePrice hebben we hier nullable gemaakt door een vraagteken
+achter decimal te plaatsen.
+Als we de prijs van een bepaald artikel niet weten maken de prijs 
+gelijk aan null (we weten de prijs dan gewoon niet).
+
+Een property in een klassen maken we aan met de snippet :
+tikin : prop 
+druk dan op de tab-toets
+
+
+ArticleBLL.cs
+-------------
+De constructor 'public ArticleBLL()' maken we aan met de snippet:
+tikin : ctor
+druk dan op de tab-toets
+
+Onderstaande code behoort in de BLL en NIET in SchoolArticleFormm.cs
+Het is Bussiness code !
+private string GetArticleMessage(Article article)
+
+
+TeacherBLL.cs
+--------------
+object initializer :
+new Teacher
+{
+                        PersonId = 1,
+                        Firstname = "Mark",
+                        MiddleName = null,
+                        LastName = "Verstraaten",
+                        StreetAndNumber = "Bloemenweg 5",
+                        ZipCode = "5000",
+                        PhoneNumber = null,
+                        EmailAddress = null,
+                        Gender = Gender.Male,
+                        DateOfBirth =  new DateTime(1988,9,2),
+                        MaritalStatus = MaritalStatus.MarriedWithChilderen,
+                        NationalRegisterNumber = 45487487,
+                        Nationality = Nationality.Belgian,
+                        MoederTongueId = 6,
+                        HireDate = new DateTime(2018,9,1),
+                        LeaveDate = null,
+                        HighestDegree = HighestDegree.HighSchool,
+                        StudyDirection = StudyDirection.Chemistry
+},
