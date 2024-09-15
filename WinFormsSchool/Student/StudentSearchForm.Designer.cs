@@ -33,9 +33,11 @@
             label1 = new Label();
             GridViewStudents = new DataGridView();
             label2 = new Label();
-            LabelDoubleClick = new Label();
-            LabelStudentsFound = new Label();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)GridViewStudents).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // TextboxSearch
@@ -67,10 +69,10 @@
             // GridViewStudents
             // 
             GridViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewStudents.Location = new Point(24, 142);
+            GridViewStudents.Location = new Point(24, 117);
             GridViewStudents.Name = "GridViewStudents";
             GridViewStudents.RowHeadersWidth = 51;
-            GridViewStudents.Size = new Size(764, 296);
+            GridViewStudents.Size = new Size(764, 321);
             GridViewStudents.TabIndex = 22;
             GridViewStudents.CellDoubleClick += dgrStudents_CellDoubleClick;
             // 
@@ -83,32 +85,35 @@
             label2.TabIndex = 23;
             label2.Text = "You can also search on the PersonId";
             // 
-            // LabelDoubleClick
+            // statusStrip1
             // 
-            LabelDoubleClick.AutoSize = true;
-            LabelDoubleClick.Location = new Point(26, 448);
-            LabelDoubleClick.Name = "LabelDoubleClick";
-            LabelDoubleClick.Size = new Size(321, 20);
-            LabelDoubleClick.TabIndex = 24;
-            LabelDoubleClick.Text = "Double click on GridRow to open detailscreen  ";
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 535);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 26);
+            statusStrip1.TabIndex = 26;
+            statusStrip1.Text = "statusStrip1";
             // 
-            // LabelStudentsFound
+            // ToolStripStatusLabel1
             // 
-            LabelStudentsFound.AutoSize = true;
-            LabelStudentsFound.Font = new Font("Segoe UI", 9F);
-            LabelStudentsFound.Location = new Point(34, 109);
-            LabelStudentsFound.Name = "LabelStudentsFound";
-            LabelStudentsFound.Size = new Size(140, 20);
-            LabelStudentsFound.TabIndex = 25;
-            LabelStudentsFound.Text = "labelStudentsFound";
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // StudentSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 492);
-            Controls.Add(LabelStudentsFound);
-            Controls.Add(LabelDoubleClick);
+            ClientSize = new Size(800, 561);
+            Controls.Add(statusStrip1);
             Controls.Add(label2);
             Controls.Add(GridViewStudents);
             Controls.Add(label1);
@@ -117,6 +122,8 @@
             Name = "StudentSearchForm";
             Text = "StudentSearchForm";
             ((System.ComponentModel.ISupportInitialize)GridViewStudents).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,7 +134,8 @@
         private Label label1;
         private DataGridView GridViewStudents;
         private Label label2;
-        private Label LabelDoubleClick;
-        private Label LabelStudentsFound;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
     }
 }

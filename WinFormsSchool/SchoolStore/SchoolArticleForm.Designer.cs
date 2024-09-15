@@ -45,7 +45,11 @@
             PictureBoxArticle = new PictureBox();
             TextBoxArticleSize = new TextBox();
             LabelSize = new Label();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // LabelArticlePrice
@@ -186,11 +190,35 @@
             LabelSize.TabIndex = 32;
             LabelSize.Text = "Size (HxWxD) in mm";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 424);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 26);
+            statusStrip1.TabIndex = 33;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // ToolStripStatusLabel1
+            // 
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
             // SchoolArticleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(statusStrip1);
             Controls.Add(LabelSize);
             Controls.Add(TextBoxArticleSize);
             Controls.Add(PictureBoxArticle);
@@ -211,6 +239,8 @@
             Name = "SchoolArticleForm";
             Text = "SchoolArticleForm";
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,5 +263,8 @@
         private PictureBox PictureBoxArticle;
         private TextBox TextBoxArticleSize;
         private Label LabelSize;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
     }
 }

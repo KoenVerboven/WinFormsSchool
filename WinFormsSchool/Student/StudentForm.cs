@@ -18,12 +18,13 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            labelCourses.Text = string.Empty;
-            labelCourses.Font = new Font(Font, FontStyle.Italic);
             DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             DataGridViewCourses.Visible = false;
             PanelYellow.BackColor = Color.Yellow;
             PanelYellow.BorderStyle = BorderStyle.FixedSingle;
+            ToolStripStatusLabel1.Text = string.Empty;
+            ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
+            ToolStripStatusLabel2.Text = string.Empty;
         }
 
         public void LoadSelectedStudent(int selectedStudentId)
@@ -49,7 +50,7 @@ namespace WinFormsSchool
 
                     if (selectedStudent.EnrolledCourse != null)
                     {
-                        labelCourses.Text = selectedStudent.EnrolledCourse.Count + " course(s) found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
+                        ToolStripStatusLabel1.Text = selectedStudent.EnrolledCourse.Count + " course(s) found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
                         DataGridViewCourses.DataSource = ((selectedStudent.EnrolledCourse).ToList().OrderByDescending(p => p.StartDate)).ToList();
                         DataGridViewCourses.Columns["TestPassed"].DisplayIndex = 6;
                         DataGridViewCourses.Visible = true;
@@ -64,7 +65,7 @@ namespace WinFormsSchool
                     }
                     else
                     {
-                        labelCourses.Text = "No Courses found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
+                        ToolStripStatusLabel1.Text = "No Courses found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
                         DataGridViewCourses.Visible = false;
                         PanelYellow.Visible = false;
                         LabelYellow.Visible = false;

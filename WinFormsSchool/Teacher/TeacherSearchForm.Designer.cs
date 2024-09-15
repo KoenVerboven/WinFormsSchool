@@ -32,19 +32,21 @@
             label1 = new Label();
             ButtonSearch = new Button();
             TextBoxSearch = new TextBox();
-            LabelDoubleClickGrid = new Label();
-            LabelTeachersFound = new Label();
             label2 = new Label();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)GridViewTeachers).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // GridViewTeachers
             // 
             GridViewTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewTeachers.Location = new Point(79, 157);
+            GridViewTeachers.Location = new Point(79, 123);
             GridViewTeachers.Name = "GridViewTeachers";
             GridViewTeachers.RowHeadersWidth = 51;
-            GridViewTeachers.Size = new Size(643, 296);
+            GridViewTeachers.Size = new Size(686, 330);
             GridViewTeachers.TabIndex = 26;
             GridViewTeachers.CellDoubleClick += gridViewTeachers_CellDoubleClick;
             // 
@@ -74,24 +76,6 @@
             TextBoxSearch.Size = new Size(279, 27);
             TextBoxSearch.TabIndex = 23;
             // 
-            // LabelDoubleClickGrid
-            // 
-            LabelDoubleClickGrid.AutoSize = true;
-            LabelDoubleClickGrid.Location = new Point(79, 456);
-            LabelDoubleClickGrid.Name = "LabelDoubleClickGrid";
-            LabelDoubleClickGrid.Size = new Size(321, 20);
-            LabelDoubleClickGrid.TabIndex = 27;
-            LabelDoubleClickGrid.Text = "Double click on GridRow to open detailscreen  ";
-            // 
-            // LabelTeachersFound
-            // 
-            LabelTeachersFound.AutoSize = true;
-            LabelTeachersFound.Location = new Point(90, 117);
-            LabelTeachersFound.Name = "LabelTeachersFound";
-            LabelTeachersFound.Size = new Size(140, 20);
-            LabelTeachersFound.TabIndex = 28;
-            LabelTeachersFound.Text = "labelTeachersFound";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -101,14 +85,36 @@
             label2.TabIndex = 29;
             label2.Text = "You can also search on the TeacherId";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 524);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 26);
+            statusStrip1.TabIndex = 30;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // ToolStripStatusLabel1
+            // 
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
             // TeacherSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 506);
+            ClientSize = new Size(800, 550);
+            Controls.Add(statusStrip1);
             Controls.Add(label2);
-            Controls.Add(LabelTeachersFound);
-            Controls.Add(LabelDoubleClickGrid);
             Controls.Add(GridViewTeachers);
             Controls.Add(label1);
             Controls.Add(ButtonSearch);
@@ -116,6 +122,8 @@
             Name = "TeacherSearchForm";
             Text = "TeacherSearchForm";
             ((System.ComponentModel.ISupportInitialize)GridViewTeachers).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,8 +134,9 @@
         private Label label1;
         private Button ButtonSearch;
         private TextBox TextBoxSearch;
-        private Label LabelDoubleClickGrid;
-        private Label LabelTeachersFound;
         private Label label2;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
     }
 }

@@ -23,6 +23,8 @@ namespace WinFormsSchool
             LabelMessage.Font = new Font(Font, FontStyle.Italic);
             LabelMessage.ForeColor = Color.Red;
             PictureBoxArticle.BackColor = Color.LightGray;
+            ToolStripStatusLabel1.Text = string.Empty;
+            ToolStripStatusLabel2.Text = string.Empty;
         }
 
         internal void LoadSelectedArticle(int selectedArticleId)

@@ -32,8 +32,11 @@
             ButtonSearch = new Button();
             TextboxSearch = new TextBox();
             label1 = new Label();
-            ButtonDoubleClickGrid = new Label();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // GridViewArticles
@@ -44,7 +47,7 @@
             GridViewArticles.RowHeadersWidth = 51;
             GridViewArticles.Size = new Size(732, 330);
             GridViewArticles.TabIndex = 0;
-            GridViewArticles.CellDoubleClick += dataGridView1_CellDoubleClick;
+            GridViewArticles.CellDoubleClick += DataGridView1_CellDoubleClick;
             // 
             // ButtonSearch
             // 
@@ -72,21 +75,35 @@
             label1.TabIndex = 19;
             label1.Text = "Give the full article name or a part of the name";
             // 
-            // ButtonDoubleClickGrid
+            // statusStrip1
             // 
-            ButtonDoubleClickGrid.AutoSize = true;
-            ButtonDoubleClickGrid.Location = new Point(37, 512);
-            ButtonDoubleClickGrid.Name = "ButtonDoubleClickGrid";
-            ButtonDoubleClickGrid.Size = new Size(321, 20);
-            ButtonDoubleClickGrid.TabIndex = 25;
-            ButtonDoubleClickGrid.Text = "Double click on GridRow to open detailscreen  ";
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 558);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(873, 26);
+            statusStrip1.TabIndex = 31;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // ToolStripStatusLabel1
+            // 
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // SchoolArticleSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(873, 564);
-            Controls.Add(ButtonDoubleClickGrid);
+            ClientSize = new Size(873, 584);
+            Controls.Add(statusStrip1);
             Controls.Add(label1);
             Controls.Add(TextboxSearch);
             Controls.Add(ButtonSearch);
@@ -94,6 +111,8 @@
             Name = "SchoolArticleSearchForm";
             Text = "SchoolArticleSearchForm";
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -104,6 +123,8 @@
         private Button ButtonSearch;
         private TextBox TextboxSearch;
         private Label label1;
-        private Label ButtonDoubleClickGrid;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
     }
 }

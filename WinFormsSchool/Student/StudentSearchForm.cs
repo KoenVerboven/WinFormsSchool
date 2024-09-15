@@ -1,5 +1,6 @@
 ﻿using AppCode.BLL.BLLClasses;
 using System.Data;
+using System.Windows.Forms;
 
 namespace WinFormsSchool
 {
@@ -16,10 +17,11 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            LabelStudentsFound.Text = string.Empty;
-            LabelStudentsFound.Font = new Font(Font, FontStyle.Italic);
             GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewStudents.Visible = false;
+            ToolStripStatusLabel1.Text = string.Empty;
+            ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
+            ToolStripStatusLabel2.Text = string.Empty;
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -46,14 +48,16 @@ namespace WinFormsSchool
                         GridViewStudents.Columns["FirstName"].DisplayIndex = 1;
                         GridViewStudents.Columns["LastName"].DisplayIndex = 2;
                         GridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
-                        LabelStudentsFound.Text = searchStudents.Count.ToString();
-                        if (searchStudents.Count > 1) { LabelStudentsFound.Text += " students found"; }
-                        else { LabelStudentsFound.Text += " student found"; }
+                        ToolStripStatusLabel1.Text = searchStudents.Count.ToString();
+                        ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
+                        if (searchStudents.Count > 1) { ToolStripStatusLabel1.Text += " students found"; }
+                        else { ToolStripStatusLabel1.Text += " student found"; }
                     }
                     else
                     {
-                        LabelStudentsFound.Text = "No students found";
                         GridViewStudents.Visible = false;
+                        ToolStripStatusLabel1.Text = "No students found";
+                        ToolStripStatusLabel2.Text = string.Empty;
                     }
 
                 }
@@ -61,7 +65,7 @@ namespace WinFormsSchool
             }
             else
             {
-                LabelStudentsFound.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
                 GridViewStudents.Visible = false;
             }
 

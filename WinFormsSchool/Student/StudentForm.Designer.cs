@@ -45,7 +45,6 @@
             LabelEmailaddres = new Label();
             LabelGender = new Label();
             DataGridViewCourses = new DataGridView();
-            labelCourses = new Label();
             TextBoxNationality = new TextBox();
             LabelNationality = new Label();
             TextBoxDateOfBirth = new TextBox();
@@ -58,7 +57,11 @@
             TextBoxRegistrationDate = new TextBox();
             PanelYellow = new Panel();
             LabelYellow = new Label();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // TextBoxFirstname
@@ -192,21 +195,12 @@
             // DataGridViewCourses
             // 
             DataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridViewCourses.Location = new Point(35, 357);
+            DataGridViewCourses.Location = new Point(35, 317);
             DataGridViewCourses.Name = "DataGridViewCourses";
             DataGridViewCourses.RowHeadersWidth = 51;
-            DataGridViewCourses.Size = new Size(968, 284);
+            DataGridViewCourses.Size = new Size(968, 324);
             DataGridViewCourses.TabIndex = 16;
             DataGridViewCourses.CellFormatting += DataGridViewCourses_CellFormatting;
-            // 
-            // labelCourses
-            // 
-            labelCourses.AutoSize = true;
-            labelCourses.Location = new Point(37, 323);
-            labelCourses.Name = "labelCourses";
-            labelCourses.Size = new Size(64, 20);
-            labelCourses.TabIndex = 17;
-            labelCourses.Text = "Courses ";
             // 
             // TextBoxNationality
             // 
@@ -305,11 +299,35 @@
             LabelYellow.TabIndex = 51;
             LabelYellow.Text = "-> courses that are currently still in progress ";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 704);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1049, 26);
+            statusStrip1.TabIndex = 52;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // ToolStripStatusLabel1
+            // 
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1049, 718);
+            ClientSize = new Size(1049, 730);
+            Controls.Add(statusStrip1);
             Controls.Add(LabelYellow);
             Controls.Add(PanelYellow);
             Controls.Add(TextBoxRegistrationDate);
@@ -322,7 +340,6 @@
             Controls.Add(LabelMaritalStatus);
             Controls.Add(TextBoxNationalRegisterNumber);
             Controls.Add(LabelNationalRegisterNumber);
-            Controls.Add(labelCourses);
             Controls.Add(DataGridViewCourses);
             Controls.Add(LabelGender);
             Controls.Add(LabelEmailaddres);
@@ -343,6 +360,8 @@
             Name = "StudentForm";
             Text = "StudentForm";
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,7 +385,6 @@
         private Label LabelEmailaddres;
         private Label LabelGender;
         private DataGridView DataGridViewCourses;
-        private Label labelCourses;
         private TextBox TextBoxNationality;
         private Label LabelNationality;
         private TextBox TextBoxDateOfBirth;
@@ -379,5 +397,8 @@
         private TextBox TextBoxRegistrationDate;
         private Panel PanelYellow;
         private Label LabelYellow;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
     }
 }

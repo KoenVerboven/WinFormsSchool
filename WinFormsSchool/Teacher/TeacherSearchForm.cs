@@ -19,10 +19,11 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            LabelTeachersFound.Text = string.Empty;
-            LabelTeachersFound.Font = new Font(Font, FontStyle.Italic);
             GridViewTeachers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewTeachers.Visible = false;
+            ToolStripStatusLabel1.Text = string.Empty;
+            ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
+            ToolStripStatusLabel2.Text = string.Empty;
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -51,28 +52,31 @@ namespace WinFormsSchool
                         GridViewTeachers.Columns["FirstName"].DisplayIndex = 1;
                         GridViewTeachers.Columns["LastName"].DisplayIndex = 2;
                         GridViewTeachers.Columns["DateOfBirth"].DisplayIndex = 3;
-                        LabelTeachersFound.Text = searchTeachters.Count.ToString();
-                       
+                        ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
+                        ToolStripStatusLabel1.Text = searchTeachters.Count.ToString();
+                        ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
+
                         if (searchTeachters.Count > 1)
-                        { 
-                            LabelTeachersFound.Text += " teachers found"; 
+                        {
+                            ToolStripStatusLabel1.Text += " teachers found"; 
                         }
                         else
                         {
-                            LabelTeachersFound.Text += " teacher found"; 
+                            ToolStripStatusLabel1.Text += " teacher found"; 
                         }
                     }
                     else
                     {
-                        LabelTeachersFound.Text = "No teachers found";
                         GridViewTeachers.Visible = false;
+                        ToolStripStatusLabel1.Text = "No teachers found";
+                        ToolStripStatusLabel2.Text = string.Empty;
                     }
                 }
 
             }
             else
             {
-                LabelTeachersFound.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
                 GridViewTeachers.Visible = false;
             }
         }
