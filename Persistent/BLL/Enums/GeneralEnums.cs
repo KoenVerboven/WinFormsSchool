@@ -5,7 +5,6 @@
         Male,
         Female
     }
-
     public enum MaritalStatus
     {
         Single,
@@ -14,7 +13,6 @@
         Divorced,
         Widow
     }
-
     public enum Nationality
     {
         Belgian,

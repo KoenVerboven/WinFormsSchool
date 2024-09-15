@@ -73,6 +73,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = 8.5,
                                 MinimumGradeToPassTheCourse = 5,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.NightSchool
                             },
                             new()
                             {
@@ -86,6 +87,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = 6.5,
                                 MinimumGradeToPassTheCourse = 5,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.NightSchool
                             },
                             new()
                             {
@@ -99,6 +101,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = 5.5,
                                 MinimumGradeToPassTheCourse = 5,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.NightSchool
                             },
                             new()
                             {
@@ -112,6 +115,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = 5.5,
                                 MinimumGradeToPassTheCourse = 7,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.NightSchool
                             },
                             new()
                             {
@@ -125,6 +129,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = null,
                                 MinimumGradeToPassTheCourse = 7,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.NightSchool
                             },
                             new()
                             {
@@ -138,6 +143,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = null,
                                 MinimumGradeToPassTheCourse = 7,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.NightSchool
                             },
                             new()
                             {
@@ -151,6 +157,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = null,
                                 MinimumGradeToPassTheCourse = 7,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.DaySchool
                             }
                         ]
                   },
@@ -185,6 +192,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = 8,
                                 MinimumGradeToPassTheCourse = 5,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.DaySchool
                             },
                             new()
                             {
@@ -198,6 +206,7 @@ namespace AppCode.BLL.BLLClasses
                                 CourseTestGrade = 10,
                                 MinimumGradeToPassTheCourse = 5,
                                 MaximumTestCourseGrade = 10,
+                                CourseType = CourseType.DaySchool
                             },
                             new()
                             {

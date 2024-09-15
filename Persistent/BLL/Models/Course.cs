@@ -1,6 +1,13 @@
 ﻿
 namespace AppCode.BLL.Models
 {
+    
+    public enum CourseType
+    {
+        DaySchool,
+        NightSchool
+    }
+    
     public class Course
     {
         public int CourseId { get; set; }
@@ -13,6 +20,10 @@ namespace AppCode.BLL.Models
         public double? MinimumGradeToPassTheCourse { get; set; }
         public int? MaximumTestCourseGrade { get; set; }
         public bool? TestPassed { get => TestPassedMethod(); }
+        public bool CourseIsActive { get => CourseIsActiveMethod(); }
+        public CourseType? CourseType { get; set; }
+
+
         private bool? TestPassedMethod ()
         {
            
@@ -29,7 +40,7 @@ namespace AppCode.BLL.Models
             else return null;
 
         }
-        public bool CourseIsActive { get => CourseIsActiveMethod(); }
+       
         private bool CourseIsActiveMethod()
         {
             if (EndDate > DateTime.Now)

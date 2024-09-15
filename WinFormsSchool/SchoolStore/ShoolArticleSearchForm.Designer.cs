@@ -79,7 +79,7 @@
             label3.Name = "label3";
             label3.Size = new Size(321, 20);
             label3.TabIndex = 25;
-            label3.Text = "Dubbel click on GridRow to open detailscreen  ";
+            label3.Text = "Double click on GridRow to open detailscreen  ";
             // 
             // SchoolArticleSearchForm
             // 

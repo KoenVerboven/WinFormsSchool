@@ -6,9 +6,7 @@ namespace WinFormsSchool
 {
     public partial class SchoolArticleForm : Form
     {
-
         readonly ArticleBLL SchoolArticle;
-
 
         public SchoolArticleForm()
         {
