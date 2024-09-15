@@ -20,10 +20,10 @@ namespace WinFormsSchool
         {
             labelCourses.Text = string.Empty;
             labelCourses.Font = new Font(Font, FontStyle.Italic);
-            dataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dataGridViewCourses.Visible = false;
-            panelYellow.BackColor = Color.Yellow;
-            panelYellow.BorderStyle = BorderStyle.FixedSingle;
+            DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            DataGridViewCourses.Visible = false;
+            PanelYellow.BackColor = Color.Yellow;
+            PanelYellow.BorderStyle = BorderStyle.FixedSingle;
         }
 
         public void LoadSelectedStudent(int selectedStudentId)
@@ -33,41 +33,41 @@ namespace WinFormsSchool
                 var selectedStudent = Student.GetStudentById(selectedStudentId); //selectedStudent met hoofletter beginnen on klein letter?
                 if (selectedStudent != null)
                 {
-                    textBoxFirstname.Text = selectedStudent.Firstname;
-                    textBoxMiddeleName.Text = selectedStudent.MiddleName;
-                    textBoxLastName.Text = selectedStudent.LastName;
-                    textBoxStreetAndNumber.Text = selectedStudent.StreetAndNumber;
-                    textBoxZipCode.Text = selectedStudent.ZipCode;
-                    textBoxPhoneNumber.Text = selectedStudent.PhoneNumber;
-                    textBoxEmailAddress.Text = selectedStudent.EmailAddress;
-                    textBoxGender.Text = Convert.ToString(selectedStudent.Gender);
-                    textBoxDateOfBirth.Text = selectedStudent.DateOfBirth.ToString("dd/MM/yyyy");
-                    textBoxMaritalStatus.Text = Convert.ToString(selectedStudent.MaritalStatus);
-                    textBoxNationalRegisterNumber.Text = Convert.ToString(selectedStudent.NationalRegisterNumber);
-                    textBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
-                    textBoxRegistrationDate.Text = selectedStudent.RegistrationDate.ToString("dd/MM/yyyy");
+                    TextBoxFirstname.Text = selectedStudent.Firstname;
+                    TextBoxMiddeleName.Text = selectedStudent.MiddleName;
+                    TextBoxLastName.Text = selectedStudent.LastName;
+                    TextBoxStreetAndNumber.Text = selectedStudent.StreetAndNumber;
+                    TextBoxZipCode.Text = selectedStudent.ZipCode;
+                    TextBoxPhoneNumber.Text = selectedStudent.PhoneNumber;
+                    TextBoxEmailAddress.Text = selectedStudent.EmailAddress;
+                    TextBoxGender.Text = Convert.ToString(selectedStudent.Gender);
+                    TextBoxDateOfBirth.Text = selectedStudent.DateOfBirth.ToString("dd/MM/yyyy");
+                    TextBoxMaritalStatus.Text = Convert.ToString(selectedStudent.MaritalStatus);
+                    TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedStudent.NationalRegisterNumber);
+                    TextBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
+                    TextBoxRegistrationDate.Text = selectedStudent.RegistrationDate.ToString("dd/MM/yyyy");
 
                     if (selectedStudent.EnrolledCourse != null)
                     {
                         labelCourses.Text = selectedStudent.EnrolledCourse.Count + " course(s) found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
-                        dataGridViewCourses.DataSource = ((selectedStudent.EnrolledCourse).ToList().OrderByDescending(p => p.StartDate)).ToList();
-                        dataGridViewCourses.Columns["TestPassed"].DisplayIndex = 6;
-                        dataGridViewCourses.Visible = true;
-                        dataGridViewCourses.Columns["CourseId"].Visible = true;
-                        dataGridViewCourses.Columns["CourseDescription"].Visible = false;
-                        dataGridViewCourses.Columns["CourseName"].ToolTipText = "Yellow means the course is still active";
-                        dataGridViewCourses.Columns["CourseIsActive"].Visible = false;
-                        dataGridViewCourses.Columns["CourseId"].Width = 50;
-                        dataGridViewCourses.Columns["CourseName"].Width = 260;
-                        dataGridViewCourses.Columns["TestPassed"].Width = 90;
+                        DataGridViewCourses.DataSource = ((selectedStudent.EnrolledCourse).ToList().OrderByDescending(p => p.StartDate)).ToList();
+                        DataGridViewCourses.Columns["TestPassed"].DisplayIndex = 6;
+                        DataGridViewCourses.Visible = true;
+                        DataGridViewCourses.Columns["CourseId"].Visible = true;
+                        DataGridViewCourses.Columns["CourseDescription"].Visible = false;
+                        DataGridViewCourses.Columns["CourseName"].ToolTipText = "Yellow means the course is still active";
+                        DataGridViewCourses.Columns["CourseIsActive"].Visible = false;
+                        DataGridViewCourses.Columns["CourseId"].Width = 50;
+                        DataGridViewCourses.Columns["CourseName"].Width = 260;
+                        DataGridViewCourses.Columns["TestPassed"].Width = 90;
 
                     }
                     else
                     {
                         labelCourses.Text = "No Courses found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
-                        dataGridViewCourses.Visible = false;
-                        panelYellow.Visible = false;
-                        labelYellow.Visible = false;
+                        DataGridViewCourses.Visible = false;
+                        PanelYellow.Visible = false;
+                        LabelYellow.Visible = false;
                     }
                 }
                 
@@ -102,28 +102,28 @@ namespace WinFormsSchool
                 ForeColor = Color.Black
             };
 
-            for (int i = 0; i < dataGridViewCourses.Rows.Count; i++)
+            for (int i = 0; i < DataGridViewCourses.Rows.Count; i++)
             {
-                if (dataGridViewCourses.Rows[i].Cells["TestPassed"].Value != null)
+                if (DataGridViewCourses.Rows[i].Cells["TestPassed"].Value != null)
                 {
                     
-                    if (dataGridViewCourses.Rows[i].Cells["TestPassed"].Value.ToString() == "True")
+                    if (DataGridViewCourses.Rows[i].Cells["TestPassed"].Value.ToString() == "True")
                     {
-                        dataGridViewCourses.Rows[i].Cells["TestPassed"].Style = stylePass;
+                        DataGridViewCourses.Rows[i].Cells["TestPassed"].Style = stylePass;
                     }
                    
-                    if (dataGridViewCourses.Rows[i].Cells["TestPassed"].Value.ToString() == "False")
+                    if (DataGridViewCourses.Rows[i].Cells["TestPassed"].Value.ToString() == "False")
                     {
-                        dataGridViewCourses.Rows[i].Cells["TestPassed"].Style = styleFail;
+                        DataGridViewCourses.Rows[i].Cells["TestPassed"].Style = styleFail;
                     }
 
                 }
 
-                if(dataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value != null)
+                if(DataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value != null)
                 {
-                    if (dataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value.ToString() == "True")
+                    if (DataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value.ToString() == "True")
                     {
-                        dataGridViewCourses.Rows[i].Cells["CourseName"].Style = styleCourseActive;
+                        DataGridViewCourses.Rows[i].Cells["CourseName"].Style = styleCourseActive;
                     }
                 }
 

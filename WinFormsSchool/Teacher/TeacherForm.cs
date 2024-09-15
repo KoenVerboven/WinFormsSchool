@@ -18,26 +18,26 @@ namespace WinFormsSchool
             try
             {
                 var selectedTeacher = Teacher.GetTeacherById(selectedTeacherId);
-                textBoxFirstname.Text = selectedTeacher.Firstname;
-                textBoxMiddeleName.Text = selectedTeacher.MiddleName;
-                textBoxLastName.Text = selectedTeacher.LastName;
-                textBoxStreetAndNumber.Text = selectedTeacher.StreetAndNumber;
-                textBoxZipCode.Text = selectedTeacher.ZipCode;
-                textBoxPhoneNumber.Text = selectedTeacher.PhoneNumber;
-                textBoxEmailAddress.Text = selectedTeacher.EmailAddress;
-                textBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
-                textBoxDateOfBirth.Text =  Convert.ToString(selectedTeacher.DateOfBirth);
-                textBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
-                textBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
-                textBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
-                textBoxHireDate.Text = Convert.ToString(selectedTeacher.HireDate);
-                textBoxLeaveDate.Text = Convert.ToString(selectedTeacher.LeaveDate);
-                textBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
-                textBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
-                textBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
-                textBoxWorkingHoursPerWeek.Text = Convert.ToString(selectedTeacher.WorkingHoursPerWeek);
-                textBoxHighestDegree.Text = Convert.ToString(selectedTeacher.HighestDegree);
-                textBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);
+                TextBoxFirstname.Text = selectedTeacher.Firstname;
+                TextBoxMiddeleName.Text = selectedTeacher.MiddleName;
+                TextBoxLastName.Text = selectedTeacher.LastName;
+                TextBoxStreetAndNumber.Text = selectedTeacher.StreetAndNumber;
+                TextBoxZipCode.Text = selectedTeacher.ZipCode;
+                TextBoxPhoneNumber.Text = selectedTeacher.PhoneNumber;
+                TextBoxEmailAddress.Text = selectedTeacher.EmailAddress;
+                TextBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
+                TextBoxDateOfBirth.Text =  Convert.ToString(selectedTeacher.DateOfBirth);
+                TextBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
+                TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
+                TextBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
+                TextBoxHireDate.Text = Convert.ToString(selectedTeacher.HireDate);
+                TextBoxLeaveDate.Text = Convert.ToString(selectedTeacher.LeaveDate);
+                TextBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
+                TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
+                TextBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
+                TextBoxWorkingHoursPerWeek.Text = Convert.ToString(selectedTeacher.WorkingHoursPerWeek);
+                TextBoxHighestDegree.Text = Convert.ToString(selectedTeacher.HighestDegree);
+                TextBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);
             }
             catch (FormatException)
             {

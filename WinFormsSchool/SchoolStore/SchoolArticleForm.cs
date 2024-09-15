@@ -19,10 +19,10 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            labelMessage.Text = string.Empty;
-            labelMessage.Font = new Font(Font, FontStyle.Italic);
-            labelMessage.ForeColor = Color.Red;
-            pictureBoxArticle.BackColor = Color.LightGray;
+            LabelMessage.Text = string.Empty;
+            LabelMessage.Font = new Font(Font, FontStyle.Italic);
+            LabelMessage.ForeColor = Color.Red;
+            PictureBoxArticle.BackColor = Color.LightGray;
         }
 
         internal void LoadSelectedArticle(int selectedArticleId)
@@ -33,23 +33,23 @@ namespace WinFormsSchool
                 
                 if(selectedArticle is not null)
                 {
-                    textboxArticleId.Text = selectedArticle.ArticleId.ToString();
-                    textboxArticleName.Text = selectedArticle.ArticleName;
-                    textboxArticlePrice.Text = (selectedArticle.ArticlePrice is not null) ? selectedArticle.ArticlePrice.ToString() + " €" : "Price unkown"; // rekening houden met null value
-                    textBoxNumberInStock.Text = selectedArticle.NumberInStock.ToString();
-                    textBoxMinimumStock.Text = selectedArticle.MinStock.ToString();
-                    textBoxFragile.Text = selectedArticle.Fragile.ToString();
-                    textBoxArticleSize.Text =  Convert.ToString(selectedArticle.ArticleSize);
-                    labelMessage.Text = (selectedArticle.Message is not null) ? selectedArticle.Message.ToString() : "";
+                    TextboxArticleId.Text = selectedArticle.ArticleId.ToString();
+                    TextboxArticleName.Text = selectedArticle.ArticleName;
+                    TextboxArticlePrice.Text = (selectedArticle.ArticlePrice is not null) ? selectedArticle.ArticlePrice.ToString() + " €" : "Price unkown"; // rekening houden met null value
+                    TextBoxNumberInStock.Text = selectedArticle.NumberInStock.ToString();
+                    TextBoxMinimumStock.Text = selectedArticle.MinStock.ToString();
+                    TextBoxFragile.Text = selectedArticle.Fragile.ToString();
+                    TextBoxArticleSize.Text =  Convert.ToString(selectedArticle.ArticleSize);
+                    LabelMessage.Text = (selectedArticle.Message is not null) ? selectedArticle.Message.ToString() : "";
 
                     if (Convert.ToBoolean(selectedArticle.Fragile))
                     {
-                        textBoxFragile.ForeColor = Color.Red;
+                        TextBoxFragile.ForeColor = Color.Red;
                     }
 
                     if (selectedArticle.ArticlePicture == null)
                     {
-                        labelArticleFoto.Text = "No picture available";
+                        LabelArticleFoto.Text = "No picture available";
                     }
                 }
                 

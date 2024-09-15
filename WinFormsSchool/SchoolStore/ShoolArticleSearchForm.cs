@@ -11,36 +11,30 @@ namespace WinFormsSchool
         public SchoolArticleSearchForm()
         {
             InitializeComponent();
-            gridViewArticles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridViewArticles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             SchoolArticle = new ArticleBLL();
         }
 
-        private void btnGetAllArticles_Click(object sender, EventArgs e) 
+        private void ButtonGetAllArticles_Click(object sender, EventArgs e) 
         {
             var searchArticles = SchoolArticle.GetArticles();
-            _ = int.TryParse(textboxSearch.Text, out int articleId);
+            _ = int.TryParse(TextboxSearch.Text, out int articleId);
 
             if(searchArticles != null)
             {
                 searchArticles = searchArticles
-                          .Where(X => (X.ArticleName.ToLower()).Contains(textboxSearch.Text.ToLower())
+                          .Where(X => (X.ArticleName.ToLower()).Contains(TextboxSearch.Text.ToLower())
                                    || (X.ArticleId == articleId)
                                    ).ToList();
 
-                gridViewArticles.DataSource = searchArticles;
+                GridViewArticles.DataSource = searchArticles;
             }
           
         }
 
-
-        private void btnDeleteArticle_Click(object sender, EventArgs e)
-        {
-            //AllArticles.Remove(1);
-        }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var success = int.TryParse(gridViewArticles.SelectedRows[0].Cells["ArticleId"].Value.ToString(),out int selectedId);
+            var success = int.TryParse(GridViewArticles.SelectedRows[0].Cells["ArticleId"].Value.ToString(),out int selectedId);
             
             if (success) {
                 SchoolArticleForm schoolArticleForm = new();

@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gridViewArticles = new DataGridView();
-            buttonSearch = new Button();
-            textboxSearch = new TextBox();
+            GridViewArticles = new DataGridView();
+            ButtonSearch = new Button();
+            TextboxSearch = new TextBox();
             label1 = new Label();
-            label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)gridViewArticles).BeginInit();
+            ButtonDoubleClickGrid = new Label();
+            ((System.ComponentModel.ISupportInitialize)GridViewArticles).BeginInit();
             SuspendLayout();
             // 
-            // gridViewArticles
+            // GridViewArticles
             // 
-            gridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridViewArticles.Location = new Point(37, 168);
-            gridViewArticles.Name = "gridViewArticles";
-            gridViewArticles.RowHeadersWidth = 51;
-            gridViewArticles.Size = new Size(732, 330);
-            gridViewArticles.TabIndex = 0;
-            gridViewArticles.CellDoubleClick += dataGridView1_CellDoubleClick;
+            GridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            GridViewArticles.Location = new Point(37, 168);
+            GridViewArticles.Name = "GridViewArticles";
+            GridViewArticles.RowHeadersWidth = 51;
+            GridViewArticles.Size = new Size(732, 330);
+            GridViewArticles.TabIndex = 0;
+            GridViewArticles.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
-            // buttonSearch
+            // ButtonSearch
             // 
-            buttonSearch.Location = new Point(322, 88);
-            buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(171, 29);
-            buttonSearch.TabIndex = 16;
-            buttonSearch.Text = "Search";
-            buttonSearch.UseVisualStyleBackColor = true;
-            buttonSearch.Click += btnGetAllArticles_Click;
+            ButtonSearch.Location = new Point(322, 88);
+            ButtonSearch.Name = "ButtonSearch";
+            ButtonSearch.Size = new Size(171, 29);
+            ButtonSearch.TabIndex = 16;
+            ButtonSearch.Text = "Search";
+            ButtonSearch.UseVisualStyleBackColor = true;
+            ButtonSearch.Click += ButtonGetAllArticles_Click;
             // 
-            // textboxSearch
+            // TextboxSearch
             // 
-            textboxSearch.Location = new Point(37, 88);
-            textboxSearch.Name = "textboxSearch";
-            textboxSearch.Size = new Size(279, 27);
-            textboxSearch.TabIndex = 18;
+            TextboxSearch.Location = new Point(37, 88);
+            TextboxSearch.Name = "TextboxSearch";
+            TextboxSearch.Size = new Size(279, 27);
+            TextboxSearch.TabIndex = 18;
             // 
             // label1
             // 
@@ -72,38 +72,38 @@
             label1.TabIndex = 19;
             label1.Text = "Give the full article name or a part of the name";
             // 
-            // label3
+            // ButtonDoubleClickGrid
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(37, 512);
-            label3.Name = "label3";
-            label3.Size = new Size(321, 20);
-            label3.TabIndex = 25;
-            label3.Text = "Double click on GridRow to open detailscreen  ";
+            ButtonDoubleClickGrid.AutoSize = true;
+            ButtonDoubleClickGrid.Location = new Point(37, 512);
+            ButtonDoubleClickGrid.Name = "ButtonDoubleClickGrid";
+            ButtonDoubleClickGrid.Size = new Size(321, 20);
+            ButtonDoubleClickGrid.TabIndex = 25;
+            ButtonDoubleClickGrid.Text = "Double click on GridRow to open detailscreen  ";
             // 
             // SchoolArticleSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(873, 564);
-            Controls.Add(label3);
+            Controls.Add(ButtonDoubleClickGrid);
             Controls.Add(label1);
-            Controls.Add(textboxSearch);
-            Controls.Add(buttonSearch);
-            Controls.Add(gridViewArticles);
+            Controls.Add(TextboxSearch);
+            Controls.Add(ButtonSearch);
+            Controls.Add(GridViewArticles);
             Name = "SchoolArticleSearchForm";
             Text = "SchoolArticleSearchForm";
-            ((System.ComponentModel.ISupportInitialize)gridViewArticles).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GridViewArticles).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView gridViewArticles;
-        private Button buttonSearch;
-        private TextBox textboxSearch;
+        private DataGridView GridViewArticles;
+        private Button ButtonSearch;
+        private TextBox TextboxSearch;
         private Label label1;
-        private Label label3;
+        private Label ButtonDoubleClickGrid;
     }
 }

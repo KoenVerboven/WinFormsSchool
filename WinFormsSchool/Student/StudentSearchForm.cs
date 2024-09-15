@@ -16,44 +16,44 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            labelStudentsFound.Text = string.Empty;
-            labelStudentsFound.Font = new Font(Font, FontStyle.Italic);
-            gridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridViewStudents.Visible = false;
+            LabelStudentsFound.Text = string.Empty;
+            LabelStudentsFound.Font = new Font(Font, FontStyle.Italic);
+            GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridViewStudents.Visible = false;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
             const int MinimumCharactersSearchCommand = 1;
 
-            if(textboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+            if(TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
             {
-                _ = int.TryParse(textboxSearch.Text, out int personId);
+                _ = int.TryParse(TextboxSearch.Text, out int personId);
                 var searchStudents = Student.GetStudents();  //onderstaande linq query hoort ook thuis in de bll?  de visuele interface zo dom mogelijk houden
                 if(searchStudents is not null)
                 {
                     searchStudents = searchStudents
-                                 .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(textboxSearch.Text.ToLower())
-                                           || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(textboxSearch.Text.ToLower())
+                                 .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextboxSearch.Text.ToLower())
+                                           || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextboxSearch.Text.ToLower())
                                            || (X.PersonId == personId)
                                            ).ToList();
 
                     if (searchStudents.Count > 0)
                     {
-                        gridViewStudents.DataSource = searchStudents;
-                        gridViewStudents.Visible = true;
-                        gridViewStudents.Columns["PersonId"].DisplayIndex = 0;
-                        gridViewStudents.Columns["FirstName"].DisplayIndex = 1;
-                        gridViewStudents.Columns["LastName"].DisplayIndex = 2;
-                        gridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
-                        labelStudentsFound.Text = searchStudents.Count.ToString();
-                        if (searchStudents.Count > 1) { labelStudentsFound.Text += " students found"; }
-                        else { labelStudentsFound.Text += " student found"; }
+                        GridViewStudents.DataSource = searchStudents;
+                        GridViewStudents.Visible = true;
+                        GridViewStudents.Columns["PersonId"].DisplayIndex = 0;
+                        GridViewStudents.Columns["FirstName"].DisplayIndex = 1;
+                        GridViewStudents.Columns["LastName"].DisplayIndex = 2;
+                        GridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
+                        LabelStudentsFound.Text = searchStudents.Count.ToString();
+                        if (searchStudents.Count > 1) { LabelStudentsFound.Text += " students found"; }
+                        else { LabelStudentsFound.Text += " student found"; }
                     }
                     else
                     {
-                        labelStudentsFound.Text = "No students found";
-                        gridViewStudents.Visible = false;
+                        LabelStudentsFound.Text = "No students found";
+                        GridViewStudents.Visible = false;
                     }
 
                 }
@@ -61,8 +61,8 @@ namespace WinFormsSchool
             }
             else
             {
-                labelStudentsFound.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
-                gridViewStudents.Visible = false;
+                LabelStudentsFound.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                GridViewStudents.Visible = false;
             }
 
         }
@@ -70,7 +70,7 @@ namespace WinFormsSchool
 
         private void dgrStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var succes = int.TryParse(gridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
+            var succes = int.TryParse(GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
             if(succes)
             {
                 StudentForm studentForm = new();

@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gridViewTeachers = new DataGridView();
+            GridViewTeachers = new DataGridView();
             label1 = new Label();
-            buttonSearch = new Button();
-            textBoxSearch = new TextBox();
-            label3 = new Label();
-            labelTeachersFound = new Label();
+            ButtonSearch = new Button();
+            TextBoxSearch = new TextBox();
+            LabelDoubleClickGrid = new Label();
+            LabelTeachersFound = new Label();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)gridViewTeachers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GridViewTeachers).BeginInit();
             SuspendLayout();
             // 
-            // gridViewTeachers
+            // GridViewTeachers
             // 
-            gridViewTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridViewTeachers.Location = new Point(79, 157);
-            gridViewTeachers.Name = "gridViewTeachers";
-            gridViewTeachers.RowHeadersWidth = 51;
-            gridViewTeachers.Size = new Size(643, 296);
-            gridViewTeachers.TabIndex = 26;
-            gridViewTeachers.CellDoubleClick += gridViewTeachers_CellDoubleClick;
+            GridViewTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            GridViewTeachers.Location = new Point(79, 157);
+            GridViewTeachers.Name = "GridViewTeachers";
+            GridViewTeachers.RowHeadersWidth = 51;
+            GridViewTeachers.Size = new Size(643, 296);
+            GridViewTeachers.TabIndex = 26;
+            GridViewTeachers.CellDoubleClick += gridViewTeachers_CellDoubleClick;
             // 
             // label1
             // 
@@ -57,40 +57,40 @@
             label1.TabIndex = 25;
             label1.Text = "Give the full teacher name or a part of the name";
             // 
-            // buttonSearch
+            // ButtonSearch
             // 
-            buttonSearch.Location = new Point(383, 74);
-            buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(171, 29);
-            buttonSearch.TabIndex = 24;
-            buttonSearch.Text = "Search";
-            buttonSearch.UseVisualStyleBackColor = true;
-            buttonSearch.Click += btnSearch_Click;
+            ButtonSearch.Location = new Point(383, 74);
+            ButtonSearch.Name = "ButtonSearch";
+            ButtonSearch.Size = new Size(171, 29);
+            ButtonSearch.TabIndex = 24;
+            ButtonSearch.Text = "Search";
+            ButtonSearch.UseVisualStyleBackColor = true;
+            ButtonSearch.Click += ButtonSearch_Click;
             // 
-            // textBoxSearch
+            // TextBoxSearch
             // 
-            textBoxSearch.Location = new Point(89, 76);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(279, 27);
-            textBoxSearch.TabIndex = 23;
+            TextBoxSearch.Location = new Point(89, 76);
+            TextBoxSearch.Name = "TextBoxSearch";
+            TextBoxSearch.Size = new Size(279, 27);
+            TextBoxSearch.TabIndex = 23;
             // 
-            // label3
+            // LabelDoubleClickGrid
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(79, 456);
-            label3.Name = "label3";
-            label3.Size = new Size(321, 20);
-            label3.TabIndex = 27;
-            label3.Text = "Double click on GridRow to open detailscreen  ";
+            LabelDoubleClickGrid.AutoSize = true;
+            LabelDoubleClickGrid.Location = new Point(79, 456);
+            LabelDoubleClickGrid.Name = "LabelDoubleClickGrid";
+            LabelDoubleClickGrid.Size = new Size(321, 20);
+            LabelDoubleClickGrid.TabIndex = 27;
+            LabelDoubleClickGrid.Text = "Double click on GridRow to open detailscreen  ";
             // 
-            // labelTeachersFound
+            // LabelTeachersFound
             // 
-            labelTeachersFound.AutoSize = true;
-            labelTeachersFound.Location = new Point(90, 117);
-            labelTeachersFound.Name = "labelTeachersFound";
-            labelTeachersFound.Size = new Size(140, 20);
-            labelTeachersFound.TabIndex = 28;
-            labelTeachersFound.Text = "labelTeachersFound";
+            LabelTeachersFound.AutoSize = true;
+            LabelTeachersFound.Location = new Point(90, 117);
+            LabelTeachersFound.Name = "LabelTeachersFound";
+            LabelTeachersFound.Size = new Size(140, 20);
+            LabelTeachersFound.TabIndex = 28;
+            LabelTeachersFound.Text = "labelTeachersFound";
             // 
             // label2
             // 
@@ -107,27 +107,27 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 506);
             Controls.Add(label2);
-            Controls.Add(labelTeachersFound);
-            Controls.Add(label3);
-            Controls.Add(gridViewTeachers);
+            Controls.Add(LabelTeachersFound);
+            Controls.Add(LabelDoubleClickGrid);
+            Controls.Add(GridViewTeachers);
             Controls.Add(label1);
-            Controls.Add(buttonSearch);
-            Controls.Add(textBoxSearch);
+            Controls.Add(ButtonSearch);
+            Controls.Add(TextBoxSearch);
             Name = "TeacherSearchForm";
             Text = "TeacherSearchForm";
-            ((System.ComponentModel.ISupportInitialize)gridViewTeachers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GridViewTeachers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView gridViewTeachers;
+        private DataGridView GridViewTeachers;
         private Label label1;
-        private Button buttonSearch;
-        private TextBox textBoxSearch;
-        private Label label3;
-        private Label labelTeachersFound;
+        private Button ButtonSearch;
+        private TextBox TextBoxSearch;
+        private Label LabelDoubleClickGrid;
+        private Label LabelTeachersFound;
         private Label label2;
     }
 }
