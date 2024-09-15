@@ -20,4 +20,4 @@ This are a few things that you will learn:
 ------------------------------------------
 C#: OO, Classes, Make a object ,Inhertitance,  Interfaces, readonly fields ,Enums , ErrorHandeling, objectInitilizer, IF-Els, TryParse , for-loop                    
 
-Winforms:  MDI-Form, Gridview, Collor Cell of a GridView ,MenuControl, Schow MasterDetailScreen, StatusTrip, DataGridViewCellStyle
+Winforms:  MDI-Form, Gridview, Collor Cell of a GridView ,MenuControl, MasterDetailScreen, StatusTrip, DataGridViewCellStyle
