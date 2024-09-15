@@ -16,7 +16,18 @@ namespace AppCode.BLL.Models
         public int? ArticleHeightInMM { get; set; }
         public int? ArticleWidthInMM { get; set; }
         public int? ArticleDephInMM { get; set; }
+        public string? ArticleSize { get => ArticleSizeMethod(); }
         public string? Message { get; set; }
         public string? ArticlePicture { get; set; }
+
+        private string? ArticleSizeMethod()
+        {
+            if(ArticleHeightInMM is not null && ArticleWidthInMM is not null && ArticleDephInMM is not null)
+            {
+                return ArticleHeightInMM + " x " + ArticleWidthInMM + " x " + ArticleDephInMM;
+            }
+            else { return null;  }
+        }
+
     }
 }

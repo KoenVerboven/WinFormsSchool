@@ -77,7 +77,10 @@ namespace AppCode.BLL.BLLClasses
                     MinStock = 10,
                     QuantityInPackage = 1,
                     ArticleWeightInKg = 1.5m,
-                    Fragile = true
+                    Fragile = true,
+                    ArticleHeightInMM = 22,
+                    ArticleWidthInMM = 8000,
+                    ArticleDephInMM = 5000
                 },
                 new()
                 {
@@ -89,14 +92,20 @@ namespace AppCode.BLL.BLLClasses
                     MinStock = 10,
                     QuantityInPackage = 1,
                     ArticleWeightInKg = 1.5m,
-                    Fragile = true
+                    Fragile = true,
+                    ArticleHeightInMM = 25,
+                    ArticleWidthInMM = 9000,
+                    ArticleDephInMM = 6000
                 },
                 new()
                 {
                     ArticleId = 3,
                     ArtcileCategory = 3,
                     ArticleName = "Lenova laptop",
-                    ArticlePrice = null
+                    ArticlePrice = null,
+                    ArticleHeightInMM = 29,
+                    ArticleWidthInMM = 8800,
+                    ArticleDephInMM =6600
                 },
                 new()
                 {

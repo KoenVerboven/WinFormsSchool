@@ -22,6 +22,8 @@ namespace AppCode.BLL.Models
         public bool? TestPassed { get => TestPassedMethod(); }
         public bool CourseIsActive { get => CourseIsActiveMethod(); }
         public CourseType? CourseType { get; set; }
+        public decimal? CoursePrice { get; set; }
+        public Teacher? Teacher { get; set; }
 
 
         private bool? TestPassedMethod ()

@@ -39,6 +39,7 @@ namespace WinFormsSchool
                     textBoxNumberInStock.Text = selectedArticle.NumberInStock.ToString();
                     textBoxMinimumStock.Text = selectedArticle.MinStock.ToString();
                     textBoxFragile.Text = selectedArticle.Fragile.ToString();
+                    textBoxArticleSize.Text =  Convert.ToString(selectedArticle.ArticleSize);
                     labelMessage.Text = (selectedArticle.Message is not null) ? selectedArticle.Message.ToString() : "";
 
                     if (Convert.ToBoolean(selectedArticle.Fragile))

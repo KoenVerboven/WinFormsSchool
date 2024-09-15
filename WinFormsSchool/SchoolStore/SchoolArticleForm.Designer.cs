@@ -43,6 +43,8 @@
             textBoxFragile = new TextBox();
             labelArticleFoto = new Label();
             pictureBoxArticle = new PictureBox();
+            textBoxArticleSize = new TextBox();
+            labelSize = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxArticle).BeginInit();
             SuspendLayout();
             // 
@@ -97,7 +99,7 @@
             // labelMessage
             // 
             labelMessage.AutoSize = true;
-            labelMessage.Location = new Point(35, 253);
+            labelMessage.Location = new Point(35, 307);
             labelMessage.Name = "labelMessage";
             labelMessage.Size = new Size(100, 20);
             labelMessage.TabIndex = 22;
@@ -168,11 +170,29 @@
             pictureBoxArticle.TabIndex = 30;
             pictureBoxArticle.TabStop = false;
             // 
+            // textBoxArticleSize
+            // 
+            textBoxArticleSize.Location = new Point(186, 242);
+            textBoxArticleSize.Name = "textBoxArticleSize";
+            textBoxArticleSize.Size = new Size(222, 27);
+            textBoxArticleSize.TabIndex = 31;
+            // 
+            // labelSize
+            // 
+            labelSize.AutoSize = true;
+            labelSize.Location = new Point(34, 242);
+            labelSize.Name = "labelSize";
+            labelSize.Size = new Size(146, 20);
+            labelSize.TabIndex = 32;
+            labelSize.Text = "Size (HxWxD) in mm";
+            // 
             // SchoolArticleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelSize);
+            Controls.Add(textBoxArticleSize);
             Controls.Add(pictureBoxArticle);
             Controls.Add(labelArticleFoto);
             Controls.Add(textBoxFragile);
@@ -211,5 +231,7 @@
         private TextBox textBoxFragile;
         private Label labelArticleFoto;
         private PictureBox pictureBoxArticle;
+        private TextBox textBoxArticleSize;
+        private Label labelSize;
     }
 }
