@@ -25,6 +25,20 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
+            SetAllTextboxesOnFormReadOnly(true);
+            DataGridViewCourses.ReadOnly = true;
+        }
+
+        private void SetAllTextboxesOnFormReadOnly(bool readOnly)
+        {
+            foreach (var control in Controls)
+            {
+                TextBox? textEdit = control as TextBox;
+                if (textEdit != null)
+                {
+                    textEdit.ReadOnly = true;
+                }
+            }
         }
 
         public void LoadSelectedStudent(int selectedStudentId)
@@ -89,7 +103,7 @@ namespace WinFormsSchool
         {
             DataGridViewCellStyle styleFail = new()
             {
-                BackColor = Color.Red,
+                BackColor = Color.DarkOrange,
                 ForeColor = Color.White
             };
             DataGridViewCellStyle stylePass = new()

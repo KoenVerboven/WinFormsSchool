@@ -25,6 +25,19 @@ namespace WinFormsSchool
             PictureBoxArticle.BackColor = Color.LightGray;
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
+            SetAllTextboxesOnFormReadOnly(true);
+        }
+
+        private void SetAllTextboxesOnFormReadOnly(bool readOnly)
+        {
+            foreach (var control in Controls)
+            {
+                TextBox? textEdit = control as TextBox;
+                if (textEdit != null)
+                {
+                    textEdit.ReadOnly = true;
+                }
+            }
         }
 
         internal void LoadSelectedArticle(int selectedArticleId)

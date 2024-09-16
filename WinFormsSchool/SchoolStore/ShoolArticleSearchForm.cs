@@ -20,6 +20,7 @@ namespace WinFormsSchool
         {
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
+            GridViewArticles.ReadOnly = true;
         }
 
         private void ButtonGetAllArticles_Click(object sender, EventArgs e) 

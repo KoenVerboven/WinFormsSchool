@@ -24,6 +24,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
+            GridViewTeachers.ReadOnly = true;
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace WinFormsSchool
             }
         }
 
-        private void gridViewTeachers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void GridViewTeachers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var success =  int.TryParse(GridViewTeachers.SelectedRows[0].Cells["PersonId"].Value.ToString(),out int selectedId) ; 
             

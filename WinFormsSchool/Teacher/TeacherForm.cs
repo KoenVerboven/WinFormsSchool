@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.BLLClasses;
+using System.Windows.Forms;
 
 namespace WinFormsSchool
 {
@@ -9,10 +10,30 @@ namespace WinFormsSchool
         public TeacherForm()
         {
             InitializeComponent();
+            InitializeControls();
             Height = 610;
             Width = 1100;
             Teacher = new TeacherBLL();
         }
+
+
+        private void InitializeControls()
+        {
+            SetAllTextboxesOnFormReadOnly(true);
+        }
+
+        private void SetAllTextboxesOnFormReadOnly(bool readOnly)
+        {
+            foreach (var control in Controls)
+            {
+                TextBox? textEdit = control as TextBox;
+                if (textEdit != null)
+                {
+                    textEdit.ReadOnly = true;
+                }
+            }
+        }
+
         public void LoadSelectedTeacher(int selectedTeacherId)
         {
             try

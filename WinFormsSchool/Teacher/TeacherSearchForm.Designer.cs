@@ -48,7 +48,7 @@
             GridViewTeachers.RowHeadersWidth = 51;
             GridViewTeachers.Size = new Size(686, 330);
             GridViewTeachers.TabIndex = 26;
-            GridViewTeachers.CellDoubleClick += gridViewTeachers_CellDoubleClick;
+            GridViewTeachers.CellDoubleClick += GridViewTeachers_CellDoubleClick;
             // 
             // label1
             // 
