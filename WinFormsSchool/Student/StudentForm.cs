@@ -33,8 +33,7 @@ namespace WinFormsSchool
         {
             foreach (var control in Controls)
             {
-                TextBox? textEdit = control as TextBox;
-                if (textEdit != null)
+                if (control is TextBox textEdit)
                 {
                     textEdit.ReadOnly = true;
                 }
