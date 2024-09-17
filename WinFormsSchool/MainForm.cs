@@ -1,6 +1,4 @@
 ﻿
-using System.Windows.Forms;
-
 namespace WinFormsSchool
 {
     public partial class MainForm : Form
@@ -18,6 +16,7 @@ namespace WinFormsSchool
             menuStrip1.BackColor = Color.FromArgb(55, 55, 55);
             menuStrip1.ForeColor = Color.White;
             menuStrip1.Renderer = new MyRender();
+            menuStrip1.Font = new Font("Helvetica", 16);
         }
 
         private void closeProgramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,41 +39,56 @@ namespace WinFormsSchool
 
         private void studentsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            StudentSearchForm studentForm = new StudentSearchForm();
-            studentForm.MdiParent = this;
+            StudentSearchForm studentForm = new()
+            {
+                MdiParent = this
+            };
             studentForm.Show();
         }
 
         private void teachersToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            TeacherSearchForm teachersForm = new TeacherSearchForm();
-            teachersForm.MdiParent = this;
+            TeacherSearchForm teachersForm = new()
+            {
+                MdiParent = this
+            };
             teachersForm.Show();
         }
 
         private void schoolShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SchoolArticleSearchForm articleSearchForm = new SchoolArticleSearchForm();
-            articleSearchForm.MdiParent = this;
+            SchoolArticleSearchForm articleSearchForm = new()
+            {
+                MdiParent = this
+            };
             articleSearchForm.Show();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            var result = MessageBox.Show("Are you sure clossing the program?","closing program",
+                MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm aboutForm = new AboutForm();
-            aboutForm.MdiParent = this;
+            AboutForm aboutForm = new()
+            {
+                MdiParent = this
+            };
             aboutForm.Show();
         }
 
         private void infoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            InfoForm infoForm = new InfoForm();
-            infoForm.MdiParent = this;
+            InfoForm infoForm = new InfoForm
+            {
+                MdiParent = this
+            };
             infoForm.Show();
         }
     }
