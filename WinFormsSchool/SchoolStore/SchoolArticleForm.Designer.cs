@@ -186,9 +186,9 @@
             LabelSize.AutoSize = true;
             LabelSize.Location = new Point(34, 242);
             LabelSize.Name = "LabelSize";
-            LabelSize.Size = new Size(146, 20);
+            LabelSize.Size = new Size(140, 20);
             LabelSize.TabIndex = 32;
-            LabelSize.Text = "Size (HxWxD) in mm";
+            LabelSize.Text = "Size (HxWxD) in cm";
             // 
             // statusStrip1
             // 

@@ -24,6 +24,9 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
             GridViewStudents.ReadOnly = true;
+            ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
+            ButtonSearch.ForeColor = Color.White;
+            ButtonSearch.Height = 35;
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)

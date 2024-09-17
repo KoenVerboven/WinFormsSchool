@@ -21,6 +21,9 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
             GridViewArticles.ReadOnly = true;
+            ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
+            ButtonSearch.ForeColor = Color.White;
+            ButtonSearch.Height = 35;
         }
 
         private void ButtonGetAllArticles_Click(object sender, EventArgs e) 
