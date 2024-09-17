@@ -29,97 +29,129 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            studentsToolStripMenuItem = new ToolStripMenuItem();
-            teachersToolStripMenuItem = new ToolStripMenuItem();
-            schoolArticleSearchToolStripMenuItem = new ToolStripMenuItem();
-            closeProgramToolStripMenuItem = new ToolStripMenuItem();
+            studentsToolStripMenuItem1 = new ToolStripMenuItem();
+            teachersToolStripMenuItem1 = new ToolStripMenuItem();
+            schoolShopToolStripMenuItem = new ToolStripMenuItem();
+            windowsToolStripMenuItem = new ToolStripMenuItem();
+            closeAllFormsToolStripMenuItem = new ToolStripMenuItem();
+            infoToolStripMenuItem1 = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
-            aboutscreenToolStripMenuItem = new ToolStripMenuItem();
-            infoToolStripMenuItem = new ToolStripMenuItem();
+            closeToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
+            menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, aboutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { studentsToolStripMenuItem1, teachersToolStripMenuItem1, schoolShopToolStripMenuItem, windowsToolStripMenuItem, infoToolStripMenuItem1, aboutToolStripMenuItem, closeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(942, 28);
+            menuStrip1.Size = new Size(108, 510);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // studentsToolStripMenuItem1
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { studentsToolStripMenuItem, teachersToolStripMenuItem, schoolArticleSearchToolStripMenuItem, closeProgramToolStripMenuItem });
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(109, 24);
-            toolStripMenuItem1.Text = "School Menu";
+            studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
+            studentsToolStripMenuItem1.Size = new Size(95, 24);
+            studentsToolStripMenuItem1.Text = "Students";
+            studentsToolStripMenuItem1.Click += studentsToolStripMenuItem1_Click;
             // 
-            // studentsToolStripMenuItem
+            // teachersToolStripMenuItem1
             // 
-            studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            studentsToolStripMenuItem.Size = new Size(189, 26);
-            studentsToolStripMenuItem.Text = "Students";
-            studentsToolStripMenuItem.Click += studentsToolStripMenuItem_Click;
+            teachersToolStripMenuItem1.Name = "teachersToolStripMenuItem1";
+            teachersToolStripMenuItem1.Size = new Size(95, 24);
+            teachersToolStripMenuItem1.Text = "Teachers";
+            teachersToolStripMenuItem1.Click += teachersToolStripMenuItem1_Click;
             // 
-            // teachersToolStripMenuItem
+            // schoolShopToolStripMenuItem
             // 
-            teachersToolStripMenuItem.Name = "teachersToolStripMenuItem";
-            teachersToolStripMenuItem.Size = new Size(189, 26);
-            teachersToolStripMenuItem.Text = "Teachers";
-            teachersToolStripMenuItem.Click += teachersToolStripMenuItem_Click;
+            schoolShopToolStripMenuItem.Name = "schoolShopToolStripMenuItem";
+            schoolShopToolStripMenuItem.Size = new Size(95, 24);
+            schoolShopToolStripMenuItem.Text = "SchoolShop";
+            schoolShopToolStripMenuItem.Click += schoolShopToolStripMenuItem_Click;
             // 
-            // schoolArticleSearchToolStripMenuItem
+            // windowsToolStripMenuItem
             // 
-            schoolArticleSearchToolStripMenuItem.Name = "schoolArticleSearchToolStripMenuItem";
-            schoolArticleSearchToolStripMenuItem.Size = new Size(189, 26);
-            schoolArticleSearchToolStripMenuItem.Text = "Articles shop";
-            schoolArticleSearchToolStripMenuItem.Click += schoolArticleSearchToolStripMenuItem_Click;
+            windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { closeAllFormsToolStripMenuItem });
+            windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
+            windowsToolStripMenuItem.Size = new Size(95, 24);
+            windowsToolStripMenuItem.Text = "Windows";
             // 
-            // closeProgramToolStripMenuItem
+            // closeAllFormsToolStripMenuItem
             // 
-            closeProgramToolStripMenuItem.Name = "closeProgramToolStripMenuItem";
-            closeProgramToolStripMenuItem.Size = new Size(189, 26);
-            closeProgramToolStripMenuItem.Text = "Close Program";
-            closeProgramToolStripMenuItem.Click += closeProgramToolStripMenuItem_Click;
+            closeAllFormsToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
+            closeAllFormsToolStripMenuItem.ForeColor = Color.White;
+            closeAllFormsToolStripMenuItem.Name = "closeAllFormsToolStripMenuItem";
+            closeAllFormsToolStripMenuItem.Size = new Size(186, 26);
+            closeAllFormsToolStripMenuItem.Text = "CloseAllForms";
+            closeAllFormsToolStripMenuItem.Click += closeAllFormsToolStripMenuItem_Click;
+            // 
+            // infoToolStripMenuItem1
+            // 
+            infoToolStripMenuItem1.Name = "infoToolStripMenuItem1";
+            infoToolStripMenuItem1.Size = new Size(95, 24);
+            infoToolStripMenuItem1.Text = "Info";
+            infoToolStripMenuItem1.Click += infoToolStripMenuItem1_Click;
             // 
             // aboutToolStripMenuItem
             // 
-            aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { infoToolStripMenuItem, aboutscreenToolStripMenuItem });
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(64, 24);
+            aboutToolStripMenuItem.Size = new Size(95, 24);
             aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
-            // aboutscreenToolStripMenuItem
+            // closeToolStripMenuItem
             // 
-            aboutscreenToolStripMenuItem.Name = "aboutscreenToolStripMenuItem";
-            aboutscreenToolStripMenuItem.Size = new Size(224, 26);
-            aboutscreenToolStripMenuItem.Text = "Aboutscreen";
-            aboutscreenToolStripMenuItem.Click += aboutscreenToolStripMenuItem_Click;
+            closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            closeToolStripMenuItem.Size = new Size(95, 24);
+            closeToolStripMenuItem.Text = "Close";
+            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
-            // infoToolStripMenuItem
+            // statusStrip1
             // 
-            infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            infoToolStripMenuItem.Size = new Size(224, 26);
-            infoToolStripMenuItem.Text = "Info";
-            infoToolStripMenuItem.Click += infoToolStripMenuItem_Click;
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(108, 484);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(834, 26);
+            statusStrip1.TabIndex = 31;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // ToolStripStatusLabel1
+            // 
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 510);
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
             Text = "School";
             WindowState = FormWindowState.Maximized;
-            Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,13 +159,16 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem studentsToolStripMenuItem;
-        private ToolStripMenuItem teachersToolStripMenuItem;
-        private ToolStripMenuItem schoolArticleSearchToolStripMenuItem;
-        private ToolStripMenuItem closeProgramToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private ToolStripMenuItem aboutscreenToolStripMenuItem;
-        private ToolStripMenuItem infoToolStripMenuItem;
+        private ToolStripMenuItem windowsToolStripMenuItem;
+        private ToolStripMenuItem closeAllFormsToolStripMenuItem;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
+        private ToolStripMenuItem studentsToolStripMenuItem1;
+        private ToolStripMenuItem teachersToolStripMenuItem1;
+        private ToolStripMenuItem schoolShopToolStripMenuItem;
+        private ToolStripMenuItem closeToolStripMenuItem;
+        private ToolStripMenuItem infoToolStripMenuItem1;
     }
 }

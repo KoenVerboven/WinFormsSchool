@@ -11,13 +11,12 @@ namespace WinFormsSchool
         {
             InitializeComponent();
             InitializeControls();
-            Height = 810;
-            Width = 1100;
             Student = new StudentBLL();
         }
 
         private void InitializeControls()
         {
+            //WindowState = FormWindowState.Maximized;   
             DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             DataGridViewCourses.Visible = false;
             PanelYellow.BackColor = Color.Yellow;
@@ -44,7 +43,7 @@ namespace WinFormsSchool
         {
             try
             {
-                var selectedStudent = Student.GetStudentById(selectedStudentId); //selectedStudent met hoofletter beginnen on klein letter?
+                var selectedStudent = Student.GetStudentById(selectedStudentId);
                 if (selectedStudent != null)
                 {
                     TextBoxFirstname.Text = selectedStudent.Firstname;

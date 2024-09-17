@@ -35,8 +35,18 @@ namespace WinFormsSchool
                                    || (X.ArticleId == articleId)
                                    ).ToList();
 
-                GridViewArticles.DataSource = searchArticles;
-                ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
+                if (searchArticles.Count > 0)
+                {
+                    GridViewArticles.DataSource = searchArticles;
+                    ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
+                }
+                else
+                {
+                    GridViewArticles.Visible = false;
+                    ToolStripStatusLabel1.Text = "No Articles found";
+                    ToolStripStatusLabel2.Text = string.Empty;
+                }
+
             }
           
         }
@@ -47,8 +57,9 @@ namespace WinFormsSchool
             
             if (success) {
                 SchoolArticleForm schoolArticleForm = new();
+                schoolArticleForm.MdiParent = MdiParent;
                 schoolArticleForm.LoadSelectedArticle(selectedId);
-                schoolArticleForm.ShowDialog(this);
+                schoolArticleForm.Show();
             }
 
         }

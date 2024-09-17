@@ -89,8 +89,9 @@ namespace WinFormsSchool
             if(success)
             {
                 TeacherForm teacherForm = new();
+                teacherForm.MdiParent = MdiParent;
                 teacherForm.LoadSelectedTeacher(selectedId);
-                teacherForm.ShowDialog(this);
+                teacherForm.Show();
             }
            
         }

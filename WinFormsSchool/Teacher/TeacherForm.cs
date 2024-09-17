@@ -59,10 +59,6 @@ namespace WinFormsSchool
                 TextBoxHighestDegree.Text = Convert.ToString(selectedTeacher.HighestDegree);
                 TextBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);
             }
-            catch (FormatException)
-            {
-                MessageBox.Show(selectedTeacherId + " is not nummeric", "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             catch (ArgumentOutOfRangeException)
             {
                  MessageBox.Show("Teacher with Id " + selectedTeacherId + " doesn't exist", "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);

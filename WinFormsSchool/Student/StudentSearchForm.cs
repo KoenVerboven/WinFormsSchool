@@ -17,6 +17,7 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
+            //WindowState = FormWindowState.Maximized;
             GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewStudents.Visible = false;
             ToolStripStatusLabel1.Text = string.Empty;
@@ -78,8 +79,9 @@ namespace WinFormsSchool
             if(succes)
             {
                 StudentForm studentForm = new();
+                studentForm.MdiParent = MdiParent;
                 studentForm.LoadSelectedStudent(selectedId);
-                studentForm.ShowDialog(this);
+                studentForm.Show();
             }
         }
     }
