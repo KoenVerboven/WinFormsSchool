@@ -141,9 +141,9 @@
             LabelMiddeleName.AutoSize = true;
             LabelMiddeleName.Location = new Point(45, 118);
             LabelMiddeleName.Name = "LabelMiddeleName";
-            LabelMiddeleName.Size = new Size(104, 20);
+            LabelMiddeleName.Size = new Size(96, 20);
             LabelMiddeleName.TabIndex = 9;
-            LabelMiddeleName.Text = "MiddeleName";
+            LabelMiddeleName.Text = "MiddleName";
             // 
             // LabelLastName
             // 

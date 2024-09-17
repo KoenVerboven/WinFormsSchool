@@ -29,20 +29,32 @@
         private void InitializeComponent()
         {
             textBoxInfo = new TextBox();
+            LabelInfoTitle = new Label();
             SuspendLayout();
             // 
             // textBoxInfo
             // 
-            textBoxInfo.Location = new Point(53, 51);
+            textBoxInfo.Location = new Point(44, 81);
+            textBoxInfo.Multiline = true;
             textBoxInfo.Name = "textBoxInfo";
-            textBoxInfo.Size = new Size(656, 27);
+            textBoxInfo.Size = new Size(690, 340);
             textBoxInfo.TabIndex = 0;
+            // 
+            // LabelInfoTitle
+            // 
+            LabelInfoTitle.AutoSize = true;
+            LabelInfoTitle.Location = new Point(44, 24);
+            LabelInfoTitle.Name = "LabelInfoTitle";
+            LabelInfoTitle.Size = new Size(35, 20);
+            LabelInfoTitle.TabIndex = 54;
+            LabelInfoTitle.Text = "Info";
             // 
             // InfoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(783, 408);
+            ClientSize = new Size(783, 466);
+            Controls.Add(LabelInfoTitle);
             Controls.Add(textBoxInfo);
             Name = "InfoForm";
             Text = "InfoForm";
@@ -54,5 +66,6 @@
         #endregion
 
         private TextBox textBoxInfo;
+        private Label LabelInfoTitle;
     }
 }

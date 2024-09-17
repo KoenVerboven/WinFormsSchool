@@ -37,7 +37,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(260, 127);
+            label1.Location = new Point(212, 107);
             label1.Name = "label1";
             label1.Size = new Size(371, 35);
             label1.TabIndex = 0;
@@ -47,17 +47,17 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13F);
-            label2.Location = new Point(344, 184);
+            label2.Location = new Point(345, 184);
             label2.Name = "label2";
-            label2.Size = new Size(128, 30);
+            label2.Size = new Size(104, 30);
             label2.TabIndex = 1;
-            label2.Text = "Vosselaar    ";
+            label2.Text = "Vosselaar";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13F);
-            label3.Location = new Point(344, 238);
+            label3.Location = new Point(351, 238);
             label3.Name = "label3";
             label3.Size = new Size(92, 30);
             label3.TabIndex = 2;

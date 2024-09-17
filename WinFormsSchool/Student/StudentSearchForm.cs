@@ -27,6 +27,22 @@ namespace WinFormsSchool
             ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
+            BackColor = Color.FromArgb(66, 66, 66);
+            SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            ToolStripStatusLabel1.BackColor = Color.White;
+            ToolStripStatusLabel2.BackColor = Color.White;
+        }
+
+        private void SetLabelProperties(Color color, Font font)
+        {
+            foreach (var control in Controls)
+            {
+                if (control is Label labelEdit)
+                {
+                    labelEdit.ForeColor = color;
+                    labelEdit.Font = font;
+                }
+            }
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
