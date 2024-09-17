@@ -13,10 +13,10 @@ namespace WinFormsSchool
         {
             ToolStripStatusLabel1.Text = "Admin";
             ToolStripStatusLabel2.Text = "";
-            menuStrip1.BackColor = Color.FromArgb(55, 55, 55);
+            menuStrip1.BackColor = Color.FromArgb(56,60, 56);
             menuStrip1.ForeColor = Color.White;
             menuStrip1.Renderer = new MyRender();
-            menuStrip1.Font = new Font("Helvetica", 16);
+            menuStrip1.Font = new Font("Helvetica", 15);
         }
 
         private void closeProgramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,19 +123,19 @@ namespace WinFormsSchool
         /// Gets the starting color of the gradient used when the 
         /// System.Windows.Forms.ToolStripMenuItem is selected.
         /// </summary>
-        public override Color MenuItemSelectedGradientBegin => Color.DarkBlue;
+        public override Color MenuItemSelectedGradientBegin => Color.FromArgb(99, 129, 130);
 
         /// <summary>
         /// Gets the end color of the gradient used when the 
         /// System.Windows.Forms.ToolStripMenuItem is selected.
         /// </summary>
-        public override Color MenuItemSelectedGradientEnd => Color.DarkBlue;
+        public override Color MenuItemSelectedGradientEnd => Color.FromArgb(99,129,130);
 
         /// <summary>
         /// Gets the solid background color of the 
         /// System.Windows.Forms.ToolStripDropDown.
         /// </summary>
-        public override Color ToolStripDropDownBackground => Color.DarkGray;
+        public override Color ToolStripDropDownBackground => Color.FromArgb(99, 129, 130);
 
         /// <summary>
         /// Gets the starting color of the gradient used in the image 

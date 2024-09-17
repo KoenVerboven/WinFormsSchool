@@ -31,6 +31,7 @@ namespace WinFormsSchool
             textBoxInfo.Text += "For more information go to the files in the Info folder from the project.";//link maken naar deze files?
             textBoxInfo.SelectionStart = 0;
             textBoxInfo.SelectionLength = 0;
+            BackColor = Color.FromArgb(66, 66, 66);
         }
     }
 }

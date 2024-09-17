@@ -51,37 +51,41 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { studentsToolStripMenuItem1, teachersToolStripMenuItem1, schoolShopToolStripMenuItem, windowsToolStripMenuItem, infoToolStripMenuItem1, aboutToolStripMenuItem, closeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(126, 510);
+            menuStrip1.Size = new Size(156, 510);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "MenuStripSideBar";
             // 
             // studentsToolStripMenuItem1
             // 
             studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
-            studentsToolStripMenuItem1.Size = new Size(113, 24);
+            studentsToolStripMenuItem1.Size = new Size(143, 24);
             studentsToolStripMenuItem1.Text = "Student";
+            studentsToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
             studentsToolStripMenuItem1.Click += studentsToolStripMenuItem1_Click;
             // 
             // teachersToolStripMenuItem1
             // 
             teachersToolStripMenuItem1.Name = "teachersToolStripMenuItem1";
-            teachersToolStripMenuItem1.Size = new Size(113, 24);
+            teachersToolStripMenuItem1.Size = new Size(143, 24);
             teachersToolStripMenuItem1.Text = "Teacher";
+            teachersToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
             teachersToolStripMenuItem1.Click += teachersToolStripMenuItem1_Click;
             // 
             // schoolShopToolStripMenuItem
             // 
             schoolShopToolStripMenuItem.Name = "schoolShopToolStripMenuItem";
-            schoolShopToolStripMenuItem.Size = new Size(113, 24);
+            schoolShopToolStripMenuItem.Size = new Size(143, 24);
             schoolShopToolStripMenuItem.Text = "SchoolShop";
+            schoolShopToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             schoolShopToolStripMenuItem.Click += schoolShopToolStripMenuItem_Click;
             // 
             // windowsToolStripMenuItem
             // 
             windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { closeAllFormsToolStripMenuItem });
             windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            windowsToolStripMenuItem.Size = new Size(113, 24);
+            windowsToolStripMenuItem.Size = new Size(143, 24);
             windowsToolStripMenuItem.Text = "Windows";
+            windowsToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // closeAllFormsToolStripMenuItem
             // 
@@ -95,31 +99,34 @@
             // infoToolStripMenuItem1
             // 
             infoToolStripMenuItem1.Name = "infoToolStripMenuItem1";
-            infoToolStripMenuItem1.Size = new Size(113, 24);
+            infoToolStripMenuItem1.Size = new Size(143, 24);
             infoToolStripMenuItem1.Text = "Info";
+            infoToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
             infoToolStripMenuItem1.Click += infoToolStripMenuItem1_Click;
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(113, 24);
+            aboutToolStripMenuItem.Size = new Size(143, 24);
             aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // closeToolStripMenuItem
             // 
             closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            closeToolStripMenuItem.Size = new Size(113, 24);
+            closeToolStripMenuItem.Size = new Size(143, 24);
             closeToolStripMenuItem.Text = "Close Program";
+            closeToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
-            statusStrip1.Location = new Point(126, 484);
+            statusStrip1.Location = new Point(156, 484);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(816, 26);
+            statusStrip1.Size = new Size(786, 26);
             statusStrip1.TabIndex = 31;
             statusStrip1.Text = "statusStrip1";
             // 
