@@ -48,6 +48,7 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            LabelArticleTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -55,7 +56,7 @@
             // LabelArticlePrice
             // 
             LabelArticlePrice.AutoSize = true;
-            LabelArticlePrice.Location = new Point(35, 92);
+            LabelArticlePrice.Location = new Point(39, 143);
             LabelArticlePrice.Name = "LabelArticlePrice";
             LabelArticlePrice.Size = new Size(84, 20);
             LabelArticlePrice.TabIndex = 13;
@@ -64,7 +65,7 @@
             // LabelArticleName
             // 
             LabelArticleName.AutoSize = true;
-            LabelArticleName.Location = new Point(35, 58);
+            LabelArticleName.Location = new Point(39, 112);
             LabelArticleName.Name = "LabelArticleName";
             LabelArticleName.Size = new Size(92, 20);
             LabelArticleName.TabIndex = 12;
@@ -73,7 +74,7 @@
             // LabelArticleId
             // 
             LabelArticleId.AutoSize = true;
-            LabelArticleId.Location = new Point(35, 29);
+            LabelArticleId.Location = new Point(39, 83);
             LabelArticleId.Name = "LabelArticleId";
             LabelArticleId.Size = new Size(65, 20);
             LabelArticleId.TabIndex = 17;
@@ -81,21 +82,21 @@
             // 
             // TextboxArticleId
             // 
-            TextboxArticleId.Location = new Point(187, 26);
+            TextboxArticleId.Location = new Point(241, 77);
             TextboxArticleId.Name = "TextboxArticleId";
             TextboxArticleId.Size = new Size(222, 27);
             TextboxArticleId.TabIndex = 18;
             // 
             // TextboxArticleName
             // 
-            TextboxArticleName.Location = new Point(187, 59);
+            TextboxArticleName.Location = new Point(241, 109);
             TextboxArticleName.Name = "TextboxArticleName";
             TextboxArticleName.Size = new Size(222, 27);
             TextboxArticleName.TabIndex = 19;
             // 
             // TextboxArticlePrice
             // 
-            TextboxArticlePrice.Location = new Point(187, 92);
+            TextboxArticlePrice.Location = new Point(241, 143);
             TextboxArticlePrice.Name = "TextboxArticlePrice";
             TextboxArticlePrice.Size = new Size(222, 27);
             TextboxArticlePrice.TabIndex = 20;
@@ -103,7 +104,7 @@
             // LabelMessage
             // 
             LabelMessage.AutoSize = true;
-            LabelMessage.Location = new Point(35, 307);
+            LabelMessage.Location = new Point(39, 346);
             LabelMessage.Name = "LabelMessage";
             LabelMessage.Size = new Size(100, 20);
             LabelMessage.TabIndex = 22;
@@ -112,7 +113,7 @@
             // LabelNumberInStock
             // 
             LabelNumberInStock.AutoSize = true;
-            LabelNumberInStock.Location = new Point(35, 132);
+            LabelNumberInStock.Location = new Point(39, 180);
             LabelNumberInStock.Name = "LabelNumberInStock";
             LabelNumberInStock.Size = new Size(111, 20);
             LabelNumberInStock.TabIndex = 23;
@@ -121,7 +122,7 @@
             // LabelMinimumStock
             // 
             LabelMinimumStock.AutoSize = true;
-            LabelMinimumStock.Location = new Point(35, 161);
+            LabelMinimumStock.Location = new Point(39, 215);
             LabelMinimumStock.Name = "LabelMinimumStock";
             LabelMinimumStock.Size = new Size(108, 20);
             LabelMinimumStock.TabIndex = 24;
@@ -130,7 +131,7 @@
             // LabelFragile
             // 
             LabelFragile.AutoSize = true;
-            LabelFragile.Location = new Point(35, 202);
+            LabelFragile.Location = new Point(39, 248);
             LabelFragile.Name = "LabelFragile";
             LabelFragile.Size = new Size(54, 20);
             LabelFragile.TabIndex = 25;
@@ -138,21 +139,21 @@
             // 
             // TextBoxNumberInStock
             // 
-            TextBoxNumberInStock.Location = new Point(187, 129);
+            TextBoxNumberInStock.Location = new Point(241, 177);
             TextBoxNumberInStock.Name = "TextBoxNumberInStock";
             TextBoxNumberInStock.Size = new Size(222, 27);
             TextBoxNumberInStock.TabIndex = 26;
             // 
             // TextBoxMinimumStock
             // 
-            TextBoxMinimumStock.Location = new Point(188, 163);
+            TextBoxMinimumStock.Location = new Point(241, 212);
             TextBoxMinimumStock.Name = "TextBoxMinimumStock";
             TextBoxMinimumStock.Size = new Size(221, 27);
             TextBoxMinimumStock.TabIndex = 27;
             // 
             // TextBoxFragile
             // 
-            TextBoxFragile.Location = new Point(186, 202);
+            TextBoxFragile.Location = new Point(241, 245);
             TextBoxFragile.Name = "TextBoxFragile";
             TextBoxFragile.Size = new Size(223, 27);
             TextBoxFragile.TabIndex = 28;
@@ -160,7 +161,7 @@
             // LabelArticleFoto
             // 
             LabelArticleFoto.AutoSize = true;
-            LabelArticleFoto.Location = new Point(507, 29);
+            LabelArticleFoto.Location = new Point(548, 40);
             LabelArticleFoto.Name = "LabelArticleFoto";
             LabelArticleFoto.Size = new Size(82, 20);
             LabelArticleFoto.TabIndex = 29;
@@ -168,7 +169,7 @@
             // 
             // PictureBoxArticle
             // 
-            PictureBoxArticle.Location = new Point(507, 66);
+            PictureBoxArticle.Location = new Point(548, 77);
             PictureBoxArticle.Name = "PictureBoxArticle";
             PictureBoxArticle.Size = new Size(216, 174);
             PictureBoxArticle.TabIndex = 30;
@@ -176,7 +177,7 @@
             // 
             // TextBoxArticleSize
             // 
-            TextBoxArticleSize.Location = new Point(186, 242);
+            TextBoxArticleSize.Location = new Point(242, 278);
             TextBoxArticleSize.Name = "TextBoxArticleSize";
             TextBoxArticleSize.Size = new Size(222, 27);
             TextBoxArticleSize.TabIndex = 31;
@@ -184,7 +185,7 @@
             // LabelSize
             // 
             LabelSize.AutoSize = true;
-            LabelSize.Location = new Point(34, 242);
+            LabelSize.Location = new Point(39, 281);
             LabelSize.Name = "LabelSize";
             LabelSize.Size = new Size(140, 20);
             LabelSize.TabIndex = 32;
@@ -213,11 +214,21 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // LabelArticleTitle
+            // 
+            LabelArticleTitle.AutoSize = true;
+            LabelArticleTitle.Location = new Point(39, 19);
+            LabelArticleTitle.Name = "LabelArticleTitle";
+            LabelArticleTitle.Size = new Size(52, 20);
+            LabelArticleTitle.TabIndex = 34;
+            LabelArticleTitle.Text = "Article";
+            // 
             // SchoolArticleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(LabelArticleTitle);
             Controls.Add(statusStrip1);
             Controls.Add(LabelSize);
             Controls.Add(TextBoxArticleSize);
@@ -266,5 +277,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
+        private Label LabelArticleTitle;
     }
 }

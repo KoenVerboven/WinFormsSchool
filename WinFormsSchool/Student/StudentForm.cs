@@ -26,6 +26,11 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.Text = string.Empty;
             SetAllTextboxesOnFormReadOnly(true);
             DataGridViewCourses.ReadOnly = true;
+            BackColor = Color.FromArgb(66, 66, 66);
+            SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            LabelStudentTitle.Font = new Font("Helvetica", 15);
+            ToolStripStatusLabel1.BackColor = Color.White;
+            ToolStripStatusLabel2.BackColor = Color.White;
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -34,7 +39,19 @@ namespace WinFormsSchool
             {
                 if (control is TextBox textEdit)
                 {
-                    textEdit.ReadOnly = true;
+                    textEdit.ReadOnly = readOnly;
+                }
+            }
+        }
+
+        private void SetLabelProperties(Color color, Font font)
+        {
+            foreach (var control in Controls)
+            {
+                if (control is Label labelEdit)
+                {
+                    labelEdit.ForeColor = color;
+                    labelEdit.Font = font;
                 }
             }
         }

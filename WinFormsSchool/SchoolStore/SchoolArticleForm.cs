@@ -26,6 +26,11 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
             SetAllTextboxesOnFormReadOnly(true);
+            BackColor = Color.FromArgb(66, 66, 66);
+            SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            LabelArticleTitle.Font = new Font("Helvetica", 15);
+            ToolStripStatusLabel1.BackColor = Color.White;
+            ToolStripStatusLabel2.BackColor = Color.White;
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -34,7 +39,19 @@ namespace WinFormsSchool
             {
                 if (control is TextBox textEdit)
                 {
-                    textEdit.ReadOnly = true;
+                    textEdit.ReadOnly = readOnly;
+                }
+            }
+        }
+
+        private void SetLabelProperties(Color color, Font font)
+        {
+            foreach (var control in Controls)
+            {
+                if (control is Label labelEdit)
+                {
+                    labelEdit.ForeColor = color;
+                    labelEdit.Font = font;
                 }
             }
         }
@@ -44,8 +61,8 @@ namespace WinFormsSchool
             try
             {
                 var selectedArticle = SchoolArticle.GetArticleById(selectedArticleId);//selectedArticle Met hoofdletter?
-                
-                if(selectedArticle is not null)
+
+                if (selectedArticle is not null)
                 {
                     TextboxArticleId.Text = selectedArticle.ArticleId.ToString();
                     TextboxArticleName.Text = selectedArticle.ArticleName;
@@ -53,7 +70,7 @@ namespace WinFormsSchool
                     TextBoxNumberInStock.Text = selectedArticle.NumberInStock.ToString();
                     TextBoxMinimumStock.Text = selectedArticle.MinStock.ToString();
                     TextBoxFragile.Text = selectedArticle.Fragile.ToString();
-                    TextBoxArticleSize.Text =  Convert.ToString(selectedArticle.ArticleSize);
+                    TextBoxArticleSize.Text = Convert.ToString(selectedArticle.ArticleSize);
                     LabelMessage.Text = (selectedArticle.Message is not null) ? selectedArticle.Message.ToString() : "";
 
                     if (Convert.ToBoolean(selectedArticle.Fragile))
@@ -66,11 +83,11 @@ namespace WinFormsSchool
                         LabelArticleFoto.Text = "No picture available";
                     }
                 }
-                
+
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Article with ArticleId " + selectedArticleId + " doesn't exist", 
+                MessageBox.Show("Article with ArticleId " + selectedArticleId + " doesn't exist",
                                  "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception oEx)
@@ -78,6 +95,5 @@ namespace WinFormsSchool
                 MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-       
     }
 }

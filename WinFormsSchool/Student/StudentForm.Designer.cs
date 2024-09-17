@@ -60,62 +60,63 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            LabelStudentTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // TextBoxFirstname
             // 
-            TextBoxFirstname.Location = new Point(222, 36);
+            TextBoxFirstname.Location = new Point(222, 81);
             TextBoxFirstname.Name = "TextBoxFirstname";
             TextBoxFirstname.Size = new Size(275, 27);
             TextBoxFirstname.TabIndex = 0;
             // 
             // TextBoxMiddeleName
             // 
-            TextBoxMiddeleName.Location = new Point(222, 69);
+            TextBoxMiddeleName.Location = new Point(222, 111);
             TextBoxMiddeleName.Name = "TextBoxMiddeleName";
             TextBoxMiddeleName.Size = new Size(275, 27);
             TextBoxMiddeleName.TabIndex = 1;
             // 
             // TextBoxStreetAndNumber
             // 
-            TextBoxStreetAndNumber.Location = new Point(222, 135);
+            TextBoxStreetAndNumber.Location = new Point(222, 177);
             TextBoxStreetAndNumber.Name = "TextBoxStreetAndNumber";
             TextBoxStreetAndNumber.Size = new Size(275, 27);
             TextBoxStreetAndNumber.TabIndex = 2;
             // 
             // TextBoxZipCode
             // 
-            TextBoxZipCode.Location = new Point(222, 168);
+            TextBoxZipCode.Location = new Point(222, 210);
             TextBoxZipCode.Name = "TextBoxZipCode";
             TextBoxZipCode.Size = new Size(275, 27);
             TextBoxZipCode.TabIndex = 3;
             // 
             // TextBoxLastName
             // 
-            TextBoxLastName.Location = new Point(222, 102);
+            TextBoxLastName.Location = new Point(222, 144);
             TextBoxLastName.Name = "TextBoxLastName";
             TextBoxLastName.Size = new Size(275, 27);
             TextBoxLastName.TabIndex = 7;
             // 
             // TextBoxGender
             // 
-            TextBoxGender.Location = new Point(222, 267);
+            TextBoxGender.Location = new Point(222, 309);
             TextBoxGender.Name = "TextBoxGender";
             TextBoxGender.Size = new Size(275, 27);
             TextBoxGender.TabIndex = 6;
             // 
             // TextBoxEmailAddress
             // 
-            TextBoxEmailAddress.Location = new Point(222, 234);
+            TextBoxEmailAddress.Location = new Point(222, 276);
             TextBoxEmailAddress.Name = "TextBoxEmailAddress";
             TextBoxEmailAddress.Size = new Size(275, 27);
             TextBoxEmailAddress.TabIndex = 5;
             // 
             // TextBoxPhoneNumber
             // 
-            TextBoxPhoneNumber.Location = new Point(222, 201);
+            TextBoxPhoneNumber.Location = new Point(222, 243);
             TextBoxPhoneNumber.Name = "TextBoxPhoneNumber";
             TextBoxPhoneNumber.Size = new Size(275, 27);
             TextBoxPhoneNumber.TabIndex = 4;
@@ -123,7 +124,7 @@
             // LabelFirstname
             // 
             LabelFirstname.AutoSize = true;
-            LabelFirstname.Location = new Point(35, 39);
+            LabelFirstname.Location = new Point(35, 84);
             LabelFirstname.Name = "LabelFirstname";
             LabelFirstname.Size = new Size(73, 20);
             LabelFirstname.TabIndex = 8;
@@ -132,7 +133,7 @@
             // LabelMiddlename
             // 
             LabelMiddlename.AutoSize = true;
-            LabelMiddlename.Location = new Point(35, 69);
+            LabelMiddlename.Location = new Point(35, 114);
             LabelMiddlename.Name = "LabelMiddlename";
             LabelMiddlename.Size = new Size(93, 20);
             LabelMiddlename.TabIndex = 9;
@@ -141,7 +142,7 @@
             // LabelLastname
             // 
             LabelLastname.AutoSize = true;
-            LabelLastname.Location = new Point(35, 102);
+            LabelLastname.Location = new Point(35, 147);
             LabelLastname.Name = "LabelLastname";
             LabelLastname.Size = new Size(72, 20);
             LabelLastname.TabIndex = 10;
@@ -150,7 +151,7 @@
             // LabelStreetandnumber
             // 
             LabelStreetandnumber.AutoSize = true;
-            LabelStreetandnumber.Location = new Point(35, 135);
+            LabelStreetandnumber.Location = new Point(35, 180);
             LabelStreetandnumber.Name = "LabelStreetandnumber";
             LabelStreetandnumber.Size = new Size(132, 20);
             LabelStreetandnumber.TabIndex = 11;
@@ -159,7 +160,7 @@
             // LabelZipcode
             // 
             LabelZipcode.AutoSize = true;
-            LabelZipcode.Location = new Point(35, 168);
+            LabelZipcode.Location = new Point(35, 213);
             LabelZipcode.Name = "LabelZipcode";
             LabelZipcode.Size = new Size(64, 20);
             LabelZipcode.TabIndex = 12;
@@ -168,7 +169,7 @@
             // LabelPhonenumber
             // 
             LabelPhonenumber.AutoSize = true;
-            LabelPhonenumber.Location = new Point(35, 201);
+            LabelPhonenumber.Location = new Point(35, 246);
             LabelPhonenumber.Name = "LabelPhonenumber";
             LabelPhonenumber.Size = new Size(101, 20);
             LabelPhonenumber.TabIndex = 13;
@@ -177,7 +178,7 @@
             // LabelEmailaddres
             // 
             LabelEmailaddres.AutoSize = true;
-            LabelEmailaddres.Location = new Point(35, 234);
+            LabelEmailaddres.Location = new Point(35, 279);
             LabelEmailaddres.Name = "LabelEmailaddres";
             LabelEmailaddres.Size = new Size(97, 20);
             LabelEmailaddres.TabIndex = 14;
@@ -186,7 +187,7 @@
             // LabelGender
             // 
             LabelGender.AutoSize = true;
-            LabelGender.Location = new Point(35, 267);
+            LabelGender.Location = new Point(35, 312);
             LabelGender.Name = "LabelGender";
             LabelGender.Size = new Size(57, 20);
             LabelGender.TabIndex = 15;
@@ -195,24 +196,24 @@
             // DataGridViewCourses
             // 
             DataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridViewCourses.Location = new Point(35, 317);
+            DataGridViewCourses.Location = new Point(35, 357);
             DataGridViewCourses.Name = "DataGridViewCourses";
             DataGridViewCourses.RowHeadersWidth = 51;
-            DataGridViewCourses.Size = new Size(968, 324);
+            DataGridViewCourses.Size = new Size(1016, 324);
             DataGridViewCourses.TabIndex = 16;
             DataGridViewCourses.CellFormatting += DataGridViewCourses_CellFormatting;
             // 
             // TextBoxNationality
             // 
-            TextBoxNationality.Location = new Point(658, 161);
+            TextBoxNationality.Location = new Point(706, 177);
             TextBoxNationality.Name = "TextBoxNationality";
-            TextBoxNationality.Size = new Size(349, 27);
+            TextBoxNationality.Size = new Size(345, 27);
             TextBoxNationality.TabIndex = 47;
             // 
             // LabelNationality
             // 
             LabelNationality.AutoSize = true;
-            LabelNationality.Location = new Point(518, 161);
+            LabelNationality.Location = new Point(526, 180);
             LabelNationality.Name = "LabelNationality";
             LabelNationality.Size = new Size(82, 20);
             LabelNationality.TabIndex = 46;
@@ -220,7 +221,7 @@
             // 
             // TextBoxDateOfBirth
             // 
-            TextBoxDateOfBirth.Location = new Point(658, 119);
+            TextBoxDateOfBirth.Location = new Point(706, 144);
             TextBoxDateOfBirth.Name = "TextBoxDateOfBirth";
             TextBoxDateOfBirth.Size = new Size(345, 27);
             TextBoxDateOfBirth.TabIndex = 45;
@@ -228,7 +229,7 @@
             // LabelDateOfBirth
             // 
             LabelDateOfBirth.AutoSize = true;
-            LabelDateOfBirth.Location = new Point(518, 122);
+            LabelDateOfBirth.Location = new Point(526, 147);
             LabelDateOfBirth.Name = "LabelDateOfBirth";
             LabelDateOfBirth.Size = new Size(88, 20);
             LabelDateOfBirth.TabIndex = 44;
@@ -236,7 +237,7 @@
             // 
             // TextBoxMaritalStatus
             // 
-            TextBoxMaritalStatus.Location = new Point(658, 77);
+            TextBoxMaritalStatus.Location = new Point(706, 111);
             TextBoxMaritalStatus.Name = "TextBoxMaritalStatus";
             TextBoxMaritalStatus.Size = new Size(345, 27);
             TextBoxMaritalStatus.TabIndex = 43;
@@ -244,7 +245,7 @@
             // LabelMaritalStatus
             // 
             LabelMaritalStatus.AutoSize = true;
-            LabelMaritalStatus.Location = new Point(517, 84);
+            LabelMaritalStatus.Location = new Point(526, 114);
             LabelMaritalStatus.Name = "LabelMaritalStatus";
             LabelMaritalStatus.Size = new Size(96, 20);
             LabelMaritalStatus.TabIndex = 42;
@@ -252,7 +253,7 @@
             // 
             // TextBoxNationalRegisterNumber
             // 
-            TextBoxNationalRegisterNumber.Location = new Point(658, 40);
+            TextBoxNationalRegisterNumber.Location = new Point(706, 81);
             TextBoxNationalRegisterNumber.Name = "TextBoxNationalRegisterNumber";
             TextBoxNationalRegisterNumber.Size = new Size(345, 27);
             TextBoxNationalRegisterNumber.TabIndex = 41;
@@ -260,7 +261,7 @@
             // LabelNationalRegisterNumber
             // 
             LabelNationalRegisterNumber.AutoSize = true;
-            LabelNationalRegisterNumber.Location = new Point(516, 39);
+            LabelNationalRegisterNumber.Location = new Point(526, 84);
             LabelNationalRegisterNumber.Name = "LabelNationalRegisterNumber";
             LabelNationalRegisterNumber.Size = new Size(136, 20);
             LabelNationalRegisterNumber.TabIndex = 40;
@@ -269,7 +270,7 @@
             // lLbelRegistrationDate
             // 
             lLbelRegistrationDate.AutoSize = true;
-            lLbelRegistrationDate.Location = new Point(518, 201);
+            lLbelRegistrationDate.Location = new Point(526, 213);
             lLbelRegistrationDate.Name = "lLbelRegistrationDate";
             lLbelRegistrationDate.Size = new Size(121, 20);
             lLbelRegistrationDate.TabIndex = 48;
@@ -277,7 +278,7 @@
             // 
             // TextBoxRegistrationDate
             // 
-            TextBoxRegistrationDate.Location = new Point(658, 204);
+            TextBoxRegistrationDate.Location = new Point(706, 210);
             TextBoxRegistrationDate.Name = "TextBoxRegistrationDate";
             TextBoxRegistrationDate.Size = new Size(345, 27);
             TextBoxRegistrationDate.TabIndex = 49;
@@ -285,7 +286,7 @@
             // PanelYellow
             // 
             PanelYellow.BackColor = SystemColors.ControlLightLight;
-            PanelYellow.Location = new Point(39, 663);
+            PanelYellow.Location = new Point(35, 696);
             PanelYellow.Name = "PanelYellow";
             PanelYellow.Size = new Size(22, 23);
             PanelYellow.TabIndex = 50;
@@ -293,7 +294,7 @@
             // LabelYellow
             // 
             LabelYellow.AutoSize = true;
-            LabelYellow.Location = new Point(67, 666);
+            LabelYellow.Location = new Point(63, 699);
             LabelYellow.Name = "LabelYellow";
             LabelYellow.Size = new Size(302, 20);
             LabelYellow.TabIndex = 51;
@@ -303,9 +304,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
-            statusStrip1.Location = new Point(0, 704);
+            statusStrip1.Location = new Point(0, 737);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1049, 26);
+            statusStrip1.Size = new Size(1146, 26);
             statusStrip1.TabIndex = 52;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -322,11 +323,21 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // LabelStudentTitle
+            // 
+            LabelStudentTitle.AutoSize = true;
+            LabelStudentTitle.Location = new Point(35, 23);
+            LabelStudentTitle.Name = "LabelStudentTitle";
+            LabelStudentTitle.Size = new Size(60, 20);
+            LabelStudentTitle.TabIndex = 53;
+            LabelStudentTitle.Text = "Student";
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1049, 730);
+            ClientSize = new Size(1146, 763);
+            Controls.Add(LabelStudentTitle);
             Controls.Add(statusStrip1);
             Controls.Add(LabelYellow);
             Controls.Add(PanelYellow);
@@ -400,5 +411,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
+        private Label LabelStudentTitle;
     }
 }

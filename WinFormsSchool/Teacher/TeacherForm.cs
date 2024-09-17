@@ -11,8 +11,6 @@ namespace WinFormsSchool
         {
             InitializeComponent();
             InitializeControls();
-            Height = 610;
-            Width = 1100;
             Teacher = new TeacherBLL();
         }
 
@@ -20,6 +18,11 @@ namespace WinFormsSchool
         private void InitializeControls()
         {
             SetAllTextboxesOnFormReadOnly(true);
+            Height = 610;
+            Width = 1100;
+            BackColor = Color.FromArgb(66, 66, 66);
+            SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            LabelTeacherTitle.Font = new Font("Helvetica", 15);
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -32,6 +35,19 @@ namespace WinFormsSchool
                 }
             }
         }
+
+        private void SetLabelProperties(Color color, Font font)
+        {
+            foreach (var control in Controls)
+            {
+                if (control is Label labelEdit)
+                {
+                    labelEdit.ForeColor = color;
+                    labelEdit.Font = font;
+                }
+            }
+        }
+
 
         public void LoadSelectedTeacher(int selectedTeacherId)
         {
