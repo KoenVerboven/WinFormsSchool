@@ -30,9 +30,12 @@ namespace WinFormsSchool
             GridViewStudents.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
             GridViewStudents.EnableHeadersVisualStyles = false;
             splitContainer1.Panel2.Padding = new Padding(16);
-            ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
+            ButtonSearch.BackColor = Color.FromArgb(55, 150, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
+            ButtonSearch.Image = Properties.Resources.SearchIcon;
+            ButtonSearch.FlatStyle = FlatStyle.Flat;
+            ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;

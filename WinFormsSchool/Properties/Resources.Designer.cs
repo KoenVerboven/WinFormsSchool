@@ -63,9 +63,9 @@ namespace WinFormsSchool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap student {
+        internal static System.Drawing.Bitmap SearchIcon {
             get {
-                object obj = ResourceManager.GetObject("student", resourceCulture);
+                object obj = ResourceManager.GetObject("SearchIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

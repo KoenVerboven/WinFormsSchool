@@ -57,9 +57,9 @@
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(316, 60);
+            ButtonSearch.Location = new Point(326, 54);
             ButtonSearch.Name = "ButtonSearch";
-            ButtonSearch.Size = new Size(171, 29);
+            ButtonSearch.Size = new Size(139, 38);
             ButtonSearch.TabIndex = 16;
             ButtonSearch.Text = "Search";
             ButtonSearch.UseVisualStyleBackColor = true;
