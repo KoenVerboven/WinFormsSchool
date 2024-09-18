@@ -37,11 +37,10 @@ namespace WinFormsSchool
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
-            LabelPageTitle.Text = "Article Search";
+            LabelPageTitle.Text = "Search Article";
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
-            LabelPageTitle.Text = "Article Search";
         }
 
         private void SetLabelProperties(Color color, Font font)

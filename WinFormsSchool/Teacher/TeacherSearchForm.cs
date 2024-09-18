@@ -42,7 +42,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
-            LabelPageTitle.Text = "Teacher Search";
+            LabelPageTitle.Text = "Search Teacher";
         }
 
         private void SetLabelProperties(Color color, Font font)
