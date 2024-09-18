@@ -13,7 +13,7 @@ namespace WinFormsSchool
         {
             ToolStripStatusLabel1.Text = "Admin";
             ToolStripStatusLabel2.Text = "";
-            menuStrip1.BackColor = Color.FromArgb(56,60, 56);
+            menuStrip1.BackColor = Color.FromArgb(56,60, 77);
             menuStrip1.ForeColor = Color.White;
             menuStrip1.Renderer = new MyRender();
             menuStrip1.Font = new Font("Helvetica", 15);

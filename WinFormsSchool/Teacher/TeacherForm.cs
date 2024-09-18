@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace WinFormsSchool
 {
-    public partial class TeacherForm : Form
+    public partial class TeacherForm : Base.BaseForm1
     {
         readonly TeacherBLL Teacher;
         
@@ -20,7 +20,6 @@ namespace WinFormsSchool
             SetAllTextboxesOnFormReadOnly(true);
             Height = 610;
             Width = 1100;
-            BackColor = Color.FromArgb(66, 66, 66);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             LabelTeacherTitle.Font = new Font("Helvetica", 15);
         }

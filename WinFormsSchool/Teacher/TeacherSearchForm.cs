@@ -4,7 +4,7 @@ using AppCode.BLL.BLLClasses;
 
 namespace WinFormsSchool
 {
-    public partial class TeacherSearchForm : Form
+    public partial class TeacherSearchForm : Base.BaseForm1
     {
 
         readonly TeacherBLL Teacher;
@@ -34,7 +34,6 @@ namespace WinFormsSchool
             ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
-            BackColor = Color.FromArgb(66, 66, 66);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;

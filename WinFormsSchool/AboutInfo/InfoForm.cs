@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsSchool
 {
-    public partial class InfoForm : Form
+    public partial class InfoForm : Base.BaseForm1
     {
         public InfoForm()
         {
@@ -10,7 +10,6 @@ namespace WinFormsSchool
 
         private void InfoForm_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(66, 66, 66);
             textBoxInfo.Multiline = true;
             textBoxInfo.IsAccessible  = false;
             textBoxInfo.ReadOnly = true;
@@ -26,7 +25,7 @@ namespace WinFormsSchool
             textBoxInfo.Text += "-> Object Oriënted programming : classes, interfaces, inheritance"+ Environment.NewLine;
             textBoxInfo.Text += "-> WinForms : forms, datagrid, menu, open new detailscreens " + Environment.NewLine;
             textBoxInfo.Text += Environment.NewLine ;
-            textBoxInfo.Text += "For more information go to the files in the Info folder from the project.";//link maken naar deze files?
+            textBoxInfo.Text += "For more information go to the files in the Info folder from the project.";//Todo link maken naar deze files?
             textBoxInfo.SelectionStart = 0;
             textBoxInfo.SelectionLength = 0;
             textBoxInfo.Dock = DockStyle.None;

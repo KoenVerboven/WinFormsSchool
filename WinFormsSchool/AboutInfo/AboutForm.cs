@@ -1,12 +1,11 @@
 ﻿
 namespace WinFormsSchool
 {
-    public partial class AboutForm : Form
+    public partial class AboutForm : Base.BaseForm1
     {
         public AboutForm()
         {
             InitializeComponent();
-            BackColor = Color.FromArgb(66, 66, 66);
             SetLabelProperties(Color.Yellow, new Font("Helvetica", 14));
         }
         private void SetLabelProperties(Color color, Font font)

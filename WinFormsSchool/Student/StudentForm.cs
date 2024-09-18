@@ -3,7 +3,7 @@
 
 namespace WinFormsSchool
 {
-    public partial class StudentForm : Form
+    public partial class StudentForm : Base.BaseForm1
     {
         readonly StudentBLL Student;
 
@@ -26,7 +26,6 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.Text = string.Empty;
             SetAllTextboxesOnFormReadOnly(true);
             DataGridViewCourses.ReadOnly = true;
-            BackColor = Color.FromArgb(66, 66, 66);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             LabelStudentTitle.Font = new Font("Helvetica", 15);
             ToolStripStatusLabel1.BackColor = Color.White;
@@ -100,7 +99,7 @@ namespace WinFormsSchool
                         LabelYellow.Visible = false;
                     }
                 }
-                
+
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -136,12 +135,12 @@ namespace WinFormsSchool
             {
                 if (DataGridViewCourses.Rows[i].Cells["TestPassed"].Value != null)
                 {
-                    
+
                     if (DataGridViewCourses.Rows[i].Cells["TestPassed"].Value.ToString() == "True")
                     {
                         DataGridViewCourses.Rows[i].Cells["TestPassed"].Style = stylePass;
                     }
-                   
+
                     if (DataGridViewCourses.Rows[i].Cells["TestPassed"].Value.ToString() == "False")
                     {
                         DataGridViewCourses.Rows[i].Cells["TestPassed"].Style = styleFail;
@@ -149,7 +148,7 @@ namespace WinFormsSchool
 
                 }
 
-                if(DataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value != null)
+                if (DataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value != null)
                 {
                     if (DataGridViewCourses.Rows[i].Cells["CourseIsActive"].Value.ToString() == "True")
                     {
@@ -159,5 +158,6 @@ namespace WinFormsSchool
 
             }
         }
+
     }
 }

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace WinFormsSchool
 {
-    public partial class SchoolArticleSearchForm : Form
+    public partial class SchoolArticleSearchForm : Base.BaseForm1
     {
         readonly ArticleBLL SchoolArticle;
 
@@ -30,7 +30,6 @@ namespace WinFormsSchool
             ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
-            BackColor = Color.FromArgb(66, 66, 66);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
