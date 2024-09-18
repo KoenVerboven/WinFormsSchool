@@ -57,6 +57,8 @@
             // 
             // studentsToolStripMenuItem1
             // 
+            studentsToolStripMenuItem1.Image = Properties.Resources.studentIcon;
+            studentsToolStripMenuItem1.ImageAlign = ContentAlignment.MiddleLeft;
             studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
             studentsToolStripMenuItem1.Size = new Size(143, 24);
             studentsToolStripMenuItem1.Text = "Student";
@@ -65,6 +67,8 @@
             // 
             // teachersToolStripMenuItem1
             // 
+            teachersToolStripMenuItem1.Image = Properties.Resources.teacherIcon;
+            teachersToolStripMenuItem1.ImageAlign = ContentAlignment.MiddleLeft;
             teachersToolStripMenuItem1.Name = "teachersToolStripMenuItem1";
             teachersToolStripMenuItem1.Size = new Size(143, 24);
             teachersToolStripMenuItem1.Text = "Teacher";
@@ -73,6 +77,8 @@
             // 
             // schoolShopToolStripMenuItem
             // 
+            schoolShopToolStripMenuItem.Image = Properties.Resources.shopping_cart;
+            schoolShopToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             schoolShopToolStripMenuItem.Name = "schoolShopToolStripMenuItem";
             schoolShopToolStripMenuItem.Size = new Size(143, 24);
             schoolShopToolStripMenuItem.Text = "SchoolShop";

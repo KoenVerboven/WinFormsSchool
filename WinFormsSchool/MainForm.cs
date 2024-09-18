@@ -1,4 +1,6 @@
 ﻿
+using AppCode.BLL.Models;
+
 namespace WinFormsSchool
 {
     public partial class MainForm : Form
@@ -168,5 +170,8 @@ namespace WinFormsSchool
         public override Color MenuBorder => Color.DarkGray;
        
     }
-
 }
+
+//teacherIcon : "https://www.flaticon.com/free-icons/teacher"Teacher icons created by Bert Flint
+//studentIcon "https://www.flaticon.com/free-icons/student" Student icons created by RIkas Dzihab
+//<a href="https://www.flaticon.com/free-icons/smart-cart" title="smart cart icons">Smart cart icons created by Freepik - Flaticon</a>
