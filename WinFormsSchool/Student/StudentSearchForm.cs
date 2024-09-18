@@ -17,13 +17,19 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            //WindowState = FormWindowState.Maximized;
+            // WindowState = FormWindowState.Maximized;
             GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewStudents.Visible = false;
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
             GridViewStudents.ReadOnly = true;
+            GridViewStudents.ColumnHeadersDefaultCellStyle.Padding = new Padding(6);
+            GridViewStudents.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkCyan;
+            GridViewStudents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            GridViewStudents.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
+            GridViewStudents.EnableHeadersVisualStyles = false;
+            splitContainer1.Panel2.Padding = new Padding(16);
             ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
@@ -31,6 +37,8 @@ namespace WinFormsSchool
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+            label1.ForeColor = Color.White;
+            label2.ForeColor = Color.White;
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -49,11 +57,11 @@ namespace WinFormsSchool
         {
             const int MinimumCharactersSearchCommand = 1;
 
-            if(TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+            if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
             {
                 _ = int.TryParse(TextboxSearch.Text, out int personId);
-                var searchStudents = Student.GetStudents(); 
-                if(searchStudents is not null)
+                var searchStudents = Student.GetStudents();
+                if (searchStudents is not null)
                 {
                     searchStudents = searchStudents
                                  .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextboxSearch.Text.ToLower())
@@ -95,13 +103,18 @@ namespace WinFormsSchool
         private void dgrStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var succes = int.TryParse(GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
-            if(succes)
+            if (succes)
             {
                 StudentForm studentForm = new();
                 studentForm.MdiParent = MdiParent;
                 studentForm.LoadSelectedStudent(selectedId);
                 studentForm.Show();
             }
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

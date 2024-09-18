@@ -35,23 +35,29 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            splitContainer1 = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).BeginInit();
             statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // GridViewArticles
             // 
             GridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewArticles.Location = new Point(37, 168);
+            GridViewArticles.Dock = DockStyle.Fill;
+            GridViewArticles.Location = new Point(0, 0);
             GridViewArticles.Name = "GridViewArticles";
             GridViewArticles.RowHeadersWidth = 51;
-            GridViewArticles.Size = new Size(732, 330);
+            GridViewArticles.Size = new Size(873, 416);
             GridViewArticles.TabIndex = 0;
             GridViewArticles.CellDoubleClick += DataGridView1_CellDoubleClick;
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(322, 88);
+            ButtonSearch.Location = new Point(316, 60);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.Size = new Size(171, 29);
             ButtonSearch.TabIndex = 16;
@@ -61,7 +67,7 @@
             // 
             // TextboxSearch
             // 
-            TextboxSearch.Location = new Point(37, 88);
+            TextboxSearch.Location = new Point(31, 60);
             TextboxSearch.Name = "TextboxSearch";
             TextboxSearch.Size = new Size(279, 27);
             TextboxSearch.TabIndex = 18;
@@ -69,7 +75,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 56);
+            label1.Location = new Point(31, 28);
             label1.Name = "label1";
             label1.Size = new Size(319, 20);
             label1.TabIndex = 19;
@@ -98,21 +104,43 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(ButtonSearch);
+            splitContainer1.Panel1.Controls.Add(TextboxSearch);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(GridViewArticles);
+            splitContainer1.Size = new Size(873, 558);
+            splitContainer1.SplitterDistance = 138;
+            splitContainer1.TabIndex = 32;
+            // 
             // SchoolArticleSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(873, 584);
+            Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
-            Controls.Add(label1);
-            Controls.Add(TextboxSearch);
-            Controls.Add(ButtonSearch);
-            Controls.Add(GridViewArticles);
             Name = "SchoolArticleSearchForm";
             Text = "SchoolArticleSearchForm";
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,5 +154,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
+        private SplitContainer splitContainer1;
     }
 }

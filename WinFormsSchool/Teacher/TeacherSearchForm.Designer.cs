@@ -36,24 +36,31 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            splitContainer1 = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)GridViewTeachers).BeginInit();
             statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // GridViewTeachers
             // 
             GridViewTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewTeachers.Location = new Point(79, 123);
+            GridViewTeachers.Dock = DockStyle.Fill;
+            GridViewTeachers.Location = new Point(0, 0);
             GridViewTeachers.Name = "GridViewTeachers";
             GridViewTeachers.RowHeadersWidth = 51;
-            GridViewTeachers.Size = new Size(686, 330);
+            GridViewTeachers.Size = new Size(1081, 405);
             GridViewTeachers.TabIndex = 26;
             GridViewTeachers.CellDoubleClick += GridViewTeachers_CellDoubleClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(89, 20);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(20, 9);
             label1.Name = "label1";
             label1.Size = new Size(327, 20);
             label1.TabIndex = 25;
@@ -61,7 +68,7 @@
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(383, 74);
+            ButtonSearch.Location = new Point(322, 71);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.Size = new Size(171, 29);
             ButtonSearch.TabIndex = 24;
@@ -71,7 +78,7 @@
             // 
             // TextBoxSearch
             // 
-            TextBoxSearch.Location = new Point(89, 76);
+            TextBoxSearch.Location = new Point(20, 73);
             TextBoxSearch.Name = "TextBoxSearch";
             TextBoxSearch.Size = new Size(279, 27);
             TextBoxSearch.TabIndex = 23;
@@ -79,7 +86,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(89, 40);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(20, 39);
             label2.Name = "label2";
             label2.Size = new Size(251, 20);
             label2.TabIndex = 29;
@@ -91,7 +99,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
             statusStrip1.Location = new Point(0, 524);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 26);
+            statusStrip1.Size = new Size(1081, 26);
             statusStrip1.TabIndex = 30;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -108,22 +116,44 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(label2);
+            splitContainer1.Panel1.Controls.Add(ButtonSearch);
+            splitContainer1.Panel1.Controls.Add(TextBoxSearch);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(GridViewTeachers);
+            splitContainer1.Size = new Size(1081, 524);
+            splitContainer1.SplitterDistance = 115;
+            splitContainer1.TabIndex = 31;
+            // 
             // TeacherSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 550);
+            ClientSize = new Size(1081, 550);
+            Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
-            Controls.Add(label2);
-            Controls.Add(GridViewTeachers);
-            Controls.Add(label1);
-            Controls.Add(ButtonSearch);
-            Controls.Add(TextBoxSearch);
             Name = "TeacherSearchForm";
             Text = "TeacherSearchForm";
             ((System.ComponentModel.ISupportInitialize)GridViewTeachers).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,5 +168,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
+        private SplitContainer splitContainer1;
     }
 }

@@ -82,7 +82,7 @@
             // 
             // TextboxArticleId
             // 
-            TextboxArticleId.Location = new Point(241, 77);
+            TextboxArticleId.Location = new Point(241, 80);
             TextboxArticleId.Name = "TextboxArticleId";
             TextboxArticleId.Size = new Size(222, 27);
             TextboxArticleId.TabIndex = 18;
@@ -161,7 +161,7 @@
             // LabelArticleFoto
             // 
             LabelArticleFoto.AutoSize = true;
-            LabelArticleFoto.Location = new Point(548, 40);
+            LabelArticleFoto.Location = new Point(548, 83);
             LabelArticleFoto.Name = "LabelArticleFoto";
             LabelArticleFoto.Size = new Size(82, 20);
             LabelArticleFoto.TabIndex = 29;
@@ -169,9 +169,9 @@
             // 
             // PictureBoxArticle
             // 
-            PictureBoxArticle.Location = new Point(548, 77);
+            PictureBoxArticle.Location = new Point(548, 112);
             PictureBoxArticle.Name = "PictureBoxArticle";
-            PictureBoxArticle.Size = new Size(216, 174);
+            PictureBoxArticle.Size = new Size(216, 189);
             PictureBoxArticle.TabIndex = 30;
             PictureBoxArticle.TabStop = false;
             // 

@@ -30,26 +30,31 @@
         {
             TextboxSearch = new TextBox();
             ButtonSearch = new Button();
-            label1 = new Label();
             GridViewStudents = new DataGridView();
             label2 = new Label();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            splitContainer1 = new SplitContainer();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)GridViewStudents).BeginInit();
             statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // TextboxSearch
             // 
-            TextboxSearch.Location = new Point(34, 68);
+            TextboxSearch.Location = new Point(12, 72);
             TextboxSearch.Name = "TextboxSearch";
             TextboxSearch.Size = new Size(279, 27);
             TextboxSearch.TabIndex = 19;
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(319, 67);
+            ButtonSearch.Location = new Point(297, 71);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.Size = new Size(171, 29);
             ButtonSearch.TabIndex = 20;
@@ -57,29 +62,21 @@
             ButtonSearch.UseVisualStyleBackColor = true;
             ButtonSearch.Click += ButtonSearch_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(34, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(327, 20);
-            label1.TabIndex = 21;
-            label1.Text = "Give the full student name or a part of the name";
-            // 
             // GridViewStudents
             // 
             GridViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewStudents.Location = new Point(24, 117);
+            GridViewStudents.Dock = DockStyle.Fill;
+            GridViewStudents.Location = new Point(0, 0);
             GridViewStudents.Name = "GridViewStudents";
             GridViewStudents.RowHeadersWidth = 51;
-            GridViewStudents.Size = new Size(764, 321);
+            GridViewStudents.Size = new Size(1320, 423);
             GridViewStudents.TabIndex = 22;
             GridViewStudents.CellDoubleClick += dgrStudents_CellDoubleClick;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(34, 29);
+            label2.Location = new Point(12, 33);
             label2.Name = "label2";
             label2.Size = new Size(243, 20);
             label2.TabIndex = 23;
@@ -89,9 +86,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
-            statusStrip1.Location = new Point(0, 535);
+            statusStrip1.Location = new Point(0, 574);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 26);
+            statusStrip1.Size = new Size(1320, 26);
             statusStrip1.TabIndex = 26;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -108,22 +105,55 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(label2);
+            splitContainer1.Panel1.Controls.Add(TextboxSearch);
+            splitContainer1.Panel1.Controls.Add(ButtonSearch);
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(GridViewStudents);
+            splitContainer1.Size = new Size(1320, 574);
+            splitContainer1.SplitterDistance = 147;
+            splitContainer1.TabIndex = 27;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(327, 20);
+            label1.TabIndex = 26;
+            label1.Text = "Give the full student name or a part of the name";
+            // 
             // StudentSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 561);
+            ClientSize = new Size(1320, 600);
+            Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
-            Controls.Add(label2);
-            Controls.Add(GridViewStudents);
-            Controls.Add(label1);
-            Controls.Add(ButtonSearch);
-            Controls.Add(TextboxSearch);
             Name = "StudentSearchForm";
             Text = "StudentSearchForm";
             ((System.ComponentModel.ISupportInitialize)GridViewStudents).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -131,11 +161,12 @@
         #endregion
         private TextBox TextboxSearch;
         private Button ButtonSearch;
-        private Label label1;
         private DataGridView GridViewStudents;
         private Label label2;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
+        private SplitContainer splitContainer1;
+        private Label label1;
     }
 }

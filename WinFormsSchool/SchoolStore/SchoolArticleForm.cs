@@ -72,6 +72,7 @@ namespace WinFormsSchool
                     TextBoxFragile.Text = selectedArticle.Fragile.ToString();
                     TextBoxArticleSize.Text = Convert.ToString(selectedArticle.ArticleSize);
                     LabelMessage.Text = (selectedArticle.Message is not null) ? selectedArticle.Message.ToString() : "";
+                    LabelMessage.ForeColor = Color.Yellow;
 
                     if (Convert.ToBoolean(selectedArticle.Fragile))
                     {
@@ -81,6 +82,7 @@ namespace WinFormsSchool
                     if (selectedArticle.ArticlePicture == null)
                     {
                         LabelArticleFoto.Text = "No picture available";
+                        PictureBoxArticle.Visible = false;
                     }
                 }
 

@@ -25,13 +25,21 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
             GridViewTeachers.ReadOnly = true;
-            ButtonSearch.BackColor = Color.FromArgb(55,55,55);
+            GridViewTeachers.ColumnHeadersDefaultCellStyle.Padding = new Padding(6);
+            GridViewTeachers.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkCyan;
+            GridViewTeachers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            GridViewTeachers.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
+            splitContainer1.Panel2.Padding = new Padding(16);
+            GridViewTeachers.EnableHeadersVisualStyles = false;
+            ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
             BackColor = Color.FromArgb(66, 66, 66);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+            label1.ForeColor = Color.White;
+            label2.ForeColor = Color.White;
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -54,8 +62,8 @@ namespace WinFormsSchool
             {
                 _ = int.TryParse(TextBoxSearch.Text, out int teacherId);
                 var searchTeachters = Teacher.GetTeachers();
-              
-                if(searchTeachters is not null)
+
+                if (searchTeachters is not null)
                 {
                     searchTeachters = searchTeachters
                                  .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextBoxSearch.Text.ToLower())
@@ -63,7 +71,7 @@ namespace WinFormsSchool
                                         || (X.PersonId == teacherId)
                                         ).ToList();
                     //boven en onder elke if spatie; toont veel overzichterlijker
-                  
+
                     if (searchTeachters.Count > 0)
                     {
                         GridViewTeachers.DataSource = searchTeachters;
@@ -78,11 +86,11 @@ namespace WinFormsSchool
 
                         if (searchTeachters.Count > 1)
                         {
-                            ToolStripStatusLabel1.Text += " teachers found"; 
+                            ToolStripStatusLabel1.Text += " teachers found";
                         }
                         else
                         {
-                            ToolStripStatusLabel1.Text += " teacher found"; 
+                            ToolStripStatusLabel1.Text += " teacher found";
                         }
                     }
                     else
@@ -103,16 +111,16 @@ namespace WinFormsSchool
 
         private void GridViewTeachers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var success =  int.TryParse(GridViewTeachers.SelectedRows[0].Cells["PersonId"].Value.ToString(),out int selectedId) ; 
-            
-            if(success)
+            var success = int.TryParse(GridViewTeachers.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
+
+            if (success)
             {
                 TeacherForm teacherForm = new();
                 teacherForm.MdiParent = MdiParent;
                 teacherForm.LoadSelectedTeacher(selectedId);
                 teacherForm.Show();
             }
-           
+
         }
     }
 }

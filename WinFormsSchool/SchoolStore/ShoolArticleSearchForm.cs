@@ -21,6 +21,12 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
             GridViewArticles.ReadOnly = true;
+            GridViewArticles.ColumnHeadersDefaultCellStyle.Padding = new Padding(6);
+            GridViewArticles.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkCyan;
+            GridViewArticles.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            GridViewArticles.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
+            GridViewArticles.EnableHeadersVisualStyles = false;
+            splitContainer1.Panel2.Padding = new Padding(16);
             ButtonSearch.BackColor = Color.FromArgb(55, 55, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
@@ -28,6 +34,7 @@ namespace WinFormsSchool
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+            label1.ForeColor = Color.White;
         }
 
         private void SetLabelProperties(Color color, Font font)
