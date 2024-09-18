@@ -27,9 +27,9 @@ namespace WinFormsSchool
             SetAllTextboxesOnFormReadOnly(true);
             DataGridViewCourses.ReadOnly = true;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
-            LabelStudentTitle.Font = new Font("Helvetica", 15);
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+            LabelPageTitle.Text = "Student Detail";
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)

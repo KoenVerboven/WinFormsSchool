@@ -21,7 +21,7 @@ namespace WinFormsSchool
             Height = 610;
             Width = 1100;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
-            LabelTeacherTitle.Font = new Font("Helvetica", 15);
+            LabelPageTitle.Text = "Student Detail";
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)

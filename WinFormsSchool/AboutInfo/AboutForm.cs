@@ -7,6 +7,7 @@ namespace WinFormsSchool
         {
             InitializeComponent();
             SetLabelProperties(Color.Yellow, new Font("Helvetica", 14));
+            LabelPageTitle.Text = "About";
         }
         private void SetLabelProperties(Color color, Font font)
         {

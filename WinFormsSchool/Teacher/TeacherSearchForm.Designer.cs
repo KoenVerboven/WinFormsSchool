@@ -45,6 +45,12 @@
             splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
+            // LabelPageTitle
+            // 
+            LabelPageTitle.Font = new Font("Arial", 14F);
+            LabelPageTitle.ForeColor = Color.White;
+            LabelPageTitle.Size = new Size(171, 27);
+            // 
             // GridViewTeachers
             // 
             GridViewTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -52,7 +58,7 @@
             GridViewTeachers.Location = new Point(0, 0);
             GridViewTeachers.Name = "GridViewTeachers";
             GridViewTeachers.RowHeadersWidth = 51;
-            GridViewTeachers.Size = new Size(1081, 405);
+            GridViewTeachers.Size = new Size(1081, 373);
             GridViewTeachers.TabIndex = 26;
             GridViewTeachers.CellDoubleClick += GridViewTeachers_CellDoubleClick;
             // 
@@ -60,7 +66,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(20, 9);
+            label1.Location = new Point(39, 58);
             label1.Name = "label1";
             label1.Size = new Size(327, 20);
             label1.TabIndex = 25;
@@ -68,7 +74,7 @@
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(322, 71);
+            ButtonSearch.Location = new Point(337, 100);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.Size = new Size(171, 29);
             ButtonSearch.TabIndex = 24;
@@ -78,7 +84,7 @@
             // 
             // TextBoxSearch
             // 
-            TextBoxSearch.Location = new Point(20, 73);
+            TextBoxSearch.Location = new Point(39, 101);
             TextBoxSearch.Name = "TextBoxSearch";
             TextBoxSearch.Size = new Size(279, 27);
             TextBoxSearch.TabIndex = 23;
@@ -87,7 +93,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(20, 39);
+            label2.Location = new Point(39, 78);
             label2.Name = "label2";
             label2.Size = new Size(251, 20);
             label2.TabIndex = 29;
@@ -134,7 +140,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(GridViewTeachers);
             splitContainer1.Size = new Size(1081, 524);
-            splitContainer1.SplitterDistance = 115;
+            splitContainer1.SplitterDistance = 147;
             splitContainer1.TabIndex = 31;
             // 
             // TeacherSearchForm
@@ -146,6 +152,9 @@
             Controls.Add(statusStrip1);
             Name = "TeacherSearchForm";
             Text = "TeacherSearchForm";
+            Controls.SetChildIndex(statusStrip1, 0);
+            Controls.SetChildIndex(splitContainer1, 0);
+            Controls.SetChildIndex(LabelPageTitle, 0);
             ((System.ComponentModel.ISupportInitialize)GridViewTeachers).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();

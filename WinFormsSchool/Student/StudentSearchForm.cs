@@ -18,11 +18,11 @@ namespace WinFormsSchool
         private void InitializeControls()
         {
             // WindowState = FormWindowState.Maximized;
-            GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            GridViewStudents.Visible = false;
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
+            GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridViewStudents.Visible = false;
             GridViewStudents.ReadOnly = true;
             GridViewStudents.ColumnHeadersDefaultCellStyle.Padding = new Padding(6);
             GridViewStudents.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkCyan;
@@ -41,6 +41,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
+            LabelPageTitle.Text = "Student Search";
         }
 
         private void SetLabelProperties(Color color, Font font)

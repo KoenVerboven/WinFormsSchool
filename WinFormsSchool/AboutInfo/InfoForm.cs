@@ -33,8 +33,7 @@ namespace WinFormsSchool
             textBoxInfo.BackColor = Color.FromArgb(66, 66, 66);
             textBoxInfo.Font = new Font("Helvetica", 10);
             textBoxInfo.BorderStyle = BorderStyle.None;
-            LabelInfoTitle.Font = new Font("Helvetica", 15);
-            LabelInfoTitle.ForeColor = Color.White;
+            LabelPageTitle.Text = "Info";
         }
     }
 }

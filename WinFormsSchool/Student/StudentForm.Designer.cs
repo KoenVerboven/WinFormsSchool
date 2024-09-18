@@ -60,7 +60,6 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
-            LabelStudentTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -323,21 +322,11 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // LabelStudentTitle
-            // 
-            LabelStudentTitle.AutoSize = true;
-            LabelStudentTitle.Location = new Point(35, 23);
-            LabelStudentTitle.Name = "LabelStudentTitle";
-            LabelStudentTitle.Size = new Size(60, 20);
-            LabelStudentTitle.TabIndex = 53;
-            LabelStudentTitle.Text = "Student";
-            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 763);
-            Controls.Add(LabelStudentTitle);
             Controls.Add(statusStrip1);
             Controls.Add(LabelYellow);
             Controls.Add(PanelYellow);
@@ -370,6 +359,36 @@
             Controls.Add(TextBoxFirstname);
             Name = "StudentForm";
             Text = "StudentForm";
+            Controls.SetChildIndex(TextBoxFirstname, 0);
+            Controls.SetChildIndex(TextBoxMiddeleName, 0);
+            Controls.SetChildIndex(TextBoxStreetAndNumber, 0);
+            Controls.SetChildIndex(TextBoxZipCode, 0);
+            Controls.SetChildIndex(TextBoxPhoneNumber, 0);
+            Controls.SetChildIndex(TextBoxEmailAddress, 0);
+            Controls.SetChildIndex(TextBoxGender, 0);
+            Controls.SetChildIndex(TextBoxLastName, 0);
+            Controls.SetChildIndex(LabelFirstname, 0);
+            Controls.SetChildIndex(LabelMiddlename, 0);
+            Controls.SetChildIndex(LabelLastname, 0);
+            Controls.SetChildIndex(LabelStreetandnumber, 0);
+            Controls.SetChildIndex(LabelZipcode, 0);
+            Controls.SetChildIndex(LabelPhonenumber, 0);
+            Controls.SetChildIndex(LabelEmailaddres, 0);
+            Controls.SetChildIndex(LabelGender, 0);
+            Controls.SetChildIndex(DataGridViewCourses, 0);
+            Controls.SetChildIndex(LabelNationalRegisterNumber, 0);
+            Controls.SetChildIndex(TextBoxNationalRegisterNumber, 0);
+            Controls.SetChildIndex(LabelMaritalStatus, 0);
+            Controls.SetChildIndex(TextBoxMaritalStatus, 0);
+            Controls.SetChildIndex(LabelDateOfBirth, 0);
+            Controls.SetChildIndex(TextBoxDateOfBirth, 0);
+            Controls.SetChildIndex(LabelNationality, 0);
+            Controls.SetChildIndex(TextBoxNationality, 0);
+            Controls.SetChildIndex(lLbelRegistrationDate, 0);
+            Controls.SetChildIndex(TextBoxRegistrationDate, 0);
+            Controls.SetChildIndex(PanelYellow, 0);
+            Controls.SetChildIndex(LabelYellow, 0);
+            Controls.SetChildIndex(statusStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -411,6 +430,5 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
-        private Label LabelStudentTitle;
     }
 }

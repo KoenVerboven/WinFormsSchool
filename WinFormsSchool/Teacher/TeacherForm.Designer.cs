@@ -68,7 +68,6 @@
             TextBoxDateOfBirth = new TextBox();
             LabelNationality = new Label();
             TextBoxNationality = new TextBox();
-            LabelTeacherTitle = new Label();
             SuspendLayout();
             // 
             // TextBoxFirstname
@@ -391,21 +390,11 @@
             TextBoxNationality.Size = new Size(314, 27);
             TextBoxNationality.TabIndex = 39;
             // 
-            // LabelTeacherTitle
-            // 
-            LabelTeacherTitle.AutoSize = true;
-            LabelTeacherTitle.Location = new Point(45, 28);
-            LabelTeacherTitle.Name = "LabelTeacherTitle";
-            LabelTeacherTitle.Size = new Size(60, 20);
-            LabelTeacherTitle.TabIndex = 40;
-            LabelTeacherTitle.Text = "Teacher";
-            // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 551);
-            Controls.Add(LabelTeacherTitle);
             Controls.Add(TextBoxNationality);
             Controls.Add(LabelNationality);
             Controls.Add(TextBoxDateOfBirth);
@@ -448,6 +437,46 @@
             Controls.Add(TextBoxFirstname);
             Name = "TeacherForm";
             Text = "TeacherForm";
+            Controls.SetChildIndex(TextBoxFirstname, 0);
+            Controls.SetChildIndex(TextBoxMiddeleName, 0);
+            Controls.SetChildIndex(TextBoxLastName, 0);
+            Controls.SetChildIndex(TextBoxStreetAndNumber, 0);
+            Controls.SetChildIndex(TextBoxZipCode, 0);
+            Controls.SetChildIndex(TextBoxPhoneNumber, 0);
+            Controls.SetChildIndex(TextBoxEmailAddress, 0);
+            Controls.SetChildIndex(TextBoxGender, 0);
+            Controls.SetChildIndex(LabelFirstname, 0);
+            Controls.SetChildIndex(LabelMiddeleName, 0);
+            Controls.SetChildIndex(LabelLastName, 0);
+            Controls.SetChildIndex(LabelStreetAndNumber, 0);
+            Controls.SetChildIndex(LabelZipCode, 0);
+            Controls.SetChildIndex(LabelPhoneNumber, 0);
+            Controls.SetChildIndex(LabelEmailAddress, 0);
+            Controls.SetChildIndex(LabelGender, 0);
+            Controls.SetChildIndex(TextBoxHireDate, 0);
+            Controls.SetChildIndex(TextBoxLeaveDate, 0);
+            Controls.SetChildIndex(TextBoxSaleryCategorie, 0);
+            Controls.SetChildIndex(TextBoxSeniorityYears, 0);
+            Controls.SetChildIndex(TextBoxWorkSchedule, 0);
+            Controls.SetChildIndex(TextBoxWorkingHoursPerWeek, 0);
+            Controls.SetChildIndex(TextBoxHighestDegree, 0);
+            Controls.SetChildIndex(TextBoxStudyDirection, 0);
+            Controls.SetChildIndex(LabelHireDate, 0);
+            Controls.SetChildIndex(LabelLeaveDate, 0);
+            Controls.SetChildIndex(LabelSaleryCategorie, 0);
+            Controls.SetChildIndex(LabelSeniorityYears, 0);
+            Controls.SetChildIndex(LabelWorkSchedule, 0);
+            Controls.SetChildIndex(LabelWorkingHoursPerWeek, 0);
+            Controls.SetChildIndex(LabelHighestDegree, 0);
+            Controls.SetChildIndex(LabelStudyDirection, 0);
+            Controls.SetChildIndex(LabelNationalRegisterNumber, 0);
+            Controls.SetChildIndex(TextBoxNationalRegisterNumber, 0);
+            Controls.SetChildIndex(LabelMaritalStatus, 0);
+            Controls.SetChildIndex(TextBoxMaritalStatus, 0);
+            Controls.SetChildIndex(LabelDateOfBirth, 0);
+            Controls.SetChildIndex(TextBoxDateOfBirth, 0);
+            Controls.SetChildIndex(LabelNationality, 0);
+            Controls.SetChildIndex(TextBoxNationality, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -494,6 +523,5 @@
         private TextBox TextBoxDateOfBirth;
         private Label LabelNationality;
         private TextBox TextBoxNationality;
-        private Label LabelTeacherTitle;
     }
 }

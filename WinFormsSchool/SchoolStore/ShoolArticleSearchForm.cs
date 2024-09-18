@@ -21,6 +21,8 @@ namespace WinFormsSchool
         {
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
+            GridViewArticles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridViewArticles.Visible = false;
             GridViewArticles.ReadOnly = true;
             GridViewArticles.ColumnHeadersDefaultCellStyle.Padding = new Padding(6);
             GridViewArticles.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkCyan;
@@ -35,9 +37,11 @@ namespace WinFormsSchool
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            LabelPageTitle.Text = "Article Search";
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
+            LabelPageTitle.Text = "Article Search";
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -67,6 +71,7 @@ namespace WinFormsSchool
                 if (searchArticles.Count > 0)
                 {
                     GridViewArticles.DataSource = searchArticles;
+                    GridViewArticles.Visible = true;
                     ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
                 }
                 else

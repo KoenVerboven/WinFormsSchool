@@ -48,7 +48,6 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
-            LabelArticleTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -214,21 +213,11 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // LabelArticleTitle
-            // 
-            LabelArticleTitle.AutoSize = true;
-            LabelArticleTitle.Location = new Point(39, 19);
-            LabelArticleTitle.Name = "LabelArticleTitle";
-            LabelArticleTitle.Size = new Size(52, 20);
-            LabelArticleTitle.TabIndex = 34;
-            LabelArticleTitle.Text = "Article";
-            // 
             // SchoolArticleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(LabelArticleTitle);
             Controls.Add(statusStrip1);
             Controls.Add(LabelSize);
             Controls.Add(TextBoxArticleSize);
@@ -249,6 +238,24 @@
             Controls.Add(LabelArticleName);
             Name = "SchoolArticleForm";
             Text = "SchoolArticleForm";
+            Controls.SetChildIndex(LabelArticleName, 0);
+            Controls.SetChildIndex(LabelArticlePrice, 0);
+            Controls.SetChildIndex(LabelArticleId, 0);
+            Controls.SetChildIndex(TextboxArticleId, 0);
+            Controls.SetChildIndex(TextboxArticleName, 0);
+            Controls.SetChildIndex(TextboxArticlePrice, 0);
+            Controls.SetChildIndex(LabelMessage, 0);
+            Controls.SetChildIndex(LabelNumberInStock, 0);
+            Controls.SetChildIndex(LabelMinimumStock, 0);
+            Controls.SetChildIndex(LabelFragile, 0);
+            Controls.SetChildIndex(TextBoxNumberInStock, 0);
+            Controls.SetChildIndex(TextBoxMinimumStock, 0);
+            Controls.SetChildIndex(TextBoxFragile, 0);
+            Controls.SetChildIndex(LabelArticleFoto, 0);
+            Controls.SetChildIndex(PictureBoxArticle, 0);
+            Controls.SetChildIndex(TextBoxArticleSize, 0);
+            Controls.SetChildIndex(LabelSize, 0);
+            Controls.SetChildIndex(statusStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -277,6 +284,5 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
-        private Label LabelArticleTitle;
     }
 }

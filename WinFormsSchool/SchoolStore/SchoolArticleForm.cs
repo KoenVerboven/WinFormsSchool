@@ -1,6 +1,4 @@
 ﻿using AppCode.BLL.BLLClasses;
-using AppCode.BLL.Models;
-using System.Runtime.Intrinsics.Arm;
 
 
 namespace WinFormsSchool
@@ -28,7 +26,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.Text = string.Empty;
             SetAllTextboxesOnFormReadOnly(true);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
-            LabelArticleTitle.Font = new Font("Helvetica", 15);
+            LabelPageTitle.Text = "Article Detail";
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
         }

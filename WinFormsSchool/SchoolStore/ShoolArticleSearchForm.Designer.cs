@@ -44,6 +44,12 @@
             splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
+            // LabelPageTitle
+            // 
+            LabelPageTitle.Font = new Font("Arial", 14F);
+            LabelPageTitle.ForeColor = Color.White;
+            LabelPageTitle.Size = new Size(171, 27);
+            // 
             // GridViewArticles
             // 
             GridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -51,13 +57,13 @@
             GridViewArticles.Location = new Point(0, 0);
             GridViewArticles.Name = "GridViewArticles";
             GridViewArticles.RowHeadersWidth = 51;
-            GridViewArticles.Size = new Size(873, 416);
+            GridViewArticles.Size = new Size(873, 436);
             GridViewArticles.TabIndex = 0;
             GridViewArticles.CellDoubleClick += DataGridView1_CellDoubleClick;
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(326, 54);
+            ButtonSearch.Location = new Point(326, 85);
             ButtonSearch.Name = "ButtonSearch";
             ButtonSearch.Size = new Size(139, 38);
             ButtonSearch.TabIndex = 16;
@@ -67,7 +73,7 @@
             // 
             // TextboxSearch
             // 
-            TextboxSearch.Location = new Point(31, 60);
+            TextboxSearch.Location = new Point(39, 91);
             TextboxSearch.Name = "TextboxSearch";
             TextboxSearch.Size = new Size(279, 27);
             TextboxSearch.TabIndex = 18;
@@ -75,7 +81,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 28);
+            label1.Location = new Point(39, 62);
             label1.Name = "label1";
             label1.Size = new Size(319, 20);
             label1.TabIndex = 19;
@@ -120,8 +126,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(GridViewArticles);
-            splitContainer1.Size = new Size(873, 558);
-            splitContainer1.SplitterDistance = 138;
+            splitContainer1.Size = new Size(873, 584);
+            splitContainer1.SplitterDistance = 144;
             splitContainer1.TabIndex = 32;
             // 
             // SchoolArticleSearchForm
@@ -129,10 +135,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(873, 584);
-            Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
+            Controls.Add(splitContainer1);
             Name = "SchoolArticleSearchForm";
             Text = "SchoolArticleSearchForm";
+            Controls.SetChildIndex(splitContainer1, 0);
+            Controls.SetChildIndex(LabelPageTitle, 0);
+            Controls.SetChildIndex(statusStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
