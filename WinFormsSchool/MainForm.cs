@@ -1,5 +1,6 @@
 ﻿
 using AppCode.BLL.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace WinFormsSchool
 {
@@ -172,6 +173,8 @@ namespace WinFormsSchool
     }
 }
 
-//teacherIcon : "https://www.flaticon.com/free-icons/teacher"Teacher icons created by Bert Flint
-//studentIcon "https://www.flaticon.com/free-icons/student" Student icons created by RIkas Dzihab
+//<a href="https://www.flaticon.com/free-icons/teacher" title="teacher icons">Teacher icons created by Bert Flint - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/student"title="student icons"> Student icons created by RIkas Dzihab- Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/smart-cart" title="smart cart icons">Smart cart icons created by Freepik - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Stockio - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by Leremy - Flaticon</a>
