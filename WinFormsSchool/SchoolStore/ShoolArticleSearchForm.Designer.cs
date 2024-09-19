@@ -36,6 +36,7 @@
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            ButtonDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).BeginInit();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -119,6 +120,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(ButtonDelete);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(ButtonSearch);
             splitContainer1.Panel1.Controls.Add(TextboxSearch);
@@ -129,6 +131,16 @@
             splitContainer1.Size = new Size(873, 584);
             splitContainer1.SplitterDistance = 144;
             splitContainer1.TabIndex = 32;
+            // 
+            // ButtonDelete
+            // 
+            ButtonDelete.Location = new Point(527, 85);
+            ButtonDelete.Name = "ButtonDelete";
+            ButtonDelete.Size = new Size(124, 39);
+            ButtonDelete.TabIndex = 21;
+            ButtonDelete.Text = "Delete";
+            ButtonDelete.UseVisualStyleBackColor = true;
+            ButtonDelete.Click += ButtonDelete_Click;
             // 
             // SchoolArticleSearchForm
             // 
@@ -164,5 +176,6 @@
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
         private SplitContainer splitContainer1;
+        private Button ButtonDelete;
     }
 }
