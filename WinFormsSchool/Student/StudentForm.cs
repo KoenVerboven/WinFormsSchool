@@ -6,10 +6,12 @@ namespace WinFormsSchool
     public partial class StudentForm : Base.BaseForm1
     {
         readonly StudentBLL Student;
+        private readonly DetailFormType _detailFormType;
 
-        public StudentForm()
+        public StudentForm(DetailFormType detailFormType)
         {
             InitializeComponent();
+            _detailFormType = detailFormType;
             InitializeControls();
             Student = new StudentBLL();
         }
@@ -24,12 +26,29 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
-            SetAllTextboxesOnFormReadOnly(true);
             DataGridViewCourses.ReadOnly = true;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
-            LabelPageTitle.Text = "Student Detail";
+
+            if(_detailFormType == DetailFormType.ShowDetailForm)
+            {
+                SetAllTextboxesOnFormReadOnly(true);
+                LabelPageTitle.Text = "Student Detail";
+            }
+
+            if (_detailFormType == DetailFormType.UpdateForm)
+            {
+                SetAllTextboxesOnFormReadOnly(false);
+                LabelPageTitle.Text = "Update Student";
+            }
+
+            if (_detailFormType == DetailFormType.InsertForm)
+            {
+                SetAllTextboxesOnFormReadOnly(false);
+                LabelPageTitle.Text = "Insert Student";
+            }
+
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)

@@ -9,6 +9,7 @@ namespace AppCode.BLL.Models
         public required string Firstname { get; set; }
         public string? MiddleName { get; set; }
         public required string LastName { get; set; }
+        public string FullName { get => LastName + " " + Firstname; }
         public required string StreetAndNumber { get; set; }
         public required string ZipCode { get; set; }
         public string? PhoneNumber { get; set; }

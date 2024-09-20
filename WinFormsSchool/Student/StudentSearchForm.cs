@@ -96,7 +96,7 @@ namespace WinFormsSchool
             var succes = int.TryParse(GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
             if (succes)
             {
-                StudentForm studentForm = new()
+                StudentForm studentForm = new(DetailFormType.ShowDetailForm)
                 {
                     MdiParent = MdiParent
                 };
@@ -110,7 +110,7 @@ namespace WinFormsSchool
             try
             {
                 var result = MessageBox.Show("Are you sure delete the selected person "
-                                             + GridViewStudents.SelectedRows[0].Cells["LastName"].Value.ToString() + " ?"
+                                             + GridViewStudents.SelectedRows[0].Cells["FullName"].Value.ToString() + " ?"
                                              , "Delete Student",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 

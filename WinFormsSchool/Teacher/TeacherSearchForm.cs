@@ -114,7 +114,6 @@ namespace WinFormsSchool
                 GridViewTeachers.Columns["FirstName"].DisplayIndex = 1;
                 GridViewTeachers.Columns["LastName"].DisplayIndex = 2;
                 GridViewTeachers.Columns["DateOfBirth"].DisplayIndex = 3;
-                ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
                 ToolStripStatusLabel1.Text = teachers.Count.ToString();
                 ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
 
