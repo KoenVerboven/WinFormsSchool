@@ -31,22 +31,31 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
 
-            if(_detailFormType == DetailFormType.ShowDetailForm)
+            switch(_detailFormType)
             {
-                SetAllTextboxesOnFormReadOnly(true);
-                LabelPageTitle.Text = "Student Detail";
-            }
-
-            if (_detailFormType == DetailFormType.UpdateForm)
-            {
-                SetAllTextboxesOnFormReadOnly(false);
-                LabelPageTitle.Text = "Update Student";
-            }
-
-            if (_detailFormType == DetailFormType.InsertForm)
-            {
-                SetAllTextboxesOnFormReadOnly(false);
-                LabelPageTitle.Text = "Insert Student";
+                case DetailFormType.ShowDetailForm:
+                    SetAllTextboxesOnFormReadOnly(true);
+                    LabelPageTitle.Text = "Student Detail";
+                    break;
+                case DetailFormType.UpdateForm:
+                    SetAllTextboxesOnFormReadOnly(false);
+                    LabelPageTitle.Text = "Update Student";
+                    //TODO:UpdateForm
+                    //add save and cancel button,
+                    //replace some textboxes to dropdowns.......
+                    break;
+                case DetailFormType.InsertForm:
+                    SetAllTextboxesOnFormReadOnly(false);
+                    LabelPageTitle.Text = "Insert Student";
+                    //TODO:InsertForm
+                    //make all controls empty,
+                    //add save and cancel button,
+                    //replace some textboxes to dropdowns.......
+                    break;
+                default:
+                    SetAllTextboxesOnFormReadOnly(true);
+                    LabelPageTitle.Text = "Student Detail";
+                    break;
             }
 
         }

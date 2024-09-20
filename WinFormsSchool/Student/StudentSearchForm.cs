@@ -96,7 +96,7 @@ namespace WinFormsSchool
             var succes = int.TryParse(GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
             if (succes)
             {
-                StudentForm studentForm = new(DetailFormType.ShowDetailForm)
+                StudentForm studentForm = new(DetailFormType.InsertForm)
                 {
                     MdiParent = MdiParent
                 };

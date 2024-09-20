@@ -136,9 +136,9 @@
             // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(599, 91);
+            ButtonDelete.Location = new Point(599, 97);
             ButtonDelete.Name = "ButtonDelete";
-            ButtonDelete.Size = new Size(124, 39);
+            ButtonDelete.Size = new Size(124, 27);
             ButtonDelete.TabIndex = 27;
             ButtonDelete.Text = "Delete";
             ButtonDelete.UseVisualStyleBackColor = true;

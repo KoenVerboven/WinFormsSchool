@@ -66,7 +66,7 @@ namespace WinFormsSchool
                 TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
                 TextBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
                 TextBoxHireDate.Text = selectedTeacher.HireDate.ToString("dd/MM/yyyy");
-                TextBoxLeaveDate.Text = Convert.ToString(selectedTeacher.LeaveDate);//todo aanpassen
+                TextBoxLeaveDate.Text = Convert.ToString(selectedTeacher.LeaveDate);//TODO: aanpassen :Convert.ToString(selectedTeacher.LeaveDate)
                 TextBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
                 TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
                 TextBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
