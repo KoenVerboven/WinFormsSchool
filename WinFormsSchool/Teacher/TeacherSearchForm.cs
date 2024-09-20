@@ -1,6 +1,7 @@
 ﻿
 using System.Data;
 using AppCode.BLL.BLLClasses;
+using AppCode.BLL.Models;
 
 namespace WinFormsSchool
 {
@@ -8,6 +9,7 @@ namespace WinFormsSchool
     {
 
         readonly TeacherBLL Teacher;
+        List<Teacher> teachers;
 
 
         public TeacherSearchForm()
@@ -64,44 +66,17 @@ namespace WinFormsSchool
             if (TextBoxSearch.Text.Length >= MinimumCharactersSearchCommand)
             {
                 _ = int.TryParse(TextBoxSearch.Text, out int teacherId);
-                var searchTeachters = Teacher.GetTeachers();
+                teachers = Teacher.GetTeachers();
 
-                if (searchTeachters is not null)
+                if (teachers is not null)
                 {
-                    searchTeachters = searchTeachters
+                    teachers = teachers
                                  .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextBoxSearch.Text.ToLower())
                                         || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextBoxSearch.Text.ToLower())
                                         || (X.PersonId == teacherId)
                                         ).ToList();
-                    //boven en onder elke if spatie; toont veel overzichterlijker
 
-                    if (searchTeachters.Count > 0)
-                    {
-                        GridViewTeachers.DataSource = searchTeachters;
-                        GridViewTeachers.Visible = true;
-                        GridViewTeachers.Columns["PersonId"].DisplayIndex = 0;
-                        GridViewTeachers.Columns["FirstName"].DisplayIndex = 1;
-                        GridViewTeachers.Columns["LastName"].DisplayIndex = 2;
-                        GridViewTeachers.Columns["DateOfBirth"].DisplayIndex = 3;
-                        ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
-                        ToolStripStatusLabel1.Text = searchTeachters.Count.ToString();
-                        ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
-
-                        if (searchTeachters.Count > 1)
-                        {
-                            ToolStripStatusLabel1.Text += " teachers found";
-                        }
-                        else
-                        {
-                            ToolStripStatusLabel1.Text += " teacher found";
-                        }
-                    }
-                    else
-                    {
-                        GridViewTeachers.Visible = false;
-                        ToolStripStatusLabel1.Text = "No teachers found";
-                        ToolStripStatusLabel2.Text = string.Empty;
-                    }
+                    FillGridView();
                 }
 
             }
@@ -118,12 +93,46 @@ namespace WinFormsSchool
 
             if (success)
             {
-                TeacherForm teacherForm = new();
-                teacherForm.MdiParent = MdiParent;
+                TeacherForm teacherForm = new()
+                {
+                    MdiParent = MdiParent
+                };
                 teacherForm.LoadSelectedTeacher(selectedId);
                 teacherForm.Show();
             }
 
         }
-    }
+
+
+        private void FillGridView()
+        {
+            if (teachers.Count > 0)
+            {
+                GridViewTeachers.DataSource = teachers;
+                GridViewTeachers.Visible = true;
+                GridViewTeachers.Columns["PersonId"].DisplayIndex = 0;
+                GridViewTeachers.Columns["FirstName"].DisplayIndex = 1;
+                GridViewTeachers.Columns["LastName"].DisplayIndex = 2;
+                GridViewTeachers.Columns["DateOfBirth"].DisplayIndex = 3;
+                ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
+                ToolStripStatusLabel1.Text = teachers.Count.ToString();
+                ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
+
+                if (teachers.Count > 1)
+                {
+                    ToolStripStatusLabel1.Text += " teachers found";
+                }
+                else
+                {
+                    ToolStripStatusLabel1.Text += " teacher found";
+                }
+            }
+            else
+            {
+                GridViewTeachers.Visible = false;
+                ToolStripStatusLabel1.Text = "No teachers found";
+                ToolStripStatusLabel2.Text = string.Empty;
+            }
+        }
+    }   
 }

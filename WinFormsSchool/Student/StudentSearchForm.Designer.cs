@@ -36,6 +36,7 @@
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            ButtonDelete = new Button();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)GridViewStudents).BeginInit();
             statusStrip1.SuspendLayout();
@@ -120,11 +121,11 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(ButtonDelete);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(label2);
             splitContainer1.Panel1.Controls.Add(TextboxSearch);
             splitContainer1.Panel1.Controls.Add(ButtonSearch);
-            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -132,6 +133,16 @@
             splitContainer1.Size = new Size(1320, 600);
             splitContainer1.SplitterDistance = 153;
             splitContainer1.TabIndex = 27;
+            // 
+            // ButtonDelete
+            // 
+            ButtonDelete.Location = new Point(599, 91);
+            ButtonDelete.Name = "ButtonDelete";
+            ButtonDelete.Size = new Size(124, 39);
+            ButtonDelete.TabIndex = 27;
+            ButtonDelete.Text = "Delete";
+            ButtonDelete.UseVisualStyleBackColor = true;
+            ButtonDelete.Click += ButtonDelete_Click;
             // 
             // label1
             // 
@@ -177,5 +188,6 @@
         private ToolStripStatusLabel ToolStripStatusLabel2;
         private SplitContainer splitContainer1;
         private Label label1;
+        private Button ButtonDelete;
     }
 }

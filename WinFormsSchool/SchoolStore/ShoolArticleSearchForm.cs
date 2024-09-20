@@ -7,7 +7,7 @@ namespace WinFormsSchool
     public partial class SchoolArticleSearchForm : Base.BaseForm1
     {
         readonly ArticleBLL SchoolArticle;
-        List<Article> searchArticles;
+        List<Article> articles;
 
         public SchoolArticleSearchForm()
         {
@@ -62,31 +62,18 @@ namespace WinFormsSchool
 
         private void ButtonGetAllArticles_Click(object sender, EventArgs e)
         {
-            searchArticles = SchoolArticle.GetArticles();
+            articles = SchoolArticle.GetArticles();
             _ = int.TryParse(TextboxSearch.Text, out int articleId);
 
-            if (searchArticles != null)
+            if (articles != null)
             {
-                searchArticles = searchArticles
+                articles = articles
                           .Where(X => (X.ArticleName.ToLower()).Contains(TextboxSearch.Text.ToLower())
                                    || (X.ArticleId == articleId)
                                    ).ToList();
 
-
-                if (searchArticles.Count > 0)
-                {
-                    GridViewArticles.DataSource = searchArticles;
-                    GridViewArticles.Visible = true;
-                    ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
-                    ButtonDelete.Visible = true;   
-                }
-                else
-                {
-                    GridViewArticles.Visible = false;
-                    ToolStripStatusLabel1.Text = "No Articles found";
-                    ToolStripStatusLabel2.Text = string.Empty;
-                    ButtonDelete.Visible= false;
-                }
+                FillGridView();
+                
 
             }
 
@@ -98,8 +85,10 @@ namespace WinFormsSchool
 
             if (success)
             {
-                SchoolArticleForm schoolArticleForm = new();
-                schoolArticleForm.MdiParent = MdiParent;
+                SchoolArticleForm schoolArticleForm = new()
+                {
+                    MdiParent = MdiParent
+                };
                 schoolArticleForm.LoadSelectedArticle(selectedId);
                 schoolArticleForm.Show();
             }
@@ -120,19 +109,14 @@ namespace WinFormsSchool
                     var success = int.TryParse(GridViewArticles.SelectedRows[0].Cells["ArticleId"].Value.ToString(), out int selectedId);
                     if (success)
                     {
-                        var itemRemove = searchArticles.Single(r => r.ArticleId == selectedId);
+                        var itemRemove = articles.Single(r => r.ArticleId == selectedId);
                        
                         if (itemRemove != null)
                         {
-                            searchArticles.Remove(itemRemove);
-                        }
-                        
-                        if (searchArticles.Count > 0)
-                        {
-                            GridViewArticles.DataSource = null;
-                            GridViewArticles.DataSource = searchArticles;
+                            articles.Remove(itemRemove);
                         }
 
+                        FillGridView();
                     }
                 }
 
@@ -142,6 +126,26 @@ namespace WinFormsSchool
                 MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void FillGridView()
+        {
+            if (articles.Count > 0)
+            {
+                GridViewArticles.DataSource = null;
+                GridViewArticles.DataSource = articles;
+                GridViewArticles.Visible = true;
+                ToolStripStatusLabel1.Text = "Double click on GridRow to open detailscreen";
+                ButtonDelete.Visible = true;
+            }
+            else
+            {
+                GridViewArticles.Visible = false;
+                ToolStripStatusLabel1.Text = "No Articles found";
+                ToolStripStatusLabel2.Text = string.Empty;
+                ButtonDelete.Visible = false;
+            }
+        }
+
     }
 }
 
