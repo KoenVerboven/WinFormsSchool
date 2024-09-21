@@ -39,6 +39,16 @@ namespace WinFormsSchool
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            ButtonInsertNewStudent.BackColor = Color.FromArgb(150, 150, 30);
+            ButtonInsertNewStudent.ForeColor = Color.White;
+            ButtonInsertNewStudent.Height = 35;
+            ButtonInsertNewStudent.FlatStyle = FlatStyle.Flat;
+            ButtonInsertNewStudent.Visible = true;
+            ButtonUpdateStudent.BackColor = Color.FromArgb(30, 150, 150);
+            ButtonUpdateStudent.ForeColor = Color.White;
+            ButtonUpdateStudent.Height = 35;
+            ButtonUpdateStudent.FlatStyle = FlatStyle.Flat;
+            ButtonUpdateStudent.Visible = false;
             ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
             ButtonDelete.ForeColor = Color.White;
             ButtonDelete.Height = 35;
@@ -96,7 +106,7 @@ namespace WinFormsSchool
             var succes = int.TryParse(GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
             if (succes)
             {
-                StudentForm studentForm = new(DetailFormType.InsertForm)
+                StudentForm studentForm = new(DetailFormType.ShowDetailForm)
                 {
                     MdiParent = MdiParent
                 };
@@ -123,14 +133,14 @@ namespace WinFormsSchool
 
                         if (itemRemove != null)
                         {
-                           
+
                             if (itemRemove.EnrolledCourse == null)
                             {
                                 students.Remove(itemRemove);
                             }
                             else
                             {
-                                MessageBox.Show("You can not remove a student with course(s)", "ErrorMessage", 
+                                MessageBox.Show("You can not remove a student with course(s)", "ErrorMessage",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
 
@@ -166,6 +176,7 @@ namespace WinFormsSchool
                     if (students.Count > 1) { ToolStripStatusLabel1.Text += " students found"; }
                     else { ToolStripStatusLabel1.Text += " student found"; }
                     ButtonDelete.Visible = true;
+                    ButtonUpdateStudent.Visible = true;
                 }
                 else
                 {
@@ -175,6 +186,29 @@ namespace WinFormsSchool
                     ButtonDelete.Visible = false;
                 }
 
+            }
+        }
+
+        private void ButtonInsertNewStudent_Click(object sender, EventArgs e)
+        {
+            StudentForm studentForm = new(DetailFormType.InsertForm)
+            {
+                MdiParent = MdiParent
+            };
+            studentForm.Show();
+        }
+
+        private void ButtonUpdateStudent_Click(object sender, EventArgs e)
+        {
+            var succes = int.TryParse(GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString(), out int selectedId);
+            if (succes)
+            {
+                StudentForm studentForm = new(DetailFormType.UpdateForm)
+                {
+                    MdiParent = MdiParent
+                };
+                studentForm.LoadSelectedStudent(selectedId);
+                studentForm.Show();
             }
         }
     }

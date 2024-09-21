@@ -31,7 +31,16 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
 
-            switch(_detailFormType)
+            ButtonSave.BackColor = Color.FromArgb(160, 150, 55);
+            ButtonSave.ForeColor = Color.White;
+            ButtonSave.Height = 35;
+            ButtonSave.FlatStyle = FlatStyle.Flat;
+            ButtonCancel.BackColor = Color.FromArgb(160, 150, 55);
+            ButtonCancel.ForeColor = Color.White;
+            ButtonCancel.Height = 35;
+            ButtonCancel.FlatStyle = FlatStyle.Flat;
+
+            switch (_detailFormType)
             {
                 case DetailFormType.ShowDetailForm:
                     SetAllTextboxesOnFormReadOnly(true);
@@ -40,17 +49,26 @@ namespace WinFormsSchool
                 case DetailFormType.UpdateForm:
                     SetAllTextboxesOnFormReadOnly(false);
                     LabelPageTitle.Text = "Update Student";
+                    ButtonSave.Visible = true;
+                    ButtonCancel.Visible = true;
+                    PanelYellow.Visible = false;
+                    LabelYellow.Visible = false;
                     //TODO:UpdateForm
-                    //add save and cancel button,
                     //replace some textboxes to dropdowns.......
+                    //mark required fields
+                    //input validation
                     break;
                 case DetailFormType.InsertForm:
                     SetAllTextboxesOnFormReadOnly(false);
                     LabelPageTitle.Text = "Insert Student";
+                    ButtonSave.Visible = true;
+                    ButtonCancel.Visible = true;
+                    PanelYellow.Visible = false;
+                    LabelYellow.Visible = false;
                     //TODO:InsertForm
-                    //make all controls empty,
-                    //add save and cancel button,
                     //replace some textboxes to dropdowns.......
+                    //mark required fields
+                    //input validation
                     break;
                 default:
                     SetAllTextboxesOnFormReadOnly(true);
@@ -187,5 +205,9 @@ namespace WinFormsSchool
             }
         }
 
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

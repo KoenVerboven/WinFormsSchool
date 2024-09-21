@@ -1,4 +1,6 @@
 ﻿
+using WinFormsSchool.Base;
+
 namespace WinFormsSchool
 {
     public partial class InfoForm : Base.BaseForm1

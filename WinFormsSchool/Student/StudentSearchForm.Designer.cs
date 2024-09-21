@@ -36,6 +36,8 @@
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            ButtonUpdateStudent = new Button();
+            ButtonInsertNewStudent = new Button();
             ButtonDelete = new Button();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)GridViewStudents).BeginInit();
@@ -121,6 +123,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(ButtonUpdateStudent);
+            splitContainer1.Panel1.Controls.Add(ButtonInsertNewStudent);
             splitContainer1.Panel1.Controls.Add(ButtonDelete);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(label2);
@@ -134,9 +138,29 @@
             splitContainer1.SplitterDistance = 153;
             splitContainer1.TabIndex = 27;
             // 
+            // ButtonUpdateStudent
+            // 
+            ButtonUpdateStudent.Location = new Point(740, 96);
+            ButtonUpdateStudent.Name = "ButtonUpdateStudent";
+            ButtonUpdateStudent.Size = new Size(154, 29);
+            ButtonUpdateStudent.TabIndex = 29;
+            ButtonUpdateStudent.Text = "Update Student";
+            ButtonUpdateStudent.UseVisualStyleBackColor = true;
+            ButtonUpdateStudent.Click += ButtonUpdateStudent_Click;
+            // 
+            // ButtonInsertNewStudent
+            // 
+            ButtonInsertNewStudent.Location = new Point(568, 97);
+            ButtonInsertNewStudent.Name = "ButtonInsertNewStudent";
+            ButtonInsertNewStudent.Size = new Size(154, 29);
+            ButtonInsertNewStudent.TabIndex = 28;
+            ButtonInsertNewStudent.Text = "Insert new Student";
+            ButtonInsertNewStudent.UseVisualStyleBackColor = true;
+            ButtonInsertNewStudent.Click += ButtonInsertNewStudent_Click;
+            // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(599, 97);
+            ButtonDelete.Location = new Point(920, 96);
             ButtonDelete.Name = "ButtonDelete";
             ButtonDelete.Size = new Size(124, 27);
             ButtonDelete.TabIndex = 27;
@@ -189,5 +213,7 @@
         private SplitContainer splitContainer1;
         private Label label1;
         private Button ButtonDelete;
+        private Button ButtonInsertNewStudent;
+        private Button ButtonUpdateStudent;
     }
 }
