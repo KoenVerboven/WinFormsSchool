@@ -19,6 +19,7 @@ namespace WinFormsSchool
         private void InitializeControls()
         {
             //WindowState = FormWindowState.Maximized;   
+            LabelErrorMessage.Visible = false;
             DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             DataGridViewCourses.Visible = false;
             PanelYellow.BackColor = Color.Yellow;
@@ -65,6 +66,7 @@ namespace WinFormsSchool
                     ButtonCancel.Visible = true;
                     PanelYellow.Visible = false;
                     LabelYellow.Visible = false;
+                    MarkRequiredFields();
                     //TODO:InsertForm
                     //replace some textboxes to dropdowns.......
                     //mark required fields
@@ -207,7 +209,53 @@ namespace WinFormsSchool
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
+
+        private void MarkRequiredFields()
+        {
+            var colorRequiredField = Color.FromArgb(200, 200, 251);
+            TextBoxFirstname.BackColor = colorRequiredField;
+            TextBoxLastName.BackColor = colorRequiredField;
+            TextBoxZipCode.BackColor = colorRequiredField;
+            TextBoxDateOfBirth.BackColor = colorRequiredField;
+        }
+
+        private bool InputValidation()
+        {
+            LabelErrorMessage.ForeColor = Color.Red;
+            if (TextBoxFirstname.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "first name is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+            if (TextBoxLastName.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "last name is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+            if (TextBoxZipCode.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "zipcode is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+            if (TextBoxDateOfBirth.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "date of birth is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+            return true;
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            var ok = InputValidation();
+            //ToDo : insert of update student code
+        }
+   
     }
 }

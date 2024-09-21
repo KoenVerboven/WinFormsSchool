@@ -63,6 +63,7 @@
             ButtonCancel = new Button();
             ButtonSave = new Button();
             LabelStudentCourses = new Label();
+            LabelErrorMessage = new Label();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -351,6 +352,7 @@
             ButtonSave.Text = "Save";
             ButtonSave.UseVisualStyleBackColor = true;
             ButtonSave.Visible = false;
+            ButtonSave.Click += ButtonSave_Click;
             // 
             // LabelStudentCourses
             // 
@@ -361,11 +363,21 @@
             LabelStudentCourses.TabIndex = 55;
             LabelStudentCourses.Text = "Courses :";
             // 
+            // LabelErrorMessage
+            // 
+            LabelErrorMessage.AutoSize = true;
+            LabelErrorMessage.Location = new Point(346, 57);
+            LabelErrorMessage.Name = "LabelErrorMessage";
+            LabelErrorMessage.Size = new Size(99, 20);
+            LabelErrorMessage.TabIndex = 57;
+            LabelErrorMessage.Text = "ErrorMessage";
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 763);
+            Controls.Add(LabelErrorMessage);
             Controls.Add(LabelStudentCourses);
             Controls.Add(ButtonCancel);
             Controls.Add(ButtonSave);
@@ -435,6 +447,7 @@
             Controls.SetChildIndex(ButtonSave, 0);
             Controls.SetChildIndex(ButtonCancel, 0);
             Controls.SetChildIndex(LabelStudentCourses, 0);
+            Controls.SetChildIndex(LabelErrorMessage, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -479,5 +492,6 @@
         public Button ButtonCancel;
         public Button ButtonSave;
         private Label LabelStudentCourses;
+        private Label LabelErrorMessage;
     }
 }
