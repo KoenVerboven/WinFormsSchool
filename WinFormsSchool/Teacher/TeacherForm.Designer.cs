@@ -44,7 +44,6 @@
             LabelEmailAddress = new Label();
             LabelPhoneNumber = new Label();
             LabelZipCode = new Label();
-            TextBoxLeaveDate = new TextBox();
             TextBoxSaleryCategorie = new TextBox();
             TextBoxSeniorityYears = new TextBox();
             TextBoxWorkSchedule = new TextBox();
@@ -68,6 +67,7 @@
             TextBoxNationality = new TextBox();
             DateTimePickerHireDate = new DateTimePicker();
             DateTimePickerDateOfBirth = new DateTimePicker();
+            DateTimePickerLeaveDate = new DateTimePicker();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -203,13 +203,6 @@
             LabelZipCode.Size = new Size(66, 20);
             LabelZipCode.TabIndex = 12;
             LabelZipCode.Text = "ZipCode";
-            // 
-            // TextBoxLeaveDate
-            // 
-            TextBoxLeaveDate.Location = new Point(779, 115);
-            TextBoxLeaveDate.Name = "TextBoxLeaveDate";
-            TextBoxLeaveDate.Size = new Size(242, 27);
-            TextBoxLeaveDate.TabIndex = 17;
             // 
             // TextBoxSaleryCategorie
             // 
@@ -396,11 +389,19 @@
             DateTimePickerDateOfBirth.Size = new Size(310, 27);
             DateTimePickerDateOfBirth.TabIndex = 43;
             // 
+            // DateTimePickerLeaveDate
+            // 
+            DateTimePickerLeaveDate.Location = new Point(779, 115);
+            DateTimePickerLeaveDate.Name = "DateTimePickerLeaveDate";
+            DateTimePickerLeaveDate.Size = new Size(242, 27);
+            DateTimePickerLeaveDate.TabIndex = 44;
+            // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 551);
+            Controls.Add(DateTimePickerLeaveDate);
             Controls.Add(DateTimePickerDateOfBirth);
             Controls.Add(DateTimePickerHireDate);
             Controls.Add(TextBoxNationality);
@@ -424,7 +425,6 @@
             Controls.Add(TextBoxWorkSchedule);
             Controls.Add(TextBoxSeniorityYears);
             Controls.Add(TextBoxSaleryCategorie);
-            Controls.Add(TextBoxLeaveDate);
             Controls.Add(LabelGender);
             Controls.Add(LabelEmailAddress);
             Controls.Add(LabelPhoneNumber);
@@ -460,7 +460,6 @@
             Controls.SetChildIndex(LabelPhoneNumber, 0);
             Controls.SetChildIndex(LabelEmailAddress, 0);
             Controls.SetChildIndex(LabelGender, 0);
-            Controls.SetChildIndex(TextBoxLeaveDate, 0);
             Controls.SetChildIndex(TextBoxSaleryCategorie, 0);
             Controls.SetChildIndex(TextBoxSeniorityYears, 0);
             Controls.SetChildIndex(TextBoxWorkSchedule, 0);
@@ -484,6 +483,7 @@
             Controls.SetChildIndex(TextBoxNationality, 0);
             Controls.SetChildIndex(DateTimePickerHireDate, 0);
             Controls.SetChildIndex(DateTimePickerDateOfBirth, 0);
+            Controls.SetChildIndex(DateTimePickerLeaveDate, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -506,7 +506,6 @@
         private Label LabelEmailAddress;
         private Label LabelPhoneNumber;
         private Label LabelZipCode;
-        private TextBox TextBoxLeaveDate;
         private TextBox TextBoxSaleryCategorie;
         private TextBox TextBoxSeniorityYears;
         private TextBox TextBoxWorkSchedule;
@@ -530,5 +529,6 @@
         private TextBox TextBoxNationality;
         private DateTimePicker DateTimePickerHireDate;
         private DateTimePicker DateTimePickerDateOfBirth;
+        private DateTimePicker DateTimePickerLeaveDate;
     }
 }

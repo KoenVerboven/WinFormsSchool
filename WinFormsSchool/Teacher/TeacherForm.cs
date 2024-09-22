@@ -70,7 +70,7 @@ namespace WinFormsSchool
                 TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
                 TextBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
                 DateTimePickerHireDate.Value = selectedTeacher.HireDate;
-                TextBoxLeaveDate.Text = Convert.ToString(selectedTeacher.LeaveDate);//TODO: aanpassen :Convert.ToString(selectedTeacher.LeaveDate)
+                DateTimePickerLeaveDate.Value = ((selectedTeacher.LeaveDate) ?? new DateTime(1900, 1, 1)); // null-coalescing operator
                 TextBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
                 TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
                 TextBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
