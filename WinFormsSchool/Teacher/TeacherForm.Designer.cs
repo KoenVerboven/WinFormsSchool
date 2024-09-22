@@ -44,7 +44,6 @@
             LabelEmailAddress = new Label();
             LabelPhoneNumber = new Label();
             LabelZipCode = new Label();
-            TextBoxHireDate = new TextBox();
             TextBoxLeaveDate = new TextBox();
             TextBoxSaleryCategorie = new TextBox();
             TextBoxSeniorityYears = new TextBox();
@@ -65,10 +64,17 @@
             LabelMaritalStatus = new Label();
             TextBoxMaritalStatus = new TextBox();
             LabelDateOfBirth = new Label();
-            TextBoxDateOfBirth = new TextBox();
             LabelNationality = new Label();
             TextBoxNationality = new TextBox();
+            DateTimePickerHireDate = new DateTimePicker();
+            DateTimePickerDateOfBirth = new DateTimePicker();
             SuspendLayout();
+            // 
+            // LabelPageTitle
+            // 
+            LabelPageTitle.Font = new Font("Arial", 14F);
+            LabelPageTitle.ForeColor = Color.White;
+            LabelPageTitle.Size = new Size(171, 27);
             // 
             // TextBoxFirstname
             // 
@@ -81,14 +87,14 @@
             // 
             TextBoxMiddeleName.Location = new Point(220, 115);
             TextBoxMiddeleName.Name = "TextBoxMiddeleName";
-            TextBoxMiddeleName.Size = new Size(314, 27);
+            TextBoxMiddeleName.Size = new Size(310, 27);
             TextBoxMiddeleName.TabIndex = 1;
             // 
             // TextBoxLastName
             // 
             TextBoxLastName.Location = new Point(220, 148);
             TextBoxLastName.Name = "TextBoxLastName";
-            TextBoxLastName.Size = new Size(314, 27);
+            TextBoxLastName.Size = new Size(310, 27);
             TextBoxLastName.TabIndex = 2;
             // 
             // TextBoxStreetAndNumber
@@ -197,13 +203,6 @@
             LabelZipCode.Size = new Size(66, 20);
             LabelZipCode.TabIndex = 12;
             LabelZipCode.Text = "ZipCode";
-            // 
-            // TextBoxHireDate
-            // 
-            TextBoxHireDate.Location = new Point(779, 82);
-            TextBoxHireDate.Name = "TextBoxHireDate";
-            TextBoxHireDate.Size = new Size(242, 27);
-            TextBoxHireDate.TabIndex = 16;
             // 
             // TextBoxLeaveDate
             // 
@@ -367,13 +366,6 @@
             LabelDateOfBirth.TabIndex = 36;
             LabelDateOfBirth.Text = "DateOfBirth";
             // 
-            // TextBoxDateOfBirth
-            // 
-            TextBoxDateOfBirth.Location = new Point(220, 424);
-            TextBoxDateOfBirth.Name = "TextBoxDateOfBirth";
-            TextBoxDateOfBirth.Size = new Size(314, 27);
-            TextBoxDateOfBirth.TabIndex = 37;
-            // 
             // LabelNationality
             // 
             LabelNationality.AutoSize = true;
@@ -390,14 +382,29 @@
             TextBoxNationality.Size = new Size(314, 27);
             TextBoxNationality.TabIndex = 39;
             // 
+            // DateTimePickerHireDate
+            // 
+            DateTimePickerHireDate.Location = new Point(779, 82);
+            DateTimePickerHireDate.Name = "DateTimePickerHireDate";
+            DateTimePickerHireDate.Size = new Size(242, 27);
+            DateTimePickerHireDate.TabIndex = 42;
+            // 
+            // DateTimePickerDateOfBirth
+            // 
+            DateTimePickerDateOfBirth.Location = new Point(220, 422);
+            DateTimePickerDateOfBirth.Name = "DateTimePickerDateOfBirth";
+            DateTimePickerDateOfBirth.Size = new Size(310, 27);
+            DateTimePickerDateOfBirth.TabIndex = 43;
+            // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 551);
+            Controls.Add(DateTimePickerDateOfBirth);
+            Controls.Add(DateTimePickerHireDate);
             Controls.Add(TextBoxNationality);
             Controls.Add(LabelNationality);
-            Controls.Add(TextBoxDateOfBirth);
             Controls.Add(LabelDateOfBirth);
             Controls.Add(TextBoxMaritalStatus);
             Controls.Add(LabelMaritalStatus);
@@ -418,7 +425,6 @@
             Controls.Add(TextBoxSeniorityYears);
             Controls.Add(TextBoxSaleryCategorie);
             Controls.Add(TextBoxLeaveDate);
-            Controls.Add(TextBoxHireDate);
             Controls.Add(LabelGender);
             Controls.Add(LabelEmailAddress);
             Controls.Add(LabelPhoneNumber);
@@ -437,6 +443,7 @@
             Controls.Add(TextBoxFirstname);
             Name = "TeacherForm";
             Text = "TeacherForm";
+            Controls.SetChildIndex(LabelPageTitle, 0);
             Controls.SetChildIndex(TextBoxFirstname, 0);
             Controls.SetChildIndex(TextBoxMiddeleName, 0);
             Controls.SetChildIndex(TextBoxLastName, 0);
@@ -453,7 +460,6 @@
             Controls.SetChildIndex(LabelPhoneNumber, 0);
             Controls.SetChildIndex(LabelEmailAddress, 0);
             Controls.SetChildIndex(LabelGender, 0);
-            Controls.SetChildIndex(TextBoxHireDate, 0);
             Controls.SetChildIndex(TextBoxLeaveDate, 0);
             Controls.SetChildIndex(TextBoxSaleryCategorie, 0);
             Controls.SetChildIndex(TextBoxSeniorityYears, 0);
@@ -474,9 +480,10 @@
             Controls.SetChildIndex(LabelMaritalStatus, 0);
             Controls.SetChildIndex(TextBoxMaritalStatus, 0);
             Controls.SetChildIndex(LabelDateOfBirth, 0);
-            Controls.SetChildIndex(TextBoxDateOfBirth, 0);
             Controls.SetChildIndex(LabelNationality, 0);
             Controls.SetChildIndex(TextBoxNationality, 0);
+            Controls.SetChildIndex(DateTimePickerHireDate, 0);
+            Controls.SetChildIndex(DateTimePickerDateOfBirth, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -499,7 +506,6 @@
         private Label LabelEmailAddress;
         private Label LabelPhoneNumber;
         private Label LabelZipCode;
-        private TextBox TextBoxHireDate;
         private TextBox TextBoxLeaveDate;
         private TextBox TextBoxSaleryCategorie;
         private TextBox TextBoxSeniorityYears;
@@ -520,8 +526,9 @@
         private Label LabelMaritalStatus;
         private TextBox TextBoxMaritalStatus;
         private Label LabelDateOfBirth;
-        private TextBox TextBoxDateOfBirth;
         private Label LabelNationality;
         private TextBox TextBoxNationality;
+        private DateTimePicker DateTimePickerHireDate;
+        private DateTimePicker DateTimePickerDateOfBirth;
     }
 }

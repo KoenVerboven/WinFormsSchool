@@ -32,6 +32,10 @@ namespace WinFormsSchool
                 {
                     textEdit.ReadOnly = true;
                 }
+                if (control is DateTimePicker dateTimePicker)
+                {
+                    dateTimePicker.Enabled = !readOnly;
+                }
             }
         }
 
@@ -61,11 +65,11 @@ namespace WinFormsSchool
                 TextBoxPhoneNumber.Text = selectedTeacher.PhoneNumber;
                 TextBoxEmailAddress.Text = selectedTeacher.EmailAddress;
                 TextBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
-                TextBoxDateOfBirth.Text =  selectedTeacher.DateOfBirth.ToString("dd/MM/yyyy");
+                DateTimePickerDateOfBirth.Value = selectedTeacher.DateOfBirth;
                 TextBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
                 TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
                 TextBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
-                TextBoxHireDate.Text = selectedTeacher.HireDate.ToString("dd/MM/yyyy");
+                DateTimePickerHireDate.Value = selectedTeacher.HireDate;
                 TextBoxLeaveDate.Text = Convert.ToString(selectedTeacher.LeaveDate);//TODO: aanpassen :Convert.ToString(selectedTeacher.LeaveDate)
                 TextBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
                 TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);

@@ -88,6 +88,10 @@ namespace WinFormsSchool
                 {
                     textEdit.ReadOnly = readOnly;
                 }
+                if (control is DateTimePicker dateTimePicker)
+                {
+                    dateTimePicker.Enabled = !readOnly;
+                }
             }
         }
 
@@ -118,11 +122,11 @@ namespace WinFormsSchool
                     TextBoxPhoneNumber.Text = selectedStudent.PhoneNumber;
                     TextBoxEmailAddress.Text = selectedStudent.EmailAddress;
                     TextBoxGender.Text = Convert.ToString(selectedStudent.Gender);
-                    TextBoxDateOfBirth.Text = selectedStudent.DateOfBirth.ToString("dd/MM/yyyy");
+                    DateTimePickerDateOfBirth.Value = selectedStudent.DateOfBirth;
                     TextBoxMaritalStatus.Text = Convert.ToString(selectedStudent.MaritalStatus);
                     TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedStudent.NationalRegisterNumber);
                     TextBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
-                    TextBoxRegistrationDate.Text = selectedStudent.RegistrationDate.ToString("dd/MM/yyyy");
+                    DateTimePickerRegistrationdate.Value = selectedStudent.RegistrationDate;
 
                     if (selectedStudent.EnrolledCourse != null)
                     {
@@ -218,7 +222,6 @@ namespace WinFormsSchool
             TextBoxFirstname.BackColor = colorRequiredField;
             TextBoxLastName.BackColor = colorRequiredField;
             TextBoxZipCode.BackColor = colorRequiredField;
-            TextBoxDateOfBirth.BackColor = colorRequiredField;
         }
 
         private bool InputValidation()
@@ -242,12 +245,10 @@ namespace WinFormsSchool
                 LabelErrorMessage.Visible = true;
                 return false;
             }
-            if (TextBoxDateOfBirth.Text.Trim() == string.Empty)
-            {
-                LabelErrorMessage.Text = "date of birth is a required field";
-                LabelErrorMessage.Visible = true;
-                return false;
-            }
+           
+            //ToDO: check emailaddress
+
+
             return true;
         }
 

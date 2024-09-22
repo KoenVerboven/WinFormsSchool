@@ -47,14 +47,12 @@
             DataGridViewCourses = new DataGridView();
             TextBoxNationality = new TextBox();
             LabelNationality = new Label();
-            TextBoxDateOfBirth = new TextBox();
             LabelDateOfBirth = new Label();
             TextBoxMaritalStatus = new TextBox();
             LabelMaritalStatus = new Label();
             TextBoxNationalRegisterNumber = new TextBox();
             LabelNationalRegisterNumber = new Label();
             lLbelRegistrationDate = new Label();
-            TextBoxRegistrationDate = new TextBox();
             PanelYellow = new Panel();
             LabelYellow = new Label();
             statusStrip1 = new StatusStrip();
@@ -64,6 +62,8 @@
             ButtonSave = new Button();
             LabelStudentCourses = new Label();
             LabelErrorMessage = new Label();
+            DateTimePickerDateOfBirth = new DateTimePicker();
+            DateTimePickerRegistrationdate = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -228,13 +228,6 @@
             LabelNationality.TabIndex = 46;
             LabelNationality.Text = "Nationality";
             // 
-            // TextBoxDateOfBirth
-            // 
-            TextBoxDateOfBirth.Location = new Point(708, 176);
-            TextBoxDateOfBirth.Name = "TextBoxDateOfBirth";
-            TextBoxDateOfBirth.Size = new Size(345, 27);
-            TextBoxDateOfBirth.TabIndex = 45;
-            // 
             // LabelDateOfBirth
             // 
             LabelDateOfBirth.AutoSize = true;
@@ -284,13 +277,6 @@
             lLbelRegistrationDate.Size = new Size(121, 20);
             lLbelRegistrationDate.TabIndex = 48;
             lLbelRegistrationDate.Text = "RegistrationDate";
-            // 
-            // TextBoxRegistrationDate
-            // 
-            TextBoxRegistrationDate.Location = new Point(708, 242);
-            TextBoxRegistrationDate.Name = "TextBoxRegistrationDate";
-            TextBoxRegistrationDate.Size = new Size(345, 27);
-            TextBoxRegistrationDate.TabIndex = 49;
             // 
             // PanelYellow
             // 
@@ -372,11 +358,27 @@
             LabelErrorMessage.TabIndex = 57;
             LabelErrorMessage.Text = "ErrorMessage";
             // 
+            // DateTimePickerDateOfBirth
+            // 
+            DateTimePickerDateOfBirth.Location = new Point(708, 174);
+            DateTimePickerDateOfBirth.Name = "DateTimePickerDateOfBirth";
+            DateTimePickerDateOfBirth.Size = new Size(343, 27);
+            DateTimePickerDateOfBirth.TabIndex = 58;
+            // 
+            // DateTimePickerRegistrationdate
+            // 
+            DateTimePickerRegistrationdate.Location = new Point(708, 245);
+            DateTimePickerRegistrationdate.Name = "DateTimePickerRegistrationdate";
+            DateTimePickerRegistrationdate.Size = new Size(345, 27);
+            DateTimePickerRegistrationdate.TabIndex = 59;
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 763);
+            Controls.Add(DateTimePickerRegistrationdate);
+            Controls.Add(DateTimePickerDateOfBirth);
             Controls.Add(LabelErrorMessage);
             Controls.Add(LabelStudentCourses);
             Controls.Add(ButtonCancel);
@@ -384,11 +386,9 @@
             Controls.Add(statusStrip1);
             Controls.Add(LabelYellow);
             Controls.Add(PanelYellow);
-            Controls.Add(TextBoxRegistrationDate);
             Controls.Add(lLbelRegistrationDate);
             Controls.Add(TextBoxNationality);
             Controls.Add(LabelNationality);
-            Controls.Add(TextBoxDateOfBirth);
             Controls.Add(LabelDateOfBirth);
             Controls.Add(TextBoxMaritalStatus);
             Controls.Add(LabelMaritalStatus);
@@ -436,11 +436,9 @@
             Controls.SetChildIndex(LabelMaritalStatus, 0);
             Controls.SetChildIndex(TextBoxMaritalStatus, 0);
             Controls.SetChildIndex(LabelDateOfBirth, 0);
-            Controls.SetChildIndex(TextBoxDateOfBirth, 0);
             Controls.SetChildIndex(LabelNationality, 0);
             Controls.SetChildIndex(TextBoxNationality, 0);
             Controls.SetChildIndex(lLbelRegistrationDate, 0);
-            Controls.SetChildIndex(TextBoxRegistrationDate, 0);
             Controls.SetChildIndex(PanelYellow, 0);
             Controls.SetChildIndex(LabelYellow, 0);
             Controls.SetChildIndex(statusStrip1, 0);
@@ -448,6 +446,8 @@
             Controls.SetChildIndex(ButtonCancel, 0);
             Controls.SetChildIndex(LabelStudentCourses, 0);
             Controls.SetChildIndex(LabelErrorMessage, 0);
+            Controls.SetChildIndex(DateTimePickerDateOfBirth, 0);
+            Controls.SetChildIndex(DateTimePickerRegistrationdate, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -476,14 +476,12 @@
         private DataGridView DataGridViewCourses;
         private TextBox TextBoxNationality;
         private Label LabelNationality;
-        private TextBox TextBoxDateOfBirth;
         private Label LabelDateOfBirth;
         private TextBox TextBoxMaritalStatus;
         private Label LabelMaritalStatus;
         private TextBox TextBoxNationalRegisterNumber;
         private Label LabelNationalRegisterNumber;
         private Label lLbelRegistrationDate;
-        private TextBox TextBoxRegistrationDate;
         private Panel PanelYellow;
         private Label LabelYellow;
         private StatusStrip statusStrip1;
@@ -493,5 +491,7 @@
         public Button ButtonSave;
         private Label LabelStudentCourses;
         private Label LabelErrorMessage;
+        private DateTimePicker DateTimePickerDateOfBirth;
+        private DateTimePicker DateTimePickerRegistrationdate;
     }
 }
