@@ -91,10 +91,9 @@ namespace WinFormsSchool
             catch (Exception oEx)
             {
                 //MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                CustomErrorClass customErrorClass = new CustomErrorClass();
-                customErrorClass.ErrorMessage = oEx.Message;
-                customErrorClass.PageOrFormName = "SchoolArticleForm";
-                CustomErrorForm customErrorForm = new CustomErrorForm(customErrorClass); //ToDo
+                CustomErrorClass customErrorClass = new(oEx.Message, "Admin", "SchoolArticleForm",
+                                                         "LoadSelectedArticle", false, null, DateTime.Now);
+                CustomErrorForm customErrorForm = new(customErrorClass); //ToDo
                 customErrorForm.ShowDialog();
             }
         }

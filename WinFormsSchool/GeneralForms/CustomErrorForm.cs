@@ -13,6 +13,7 @@ namespace WinFormsSchool.GeneralForms
             InitializeComponent();
             _customErrorClass = customErrorClass;
             LabelPageTitle.Text = "Error";
+            LabelErrorMessage.BackColor = Color.Red;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
         }
 
@@ -32,6 +33,8 @@ namespace WinFormsSchool.GeneralForms
         {
             LabelErrorMessage.Text = _customErrorClass.ErrorMessage;
             LabelPageOrFormName.Text = _customErrorClass.PageOrFormName;
+            LabelMethodName.Text = _customErrorClass.MethodName;
+            LabelErrorTime.Text = _customErrorClass.ErrorOccurAtTime.ToString();
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
