@@ -1,6 +1,7 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Models;
 using System.Data;
+using WinFormsSchool.GeneralForms;
 
 namespace WinFormsSchool
 {
@@ -123,7 +124,11 @@ namespace WinFormsSchool
             }
             catch (Exception oEx)
             {
-                MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CustomErrorForm customErrorForm = new(
+                   new(oEx.Message, "Admin", "SchoolArticleSearchForm",
+                         "ButtonDelete_Click", false, null, DateTime.Now)
+                      );
+                customErrorForm.ShowDialog();
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.BLLClasses;
+using WinFormsSchool.GeneralForms;
 
 
 namespace WinFormsSchool
@@ -80,11 +81,20 @@ namespace WinFormsSchool
             }
             catch (ArgumentOutOfRangeException)
             {
-                 MessageBox.Show("Teacher with Id " + selectedTeacherId + " doesn't exist", "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CustomErrorForm customErrorForm = new(
+                new( "ArgumentOutOfRangeException.Teacher with Id " + selectedTeacherId + " doesn't exist", 
+                     "Admin", "TeacherForm",
+                     "LoadSelectedTeacher", false, null, DateTime.Now)
+                   );
+                customErrorForm.ShowDialog();
             }
             catch (Exception oEx)
             {
-                MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CustomErrorForm customErrorForm = new(
+                 new(oEx.Message, "Admin", "TeacherForm",
+                       "LoadSelectedTeacher", false, null, DateTime.Now)
+                    );
+                customErrorForm.ShowDialog();
             }
         }
   
