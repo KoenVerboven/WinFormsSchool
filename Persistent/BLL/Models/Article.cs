@@ -12,7 +12,7 @@ namespace AppCode.BLL.Models
         public int? NumberSoldInTotal { get; set;}
         public int? QuantityInPackage { get; set; }
         public decimal? ArticleWeightInKg { get; set; }
-        public bool? Fragile { get; set; }
+        public bool Fragile { get; set; }
         public int? ArticleHeightInCM { get; set; }
         public int? ArticleWidthInCM { get; set; }
         public int? ArticleDephInCM { get; set; }

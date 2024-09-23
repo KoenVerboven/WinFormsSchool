@@ -1,4 +1,6 @@
 ﻿using AppCode.BLL.BLLClasses;
+using AppCode.BLL.GeneralClasses;
+using WinFormsSchool.GeneralForms;
 
 
 namespace WinFormsSchool
@@ -29,6 +31,7 @@ namespace WinFormsSchool
             LabelPageTitle.Text = "Article Detail";
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+            CheckBoxFragile.AutoCheck = false;
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -62,21 +65,16 @@ namespace WinFormsSchool
 
                 if (selectedArticle is not null)
                 {
+                    //selectedArticle = null;//ToDo error uitlokken weg doen
                     TextboxArticleId.Text = selectedArticle.ArticleId.ToString();
                     TextboxArticleName.Text = selectedArticle.ArticleName;
                     TextboxArticlePrice.Text = (selectedArticle.ArticlePrice is not null) ? selectedArticle.ArticlePrice.ToString() + " €" : "Price unkown"; // rekening houden met null value
                     TextBoxNumberInStock.Text = selectedArticle.NumberInStock.ToString();
                     TextBoxMinimumStock.Text = selectedArticle.MinStock.ToString();
-                    TextBoxFragile.Text = selectedArticle.Fragile.ToString();
+                    CheckBoxFragile.Checked = selectedArticle.Fragile;
                     TextBoxArticleSize.Text = Convert.ToString(selectedArticle.ArticleSize);
                     LabelMessage.Text = (selectedArticle.Message is not null) ? selectedArticle.Message.ToString() : "";
                     LabelMessage.ForeColor = Color.Yellow;
-
-                    if (Convert.ToBoolean(selectedArticle.Fragile))
-                    {
-                        TextBoxFragile.ForeColor = Color.Red;
-                    }
-
                     if (selectedArticle.ArticlePicture == null)
                     {
                         LabelArticleFoto.Text = "No picture available";
@@ -92,7 +90,12 @@ namespace WinFormsSchool
             }
             catch (Exception oEx)
             {
-                MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show(oEx.Message, "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CustomErrorClass customErrorClass = new CustomErrorClass();
+                customErrorClass.ErrorMessage = oEx.Message;
+                customErrorClass.PageOrFormName = "SchoolArticleForm";
+                CustomErrorForm customErrorForm = new CustomErrorForm(customErrorClass); //ToDo
+                customErrorForm.ShowDialog();
             }
         }
     }

@@ -26,12 +26,9 @@ namespace AppCode.BLL.BLLClasses
         private static string GetArticleMessage(Article article)
         {
             var message = string.Empty;
-            if (article.Fragile is not null)
+            if (Convert.ToBoolean(article.Fragile))
             {
-                if (Convert.ToBoolean(article.Fragile))
-                {
-                    message = "* Article is fragile, handle with care !!";
-                }
+                message = "* Article is fragile, handle with care !!";
             }
             if (article.NumberInStock < article.MinStock)
             {
@@ -103,6 +100,7 @@ namespace AppCode.BLL.BLLClasses
                     ArtcileCategory = 3,
                     ArticleName = "Lenova laptop",
                     ArticlePrice = null,
+                    Fragile = false,
                     ArticleHeightInCM = 29,
                     ArticleWidthInCM = 31,
                     ArticleDephInCM = 30
@@ -112,7 +110,8 @@ namespace AppCode.BLL.BLLClasses
                     ArticleId = 4,
                     ArtcileCategory = 3,
                     ArticleName = "Apple laptop",
-                    ArticlePrice = 155.50m
+                    ArticlePrice = 155.50m,
+                    Fragile = false,
                 },
                 new()
                 {
@@ -155,14 +154,16 @@ namespace AppCode.BLL.BLLClasses
                     ArticleId = 8,
                     ArtcileCategory = 5,
                     ArticleName = "HP wireless mouse",
-                    ArticlePrice = 29.99m
+                    ArticlePrice = 29.99m,
+                    Fragile = false
                 },
                 new()
                 {
                     ArticleId = 9,
                     ArtcileCategory = 5,
                     ArticleName = "Blocknote 100 pages",
-                    ArticlePrice = 10.99m
+                    ArticlePrice = 10.99m,
+                    Fragile = false
                 },
 
             ];

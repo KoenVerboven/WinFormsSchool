@@ -40,7 +40,6 @@
             LabelFragile = new Label();
             TextBoxNumberInStock = new TextBox();
             TextBoxMinimumStock = new TextBox();
-            TextBoxFragile = new TextBox();
             LabelArticleFoto = new Label();
             PictureBoxArticle = new PictureBox();
             TextBoxArticleSize = new TextBox();
@@ -48,9 +47,16 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            CheckBoxFragile = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
+            // 
+            // LabelPageTitle
+            // 
+            LabelPageTitle.Font = new Font("Arial", 14F);
+            LabelPageTitle.ForeColor = Color.White;
+            LabelPageTitle.Size = new Size(171, 27);
             // 
             // LabelArticlePrice
             // 
@@ -130,7 +136,7 @@
             // LabelFragile
             // 
             LabelFragile.AutoSize = true;
-            LabelFragile.Location = new Point(39, 248);
+            LabelFragile.Location = new Point(39, 281);
             LabelFragile.Name = "LabelFragile";
             LabelFragile.Size = new Size(54, 20);
             LabelFragile.TabIndex = 25;
@@ -149,13 +155,6 @@
             TextBoxMinimumStock.Name = "TextBoxMinimumStock";
             TextBoxMinimumStock.Size = new Size(221, 27);
             TextBoxMinimumStock.TabIndex = 27;
-            // 
-            // TextBoxFragile
-            // 
-            TextBoxFragile.Location = new Point(241, 245);
-            TextBoxFragile.Name = "TextBoxFragile";
-            TextBoxFragile.Size = new Size(223, 27);
-            TextBoxFragile.TabIndex = 28;
             // 
             // LabelArticleFoto
             // 
@@ -176,7 +175,7 @@
             // 
             // TextBoxArticleSize
             // 
-            TextBoxArticleSize.Location = new Point(242, 278);
+            TextBoxArticleSize.Location = new Point(241, 246);
             TextBoxArticleSize.Name = "TextBoxArticleSize";
             TextBoxArticleSize.Size = new Size(222, 27);
             TextBoxArticleSize.TabIndex = 31;
@@ -184,7 +183,7 @@
             // LabelSize
             // 
             LabelSize.AutoSize = true;
-            LabelSize.Location = new Point(39, 281);
+            LabelSize.Location = new Point(39, 249);
             LabelSize.Name = "LabelSize";
             LabelSize.Size = new Size(140, 20);
             LabelSize.TabIndex = 32;
@@ -213,17 +212,26 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // CheckBoxFragile
+            // 
+            CheckBoxFragile.AutoSize = true;
+            CheckBoxFragile.Location = new Point(241, 283);
+            CheckBoxFragile.Name = "CheckBoxFragile";
+            CheckBoxFragile.Size = new Size(18, 17);
+            CheckBoxFragile.TabIndex = 42;
+            CheckBoxFragile.UseVisualStyleBackColor = true;
+            // 
             // SchoolArticleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(CheckBoxFragile);
             Controls.Add(statusStrip1);
             Controls.Add(LabelSize);
             Controls.Add(TextBoxArticleSize);
             Controls.Add(PictureBoxArticle);
             Controls.Add(LabelArticleFoto);
-            Controls.Add(TextBoxFragile);
             Controls.Add(TextBoxMinimumStock);
             Controls.Add(TextBoxNumberInStock);
             Controls.Add(LabelFragile);
@@ -238,6 +246,7 @@
             Controls.Add(LabelArticleName);
             Name = "SchoolArticleForm";
             Text = "SchoolArticleForm";
+            Controls.SetChildIndex(LabelPageTitle, 0);
             Controls.SetChildIndex(LabelArticleName, 0);
             Controls.SetChildIndex(LabelArticlePrice, 0);
             Controls.SetChildIndex(LabelArticleId, 0);
@@ -250,12 +259,12 @@
             Controls.SetChildIndex(LabelFragile, 0);
             Controls.SetChildIndex(TextBoxNumberInStock, 0);
             Controls.SetChildIndex(TextBoxMinimumStock, 0);
-            Controls.SetChildIndex(TextBoxFragile, 0);
             Controls.SetChildIndex(LabelArticleFoto, 0);
             Controls.SetChildIndex(PictureBoxArticle, 0);
             Controls.SetChildIndex(TextBoxArticleSize, 0);
             Controls.SetChildIndex(LabelSize, 0);
             Controls.SetChildIndex(statusStrip1, 0);
+            Controls.SetChildIndex(CheckBoxFragile, 0);
             ((System.ComponentModel.ISupportInitialize)PictureBoxArticle).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -276,7 +285,6 @@
         private Label LabelFragile;
         private TextBox TextBoxNumberInStock;
         private TextBox TextBoxMinimumStock;
-        private TextBox TextBoxFragile;
         private Label LabelArticleFoto;
         private PictureBox PictureBoxArticle;
         private TextBox TextBoxArticleSize;
@@ -284,5 +292,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
+        private CheckBox CheckBoxFragile;
     }
 }
