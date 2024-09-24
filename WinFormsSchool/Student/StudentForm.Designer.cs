@@ -33,7 +33,6 @@
             TextBoxStreetAndNumber = new TextBox();
             TextBoxZipCode = new TextBox();
             TextBoxLastName = new TextBox();
-            TextBoxGender = new TextBox();
             TextBoxEmailAddress = new TextBox();
             TextBoxPhoneNumber = new TextBox();
             LabelFirstname = new Label();
@@ -45,10 +44,8 @@
             LabelEmailaddres = new Label();
             LabelGender = new Label();
             DataGridViewCourses = new DataGridView();
-            TextBoxNationality = new TextBox();
             LabelNationality = new Label();
             LabelDateOfBirth = new Label();
-            TextBoxMaritalStatus = new TextBox();
             LabelMaritalStatus = new Label();
             TextBoxNationalRegisterNumber = new TextBox();
             LabelNationalRegisterNumber = new Label();
@@ -64,6 +61,9 @@
             LabelErrorMessage = new Label();
             DateTimePickerDateOfBirth = new DateTimePicker();
             DateTimePickerRegistrationdate = new DateTimePicker();
+            ComboBoxMartialStatus = new ComboBox();
+            ComboBoxGender = new ComboBox();
+            ComboBoxNationality = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -83,7 +83,7 @@
             // 
             // TextBoxMiddeleName
             // 
-            TextBoxMiddeleName.Location = new Point(224, 143);
+            TextBoxMiddeleName.Location = new Point(224, 144);
             TextBoxMiddeleName.Name = "TextBoxMiddeleName";
             TextBoxMiddeleName.Size = new Size(275, 27);
             TextBoxMiddeleName.TabIndex = 1;
@@ -108,13 +108,6 @@
             TextBoxLastName.Name = "TextBoxLastName";
             TextBoxLastName.Size = new Size(275, 27);
             TextBoxLastName.TabIndex = 7;
-            // 
-            // TextBoxGender
-            // 
-            TextBoxGender.Location = new Point(224, 341);
-            TextBoxGender.Name = "TextBoxGender";
-            TextBoxGender.Size = new Size(275, 27);
-            TextBoxGender.TabIndex = 6;
             // 
             // TextBoxEmailAddress
             // 
@@ -212,13 +205,6 @@
             DataGridViewCourses.TabIndex = 16;
             DataGridViewCourses.CellFormatting += DataGridViewCourses_CellFormatting;
             // 
-            // TextBoxNationality
-            // 
-            TextBoxNationality.Location = new Point(708, 209);
-            TextBoxNationality.Name = "TextBoxNationality";
-            TextBoxNationality.Size = new Size(345, 27);
-            TextBoxNationality.TabIndex = 47;
-            // 
             // LabelNationality
             // 
             LabelNationality.AutoSize = true;
@@ -237,17 +223,10 @@
             LabelDateOfBirth.TabIndex = 44;
             LabelDateOfBirth.Text = "DateOfBirth";
             // 
-            // TextBoxMaritalStatus
-            // 
-            TextBoxMaritalStatus.Location = new Point(708, 143);
-            TextBoxMaritalStatus.Name = "TextBoxMaritalStatus";
-            TextBoxMaritalStatus.Size = new Size(345, 27);
-            TextBoxMaritalStatus.TabIndex = 43;
-            // 
             // LabelMaritalStatus
             // 
             LabelMaritalStatus.AutoSize = true;
-            LabelMaritalStatus.Location = new Point(528, 146);
+            LabelMaritalStatus.Location = new Point(528, 147);
             LabelMaritalStatus.Name = "LabelMaritalStatus";
             LabelMaritalStatus.Size = new Size(96, 20);
             LabelMaritalStatus.TabIndex = 42;
@@ -372,11 +351,38 @@
             DateTimePickerRegistrationdate.Size = new Size(345, 27);
             DateTimePickerRegistrationdate.TabIndex = 59;
             // 
+            // ComboBoxMartialStatus
+            // 
+            ComboBoxMartialStatus.FormattingEnabled = true;
+            ComboBoxMartialStatus.Location = new Point(708, 143);
+            ComboBoxMartialStatus.Name = "ComboBoxMartialStatus";
+            ComboBoxMartialStatus.Size = new Size(345, 28);
+            ComboBoxMartialStatus.TabIndex = 60;
+            // 
+            // ComboBoxGender
+            // 
+            ComboBoxGender.FormattingEnabled = true;
+            ComboBoxGender.Location = new Point(224, 341);
+            ComboBoxGender.Name = "ComboBoxGender";
+            ComboBoxGender.Size = new Size(275, 28);
+            ComboBoxGender.TabIndex = 61;
+            // 
+            // ComboBoxNationality
+            // 
+            ComboBoxNationality.FormattingEnabled = true;
+            ComboBoxNationality.Location = new Point(708, 211);
+            ComboBoxNationality.Name = "ComboBoxNationality";
+            ComboBoxNationality.Size = new Size(345, 28);
+            ComboBoxNationality.TabIndex = 62;
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 763);
+            Controls.Add(ComboBoxNationality);
+            Controls.Add(ComboBoxGender);
+            Controls.Add(ComboBoxMartialStatus);
             Controls.Add(DateTimePickerRegistrationdate);
             Controls.Add(DateTimePickerDateOfBirth);
             Controls.Add(LabelErrorMessage);
@@ -387,10 +393,8 @@
             Controls.Add(LabelYellow);
             Controls.Add(PanelYellow);
             Controls.Add(lLbelRegistrationDate);
-            Controls.Add(TextBoxNationality);
             Controls.Add(LabelNationality);
             Controls.Add(LabelDateOfBirth);
-            Controls.Add(TextBoxMaritalStatus);
             Controls.Add(LabelMaritalStatus);
             Controls.Add(TextBoxNationalRegisterNumber);
             Controls.Add(LabelNationalRegisterNumber);
@@ -404,7 +408,6 @@
             Controls.Add(LabelMiddlename);
             Controls.Add(LabelFirstname);
             Controls.Add(TextBoxLastName);
-            Controls.Add(TextBoxGender);
             Controls.Add(TextBoxEmailAddress);
             Controls.Add(TextBoxPhoneNumber);
             Controls.Add(TextBoxZipCode);
@@ -420,7 +423,6 @@
             Controls.SetChildIndex(TextBoxZipCode, 0);
             Controls.SetChildIndex(TextBoxPhoneNumber, 0);
             Controls.SetChildIndex(TextBoxEmailAddress, 0);
-            Controls.SetChildIndex(TextBoxGender, 0);
             Controls.SetChildIndex(TextBoxLastName, 0);
             Controls.SetChildIndex(LabelFirstname, 0);
             Controls.SetChildIndex(LabelMiddlename, 0);
@@ -434,10 +436,8 @@
             Controls.SetChildIndex(LabelNationalRegisterNumber, 0);
             Controls.SetChildIndex(TextBoxNationalRegisterNumber, 0);
             Controls.SetChildIndex(LabelMaritalStatus, 0);
-            Controls.SetChildIndex(TextBoxMaritalStatus, 0);
             Controls.SetChildIndex(LabelDateOfBirth, 0);
             Controls.SetChildIndex(LabelNationality, 0);
-            Controls.SetChildIndex(TextBoxNationality, 0);
             Controls.SetChildIndex(lLbelRegistrationDate, 0);
             Controls.SetChildIndex(PanelYellow, 0);
             Controls.SetChildIndex(LabelYellow, 0);
@@ -448,6 +448,9 @@
             Controls.SetChildIndex(LabelErrorMessage, 0);
             Controls.SetChildIndex(DateTimePickerDateOfBirth, 0);
             Controls.SetChildIndex(DateTimePickerRegistrationdate, 0);
+            Controls.SetChildIndex(ComboBoxMartialStatus, 0);
+            Controls.SetChildIndex(ComboBoxGender, 0);
+            Controls.SetChildIndex(ComboBoxNationality, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -462,7 +465,6 @@
         private TextBox TextBoxStreetAndNumber;
         private TextBox TextBoxZipCode;
         private TextBox TextBoxLastName;
-        private TextBox TextBoxGender;
         private TextBox TextBoxEmailAddress;
         private TextBox TextBoxPhoneNumber;
         private Label LabelFirstname;
@@ -474,10 +476,8 @@
         private Label LabelEmailaddres;
         private Label LabelGender;
         private DataGridView DataGridViewCourses;
-        private TextBox TextBoxNationality;
         private Label LabelNationality;
         private Label LabelDateOfBirth;
-        private TextBox TextBoxMaritalStatus;
         private Label LabelMaritalStatus;
         private TextBox TextBoxNationalRegisterNumber;
         private Label LabelNationalRegisterNumber;
@@ -493,5 +493,8 @@
         private Label LabelErrorMessage;
         private DateTimePicker DateTimePickerDateOfBirth;
         private DateTimePicker DateTimePickerRegistrationdate;
+        private ComboBox ComboBoxMartialStatus;
+        private ComboBox ComboBoxGender;
+        private ComboBox ComboBoxNationality;
     }
 }

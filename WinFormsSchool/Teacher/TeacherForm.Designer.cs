@@ -32,7 +32,6 @@
             TextBoxMiddeleName = new TextBox();
             TextBoxLastName = new TextBox();
             TextBoxStreetAndNumber = new TextBox();
-            TextBoxGender = new TextBox();
             TextBoxEmailAddress = new TextBox();
             TextBoxPhoneNumber = new TextBox();
             TextBoxZipCode = new TextBox();
@@ -44,12 +43,9 @@
             LabelEmailAddress = new Label();
             LabelPhoneNumber = new Label();
             LabelZipCode = new Label();
-            TextBoxSaleryCategorie = new TextBox();
             TextBoxSeniorityYears = new TextBox();
             TextBoxWorkSchedule = new TextBox();
             TextBoxWorkingHoursPerWeek = new TextBox();
-            TextBoxHighestDegree = new TextBox();
-            TextBoxStudyDirection = new TextBox();
             LabelSeniorityYears = new Label();
             LabelSaleryCategorie = new Label();
             LabelLeaveDate = new Label();
@@ -61,13 +57,17 @@
             LabelNationalRegisterNumber = new Label();
             TextBoxNationalRegisterNumber = new TextBox();
             LabelMaritalStatus = new Label();
-            TextBoxMaritalStatus = new TextBox();
             LabelDateOfBirth = new Label();
             LabelNationality = new Label();
-            TextBoxNationality = new TextBox();
             DateTimePickerHireDate = new DateTimePicker();
             DateTimePickerDateOfBirth = new DateTimePicker();
             DateTimePickerLeaveDate = new DateTimePicker();
+            ComboBoxNationality = new ComboBox();
+            ComboBoxMaritalStatus = new ComboBox();
+            ComboBoxGender = new ComboBox();
+            ComboBoxSaleryCategorie = new ComboBox();
+            ComboBoxStudyDirection = new ComboBox();
+            ComboBoxHighestDegree = new ComboBox();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -103,13 +103,6 @@
             TextBoxStreetAndNumber.Name = "TextBoxStreetAndNumber";
             TextBoxStreetAndNumber.Size = new Size(312, 27);
             TextBoxStreetAndNumber.TabIndex = 3;
-            // 
-            // TextBoxGender
-            // 
-            TextBoxGender.Location = new Point(220, 317);
-            TextBoxGender.Name = "TextBoxGender";
-            TextBoxGender.Size = new Size(312, 27);
-            TextBoxGender.TabIndex = 7;
             // 
             // TextBoxEmailAddress
             // 
@@ -204,13 +197,6 @@
             LabelZipCode.TabIndex = 12;
             LabelZipCode.Text = "ZipCode";
             // 
-            // TextBoxSaleryCategorie
-            // 
-            TextBoxSaleryCategorie.Location = new Point(779, 148);
-            TextBoxSaleryCategorie.Name = "TextBoxSaleryCategorie";
-            TextBoxSaleryCategorie.Size = new Size(242, 27);
-            TextBoxSaleryCategorie.TabIndex = 18;
-            // 
             // TextBoxSeniorityYears
             // 
             TextBoxSeniorityYears.Location = new Point(779, 181);
@@ -231,20 +217,6 @@
             TextBoxWorkingHoursPerWeek.Name = "TextBoxWorkingHoursPerWeek";
             TextBoxWorkingHoursPerWeek.Size = new Size(242, 27);
             TextBoxWorkingHoursPerWeek.TabIndex = 21;
-            // 
-            // TextBoxHighestDegree
-            // 
-            TextBoxHighestDegree.Location = new Point(779, 280);
-            TextBoxHighestDegree.Name = "TextBoxHighestDegree";
-            TextBoxHighestDegree.Size = new Size(242, 27);
-            TextBoxHighestDegree.TabIndex = 22;
-            // 
-            // TextBoxStudyDirection
-            // 
-            TextBoxStudyDirection.Location = new Point(779, 317);
-            TextBoxStudyDirection.Name = "TextBoxStudyDirection";
-            TextBoxStudyDirection.Size = new Size(242, 27);
-            TextBoxStudyDirection.TabIndex = 23;
             // 
             // LabelSeniorityYears
             // 
@@ -343,13 +315,6 @@
             LabelMaritalStatus.TabIndex = 34;
             LabelMaritalStatus.Text = "MaritalStatus";
             // 
-            // TextBoxMaritalStatus
-            // 
-            TextBoxMaritalStatus.Location = new Point(220, 385);
-            TextBoxMaritalStatus.Name = "TextBoxMaritalStatus";
-            TextBoxMaritalStatus.Size = new Size(314, 27);
-            TextBoxMaritalStatus.TabIndex = 35;
-            // 
             // LabelDateOfBirth
             // 
             LabelDateOfBirth.AutoSize = true;
@@ -367,13 +332,6 @@
             LabelNationality.Size = new Size(82, 20);
             LabelNationality.TabIndex = 38;
             LabelNationality.Text = "Nationality";
-            // 
-            // TextBoxNationality
-            // 
-            TextBoxNationality.Location = new Point(220, 465);
-            TextBoxNationality.Name = "TextBoxNationality";
-            TextBoxNationality.Size = new Size(314, 27);
-            TextBoxNationality.TabIndex = 39;
             // 
             // DateTimePickerHireDate
             // 
@@ -396,18 +354,70 @@
             DateTimePickerLeaveDate.Size = new Size(242, 27);
             DateTimePickerLeaveDate.TabIndex = 44;
             // 
+            // ComboBoxNationality
+            // 
+            ComboBoxNationality.FormattingEnabled = true;
+            ComboBoxNationality.Location = new Point(220, 465);
+            ComboBoxNationality.Name = "ComboBoxNationality";
+            ComboBoxNationality.Size = new Size(310, 28);
+            ComboBoxNationality.TabIndex = 45;
+            // 
+            // ComboBoxMaritalStatus
+            // 
+            ComboBoxMaritalStatus.FormattingEnabled = true;
+            ComboBoxMaritalStatus.Location = new Point(220, 388);
+            ComboBoxMaritalStatus.Name = "ComboBoxMaritalStatus";
+            ComboBoxMaritalStatus.Size = new Size(312, 28);
+            ComboBoxMaritalStatus.TabIndex = 46;
+            // 
+            // ComboBoxGender
+            // 
+            ComboBoxGender.FormattingEnabled = true;
+            ComboBoxGender.Location = new Point(220, 317);
+            ComboBoxGender.Name = "ComboBoxGender";
+            ComboBoxGender.Size = new Size(310, 28);
+            ComboBoxGender.TabIndex = 47;
+            // 
+            // ComboBoxSaleryCategorie
+            // 
+            ComboBoxSaleryCategorie.FormattingEnabled = true;
+            ComboBoxSaleryCategorie.Location = new Point(776, 148);
+            ComboBoxSaleryCategorie.Name = "ComboBoxSaleryCategorie";
+            ComboBoxSaleryCategorie.Size = new Size(245, 28);
+            ComboBoxSaleryCategorie.TabIndex = 48;
+            // 
+            // ComboBoxStudyDirection
+            // 
+            ComboBoxStudyDirection.FormattingEnabled = true;
+            ComboBoxStudyDirection.Location = new Point(778, 317);
+            ComboBoxStudyDirection.Name = "ComboBoxStudyDirection";
+            ComboBoxStudyDirection.Size = new Size(243, 28);
+            ComboBoxStudyDirection.TabIndex = 49;
+            // 
+            // ComboBoxHighestDegree
+            // 
+            ComboBoxHighestDegree.FormattingEnabled = true;
+            ComboBoxHighestDegree.Location = new Point(776, 280);
+            ComboBoxHighestDegree.Name = "ComboBoxHighestDegree";
+            ComboBoxHighestDegree.Size = new Size(245, 28);
+            ComboBoxHighestDegree.TabIndex = 50;
+            // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 551);
+            Controls.Add(ComboBoxHighestDegree);
+            Controls.Add(ComboBoxStudyDirection);
+            Controls.Add(ComboBoxSaleryCategorie);
+            Controls.Add(ComboBoxGender);
+            Controls.Add(ComboBoxMaritalStatus);
+            Controls.Add(ComboBoxNationality);
             Controls.Add(DateTimePickerLeaveDate);
             Controls.Add(DateTimePickerDateOfBirth);
             Controls.Add(DateTimePickerHireDate);
-            Controls.Add(TextBoxNationality);
             Controls.Add(LabelNationality);
             Controls.Add(LabelDateOfBirth);
-            Controls.Add(TextBoxMaritalStatus);
             Controls.Add(LabelMaritalStatus);
             Controls.Add(TextBoxNationalRegisterNumber);
             Controls.Add(LabelNationalRegisterNumber);
@@ -419,12 +429,9 @@
             Controls.Add(LabelSaleryCategorie);
             Controls.Add(LabelLeaveDate);
             Controls.Add(LabelHireDate);
-            Controls.Add(TextBoxStudyDirection);
-            Controls.Add(TextBoxHighestDegree);
             Controls.Add(TextBoxWorkingHoursPerWeek);
             Controls.Add(TextBoxWorkSchedule);
             Controls.Add(TextBoxSeniorityYears);
-            Controls.Add(TextBoxSaleryCategorie);
             Controls.Add(LabelGender);
             Controls.Add(LabelEmailAddress);
             Controls.Add(LabelPhoneNumber);
@@ -433,7 +440,6 @@
             Controls.Add(LabelLastName);
             Controls.Add(LabelMiddeleName);
             Controls.Add(LabelFirstname);
-            Controls.Add(TextBoxGender);
             Controls.Add(TextBoxEmailAddress);
             Controls.Add(TextBoxPhoneNumber);
             Controls.Add(TextBoxZipCode);
@@ -451,7 +457,6 @@
             Controls.SetChildIndex(TextBoxZipCode, 0);
             Controls.SetChildIndex(TextBoxPhoneNumber, 0);
             Controls.SetChildIndex(TextBoxEmailAddress, 0);
-            Controls.SetChildIndex(TextBoxGender, 0);
             Controls.SetChildIndex(LabelFirstname, 0);
             Controls.SetChildIndex(LabelMiddeleName, 0);
             Controls.SetChildIndex(LabelLastName, 0);
@@ -460,12 +465,9 @@
             Controls.SetChildIndex(LabelPhoneNumber, 0);
             Controls.SetChildIndex(LabelEmailAddress, 0);
             Controls.SetChildIndex(LabelGender, 0);
-            Controls.SetChildIndex(TextBoxSaleryCategorie, 0);
             Controls.SetChildIndex(TextBoxSeniorityYears, 0);
             Controls.SetChildIndex(TextBoxWorkSchedule, 0);
             Controls.SetChildIndex(TextBoxWorkingHoursPerWeek, 0);
-            Controls.SetChildIndex(TextBoxHighestDegree, 0);
-            Controls.SetChildIndex(TextBoxStudyDirection, 0);
             Controls.SetChildIndex(LabelHireDate, 0);
             Controls.SetChildIndex(LabelLeaveDate, 0);
             Controls.SetChildIndex(LabelSaleryCategorie, 0);
@@ -477,13 +479,17 @@
             Controls.SetChildIndex(LabelNationalRegisterNumber, 0);
             Controls.SetChildIndex(TextBoxNationalRegisterNumber, 0);
             Controls.SetChildIndex(LabelMaritalStatus, 0);
-            Controls.SetChildIndex(TextBoxMaritalStatus, 0);
             Controls.SetChildIndex(LabelDateOfBirth, 0);
             Controls.SetChildIndex(LabelNationality, 0);
-            Controls.SetChildIndex(TextBoxNationality, 0);
             Controls.SetChildIndex(DateTimePickerHireDate, 0);
             Controls.SetChildIndex(DateTimePickerDateOfBirth, 0);
             Controls.SetChildIndex(DateTimePickerLeaveDate, 0);
+            Controls.SetChildIndex(ComboBoxNationality, 0);
+            Controls.SetChildIndex(ComboBoxMaritalStatus, 0);
+            Controls.SetChildIndex(ComboBoxGender, 0);
+            Controls.SetChildIndex(ComboBoxSaleryCategorie, 0);
+            Controls.SetChildIndex(ComboBoxStudyDirection, 0);
+            Controls.SetChildIndex(ComboBoxHighestDegree, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -494,7 +500,6 @@
         private TextBox TextBoxMiddeleName;
         private TextBox TextBoxLastName;
         private TextBox TextBoxStreetAndNumber;
-        private TextBox TextBoxGender;
         private TextBox TextBoxEmailAddress;
         private TextBox TextBoxPhoneNumber;
         private TextBox TextBoxZipCode;
@@ -506,12 +511,9 @@
         private Label LabelEmailAddress;
         private Label LabelPhoneNumber;
         private Label LabelZipCode;
-        private TextBox TextBoxSaleryCategorie;
         private TextBox TextBoxSeniorityYears;
         private TextBox TextBoxWorkSchedule;
         private TextBox TextBoxWorkingHoursPerWeek;
-        private TextBox TextBoxHighestDegree;
-        private TextBox TextBoxStudyDirection;
         private Label LabelSeniorityYears;
         private Label LabelSaleryCategorie;
         private Label LabelLeaveDate;
@@ -523,12 +525,16 @@
         private Label LabelNationalRegisterNumber;
         private TextBox TextBoxNationalRegisterNumber;
         private Label LabelMaritalStatus;
-        private TextBox TextBoxMaritalStatus;
         private Label LabelDateOfBirth;
         private Label LabelNationality;
-        private TextBox TextBoxNationality;
         private DateTimePicker DateTimePickerHireDate;
         private DateTimePicker DateTimePickerDateOfBirth;
         private DateTimePicker DateTimePickerLeaveDate;
+        private ComboBox ComboBoxNationality;
+        private ComboBox ComboBoxMaritalStatus;
+        private ComboBox ComboBoxGender;
+        private ComboBox ComboBoxSaleryCategorie;
+        private ComboBox ComboBoxStudyDirection;
+        private ComboBox ComboBoxHighestDegree;
     }
 }

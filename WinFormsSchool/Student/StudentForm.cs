@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.BLLClasses;
+using AppCode.BLL.Enums;
 using WinFormsSchool.GeneralForms;
 
 
@@ -41,6 +42,11 @@ namespace WinFormsSchool
             ButtonCancel.ForeColor = Color.White;
             ButtonCancel.Height = 35;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
+
+            ComboBoxMartialStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
+            ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
+            ComboBoxNationality.DataSource = Enum.GetValues(typeof(Nationality));
+
 
             switch (_detailFormType)
             {
@@ -93,6 +99,10 @@ namespace WinFormsSchool
                 {
                     dateTimePicker.Enabled = !readOnly;
                 }
+                if (control is ComboBox combobox)
+                {
+                    combobox.Enabled = !readOnly;
+                }
             }
         }
 
@@ -122,11 +132,11 @@ namespace WinFormsSchool
                     TextBoxZipCode.Text = selectedStudent.ZipCode;
                     TextBoxPhoneNumber.Text = selectedStudent.PhoneNumber;
                     TextBoxEmailAddress.Text = selectedStudent.EmailAddress;
-                    TextBoxGender.Text = Convert.ToString(selectedStudent.Gender);
                     DateTimePickerDateOfBirth.Value = selectedStudent.DateOfBirth;
-                    TextBoxMaritalStatus.Text = Convert.ToString(selectedStudent.MaritalStatus);
                     TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedStudent.NationalRegisterNumber);
-                    TextBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
+                    ComboBoxMartialStatus.Text = Convert.ToString(selectedStudent.MaritalStatus);
+                    ComboBoxGender.Text = Convert.ToString(selectedStudent.Gender);
+                    ComboBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
                     DateTimePickerRegistrationdate.Value = selectedStudent.RegistrationDate;
 
                     if (selectedStudent.EnrolledCourse != null)

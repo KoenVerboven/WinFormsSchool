@@ -1,4 +1,6 @@
 ﻿using AppCode.BLL.BLLClasses;
+using AppCode.BLL.Enums;
+using AppCode.BLL.Models;
 using WinFormsSchool.GeneralForms;
 
 
@@ -15,7 +17,6 @@ namespace WinFormsSchool
             Teacher = new TeacherBLL();
         }
 
-
         private void InitializeControls()
         {
             SetAllTextboxesOnFormReadOnly(true);
@@ -23,6 +24,13 @@ namespace WinFormsSchool
             Width = 1100;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             LabelPageTitle.Text = "Student Detail";
+            
+            ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
+            ComboBoxMaritalStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
+            ComboBoxNationality.DataSource = Enum.GetValues(typeof(Nationality));
+            ComboBoxSaleryCategorie.DataSource = Enum.GetValues(typeof(SaleryCategorie));
+            ComboBoxHighestDegree.DataSource = Enum.GetValues(typeof(HighestDegree));
+            ComboBoxStudyDirection.DataSource = Enum.GetValues(typeof(StudyDirection));
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -31,11 +39,17 @@ namespace WinFormsSchool
             {
                 if (control is TextBox textEdit)
                 {
-                    textEdit.ReadOnly = true;
+                    textEdit.ReadOnly = readOnly;
                 }
+
                 if (control is DateTimePicker dateTimePicker)
                 {
                     dateTimePicker.Enabled = !readOnly;
+                }
+
+                if (control is ComboBox comboBox)
+                {
+                    comboBox.Enabled = !readOnly;
                 }
             }
         }
@@ -52,7 +66,6 @@ namespace WinFormsSchool
             }
         }
 
-
         public void LoadSelectedTeacher(int selectedTeacherId)
         {
             try
@@ -65,19 +78,20 @@ namespace WinFormsSchool
                 TextBoxZipCode.Text = selectedTeacher.ZipCode;
                 TextBoxPhoneNumber.Text = selectedTeacher.PhoneNumber;
                 TextBoxEmailAddress.Text = selectedTeacher.EmailAddress;
-                TextBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
                 DateTimePickerDateOfBirth.Value = selectedTeacher.DateOfBirth;
-                TextBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
                 TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
-                TextBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
                 DateTimePickerHireDate.Value = selectedTeacher.HireDate;
                 DateTimePickerLeaveDate.Value = ((selectedTeacher.LeaveDate) ?? new DateTime(1900, 1, 1)); // null-coalescing operator
-                TextBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
                 TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
                 TextBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
                 TextBoxWorkingHoursPerWeek.Text = Convert.ToString(selectedTeacher.WorkingHoursPerWeek);
-                TextBoxHighestDegree.Text = Convert.ToString(selectedTeacher.HighestDegree);
-                TextBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);
+                ComboBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
+                ComboBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
+                ComboBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
+                ComboBoxSaleryCategorie.Text = Convert.ToString(selectedTeacher.SaleryCategorie);
+                ComboBoxHighestDegree.Text = Convert.ToString(selectedTeacher.HighestDegree);
+                ComboBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);//ToDo studydirection correct? teacher can have more than one studydirection
+
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -97,6 +111,5 @@ namespace WinFormsSchool
                 customErrorForm.ShowDialog();
             }
         }
-  
     }
 }
