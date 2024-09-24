@@ -1,5 +1,6 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Enums;
+using System.Text.RegularExpressions;
 using WinFormsSchool.GeneralForms;
 
 
@@ -22,15 +23,20 @@ namespace WinFormsSchool
         {
             //WindowState = FormWindowState.Maximized;   
             LabelErrorMessage.Visible = false;
+
             DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             DataGridViewCourses.Visible = false;
+            DataGridViewCourses.ReadOnly = true;
+
             PanelYellow.BackColor = Color.Yellow;
             PanelYellow.BorderStyle = BorderStyle.FixedSingle;
+
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
-            DataGridViewCourses.ReadOnly = true;
+           
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
+
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
 
@@ -38,6 +44,7 @@ namespace WinFormsSchool
             ButtonSave.ForeColor = Color.White;
             ButtonSave.Height = 35;
             ButtonSave.FlatStyle = FlatStyle.Flat;
+
             ButtonCancel.BackColor = Color.FromArgb(160, 150, 55);
             ButtonCancel.ForeColor = Color.White;
             ButtonCancel.Height = 35;
@@ -46,7 +53,6 @@ namespace WinFormsSchool
             ComboBoxMartialStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
             ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
             ComboBoxNationality.DataSource = Enum.GetValues(typeof(Nationality));
-
 
             switch (_detailFormType)
             {
@@ -62,8 +68,6 @@ namespace WinFormsSchool
                     PanelYellow.Visible = false;
                     LabelYellow.Visible = false;
                     //TODO:UpdateForm
-                    //replace some textboxes to dropdowns.......
-                    //mark required fields
                     //input validation
                     break;
                 case DetailFormType.InsertForm:
@@ -75,8 +79,6 @@ namespace WinFormsSchool
                     LabelYellow.Visible = false;
                     MarkRequiredFields();
                     //TODO:InsertForm
-                    //replace some textboxes to dropdowns.......
-                    //mark required fields
                     //input validation
                     break;
                 default:
@@ -95,10 +97,12 @@ namespace WinFormsSchool
                 {
                     textEdit.ReadOnly = readOnly;
                 }
+
                 if (control is DateTimePicker dateTimePicker)
                 {
                     dateTimePicker.Enabled = !readOnly;
                 }
+
                 if (control is ComboBox combobox)
                 {
                     combobox.Enabled = !readOnly;
@@ -123,6 +127,7 @@ namespace WinFormsSchool
             try
             {
                 var selectedStudent = Student.GetStudentById(selectedStudentId);
+
                 if (selectedStudent != null)
                 {
                     TextBoxFirstname.Text = selectedStudent.Firstname;
@@ -245,34 +250,55 @@ namespace WinFormsSchool
         private bool InputValidation()
         {
             LabelErrorMessage.ForeColor = Color.Red;
+
             if (TextBoxFirstname.Text.Trim() == string.Empty)
             {
                 LabelErrorMessage.Text = "first name is a required field";
                 LabelErrorMessage.Visible = true;
                 return false;
             }
+
             if (TextBoxLastName.Text.Trim() == string.Empty)
             {
                 LabelErrorMessage.Text = "last name is a required field";
                 LabelErrorMessage.Visible = true;
                 return false;
             }
+
             if (TextBoxZipCode.Text.Trim() == string.Empty)
             {
                 LabelErrorMessage.Text = "zipcode is a required field";
                 LabelErrorMessage.Visible = true;
                 return false;
             }
-           
-            //ToDO: check emailaddress
 
-
+            if(TextBoxEmailAddress.Text.Trim() != string.Empty)
+            {
+                if(! EmailIsValid(TextBoxEmailAddress.Text.Trim()))
+                {
+                    LabelErrorMessage.Text = "Email is not valid";
+                    LabelErrorMessage.Visible = true;
+                    return false;
+                }
+            }
+            //ToDo: check if mobile phonenr is valid
             return true;
+        }
+
+        public static bool EmailIsValid(string emailAddress)
+        {
+            var pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            var regex = new Regex(pattern);
+            return regex.IsMatch(emailAddress);
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            var ok = InputValidation();
+            if (InputValidation())
+            {
+                LabelErrorMessage.Visible = false;
+                MessageBox.Show("InputValidation is ok", "validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             //ToDo : insert of update student code
         }
    
