@@ -1,11 +1,20 @@
 ﻿
-using AppCode.BLL.Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-
 namespace WinFormsSchool
 {
     public partial class MainForm : Form
     {
+        // ToDo  Login form melding this is a DEMO program
+        // ToDo  check student age min 7 year old (dateofbirth)
+        // ToDo  student is loged in : page with student courses + examendates
+        // ToDo  write error log to file
+        // ToDo  try a popular error log prog, such as Log4Net
+        // ToDo  text font in all pages the same : global constant?
+        // ToDo  on each form : SetAllTextboxesOnFormReadOnly -> this can better ; don't repeat your self
+        // ToDo  Make a DAL layer to connect to sql server
+        // ToDo  Correct the tab-order for the controls on each form
+        // ToDo User and group security/rights
+
+
         public MainForm()
         {
             InitializeComponent();
