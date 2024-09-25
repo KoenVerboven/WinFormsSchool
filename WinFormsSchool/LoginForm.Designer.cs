@@ -34,6 +34,12 @@
             TextBoxUserName = new TextBox();
             TextBoxPassWord = new TextBox();
             labelMessage = new Label();
+            splitContainer1 = new SplitContainer();
+            LabelNumberOfAttemps = new Label();
+            ButtonPasswordSwitchReadable = new Button();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -44,7 +50,7 @@
             // 
             // ButtonLogin
             // 
-            ButtonLogin.Location = new Point(481, 269);
+            ButtonLogin.Location = new Point(282, 246);
             ButtonLogin.Name = "ButtonLogin";
             ButtonLogin.Size = new Size(123, 29);
             ButtonLogin.TabIndex = 0;
@@ -55,7 +61,7 @@
             // labelUserName
             // 
             labelUserName.AutoSize = true;
-            labelUserName.Location = new Point(271, 95);
+            labelUserName.Location = new Point(72, 60);
             labelUserName.Name = "labelUserName";
             labelUserName.Size = new Size(85, 20);
             labelUserName.TabIndex = 43;
@@ -64,7 +70,7 @@
             // labelPassWord
             // 
             labelPassWord.AutoSize = true;
-            labelPassWord.Location = new Point(278, 146);
+            labelPassWord.Location = new Point(79, 111);
             labelPassWord.Name = "labelPassWord";
             labelPassWord.Size = new Size(79, 20);
             labelPassWord.TabIndex = 44;
@@ -72,14 +78,14 @@
             // 
             // TextBoxUserName
             // 
-            TextBoxUserName.Location = new Point(377, 96);
+            TextBoxUserName.Location = new Point(178, 61);
             TextBoxUserName.Name = "TextBoxUserName";
             TextBoxUserName.Size = new Size(240, 27);
             TextBoxUserName.TabIndex = 45;
             // 
             // TextBoxPassWord
             // 
-            TextBoxPassWord.Location = new Point(378, 146);
+            TextBoxPassWord.Location = new Point(179, 111);
             TextBoxPassWord.Name = "TextBoxPassWord";
             TextBoxPassWord.Size = new Size(239, 27);
             TextBoxPassWord.TabIndex = 46;
@@ -87,33 +93,66 @@
             // labelMessage
             // 
             labelMessage.AutoSize = true;
-            labelMessage.Location = new Point(276, 207);
+            labelMessage.Location = new Point(79, 172);
             labelMessage.Name = "labelMessage";
             labelMessage.Size = new Size(100, 20);
             labelMessage.TabIndex = 47;
             labelMessage.Text = "labelMessage";
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(LabelNumberOfAttemps);
+            splitContainer1.Panel2.Controls.Add(ButtonPasswordSwitchReadable);
+            splitContainer1.Panel2.Controls.Add(labelUserName);
+            splitContainer1.Panel2.Controls.Add(labelMessage);
+            splitContainer1.Panel2.Controls.Add(ButtonLogin);
+            splitContainer1.Panel2.Controls.Add(TextBoxPassWord);
+            splitContainer1.Panel2.Controls.Add(labelPassWord);
+            splitContainer1.Panel2.Controls.Add(TextBoxUserName);
+            splitContainer1.Size = new Size(781, 397);
+            splitContainer1.SplitterDistance = 260;
+            splitContainer1.TabIndex = 48;
+            // 
+            // LabelNumberOfAttemps
+            // 
+            LabelNumberOfAttemps.AutoSize = true;
+            LabelNumberOfAttemps.Location = new Point(79, 192);
+            LabelNumberOfAttemps.Name = "LabelNumberOfAttemps";
+            LabelNumberOfAttemps.Size = new Size(50, 20);
+            LabelNumberOfAttemps.TabIndex = 49;
+            LabelNumberOfAttemps.Text = "label1";
+            // 
+            // ButtonPasswordSwitchReadable
+            // 
+            ButtonPasswordSwitchReadable.Location = new Point(438, 111);
+            ButtonPasswordSwitchReadable.Name = "ButtonPasswordSwitchReadable";
+            ButtonPasswordSwitchReadable.Size = new Size(33, 27);
+            ButtonPasswordSwitchReadable.TabIndex = 48;
+            ButtonPasswordSwitchReadable.Text = "button1";
+            ButtonPasswordSwitchReadable.UseVisualStyleBackColor = true;
+            ButtonPasswordSwitchReadable.Click += ButtonPasswordSwitchReadable_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(706, 326);
-            Controls.Add(labelMessage);
-            Controls.Add(TextBoxPassWord);
-            Controls.Add(TextBoxUserName);
-            Controls.Add(labelPassWord);
-            Controls.Add(labelUserName);
-            Controls.Add(ButtonLogin);
+            ClientSize = new Size(781, 397);
+            Controls.Add(splitContainer1);
             Name = "LoginForm";
             Text = "LoginForm";
             Load += LoginForm_Load;
-            Controls.SetChildIndex(ButtonLogin, 0);
             Controls.SetChildIndex(LabelPageTitle, 0);
-            Controls.SetChildIndex(labelUserName, 0);
-            Controls.SetChildIndex(labelPassWord, 0);
-            Controls.SetChildIndex(TextBoxUserName, 0);
-            Controls.SetChildIndex(TextBoxPassWord, 0);
-            Controls.SetChildIndex(labelMessage, 0);
+            Controls.SetChildIndex(splitContainer1, 0);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,5 +165,8 @@
         private TextBox TextBoxUserName;
         private TextBox TextBoxPassWord;
         private Label labelMessage;
+        private SplitContainer splitContainer1;
+        private Button ButtonPasswordSwitchReadable;
+        private Label LabelNumberOfAttemps;
     }
 }
