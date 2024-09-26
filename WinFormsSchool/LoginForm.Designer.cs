@@ -35,8 +35,8 @@
             TextBoxPassWord = new TextBox();
             labelMessage = new Label();
             splitContainer1 = new SplitContainer();
+            CheckBoxShowPassWord = new CheckBox();
             LabelNumberOfAttemps = new Label();
-            ButtonPasswordSwitchReadable = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             // ButtonLogin
             // 
-            ButtonLogin.Location = new Point(282, 246);
+            ButtonLogin.Location = new Point(283, 255);
             ButtonLogin.Name = "ButtonLogin";
             ButtonLogin.Size = new Size(123, 29);
             ButtonLogin.TabIndex = 0;
@@ -93,7 +93,7 @@
             // labelMessage
             // 
             labelMessage.AutoSize = true;
-            labelMessage.Location = new Point(79, 172);
+            labelMessage.Location = new Point(79, 210);
             labelMessage.Name = "labelMessage";
             labelMessage.Size = new Size(100, 20);
             labelMessage.TabIndex = 47;
@@ -107,8 +107,8 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(CheckBoxShowPassWord);
             splitContainer1.Panel2.Controls.Add(LabelNumberOfAttemps);
-            splitContainer1.Panel2.Controls.Add(ButtonPasswordSwitchReadable);
             splitContainer1.Panel2.Controls.Add(labelUserName);
             splitContainer1.Panel2.Controls.Add(labelMessage);
             splitContainer1.Panel2.Controls.Add(ButtonLogin);
@@ -119,24 +119,26 @@
             splitContainer1.SplitterDistance = 260;
             splitContainer1.TabIndex = 48;
             // 
+            // CheckBoxShowPassWord
+            // 
+            CheckBoxShowPassWord.AutoSize = true;
+            CheckBoxShowPassWord.ForeColor = Color.Cornsilk;
+            CheckBoxShowPassWord.Location = new Point(180, 154);
+            CheckBoxShowPassWord.Name = "CheckBoxShowPassWord";
+            CheckBoxShowPassWord.Size = new Size(134, 24);
+            CheckBoxShowPassWord.TabIndex = 50;
+            CheckBoxShowPassWord.Text = "Show password";
+            CheckBoxShowPassWord.UseVisualStyleBackColor = true;
+            CheckBoxShowPassWord.CheckedChanged += CheckBoxShowPassWord_CheckedChanged;
+            // 
             // LabelNumberOfAttemps
             // 
             LabelNumberOfAttemps.AutoSize = true;
-            LabelNumberOfAttemps.Location = new Point(79, 192);
+            LabelNumberOfAttemps.Location = new Point(79, 230);
             LabelNumberOfAttemps.Name = "LabelNumberOfAttemps";
             LabelNumberOfAttemps.Size = new Size(50, 20);
             LabelNumberOfAttemps.TabIndex = 49;
             LabelNumberOfAttemps.Text = "label1";
-            // 
-            // ButtonPasswordSwitchReadable
-            // 
-            ButtonPasswordSwitchReadable.Location = new Point(438, 111);
-            ButtonPasswordSwitchReadable.Name = "ButtonPasswordSwitchReadable";
-            ButtonPasswordSwitchReadable.Size = new Size(33, 27);
-            ButtonPasswordSwitchReadable.TabIndex = 48;
-            ButtonPasswordSwitchReadable.Text = "ButtonLogin";
-            ButtonPasswordSwitchReadable.UseVisualStyleBackColor = true;
-            ButtonPasswordSwitchReadable.Click += ButtonPasswordSwitchReadable_Click;
             // 
             // LoginForm
             // 
@@ -166,7 +168,7 @@
         private TextBox TextBoxPassWord;
         private Label labelMessage;
         private SplitContainer splitContainer1;
-        private Button ButtonPasswordSwitchReadable;
         private Label LabelNumberOfAttemps;
+        private CheckBox CheckBoxShowPassWord;
     }
 }

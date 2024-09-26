@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
-            myPersonalDataToolStripMenuItem = new ToolStripMenuItem();
+            MyPersonalDataToolStripMenuItem = new ToolStripMenuItem();
             StudentsToolStripMenuItem = new ToolStripMenuItem();
             TeachersToolStripMenuItem = new ToolStripMenuItem();
             SchoolShopToolStripMenuItem = new ToolStripMenuItem();
@@ -49,7 +49,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { myPersonalDataToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem, windowsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem, windowsToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 5, 0, 5);
@@ -57,15 +57,15 @@
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "MenuStripSideBar";
             // 
-            // myPersonalDataToolStripMenuItem
+            // MyPersonalDataToolStripMenuItem
             // 
-            myPersonalDataToolStripMenuItem.Image = Properties.Resources.Person1;
-            myPersonalDataToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
-            myPersonalDataToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            myPersonalDataToolStripMenuItem.Name = "myPersonalDataToolStripMenuItem";
-            myPersonalDataToolStripMenuItem.Size = new Size(163, 54);
-            myPersonalDataToolStripMenuItem.Text = "Personal Data";
-            myPersonalDataToolStripMenuItem.Click += myPersonalDataToolStripMenuItem_Click;
+            MyPersonalDataToolStripMenuItem.Image = Properties.Resources.Person1;
+            MyPersonalDataToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            MyPersonalDataToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            MyPersonalDataToolStripMenuItem.Name = "MyPersonalDataToolStripMenuItem";
+            MyPersonalDataToolStripMenuItem.Size = new Size(163, 54);
+            MyPersonalDataToolStripMenuItem.Text = "Personal Data";
+            MyPersonalDataToolStripMenuItem.Click += MyPersonalDataToolStripMenuItem_Click;
             // 
             // StudentsToolStripMenuItem
             // 
@@ -204,6 +204,6 @@
         private ToolStripMenuItem SchoolShopToolStripMenuItem;
         private ToolStripMenuItem CloseToolStripMenuItem;
         private ToolStripMenuItem InfoToolStripMenuItem;
-        private ToolStripMenuItem myPersonalDataToolStripMenuItem;
+        private ToolStripMenuItem MyPersonalDataToolStripMenuItem;
     }
 }

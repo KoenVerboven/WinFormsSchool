@@ -1,6 +1,4 @@
 ﻿
-using WinFormsSchool.Base;
-
 namespace WinFormsSchool
 {
     public partial class InfoForm : Base.BaseForm1
@@ -16,12 +14,12 @@ namespace WinFormsSchool
             textBoxInfo.IsAccessible  = false;
             textBoxInfo.ReadOnly = true;
             textBoxInfo.Text += Environment.NewLine;
-            textBoxInfo.Text = "This program is NOT meant as a fully functional program that can be used for schooladministration." + Environment.NewLine;
-            textBoxInfo.Text += "It is meant for education reason only." + Environment.NewLine + Environment.NewLine;
             textBoxInfo.Text += "C# FOR BEGINNERS!" + Environment.NewLine + Environment.NewLine;
-            textBoxInfo.Text += "Advantages from this program : you need no database or a webserver" + Environment.NewLine;
-            textBoxInfo.Text += "We concentrate us only on C# and winforms" + Environment.NewLine;
-            textBoxInfo.Text += "Database connection can added later on." + Environment.NewLine + Environment.NewLine;
+            textBoxInfo.Text += "Advantages from this program : you do not need a database or a webserver" + Environment.NewLine;
+            textBoxInfo.Text += "to show the functionality." + Environment.NewLine +Environment.NewLine;
+            textBoxInfo.Text += "The goal is to build a fully functioning application that has SQL Server as its database." + Environment.NewLine + Environment.NewLine;
+            textBoxInfo.Text += "We concentrate us only on C# and winforms" + Environment.NewLine + Environment.NewLine;
+            textBoxInfo.Text += "Database connection and the DAL-layer can added later on." + Environment.NewLine + Environment.NewLine;
             textBoxInfo.Text += "It is for a beginner programmer who want to learn following things:" + Environment.NewLine;
             textBoxInfo.Text += "-> C#" + Environment.NewLine;
             textBoxInfo.Text += "-> Object Oriënted programming : classes, interfaces, inheritance"+ Environment.NewLine;
@@ -35,6 +33,7 @@ namespace WinFormsSchool
             textBoxInfo.BackColor = Color.FromArgb(66, 66, 66);
             textBoxInfo.Font = new Font("Helvetica", 10);
             textBoxInfo.BorderStyle = BorderStyle.None;
+
             LabelPageTitle.Text = "Info";
         }
     }

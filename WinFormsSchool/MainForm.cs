@@ -5,7 +5,6 @@ namespace WinFormsSchool
 {
     public partial class MainForm : Form
     {
-        // ToDo  Login form melding this is a DEMO program
         // ToDo  check student age min 7 year old (dateofbirth)
         // ToDo  student is loged in : page with student courses + examendates
         // ToDo  write error log to file
@@ -15,6 +14,8 @@ namespace WinFormsSchool
         // ToDo  Make a DAL layer to connect to sql server
         // ToDo  Correct the tab-order for the controls on each form
         // ToDo User and group security/rights
+        // ToDo check the DIRTY state by closing a form
+        // ToDo Settings form Only the admin user can access these form; settings such as database connection settings ....
 
         User _validUser;
 
@@ -48,7 +49,7 @@ namespace WinFormsSchool
         {
             if (validUser.SecurityGroupId == 0)
             {
-                myPersonalDataToolStripMenuItem.Visible = false;
+                MyPersonalDataToolStripMenuItem.Visible = false;
                 StudentsToolStripMenuItem.Visible = true;
                 SchoolShopToolStripMenuItem.Visible = true;
                 TeachersToolStripMenuItem.Visible = true;
@@ -56,11 +57,10 @@ namespace WinFormsSchool
 
             if (validUser.SecurityGroupId == 1)
             {
-                myPersonalDataToolStripMenuItem.Visible = true;
+                MyPersonalDataToolStripMenuItem.Visible = true;
                 StudentsToolStripMenuItem.Visible = false;
                 SchoolShopToolStripMenuItem.Visible = false;
                 TeachersToolStripMenuItem.Visible = false;
-                //ToDo : user may only see his data
             }
 
         }
@@ -133,7 +133,7 @@ namespace WinFormsSchool
             infoForm.Show();
         }
 
-        private void myPersonalDataToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MyPersonalDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StudentForm studentForm = new(DetailFormType.ShowDetailForm)
             {

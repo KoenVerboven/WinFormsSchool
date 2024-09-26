@@ -71,6 +71,7 @@ namespace WinFormsSchool
             try
             {
                 var selectedTeacher = Teacher.GetTeacherById(selectedTeacherId);
+                
                 TextBoxFirstname.Text = selectedTeacher.Firstname;
                 TextBoxMiddeleName.Text = selectedTeacher.MiddleName;
                 TextBoxLastName.Text = selectedTeacher.LastName;
@@ -78,13 +79,16 @@ namespace WinFormsSchool
                 TextBoxZipCode.Text = selectedTeacher.ZipCode;
                 TextBoxPhoneNumber.Text = selectedTeacher.PhoneNumber;
                 TextBoxEmailAddress.Text = selectedTeacher.EmailAddress;
-                DateTimePickerDateOfBirth.Value = selectedTeacher.DateOfBirth;
                 TextBoxNationalRegisterNumber.Text = Convert.ToString(selectedTeacher.NationalRegisterNumber);
+
+                DateTimePickerDateOfBirth.Value = selectedTeacher.DateOfBirth;
                 DateTimePickerHireDate.Value = selectedTeacher.HireDate;
                 DateTimePickerLeaveDate.Value = ((selectedTeacher.LeaveDate) ?? new DateTime(1900, 1, 1)); // null-coalescing operator
+               
                 TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
                 TextBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
                 TextBoxWorkingHoursPerWeek.Text = Convert.ToString(selectedTeacher.WorkingHoursPerWeek);
+                
                 ComboBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
                 ComboBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
                 ComboBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);

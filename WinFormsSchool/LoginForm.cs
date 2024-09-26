@@ -43,25 +43,32 @@ namespace WinFormsSchool
             LabelPageTitle.Text = string.Empty;
             Width = 850;
             Height = 400;
+
             labelUserName.ForeColor = Color.White;
             labelPassWord.ForeColor = Color.White;
             labelMessage.Text = string.Empty;
             labelMessage.ForeColor = Color.Red;
-            splitContainer1.Panel1.BackColor = Color.FromArgb(55, 55, 110);
-            ButtonPasswordSwitchReadable.Text = string.Empty;
             LabelNumberOfAttemps.Text = string.Empty;
-            LabelNumberOfAttemps.ForeColor = Color.FromArgb(240,10,10);
-            TextBoxPassWord.PasswordChar = '\u25CF'; //ToDo make password readable with button swich
+            LabelNumberOfAttemps.ForeColor = Color.FromArgb(240, 10, 10);
+
+            splitContainer1.Panel1.BackColor = Color.FromArgb(55, 55, 110);
+
+            TextBoxPassWord.PasswordChar = '\u25CF';
             TextBoxUserName.Text = "admin"; //ToDo Comment this in live version
+
+            ButtonLogin.BackColor = Color.FromArgb(30, 150, 150);
+            ButtonLogin.ForeColor = Color.White;
+            ButtonLogin.Height = 35;
+            ButtonLogin.FlatStyle = FlatStyle.Flat;
         }
 
         private User? ValidUser()
         {
-            
-            UserBLL user = new UserBLL(); ;
-            var userFound = user.GetUserByUserNameAndPassword(TextBoxUserName.Text.Trim(),TextBoxPassWord.Text.Trim());
-           
-            if(userFound is not null)
+
+            UserBLL user = new(); 
+            var userFound = user.GetUserByUserNameAndPassword(TextBoxUserName.Text.Trim(), TextBoxPassWord.Text.Trim());
+
+            if (userFound is not null)
             {
                 return userFound;
             }
@@ -73,11 +80,11 @@ namespace WinFormsSchool
             }
         }
 
-        private void ButtonPasswordSwitchReadable_Click(object sender, EventArgs e)
+        private void CheckBoxShowPassWord_CheckedChanged(object sender, EventArgs e)
         {
-            if(TextBoxPassWord.PasswordChar == '\u25CF')
+            if (CheckBoxShowPassWord.Checked)
             {
-                TextBoxPassWord.PasswordChar = '\0'; 
+                TextBoxPassWord.PasswordChar = '\0';
             }
             else
             {

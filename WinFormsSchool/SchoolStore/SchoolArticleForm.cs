@@ -23,15 +23,23 @@ namespace WinFormsSchool
             LabelMessage.Text = string.Empty;
             LabelMessage.Font = new Font(Font, FontStyle.Italic);
             LabelMessage.ForeColor = Color.Red;
+
             PictureBoxArticle.BackColor = Color.LightGray;
+
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
+
             SetAllTextboxesOnFormReadOnly(true);
+
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
+
             LabelPageTitle.Text = "Article Detail";
+
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+           
             CheckBoxFragile.AutoCheck = false;
+
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
