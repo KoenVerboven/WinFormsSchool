@@ -17,13 +17,13 @@ namespace WinFormsSchool
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonLogin_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new();
 
             if (CheckLogin())
             {
-                mainForm.setUser(TextBoxUserName.Text.Trim());
+                mainForm.SetUser(TextBoxUserName.Text.Trim());
                 mainForm.ShowDialog();
                 Close();
             }
@@ -60,6 +60,7 @@ namespace WinFormsSchool
 
         private bool CheckLogin()
         {
+            //ToDo : replace hardcoded users
             if (
                 (
                   TextBoxUserName.Text.Trim() == "admin"

@@ -36,17 +36,30 @@ namespace WinFormsSchool
             menuStrip1.Font = new Font("Helvetica", 15);
         }
 
-        public void setUser(string userId)
+        public void SetUser(string userId)
         {
             _userId = userId;
+            SetUserSecurity(userId);
         }
 
-        private void closeProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        public void SetUserSecurity(string userId)//replace hardcoded users with user form User-Class and Security-Class
         {
-            Close();
+            if (userId == "koen") //koen is member of student security group
+            {
+                SchoolShopToolStripMenuItem.Visible = false;
+                TeachersToolStripMenuItem.Visible = false;
+                //ToDo : see only te data from koen ! not from other students
+            }
+
+            if (userId == "admin") // admin security group
+            {
+                StudentsToolStripMenuItem.Visible = true;
+                SchoolShopToolStripMenuItem.Visible = true;
+                TeachersToolStripMenuItem.Visible = true;
+            }
         }
 
-        private void closeAllFormsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseAllFormsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (var form in this.MdiChildren)
             {
@@ -59,7 +72,7 @@ namespace WinFormsSchool
             }
         }
 
-        private void studentsToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void StudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StudentSearchForm studentForm = new()
             {
@@ -68,7 +81,7 @@ namespace WinFormsSchool
             studentForm.Show();
         }
 
-        private void teachersToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void TeachersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TeacherSearchForm teachersForm = new()
             {
@@ -77,7 +90,7 @@ namespace WinFormsSchool
             teachersForm.Show();
         }
 
-        private void schoolShopToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SchoolShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SchoolArticleSearchForm articleSearchForm = new()
             {
@@ -86,7 +99,7 @@ namespace WinFormsSchool
             articleSearchForm.Show();
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Are you sure clossing the program?", "closing program",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -96,7 +109,7 @@ namespace WinFormsSchool
             }
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm aboutForm = new()
             {
@@ -105,7 +118,7 @@ namespace WinFormsSchool
             aboutForm.Show();
         }
 
-        private void infoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InfoForm infoForm = new InfoForm
             {

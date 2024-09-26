@@ -56,7 +56,7 @@
             ButtonLogin.TabIndex = 0;
             ButtonLogin.Text = "LogIn";
             ButtonLogin.UseVisualStyleBackColor = true;
-            ButtonLogin.Click += button1_Click;
+            ButtonLogin.Click += ButtonLogin_Click;
             // 
             // labelUserName
             // 
@@ -134,7 +134,7 @@
             ButtonPasswordSwitchReadable.Name = "ButtonPasswordSwitchReadable";
             ButtonPasswordSwitchReadable.Size = new Size(33, 27);
             ButtonPasswordSwitchReadable.TabIndex = 48;
-            ButtonPasswordSwitchReadable.Text = "button1";
+            ButtonPasswordSwitchReadable.Text = "ButtonLogin";
             ButtonPasswordSwitchReadable.UseVisualStyleBackColor = true;
             ButtonPasswordSwitchReadable.Click += ButtonPasswordSwitchReadable_Click;
             // 

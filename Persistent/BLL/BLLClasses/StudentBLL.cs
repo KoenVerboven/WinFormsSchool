@@ -25,6 +25,10 @@ namespace AppCode.BLL.BLLClasses
 
         public Student? GetStudentById(int StudentId)
         {
+            if (students == null)
+            {
+                return null;
+            }
             return students.Single(p => p.PersonId == StudentId);
         }
 

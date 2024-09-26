@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
-            studentsToolStripMenuItem1 = new ToolStripMenuItem();
-            teachersToolStripMenuItem1 = new ToolStripMenuItem();
-            schoolShopToolStripMenuItem = new ToolStripMenuItem();
-            infoToolStripMenuItem1 = new ToolStripMenuItem();
-            closeToolStripMenuItem = new ToolStripMenuItem();
+            StudentsToolStripMenuItem = new ToolStripMenuItem();
+            TeachersToolStripMenuItem = new ToolStripMenuItem();
+            SchoolShopToolStripMenuItem = new ToolStripMenuItem();
+            InfoToolStripMenuItem = new ToolStripMenuItem();
+            CloseToolStripMenuItem = new ToolStripMenuItem();
             windowsToolStripMenuItem = new ToolStripMenuItem();
-            closeAllFormsToolStripMenuItem = new ToolStripMenuItem();
+            CloseAllFormsToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
@@ -48,7 +48,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { studentsToolStripMenuItem1, teachersToolStripMenuItem1, schoolShopToolStripMenuItem, infoToolStripMenuItem1, closeToolStripMenuItem, windowsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem, windowsToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 5, 0, 5);
@@ -56,85 +56,85 @@
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "MenuStripSideBar";
             // 
-            // studentsToolStripMenuItem1
+            // StudentsToolStripMenuItem
             // 
-            studentsToolStripMenuItem1.Image = (Image)resources.GetObject("studentsToolStripMenuItem1.Image");
-            studentsToolStripMenuItem1.ImageAlign = ContentAlignment.MiddleLeft;
-            studentsToolStripMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
-            studentsToolStripMenuItem1.Margin = new Padding(0, 5, 0, 5);
-            studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
-            studentsToolStripMenuItem1.Padding = new Padding(5);
-            studentsToolStripMenuItem1.Size = new Size(163, 64);
-            studentsToolStripMenuItem1.Text = "Student";
-            studentsToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
-            studentsToolStripMenuItem1.Click += studentsToolStripMenuItem1_Click;
+            StudentsToolStripMenuItem.Image = (Image)resources.GetObject("StudentsToolStripMenuItem.Image");
+            StudentsToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            StudentsToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            StudentsToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
+            StudentsToolStripMenuItem.Name = "StudentsToolStripMenuItem";
+            StudentsToolStripMenuItem.Padding = new Padding(5);
+            StudentsToolStripMenuItem.Size = new Size(163, 64);
+            StudentsToolStripMenuItem.Text = "Student";
+            StudentsToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
+            StudentsToolStripMenuItem.Click += StudentsToolStripMenuItem_Click;
             // 
-            // teachersToolStripMenuItem1
+            // TeachersToolStripMenuItem
             // 
-            teachersToolStripMenuItem1.Image = (Image)resources.GetObject("teachersToolStripMenuItem1.Image");
-            teachersToolStripMenuItem1.ImageAlign = ContentAlignment.MiddleLeft;
-            teachersToolStripMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
-            teachersToolStripMenuItem1.Margin = new Padding(0, 5, 0, 5);
-            teachersToolStripMenuItem1.Name = "teachersToolStripMenuItem1";
-            teachersToolStripMenuItem1.Padding = new Padding(5);
-            teachersToolStripMenuItem1.Size = new Size(163, 64);
-            teachersToolStripMenuItem1.Text = "Teacher";
-            teachersToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
-            teachersToolStripMenuItem1.Click += teachersToolStripMenuItem1_Click;
+            TeachersToolStripMenuItem.Image = (Image)resources.GetObject("TeachersToolStripMenuItem.Image");
+            TeachersToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            TeachersToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            TeachersToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
+            TeachersToolStripMenuItem.Name = "TeachersToolStripMenuItem";
+            TeachersToolStripMenuItem.Padding = new Padding(5);
+            TeachersToolStripMenuItem.Size = new Size(163, 64);
+            TeachersToolStripMenuItem.Text = "Teacher";
+            TeachersToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
+            TeachersToolStripMenuItem.Click += TeachersToolStripMenuItem_Click;
             // 
-            // schoolShopToolStripMenuItem
+            // SchoolShopToolStripMenuItem
             // 
-            schoolShopToolStripMenuItem.Image = (Image)resources.GetObject("schoolShopToolStripMenuItem.Image");
-            schoolShopToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
-            schoolShopToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            schoolShopToolStripMenuItem.Name = "schoolShopToolStripMenuItem";
-            schoolShopToolStripMenuItem.Padding = new Padding(5);
-            schoolShopToolStripMenuItem.Size = new Size(163, 64);
-            schoolShopToolStripMenuItem.Text = "SchoolShop";
-            schoolShopToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
-            schoolShopToolStripMenuItem.Click += schoolShopToolStripMenuItem_Click;
+            SchoolShopToolStripMenuItem.Image = (Image)resources.GetObject("SchoolShopToolStripMenuItem.Image");
+            SchoolShopToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            SchoolShopToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            SchoolShopToolStripMenuItem.Name = "SchoolShopToolStripMenuItem";
+            SchoolShopToolStripMenuItem.Padding = new Padding(5);
+            SchoolShopToolStripMenuItem.Size = new Size(163, 64);
+            SchoolShopToolStripMenuItem.Text = "SchoolShop";
+            SchoolShopToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
+            SchoolShopToolStripMenuItem.Click += SchoolShopToolStripMenuItem_Click;
             // 
-            // infoToolStripMenuItem1
+            // InfoToolStripMenuItem
             // 
-            infoToolStripMenuItem1.Image = Properties.Resources.info3;
-            infoToolStripMenuItem1.ImageAlign = ContentAlignment.MiddleLeft;
-            infoToolStripMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
-            infoToolStripMenuItem1.Margin = new Padding(0, 5, 0, 5);
-            infoToolStripMenuItem1.Name = "infoToolStripMenuItem1";
-            infoToolStripMenuItem1.Size = new Size(163, 54);
-            infoToolStripMenuItem1.Text = "Info";
-            infoToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
-            infoToolStripMenuItem1.Click += infoToolStripMenuItem1_Click;
+            InfoToolStripMenuItem.Image = Properties.Resources.info3;
+            InfoToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            InfoToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            InfoToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
+            InfoToolStripMenuItem.Name = "InfoToolStripMenuItem";
+            InfoToolStripMenuItem.Size = new Size(163, 54);
+            InfoToolStripMenuItem.Text = "Info";
+            InfoToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
+            InfoToolStripMenuItem.Click += InfoToolStripMenuItem_Click;
             // 
-            // closeToolStripMenuItem
+            // CloseToolStripMenuItem
             // 
-            closeToolStripMenuItem.Image = Properties.Resources.Close2;
-            closeToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
-            closeToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            closeToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
-            closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            closeToolStripMenuItem.Size = new Size(163, 54);
-            closeToolStripMenuItem.Text = "Close Program";
-            closeToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
-            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
+            CloseToolStripMenuItem.Image = Properties.Resources.Close2;
+            CloseToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            CloseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            CloseToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
+            CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            CloseToolStripMenuItem.Size = new Size(163, 54);
+            CloseToolStripMenuItem.Text = "Close Program";
+            CloseToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
+            CloseToolStripMenuItem.Click += CloseToolStripMenuItem_Click;
             // 
             // windowsToolStripMenuItem
             // 
-            windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { closeAllFormsToolStripMenuItem });
+            windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CloseAllFormsToolStripMenuItem });
             windowsToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
             windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
             windowsToolStripMenuItem.Size = new Size(163, 24);
             windowsToolStripMenuItem.Text = "Windows";
             windowsToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // closeAllFormsToolStripMenuItem
+            // CloseAllFormsToolStripMenuItem
             // 
-            closeAllFormsToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
-            closeAllFormsToolStripMenuItem.ForeColor = Color.White;
-            closeAllFormsToolStripMenuItem.Name = "closeAllFormsToolStripMenuItem";
-            closeAllFormsToolStripMenuItem.Size = new Size(186, 26);
-            closeAllFormsToolStripMenuItem.Text = "CloseAllForms";
-            closeAllFormsToolStripMenuItem.Click += closeAllFormsToolStripMenuItem_Click;
+            CloseAllFormsToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
+            CloseAllFormsToolStripMenuItem.ForeColor = Color.White;
+            CloseAllFormsToolStripMenuItem.Name = "CloseAllFormsToolStripMenuItem";
+            CloseAllFormsToolStripMenuItem.Size = new Size(186, 26);
+            CloseAllFormsToolStripMenuItem.Text = "CloseAllForms";
+            CloseAllFormsToolStripMenuItem.Click += CloseAllFormsToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -184,14 +184,14 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem windowsToolStripMenuItem;
-        private ToolStripMenuItem closeAllFormsToolStripMenuItem;
+        private ToolStripMenuItem CloseAllFormsToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
-        private ToolStripMenuItem studentsToolStripMenuItem1;
-        private ToolStripMenuItem teachersToolStripMenuItem1;
-        private ToolStripMenuItem schoolShopToolStripMenuItem;
-        private ToolStripMenuItem closeToolStripMenuItem;
-        private ToolStripMenuItem infoToolStripMenuItem1;
+        private ToolStripMenuItem StudentsToolStripMenuItem;
+        private ToolStripMenuItem TeachersToolStripMenuItem;
+        private ToolStripMenuItem SchoolShopToolStripMenuItem;
+        private ToolStripMenuItem CloseToolStripMenuItem;
+        private ToolStripMenuItem InfoToolStripMenuItem;
     }
 }

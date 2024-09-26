@@ -4,11 +4,6 @@ namespace AppCode.BLL.GeneralClasses
 {
     public class CustomErrorClass
     {
-        public CustomErrorClass()
-        {
-            
-        }
-
         public CustomErrorClass(string errorMessage, string username, string pageOrFormName,
                                 string methodName, bool writeToLog, int? errorLineNumber,
                                 DateTime errorOccurAtTime)
