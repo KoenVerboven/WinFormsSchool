@@ -9,5 +9,6 @@ namespace AppCode.BLL.Models
         public int SecurityGroupId { get; set; }
         public DateTime? ActiveFrom { get; set; }
         public bool Blocked { get; set; }
+        public int PersonId{ get; set; }
     }
 }

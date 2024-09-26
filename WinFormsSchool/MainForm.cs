@@ -48,18 +48,21 @@ namespace WinFormsSchool
         {
             if (validUser.SecurityGroupId == 0)
             {
+                myPersonalDataToolStripMenuItem.Visible = false;
                 StudentsToolStripMenuItem.Visible = true;
                 SchoolShopToolStripMenuItem.Visible = true;
                 TeachersToolStripMenuItem.Visible = true;
             }
 
-            if (validUser.SecurityGroupId == 1) 
+            if (validUser.SecurityGroupId == 1)
             {
+                myPersonalDataToolStripMenuItem.Visible = true;
+                StudentsToolStripMenuItem.Visible = false;
                 SchoolShopToolStripMenuItem.Visible = false;
                 TeachersToolStripMenuItem.Visible = false;
                 //ToDo : user may only see his data
             }
-            
+
         }
 
         private void CloseAllFormsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +133,15 @@ namespace WinFormsSchool
             infoForm.Show();
         }
 
+        private void myPersonalDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentForm studentForm = new(DetailFormType.ShowDetailForm)
+            {
+                MdiParent = this
+            };
+            studentForm.LoadSelectedStudent(_validUser.PersonId);
+            studentForm.Show();
+        }
     }
 
     internal class MyRender : ToolStripProfessionalRenderer
@@ -214,3 +226,4 @@ namespace WinFormsSchool
 //<a href="https://www.flaticon.com/free-icons/smart-cart" title="smart cart icons">Smart cart icons created by Freepik - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Stockio - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by Leremy - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/figure" title="figure icons">Figure icons created by heisenberg_jr - Flaticon</a>

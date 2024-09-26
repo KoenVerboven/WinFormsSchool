@@ -177,7 +177,7 @@ namespace AppCode.BLL.BLLClasses
                       EmailAddress = "Maria@test.be",
                       Gender = Gender.Female,
                       DateOfBirth = new DateTime(1944, 4, 12),
-                      MaritalStatus = MaritalStatus.Divorced,
+                      MaritalStatus = MaritalStatus.Single,
                       NationalRegisterNumber = 45487487,
                       Nationality = Nationality.Belgian,
                       MoederTongueId = 6,

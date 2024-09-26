@@ -35,7 +35,8 @@ namespace AppCode.BLL.BLLClasses
                     Password = "schoolSoft4you",
                     SecurityGroupId = 0,
                     ActiveFrom = DateTime.Now,
-                    Blocked = false
+                    Blocked = false,
+                    PersonId =  0
                 },
                 new()
                 {
@@ -44,7 +45,8 @@ namespace AppCode.BLL.BLLClasses
                     Password = "rgSeg@45",
                     SecurityGroupId = 1,
                     ActiveFrom = DateTime.Now,
-                    Blocked = false
+                    Blocked = false,
+                    PersonId = 1
                 },
                 new()
                 {
@@ -53,7 +55,8 @@ namespace AppCode.BLL.BLLClasses
                     Password = "regreT@488",
                     SecurityGroupId = 1,
                     ActiveFrom = DateTime.Now,
-                    Blocked = false
+                    Blocked = false,
+                    PersonId = 2
                 },
                 new()
                 {
@@ -62,7 +65,8 @@ namespace AppCode.BLL.BLLClasses
                     Password = "threM@566",
                     SecurityGroupId = 1,
                     ActiveFrom = DateTime.Now,
-                    Blocked = false
+                    Blocked = false,
+                    PersonId = 3
                 }
             ];
         }
