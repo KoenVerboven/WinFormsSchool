@@ -1,6 +1,11 @@
+C#
+WinForms
+Application for School administration
+
+
 Programmer :
 ------------
-Verboven Koen  Vosselaar  België
+Verboven Koen  Vosselaar Mpad  België
 
 Version :
 ---------
@@ -9,10 +14,6 @@ This programma is programmed in Visual Studio Community 2022
 Version 17.7.4
 
 Target framework: .NET8.0
-
-This program is NOT meant as a fully functional program that can be used for schooladministration.
-
-It is meant for education reason only.
 
 Ideal for to start programming with C# and WinForms.
 
