@@ -1,4 +1,6 @@
 ﻿
+using AppCode.BLL.Models;
+
 namespace WinFormsSchool
 {
     public partial class MainForm : Form
@@ -14,7 +16,7 @@ namespace WinFormsSchool
         // ToDo  Correct the tab-order for the controls on each form
         // ToDo User and group security/rights
 
-        string _userId = "";
+        User _validUser;
 
         public MainForm()
         {
@@ -28,7 +30,7 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            ToolStripStatusLabel1.Text = _userId;
+            ToolStripStatusLabel1.Text = _validUser.UserName;
             ToolStripStatusLabel2.Text = "";
             menuStrip1.BackColor = Color.FromArgb(120, 140, 200);
             menuStrip1.ForeColor = Color.White;
@@ -36,27 +38,28 @@ namespace WinFormsSchool
             menuStrip1.Font = new Font("Helvetica", 15);
         }
 
-        public void SetUser(string userId)
+        public void SetUser(User validUser)
         {
-            _userId = userId;
-            SetUserSecurity(userId);
+            _validUser = validUser;
+            SetUserSecurity(validUser);
         }
 
-        public void SetUserSecurity(string userId)//replace hardcoded users with user form User-Class and Security-Class
+        public void SetUserSecurity(User validUser)
         {
-            if (userId == "koen") //koen is member of student security group
-            {
-                SchoolShopToolStripMenuItem.Visible = false;
-                TeachersToolStripMenuItem.Visible = false;
-                //ToDo : see only te data from koen ! not from other students
-            }
-
-            if (userId == "admin") // admin security group
+            if (validUser.SecurityGroupId == 0)
             {
                 StudentsToolStripMenuItem.Visible = true;
                 SchoolShopToolStripMenuItem.Visible = true;
                 TeachersToolStripMenuItem.Visible = true;
             }
+
+            if (validUser.SecurityGroupId == 1) 
+            {
+                SchoolShopToolStripMenuItem.Visible = false;
+                TeachersToolStripMenuItem.Visible = false;
+                //ToDo : user may only see his data
+            }
+            
         }
 
         private void CloseAllFormsToolStripMenuItem_Click(object sender, EventArgs e)

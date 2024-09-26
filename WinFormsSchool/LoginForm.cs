@@ -1,4 +1,6 @@
-﻿using WinFormsSchool.Base;
+﻿using AppCode.BLL.BLLClasses;
+using AppCode.BLL.Models;
+using WinFormsSchool.Base;
 
 namespace WinFormsSchool
 {
@@ -6,11 +8,6 @@ namespace WinFormsSchool
     {
         const int maximumNumberOfLoginAttempts = 5;
         int loginAttemptsLeft = maximumNumberOfLoginAttempts;
-
-        //PasswordRequirments:
-        const int passwordMinimumCharacters = 5;
-        //ToDo Password must contain letters and numbers
-        //ToDo Password must contain capital letters and regular letters
 
         public LoginForm()
         {
@@ -21,9 +18,9 @@ namespace WinFormsSchool
         {
             MainForm mainForm = new();
 
-            if (CheckLogin())
+            if (ValidUser() is not null)
             {
-                mainForm.SetUser(TextBoxUserName.Text.Trim());
+                mainForm.SetUser(ValidUser());
                 mainForm.ShowDialog();
                 Close();
             }
@@ -58,26 +55,21 @@ namespace WinFormsSchool
             TextBoxUserName.Text = "admin"; //ToDo Comment this in live version
         }
 
-        private bool CheckLogin()
+        private User? ValidUser()
         {
-            //ToDo : replace hardcoded users
-            if (
-                (
-                  TextBoxUserName.Text.Trim() == "admin"
-                  //&& TextBoxPassWord.Text.Trim() == "schoolsoft4you" //ToDo Comment out this in live version
-                )
-                ||
-                TextBoxUserName.Text.Trim() == "koen"
-               //&& TextBoxPassWord.Text.Trim() == "fiezfjz@469" //ToDo Comment out this in live version
-               )
+            
+            UserBLL user = new UserBLL(); ;
+            var userFound = user.GetUserByUserNameAndPassword(TextBoxUserName.Text.Trim(),TextBoxPassWord.Text.Trim());
+           
+            if(userFound is not null)
             {
-                return true;
+                return userFound;
             }
             else
             {
                 loginAttemptsLeft -= 1;
                 LabelNumberOfAttemps.Text = "You can try " + loginAttemptsLeft + " more times ";
-                return false;
+                return null;
             }
         }
 
