@@ -14,21 +14,31 @@ namespace WinFormsSchool
         // ToDo  Correct the tab-order for the controls on each form
         // ToDo User and group security/rights
 
+        string _userId = "";
 
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
             InitializeControls();
         }
 
         private void InitializeControls()
         {
-            ToolStripStatusLabel1.Text = "Admin";
+            ToolStripStatusLabel1.Text = _userId;
             ToolStripStatusLabel2.Text = "";
-            menuStrip1.BackColor = Color.FromArgb(120,140, 200);
+            menuStrip1.BackColor = Color.FromArgb(120, 140, 200);
             menuStrip1.ForeColor = Color.White;
             menuStrip1.Renderer = new MyRender();
             menuStrip1.Font = new Font("Helvetica", 15);
+        }
+
+        public void setUser(string userId)
+        {
+            _userId = userId;
         }
 
         private void closeProgramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,8 +88,8 @@ namespace WinFormsSchool
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure clossing the program?","closing program",
-                MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            var result = MessageBox.Show("Are you sure clossing the program?", "closing program",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
                 Close();
@@ -103,6 +113,7 @@ namespace WinFormsSchool
             };
             infoForm.Show();
         }
+
     }
 
     internal class MyRender : ToolStripProfessionalRenderer

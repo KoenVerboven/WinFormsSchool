@@ -23,6 +23,7 @@ namespace WinFormsSchool
 
             if (CheckLogin())
             {
+                mainForm.setUser(TextBoxUserName.Text.Trim());
                 mainForm.ShowDialog();
                 Close();
             }
@@ -59,8 +60,14 @@ namespace WinFormsSchool
 
         private bool CheckLogin()
         {
-            if (TextBoxUserName.Text.Trim() == "admin"
-               //&& TextBoxPassWord.Text.Trim() == "schoolsoft4you" //ToDo Comment out this in live version
+            if (
+                (
+                  TextBoxUserName.Text.Trim() == "admin"
+                  //&& TextBoxPassWord.Text.Trim() == "schoolsoft4you" //ToDo Comment out this in live version
+                )
+                ||
+                TextBoxUserName.Text.Trim() == "koen"
+               //&& TextBoxPassWord.Text.Trim() == "fiezfjz@469" //ToDo Comment out this in live version
                )
             {
                 return true;

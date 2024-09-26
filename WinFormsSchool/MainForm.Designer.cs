@@ -34,9 +34,9 @@
             teachersToolStripMenuItem1 = new ToolStripMenuItem();
             schoolShopToolStripMenuItem = new ToolStripMenuItem();
             infoToolStripMenuItem1 = new ToolStripMenuItem();
+            closeToolStripMenuItem = new ToolStripMenuItem();
             windowsToolStripMenuItem = new ToolStripMenuItem();
             closeAllFormsToolStripMenuItem = new ToolStripMenuItem();
-            closeToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
@@ -106,6 +106,18 @@
             infoToolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
             infoToolStripMenuItem1.Click += infoToolStripMenuItem1_Click;
             // 
+            // closeToolStripMenuItem
+            // 
+            closeToolStripMenuItem.Image = Properties.Resources.Close2;
+            closeToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            closeToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            closeToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
+            closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            closeToolStripMenuItem.Size = new Size(163, 54);
+            closeToolStripMenuItem.Text = "Close Program";
+            closeToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
+            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
+            // 
             // windowsToolStripMenuItem
             // 
             windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { closeAllFormsToolStripMenuItem });
@@ -120,21 +132,9 @@
             closeAllFormsToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
             closeAllFormsToolStripMenuItem.ForeColor = Color.White;
             closeAllFormsToolStripMenuItem.Name = "closeAllFormsToolStripMenuItem";
-            closeAllFormsToolStripMenuItem.Size = new Size(224, 26);
+            closeAllFormsToolStripMenuItem.Size = new Size(186, 26);
             closeAllFormsToolStripMenuItem.Text = "CloseAllForms";
             closeAllFormsToolStripMenuItem.Click += closeAllFormsToolStripMenuItem_Click;
-            // 
-            // closeToolStripMenuItem
-            // 
-            closeToolStripMenuItem.Image = Properties.Resources.Close2;
-            closeToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
-            closeToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
-            closeToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
-            closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            closeToolStripMenuItem.Size = new Size(163, 54);
-            closeToolStripMenuItem.Text = "Close Program";
-            closeToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
-            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -171,6 +171,7 @@
             Name = "MainForm";
             Text = "School";
             WindowState = FormWindowState.Maximized;
+            Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);

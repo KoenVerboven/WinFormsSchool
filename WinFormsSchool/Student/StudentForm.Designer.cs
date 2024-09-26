@@ -416,6 +416,7 @@
             Controls.Add(TextBoxFirstname);
             Name = "StudentForm";
             Text = "StudentForm";
+            Load += StudentForm_Load;
             Controls.SetChildIndex(LabelPageTitle, 0);
             Controls.SetChildIndex(TextBoxFirstname, 0);
             Controls.SetChildIndex(TextBoxMiddeleName, 0);

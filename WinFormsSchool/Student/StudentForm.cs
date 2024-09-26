@@ -19,13 +19,18 @@ namespace WinFormsSchool
             Student = new StudentBLL();
         }
 
+        private void StudentForm_Load(object sender, EventArgs e)
+        {
+            //InitializeControls();
+        }
+
         private void InitializeControls()
         {
             //WindowState = FormWindowState.Maximized;   
             LabelErrorMessage.Visible = false;
 
-            DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             DataGridViewCourses.Visible = false;
+            DataGridViewCourses.SelectionMode = DataGridViewSelectionMode.CellSelect;
             DataGridViewCourses.ReadOnly = true;
 
             PanelYellow.BackColor = Color.Yellow;
@@ -34,7 +39,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
-           
+
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
 
             ToolStripStatusLabel1.BackColor = Color.White;
@@ -77,6 +82,7 @@ namespace WinFormsSchool
                     ButtonCancel.Visible = true;
                     PanelYellow.Visible = false;
                     LabelYellow.Visible = false;
+                    LabelStudentCourses.Visible = false;    
                     MarkRequiredFields();
                     //TODO:InsertForm
                     //input validation
@@ -172,7 +178,7 @@ namespace WinFormsSchool
             catch (ArgumentOutOfRangeException)
             {
                 CustomErrorForm customErrorForm = new(
-                   new("ArgumentOutOfRangeException. Student with Id " + selectedStudentId + " doesn't exist", 
+                   new("ArgumentOutOfRangeException. Student with Id " + selectedStudentId + " doesn't exist",
                         "Admin", "StudentForm",
                         "LoadSelectedStudent", false, null, DateTime.Now)
                       );
@@ -272,9 +278,9 @@ namespace WinFormsSchool
                 return false;
             }
 
-            if(TextBoxEmailAddress.Text.Trim() != string.Empty)
+            if (TextBoxEmailAddress.Text.Trim() != string.Empty)
             {
-                if(! EmailIsValid(TextBoxEmailAddress.Text.Trim()))
+                if (!EmailIsValid(TextBoxEmailAddress.Text.Trim()))
                 {
                     LabelErrorMessage.Text = "Email is not valid";
                     LabelErrorMessage.Visible = true;
@@ -301,6 +307,6 @@ namespace WinFormsSchool
             }
             //ToDo : insert of update student code
         }
-   
+ 
     }
 }
