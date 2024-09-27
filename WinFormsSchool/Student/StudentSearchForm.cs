@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.BLLClasses;
+using AppCode.BLL.GeneralClasses;
 using AppCode.BLL.Models;
 using System.Data;
 using WinFormsSchool.GeneralForms;
@@ -154,12 +155,21 @@ namespace WinFormsSchool
             }
             catch (Exception oEx)
             {
-                CustomErrorForm customErrorForm = new(
-                  new(oEx.Message, "Admin", "StudentSearchForm",
-                        "ButtonDelete_Click", false, null, DateTime.Now)
-                     );
-                customErrorForm.ShowDialog();
+                var logError = new LogError();
+                logError.LogException(oEx, "", "StudentSearchForm", "ButtonDelete_Click",
+                                       "", DateTime.Now
+                                      );
+
+                ShowErrorMessage();
             }
+        }
+
+        private static void ShowErrorMessage()
+        {
+            CustomErrorForm customErrorForm = new(
+                             new("An error occurred. Please try again later.", "", "", "", false, null, DateTime.Now)
+                                                 );
+            customErrorForm.ShowDialog();
         }
 
         private void FillGridView()

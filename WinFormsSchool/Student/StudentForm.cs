@@ -1,5 +1,6 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Enums;
+using AppCode.BLL.GeneralClasses;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using WinFormsSchool.GeneralForms;
@@ -179,12 +180,20 @@ namespace WinFormsSchool
             }
             catch (ArgumentOutOfRangeException oEx)
             {
-                LogException(oEx, "", "StudentForm", "LoadSelectedStudent", "selectedStudentId=" + selectedStudentId, DateTime.Now);//ToDo fill in user
+                var logError = new LogError();
+                logError.LogException(oEx, "", "StudentForm", "LoadSelectedStudent",
+                                       "selectedStudentId=" + selectedStudentId, DateTime.Now
+                                      );//ToDo fill in user
+               
                 ShowErrorMessage();
             }
             catch (Exception oEx)
             {
-                LogException(oEx, "", "StudentForm", "LoadSelectedStudent", "selectedStudentId=" + selectedStudentId, DateTime.Now);//ToDo fill in user
+                var logError = new LogError();
+                logError.LogException(oEx, "", "StudentForm", "LoadSelectedStudent",
+                                       "selectedStudentId=" + selectedStudentId, DateTime.Now
+                                      );//ToDo fill in user
+                
                 ShowErrorMessage();
             }
         }
@@ -196,27 +205,6 @@ namespace WinFormsSchool
                              new("An error occurred. Please try again later.", "", "", "", false, null, DateTime.Now)
                                                  );
             customErrorForm.ShowDialog();
-        }
-
-        private static void LogException(Exception oEx, string userName,
-                                          string PageOrFormName, string methodName,
-                                          string moreInfo, DateTime dateTime)
-        {
-            string[] lines =
-            { "Date :" + dateTime,
-              "UserName :" + userName,
-              "Exception :" + oEx.Message,
-              "FormName :" + PageOrFormName,
-              "Methodname :" + methodName,
-              "MoreInfo :" + moreInfo,
-              "   "
-            };
-
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-            using StreamWriter outputFile = new(Path.Combine(docPath, "WinFormsSchoolErrorLog.txt"), true);
-            foreach (string line in lines)
-                outputFile.WriteLine(line);
         }
 
 
