@@ -1,5 +1,4 @@
 ﻿using AppCode.BLL.BLLClasses;
-using AppCode.BLL.GeneralClasses;
 using WinFormsSchool.GeneralForms;
 
 
@@ -91,19 +90,32 @@ namespace WinFormsSchool
                 }
 
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException oEx)
             {
-                MessageBox.Show("Article with ArticleId " + selectedArticleId + " doesn't exist",
-                                 "ErrorMessage", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LogException(oEx, "", "SchoolArticleForm", "LoadSelectedArticle");
+                ShowErrorMessage();
             }
             catch (Exception oEx)
             {
-                CustomErrorForm customErrorForm = new(
-                    new(  oEx.Message, "Admin", "SchoolArticleForm",
-                          "LoadSelectedArticle", false, null, DateTime.Now)
-                       ); 
-                customErrorForm.ShowDialog();
+                LogException(oEx,"","SchoolArticleForm", "LoadSelectedArticle");
+                ShowErrorMessage();
             }
         }
+
+        private static void ShowErrorMessage()
+        {
+            CustomErrorForm customErrorForm = new(
+                             new("An error occurred. Please try again later.", "", "", "", false, null, DateTime.Now)
+                                                 );
+            customErrorForm.ShowDialog();
+        }
+
+        private static void LogException(Exception oEx, string userName, string PageOrFormName,string methodName)
+        {
+            CustomErrorForm customErrorForm = new(
+                             new(oEx.Message, userName, PageOrFormName, methodName, false, null, DateTime.Now)
+                                                 );
+        }
+
     }
 }

@@ -6,7 +6,7 @@ namespace WinFormsSchool.GeneralForms
 {
     public partial class CustomErrorForm : BaseForm1
     {
-        CustomErrorClass _customErrorClass;
+        readonly CustomErrorClass _customErrorClass;
 
         public CustomErrorForm(CustomErrorClass customErrorClass)
         {
@@ -32,8 +32,6 @@ namespace WinFormsSchool.GeneralForms
         private void CustomErrorForm_Load(object sender, EventArgs e)
         {
             LabelErrorMessage.Text = _customErrorClass.ErrorMessage;
-            LabelPageOrFormName.Text = _customErrorClass.PageOrFormName;
-            LabelMethodName.Text = _customErrorClass.MethodName;
             LabelErrorTime.Text = _customErrorClass.ErrorOccurAtTime.ToString();
         }
 

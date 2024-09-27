@@ -175,24 +175,34 @@ namespace WinFormsSchool
                 }
 
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException oEx)
             {
-                CustomErrorForm customErrorForm = new(
-                   new("ArgumentOutOfRangeException. Student with Id " + selectedStudentId + " doesn't exist",
-                        "Admin", "StudentForm",
-                        "LoadSelectedStudent", false, null, DateTime.Now)
-                      );
-                customErrorForm.ShowDialog();
+                LogException(oEx, "", "StudentForm", "LoadSelectedStudent");
+                ShowErrorMessage();
             }
             catch (Exception oEx)
             {
-                CustomErrorForm customErrorForm = new(
-                   new(oEx.Message, "Admin", "StudentForm",
-                         "LoadSelectedStudent", false, null, DateTime.Now)
-                      );
-                customErrorForm.ShowDialog();
+                LogException(oEx, "", "StudentForm", "LoadSelectedStudent");
+                ShowErrorMessage();
             }
         }
+
+
+        private static void ShowErrorMessage()
+        {
+            CustomErrorForm customErrorForm = new(
+                             new("An error occurred. Please try again later.", "", "", "", false, null, DateTime.Now)
+                                                 );
+            customErrorForm.ShowDialog();
+        }
+
+        private static void LogException(Exception oEx, string userName, string PageOrFormName, string methodName)
+        {
+            CustomErrorForm customErrorForm = new(
+                             new(oEx.Message, userName, PageOrFormName, methodName, false, null, DateTime.Now)
+                                                 );
+        }
+
 
         private void DataGridViewCourses_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

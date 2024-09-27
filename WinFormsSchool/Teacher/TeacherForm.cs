@@ -97,23 +97,33 @@ namespace WinFormsSchool
                 ComboBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);//ToDo studydirection correct? teacher can have more than one studydirection
 
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException oEx)
             {
-                CustomErrorForm customErrorForm = new(
-                new( "ArgumentOutOfRangeException.Teacher with Id " + selectedTeacherId + " doesn't exist", 
-                     "Admin", "TeacherForm",
-                     "LoadSelectedTeacher", false, null, DateTime.Now)
-                   );
-                customErrorForm.ShowDialog();
+                // "ArgumentOutOfRangeException.Teacher with Id " + selectedTeacherId + " doesn't exist", 
+                LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher");
+                ShowErrorMessage();
             }
             catch (Exception oEx)
             {
-                CustomErrorForm customErrorForm = new(
-                 new(oEx.Message, "Admin", "TeacherForm",
-                       "LoadSelectedTeacher", false, null, DateTime.Now)
-                    );
-                customErrorForm.ShowDialog();
+                LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher");
+                ShowErrorMessage();
             }
         }
+
+        private static void ShowErrorMessage()
+        {
+            CustomErrorForm customErrorForm = new(
+                             new("An error occurred. Please try again later.", "", "", "", false, null, DateTime.Now)
+                                                 );
+            customErrorForm.ShowDialog();
+        }
+
+        private static void LogException(Exception oEx, string userName, string PageOrFormName, string methodName)
+        {
+            CustomErrorForm customErrorForm = new(
+                             new(oEx.Message, userName, PageOrFormName, methodName, false, null, DateTime.Now)
+                                                 );
+        }
+
     }
 }
