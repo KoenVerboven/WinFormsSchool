@@ -1,7 +1,9 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Enums;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using WinFormsSchool.GeneralForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace WinFormsSchool
@@ -177,12 +179,12 @@ namespace WinFormsSchool
             }
             catch (ArgumentOutOfRangeException oEx)
             {
-                LogException(oEx, "", "StudentForm", "LoadSelectedStudent");
+                LogException(oEx, "", "StudentForm", "LoadSelectedStudent", "selectedStudentId=" + selectedStudentId, DateTime.Now);//ToDo fill in user
                 ShowErrorMessage();
             }
             catch (Exception oEx)
             {
-                LogException(oEx, "", "StudentForm", "LoadSelectedStudent");
+                LogException(oEx, "", "StudentForm", "LoadSelectedStudent", "selectedStudentId=" + selectedStudentId, DateTime.Now);//ToDo fill in user
                 ShowErrorMessage();
             }
         }
@@ -196,11 +198,25 @@ namespace WinFormsSchool
             customErrorForm.ShowDialog();
         }
 
-        private static void LogException(Exception oEx, string userName, string PageOrFormName, string methodName)
+        private static void LogException(Exception oEx, string userName,
+                                          string PageOrFormName, string methodName,
+                                          string moreInfo, DateTime dateTime)
         {
-            CustomErrorForm customErrorForm = new(
-                             new(oEx.Message, userName, PageOrFormName, methodName, false, null, DateTime.Now)
-                                                 );
+            string[] lines =
+            { "Date :" + dateTime,
+              "UserName :" + userName,
+              "Exception :" + oEx.Message,
+              "FormName :" + PageOrFormName,
+              "Methodname :" + methodName,
+              "MoreInfo :" + moreInfo,
+              "   "
+            };
+
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            using StreamWriter outputFile = new(Path.Combine(docPath, "WinFormsSchoolErrorLog.txt"), true);
+            foreach (string line in lines)
+                outputFile.WriteLine(line);
         }
 
 
@@ -269,14 +285,28 @@ namespace WinFormsSchool
 
             if (TextBoxFirstname.Text.Trim() == string.Empty)
             {
-                LabelErrorMessage.Text = "first name is a required field";
+                LabelErrorMessage.Text = "Firstname is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            if (TextBoxFirstname.Text.Trim().Length > 50)
+            {
+                LabelErrorMessage.Text = "Firstname maximum lenght is 50 characters";
                 LabelErrorMessage.Visible = true;
                 return false;
             }
 
             if (TextBoxLastName.Text.Trim() == string.Empty)
             {
-                LabelErrorMessage.Text = "last name is a required field";
+                LabelErrorMessage.Text = "Lastname is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            if (TextBoxLastName.Text.Trim().Length > 50)
+            {
+                LabelErrorMessage.Text = "Lastname maximum lenght is 50 characters";
                 LabelErrorMessage.Visible = true;
                 return false;
             }
@@ -284,6 +314,13 @@ namespace WinFormsSchool
             if (TextBoxZipCode.Text.Trim() == string.Empty)
             {
                 LabelErrorMessage.Text = "zipcode is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            if (TextBoxZipCode.Text.Trim().Length > 10)
+            {
+                LabelErrorMessage.Text = "Zipcode maximum lenght is 10 characters";
                 LabelErrorMessage.Visible = true;
                 return false;
             }
@@ -296,6 +333,13 @@ namespace WinFormsSchool
                     LabelErrorMessage.Visible = true;
                     return false;
                 }
+            }
+
+            if (TextBoxEmailAddress.Text.Trim().Length > 50)
+            {
+                LabelErrorMessage.Text = "Email maximum lenght is 50 characters";
+                LabelErrorMessage.Visible = true;
+                return false;
             }
             //ToDo: check if mobile phonenr is valid
             return true;

@@ -100,12 +100,12 @@ namespace WinFormsSchool
             catch (ArgumentOutOfRangeException oEx)
             {
                 // "ArgumentOutOfRangeException.Teacher with Id " + selectedTeacherId + " doesn't exist", 
-                LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher");
+                LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher","selectedTeacherId=" + selectedTeacherId, DateTime.Now);
                 ShowErrorMessage();
             }
             catch (Exception oEx)
             {
-                LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher");
+                LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher", "selectedTeacherId=" + selectedTeacherId, DateTime.Now);
                 ShowErrorMessage();
             }
         }
@@ -118,11 +118,25 @@ namespace WinFormsSchool
             customErrorForm.ShowDialog();
         }
 
-        private static void LogException(Exception oEx, string userName, string PageOrFormName, string methodName)
+        private static void LogException(Exception oEx, string userName,
+                                        string PageOrFormName, string methodName,
+                                        string moreInfo, DateTime dateTime)
         {
-            CustomErrorForm customErrorForm = new(
-                             new(oEx.Message, userName, PageOrFormName, methodName, false, null, DateTime.Now)
-                                                 );
+            string[] lines =
+            { "Date :" + dateTime,
+              "UserName :" + userName,
+              "Exception :" + oEx.Message,
+              "FormName :" + PageOrFormName,
+              "Methodname :" + methodName,
+              "MoreInfo :" + moreInfo,
+              "   "
+            };
+
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            using StreamWriter outputFile = new(Path.Combine(docPath, "WinFormsSchoolErrorLog.txt"), true);
+            foreach (string line in lines)
+                outputFile.WriteLine(line);
         }
 
     }
