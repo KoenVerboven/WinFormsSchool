@@ -155,10 +155,21 @@ namespace WinFormsSchool
             }
             catch (Exception oEx)
             {
+                var personId = "";
+                if (GridViewStudents.SelectedRows[0].Cells["PersonId"].Value is not null)
+                {
+                    personId = GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString();
+                }
+ 
+                var dictErrorData = new Dictionary<string, string>()
+                {
+                  { "UserName", "" },
+                  { "Form", "StudentSearchForm" },
+                  { "Method", "ButtonDelete_Click" },
+                  { "selectedArticleId", personId }
+                };
                 var logError = new LogError();
-                logError.LogException(oEx, "", "StudentSearchForm", "ButtonDelete_Click",
-                                       "", DateTime.Now
-                                      );
+                LogError.LogException(oEx, dictErrorData);
 
                 ShowErrorMessage();
             }

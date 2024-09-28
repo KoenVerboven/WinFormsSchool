@@ -124,10 +124,21 @@ namespace WinFormsSchool
             }
             catch (Exception oEx)
             {
+                var articleId = "";
+                if (GridViewArticles.SelectedRows[0].Cells["ArticleId"].Value is not null)
+                {
+                    articleId = GridViewArticles.SelectedRows[0].Cells["ArticleId"].Value.ToString();
+                }
+
+                var dictErrorData = new Dictionary<string, string>()
+                {
+                  { "UserName", "" },
+                  { "Form", "SchoolArticleSearchForm" },
+                  { "Method", "ButtonDelete_Click" },
+                  { "selectedArticleId", articleId }
+                };
                 var logError = new LogError();
-                logError.LogException(oEx, "", "SchoolArticleSearchForm", "ButtonDelete_Click",
-                                       "", DateTime.Now
-                                      );
+                LogError.LogException(oEx, dictErrorData);
 
                 ShowErrorMessage();
             }

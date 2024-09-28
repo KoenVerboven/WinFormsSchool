@@ -1,22 +1,24 @@
 ﻿
+using System.Collections.Generic;
+
 namespace AppCode.BLL.GeneralClasses
 {
     public class LogError
     {
 
-        public void LogException(Exception oEx, string userName,
-                                        string PageOrFormName, string methodName,
-                                        string moreInfo, DateTime dateTime)
+        public static void LogException(Exception oEx, Dictionary<string,string> errorData)
         {
-            string[] lines =
-            { "Date :" + dateTime,
-              "UserName :" + userName,
-              "Exception :" + oEx.Message,
-              "FormName :" + PageOrFormName,
-              "Methodname :" + methodName,
-              "MoreInfo :" + moreInfo,
-              "   "
-            };
+            List<string> lines =
+            [
+                $"Date               : {DateTime.Now.ToLongDateString()}  {DateTime.Now.ToLongTimeString()}",
+                $"Exception          : {oEx.Message}",
+            ];
+
+            foreach (var key in errorData.ToArray())
+            {
+                lines.Add(key.Key + " = " + key.Value);
+            }
+            lines.Add("--------------------------------------------");
 
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 

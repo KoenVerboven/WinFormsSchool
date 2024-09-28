@@ -91,21 +91,17 @@ namespace WinFormsSchool
                 }
 
             }
-            catch (ArgumentOutOfRangeException oEx)
-            {
-                var logError = new LogError();
-                logError.LogException(oEx, "", "SchoolArticleForm", "LoadSelectedArticle",
-                                       "selectedArticleId=" + selectedArticleId, DateTime.Now
-                                      );
-                
-                ShowErrorMessage();
-            }
             catch (Exception oEx)
             {
+                var dictErrorData = new Dictionary<string, string>()
+                {
+                  { "UserName", "" },
+                  { "Form", "SchoolArticleForm" },
+                  { "Method", "LoadSelectedArticle" },
+                  { "selectedArticleId", selectedArticleId.ToString() }
+                };
                 var logError = new LogError();
-                logError.LogException(oEx, "", "SchoolArticleForm", "LoadSelectedArticle",
-                                       "selectedArticleId=" + selectedArticleId, DateTime.Now
-                                      );
+                LogError.LogException(oEx, dictErrorData );
 
                 ShowErrorMessage();
             }

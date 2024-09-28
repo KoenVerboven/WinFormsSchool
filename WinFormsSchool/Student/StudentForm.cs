@@ -180,20 +180,31 @@ namespace WinFormsSchool
             }
             catch (ArgumentOutOfRangeException oEx)
             {
+                var dictErrorData = new Dictionary<string, string>()
+                {
+                  { "UserName", "" },
+                  { "MoreInfo", "ArgumentOutOfRangeException" },
+                  { "Form", "StudentForm" },
+                  { "Method", "LoadSelectedStudent" },
+                  { "selectedArticleId", selectedStudentId.ToString() }
+                };
                 var logError = new LogError();
-                logError.LogException(oEx, "", "StudentForm", "LoadSelectedStudent",
-                                       "selectedStudentId=" + selectedStudentId, DateTime.Now
-                                      );//ToDo fill in user
-               
+                LogError.LogException(oEx, dictErrorData);
+
                 ShowErrorMessage();
             }
             catch (Exception oEx)
             {
+                var dictErrorData = new Dictionary<string, string>()
+                {
+                  { "UserName", "" },
+                  { "Form", "StudentForm" },
+                  { "Method", "LoadSelectedStudent" },
+                  { "selectedArticleId", selectedStudentId.ToString() }
+                };
                 var logError = new LogError();
-                logError.LogException(oEx, "", "StudentForm", "LoadSelectedStudent",
-                                       "selectedStudentId=" + selectedStudentId, DateTime.Now
-                                      );//ToDo fill in user
-                
+                LogError.LogException(oEx, dictErrorData);
+
                 ShowErrorMessage();
             }
         }

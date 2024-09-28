@@ -98,23 +98,19 @@ namespace WinFormsSchool
                 ComboBoxStudyDirection.Text = Convert.ToString(selectedTeacher.StudyDirection);//ToDo studydirection correct? teacher can have more than one studydirection
 
             }
-            catch (ArgumentOutOfRangeException oEx)
-            {
-                // "ArgumentOutOfRangeException.Teacher with Id " + selectedTeacherId + " doesn't exist", 
-                var logError = new LogError();
-                logError.LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher",
-                                      "selectedTeacherId=" + selectedTeacherId, DateTime.Now
-                                      );
-                
-                ShowErrorMessage();
-            }
             catch (Exception oEx)
             {
+                var dictErrorData = new Dictionary<string, string>()
+                {
+                  { "UserName", "" },
+                  { "Form", "TeacherForm" },
+                  { "Method", "LoadSelectedTeacher" },
+                  { "selectedTeacherId", selectedTeacherId.ToString() }
+                };
                 var logError = new LogError();
-                logError.LogException(oEx, "", "TeacherForm", "LoadSelectedTeacher",
-                                      "selectedTeacherId=" + selectedTeacherId, DateTime.Now
-                                      );
-                
+                LogError.LogException(oEx, dictErrorData);
+
+
                 ShowErrorMessage();
             }
         }
