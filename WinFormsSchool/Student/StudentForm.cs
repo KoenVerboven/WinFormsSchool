@@ -29,7 +29,7 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            //WindowState = FormWindowState.Maximized;   
+            WindowState = FormWindowState.Maximized;   
             LabelErrorMessage.Visible = false;
 
             DataGridViewCourses.Visible = false;
@@ -85,7 +85,7 @@ namespace WinFormsSchool
                     ButtonCancel.Visible = true;
                     PanelYellow.Visible = false;
                     LabelYellow.Visible = false;
-                    LabelStudentCourses.Visible = false;    
+                    LabelStudentCourses.Visible = false;
                     MarkRequiredFields();
                     //TODO:InsertForm
                     //input validation
@@ -360,6 +360,10 @@ namespace WinFormsSchool
             }
             //ToDo : insert of update student code
         }
- 
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

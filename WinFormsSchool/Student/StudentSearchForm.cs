@@ -21,7 +21,7 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            // WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;

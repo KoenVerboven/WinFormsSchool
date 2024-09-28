@@ -78,9 +78,24 @@ namespace WinFormsSchool
             }
         }
 
+
+        private void CloseAllForms()
+        {
+            foreach (var form in this.MdiChildren)
+            {
+                if (!form.Focused)
+                {
+                    form.Visible = false;
+                    form.Close();
+                    form.Dispose();
+                }
+            }
+        }
+
         private void StudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentSearchForm studentForm = new()
+            CloseAllForms();
+            var studentForm = new StudentSearchForm()
             {
                 MdiParent = this
             };
@@ -89,7 +104,8 @@ namespace WinFormsSchool
 
         private void TeachersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TeacherSearchForm teachersForm = new()
+            CloseAllForms();
+            var teachersForm = new TeacherSearchForm()
             {
                 MdiParent = this
             };
@@ -98,7 +114,8 @@ namespace WinFormsSchool
 
         private void SchoolShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SchoolArticleSearchForm articleSearchForm = new()
+            CloseAllForms();
+            var articleSearchForm = new SchoolArticleSearchForm()
             {
                 MdiParent = this
             };
@@ -117,7 +134,8 @@ namespace WinFormsSchool
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm aboutForm = new()
+            CloseAllForms();
+            var aboutForm = new AboutForm()
             {
                 MdiParent = this
             };
@@ -126,7 +144,8 @@ namespace WinFormsSchool
 
         private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InfoForm infoForm = new InfoForm
+            CloseAllForms();
+            var infoForm = new InfoForm
             {
                 MdiParent = this
             };
@@ -135,7 +154,7 @@ namespace WinFormsSchool
 
         private void MyPersonalDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentForm studentForm = new(DetailFormType.ShowDetailForm)
+            var studentForm = new StudentForm(DetailFormType.ShowDetailForm)
             {
                 MdiParent = this
             };

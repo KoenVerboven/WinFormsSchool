@@ -10,6 +10,8 @@ namespace WinFormsSchool
 
         private void InfoForm_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
+            
             textBoxInfo.Multiline = true;
             textBoxInfo.IsAccessible  = false;
             textBoxInfo.ReadOnly = true;

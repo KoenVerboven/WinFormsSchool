@@ -64,6 +64,7 @@
             ComboBoxMartialStatus = new ComboBox();
             ComboBoxGender = new ComboBox();
             ComboBoxNationality = new ComboBox();
+            buttonClose = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -299,7 +300,7 @@
             // 
             // ButtonCancel
             // 
-            ButtonCancel.Location = new Point(155, 53);
+            ButtonCancel.Location = new Point(271, 54);
             ButtonCancel.Name = "ButtonCancel";
             ButtonCancel.Size = new Size(94, 29);
             ButtonCancel.TabIndex = 54;
@@ -310,7 +311,7 @@
             // 
             // ButtonSave
             // 
-            ButtonSave.Location = new Point(35, 52);
+            ButtonSave.Location = new Point(165, 53);
             ButtonSave.Name = "ButtonSave";
             ButtonSave.Size = new Size(89, 30);
             ButtonSave.TabIndex = 53;
@@ -331,7 +332,7 @@
             // LabelErrorMessage
             // 
             LabelErrorMessage.AutoSize = true;
-            LabelErrorMessage.Location = new Point(346, 57);
+            LabelErrorMessage.Location = new Point(708, 62);
             LabelErrorMessage.Name = "LabelErrorMessage";
             LabelErrorMessage.Size = new Size(99, 20);
             LabelErrorMessage.TabIndex = 57;
@@ -375,11 +376,22 @@
             ComboBoxNationality.Size = new Size(345, 28);
             ComboBoxNationality.TabIndex = 62;
             // 
+            // buttonClose
+            // 
+            buttonClose.Location = new Point(44, 53);
+            buttonClose.Name = "buttonClose";
+            buttonClose.Size = new Size(94, 29);
+            buttonClose.TabIndex = 63;
+            buttonClose.Text = "Close";
+            buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += buttonClose_Click;
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 763);
+            Controls.Add(buttonClose);
             Controls.Add(ComboBoxNationality);
             Controls.Add(ComboBoxGender);
             Controls.Add(ComboBoxMartialStatus);
@@ -452,6 +464,7 @@
             Controls.SetChildIndex(ComboBoxMartialStatus, 0);
             Controls.SetChildIndex(ComboBoxGender, 0);
             Controls.SetChildIndex(ComboBoxNationality, 0);
+            Controls.SetChildIndex(buttonClose, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -497,5 +510,6 @@
         private ComboBox ComboBoxMartialStatus;
         private ComboBox ComboBoxGender;
         private ComboBox ComboBoxNationality;
+        private Button buttonClose;
     }
 }

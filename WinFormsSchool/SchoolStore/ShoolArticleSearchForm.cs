@@ -21,6 +21,8 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
+            WindowState = FormWindowState.Maximized;
+            
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel2.Text = string.Empty;
             GridViewArticles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

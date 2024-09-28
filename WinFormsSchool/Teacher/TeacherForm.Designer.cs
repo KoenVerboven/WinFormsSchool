@@ -68,6 +68,7 @@
             ComboBoxSaleryCategorie = new ComboBox();
             ComboBoxStudyDirection = new ComboBox();
             ComboBoxHighestDegree = new ComboBox();
+            ButtonClose = new Button();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -78,49 +79,49 @@
             // 
             // TextBoxFirstname
             // 
-            TextBoxFirstname.Location = new Point(220, 82);
+            TextBoxFirstname.Location = new Point(226, 123);
             TextBoxFirstname.Name = "TextBoxFirstname";
             TextBoxFirstname.Size = new Size(310, 27);
             TextBoxFirstname.TabIndex = 0;
             // 
             // TextBoxMiddeleName
             // 
-            TextBoxMiddeleName.Location = new Point(220, 115);
+            TextBoxMiddeleName.Location = new Point(226, 156);
             TextBoxMiddeleName.Name = "TextBoxMiddeleName";
             TextBoxMiddeleName.Size = new Size(310, 27);
             TextBoxMiddeleName.TabIndex = 1;
             // 
             // TextBoxLastName
             // 
-            TextBoxLastName.Location = new Point(220, 148);
+            TextBoxLastName.Location = new Point(226, 189);
             TextBoxLastName.Name = "TextBoxLastName";
             TextBoxLastName.Size = new Size(310, 27);
             TextBoxLastName.TabIndex = 2;
             // 
             // TextBoxStreetAndNumber
             // 
-            TextBoxStreetAndNumber.Location = new Point(220, 181);
+            TextBoxStreetAndNumber.Location = new Point(226, 222);
             TextBoxStreetAndNumber.Name = "TextBoxStreetAndNumber";
             TextBoxStreetAndNumber.Size = new Size(312, 27);
             TextBoxStreetAndNumber.TabIndex = 3;
             // 
             // TextBoxEmailAddress
             // 
-            TextBoxEmailAddress.Location = new Point(220, 280);
+            TextBoxEmailAddress.Location = new Point(226, 321);
             TextBoxEmailAddress.Name = "TextBoxEmailAddress";
             TextBoxEmailAddress.Size = new Size(310, 27);
             TextBoxEmailAddress.TabIndex = 6;
             // 
             // TextBoxPhoneNumber
             // 
-            TextBoxPhoneNumber.Location = new Point(220, 247);
+            TextBoxPhoneNumber.Location = new Point(226, 288);
             TextBoxPhoneNumber.Name = "TextBoxPhoneNumber";
             TextBoxPhoneNumber.Size = new Size(310, 27);
             TextBoxPhoneNumber.TabIndex = 5;
             // 
             // TextBoxZipCode
             // 
-            TextBoxZipCode.Location = new Point(220, 217);
+            TextBoxZipCode.Location = new Point(226, 258);
             TextBoxZipCode.Name = "TextBoxZipCode";
             TextBoxZipCode.Size = new Size(310, 27);
             TextBoxZipCode.TabIndex = 4;
@@ -128,7 +129,7 @@
             // LabelFirstname
             // 
             LabelFirstname.AutoSize = true;
-            LabelFirstname.Location = new Point(45, 85);
+            LabelFirstname.Location = new Point(51, 126);
             LabelFirstname.Name = "LabelFirstname";
             LabelFirstname.Size = new Size(73, 20);
             LabelFirstname.TabIndex = 8;
@@ -137,7 +138,7 @@
             // LabelMiddeleName
             // 
             LabelMiddeleName.AutoSize = true;
-            LabelMiddeleName.Location = new Point(45, 118);
+            LabelMiddeleName.Location = new Point(51, 159);
             LabelMiddeleName.Name = "LabelMiddeleName";
             LabelMiddeleName.Size = new Size(96, 20);
             LabelMiddeleName.TabIndex = 9;
@@ -146,7 +147,7 @@
             // LabelLastName
             // 
             LabelLastName.AutoSize = true;
-            LabelLastName.Location = new Point(45, 151);
+            LabelLastName.Location = new Point(51, 192);
             LabelLastName.Name = "LabelLastName";
             LabelLastName.Size = new Size(75, 20);
             LabelLastName.TabIndex = 10;
@@ -155,7 +156,7 @@
             // LabelStreetAndNumber
             // 
             LabelStreetAndNumber.AutoSize = true;
-            LabelStreetAndNumber.Location = new Point(45, 184);
+            LabelStreetAndNumber.Location = new Point(51, 225);
             LabelStreetAndNumber.Name = "LabelStreetAndNumber";
             LabelStreetAndNumber.Size = new Size(129, 20);
             LabelStreetAndNumber.TabIndex = 11;
@@ -164,7 +165,7 @@
             // LabelGender
             // 
             LabelGender.AutoSize = true;
-            LabelGender.Location = new Point(45, 320);
+            LabelGender.Location = new Point(51, 361);
             LabelGender.Name = "LabelGender";
             LabelGender.Size = new Size(57, 20);
             LabelGender.TabIndex = 15;
@@ -173,7 +174,7 @@
             // LabelEmailAddress
             // 
             LabelEmailAddress.AutoSize = true;
-            LabelEmailAddress.Location = new Point(45, 283);
+            LabelEmailAddress.Location = new Point(51, 324);
             LabelEmailAddress.Name = "LabelEmailAddress";
             LabelEmailAddress.Size = new Size(99, 20);
             LabelEmailAddress.TabIndex = 14;
@@ -182,7 +183,7 @@
             // LabelPhoneNumber
             // 
             LabelPhoneNumber.AutoSize = true;
-            LabelPhoneNumber.Location = new Point(45, 250);
+            LabelPhoneNumber.Location = new Point(51, 291);
             LabelPhoneNumber.Name = "LabelPhoneNumber";
             LabelPhoneNumber.Size = new Size(104, 20);
             LabelPhoneNumber.TabIndex = 13;
@@ -191,7 +192,7 @@
             // LabelZipCode
             // 
             LabelZipCode.AutoSize = true;
-            LabelZipCode.Location = new Point(45, 220);
+            LabelZipCode.Location = new Point(51, 261);
             LabelZipCode.Name = "LabelZipCode";
             LabelZipCode.Size = new Size(66, 20);
             LabelZipCode.TabIndex = 12;
@@ -199,21 +200,21 @@
             // 
             // TextBoxSeniorityYears
             // 
-            TextBoxSeniorityYears.Location = new Point(779, 181);
+            TextBoxSeniorityYears.Location = new Point(785, 222);
             TextBoxSeniorityYears.Name = "TextBoxSeniorityYears";
             TextBoxSeniorityYears.Size = new Size(242, 27);
             TextBoxSeniorityYears.TabIndex = 19;
             // 
             // TextBoxWorkSchedule
             // 
-            TextBoxWorkSchedule.Location = new Point(779, 217);
+            TextBoxWorkSchedule.Location = new Point(785, 258);
             TextBoxWorkSchedule.Name = "TextBoxWorkSchedule";
             TextBoxWorkSchedule.Size = new Size(242, 27);
             TextBoxWorkSchedule.TabIndex = 20;
             // 
             // TextBoxWorkingHoursPerWeek
             // 
-            TextBoxWorkingHoursPerWeek.Location = new Point(779, 247);
+            TextBoxWorkingHoursPerWeek.Location = new Point(785, 288);
             TextBoxWorkingHoursPerWeek.Name = "TextBoxWorkingHoursPerWeek";
             TextBoxWorkingHoursPerWeek.Size = new Size(242, 27);
             TextBoxWorkingHoursPerWeek.TabIndex = 21;
@@ -221,7 +222,7 @@
             // LabelSeniorityYears
             // 
             LabelSeniorityYears.AutoSize = true;
-            LabelSeniorityYears.Location = new Point(571, 184);
+            LabelSeniorityYears.Location = new Point(577, 225);
             LabelSeniorityYears.Name = "LabelSeniorityYears";
             LabelSeniorityYears.Size = new Size(101, 20);
             LabelSeniorityYears.TabIndex = 27;
@@ -230,7 +231,7 @@
             // LabelSaleryCategorie
             // 
             LabelSaleryCategorie.AutoSize = true;
-            LabelSaleryCategorie.Location = new Point(571, 151);
+            LabelSaleryCategorie.Location = new Point(577, 192);
             LabelSaleryCategorie.Name = "LabelSaleryCategorie";
             LabelSaleryCategorie.Size = new Size(114, 20);
             LabelSaleryCategorie.TabIndex = 26;
@@ -239,7 +240,7 @@
             // LabelLeaveDate
             // 
             LabelLeaveDate.AutoSize = true;
-            LabelLeaveDate.Location = new Point(571, 118);
+            LabelLeaveDate.Location = new Point(577, 159);
             LabelLeaveDate.Name = "LabelLeaveDate";
             LabelLeaveDate.Size = new Size(79, 20);
             LabelLeaveDate.TabIndex = 25;
@@ -248,7 +249,7 @@
             // LabelHireDate
             // 
             LabelHireDate.AutoSize = true;
-            LabelHireDate.Location = new Point(571, 85);
+            LabelHireDate.Location = new Point(577, 126);
             LabelHireDate.Name = "LabelHireDate";
             LabelHireDate.Size = new Size(69, 20);
             LabelHireDate.TabIndex = 24;
@@ -257,7 +258,7 @@
             // LabelStudyDirection
             // 
             LabelStudyDirection.AutoSize = true;
-            LabelStudyDirection.Location = new Point(571, 320);
+            LabelStudyDirection.Location = new Point(577, 361);
             LabelStudyDirection.Name = "LabelStudyDirection";
             LabelStudyDirection.Size = new Size(107, 20);
             LabelStudyDirection.TabIndex = 31;
@@ -266,7 +267,7 @@
             // LabelHighestDegree
             // 
             LabelHighestDegree.AutoSize = true;
-            LabelHighestDegree.Location = new Point(571, 283);
+            LabelHighestDegree.Location = new Point(577, 324);
             LabelHighestDegree.Name = "LabelHighestDegree";
             LabelHighestDegree.Size = new Size(109, 20);
             LabelHighestDegree.TabIndex = 30;
@@ -275,7 +276,7 @@
             // LabelWorkingHoursPerWeek
             // 
             LabelWorkingHoursPerWeek.AutoSize = true;
-            LabelWorkingHoursPerWeek.Location = new Point(571, 250);
+            LabelWorkingHoursPerWeek.Location = new Point(577, 291);
             LabelWorkingHoursPerWeek.Name = "LabelWorkingHoursPerWeek";
             LabelWorkingHoursPerWeek.Size = new Size(153, 20);
             LabelWorkingHoursPerWeek.TabIndex = 29;
@@ -284,7 +285,7 @@
             // LabelWorkSchedule
             // 
             LabelWorkSchedule.AutoSize = true;
-            LabelWorkSchedule.Location = new Point(571, 220);
+            LabelWorkSchedule.Location = new Point(577, 261);
             LabelWorkSchedule.Name = "LabelWorkSchedule";
             LabelWorkSchedule.Size = new Size(103, 20);
             LabelWorkSchedule.TabIndex = 28;
@@ -293,7 +294,7 @@
             // LabelNationalRegisterNumber
             // 
             LabelNationalRegisterNumber.AutoSize = true;
-            LabelNationalRegisterNumber.Location = new Point(45, 352);
+            LabelNationalRegisterNumber.Location = new Point(51, 393);
             LabelNationalRegisterNumber.Name = "LabelNationalRegisterNumber";
             LabelNationalRegisterNumber.Size = new Size(136, 20);
             LabelNationalRegisterNumber.TabIndex = 32;
@@ -301,7 +302,7 @@
             // 
             // TextBoxNationalRegisterNumber
             // 
-            TextBoxNationalRegisterNumber.Location = new Point(220, 349);
+            TextBoxNationalRegisterNumber.Location = new Point(226, 390);
             TextBoxNationalRegisterNumber.Name = "TextBoxNationalRegisterNumber";
             TextBoxNationalRegisterNumber.Size = new Size(312, 27);
             TextBoxNationalRegisterNumber.TabIndex = 33;
@@ -309,7 +310,7 @@
             // LabelMaritalStatus
             // 
             LabelMaritalStatus.AutoSize = true;
-            LabelMaritalStatus.Location = new Point(45, 388);
+            LabelMaritalStatus.Location = new Point(51, 429);
             LabelMaritalStatus.Name = "LabelMaritalStatus";
             LabelMaritalStatus.Size = new Size(96, 20);
             LabelMaritalStatus.TabIndex = 34;
@@ -318,7 +319,7 @@
             // LabelDateOfBirth
             // 
             LabelDateOfBirth.AutoSize = true;
-            LabelDateOfBirth.Location = new Point(45, 427);
+            LabelDateOfBirth.Location = new Point(51, 468);
             LabelDateOfBirth.Name = "LabelDateOfBirth";
             LabelDateOfBirth.Size = new Size(88, 20);
             LabelDateOfBirth.TabIndex = 36;
@@ -327,7 +328,7 @@
             // LabelNationality
             // 
             LabelNationality.AutoSize = true;
-            LabelNationality.Location = new Point(45, 468);
+            LabelNationality.Location = new Point(51, 509);
             LabelNationality.Name = "LabelNationality";
             LabelNationality.Size = new Size(82, 20);
             LabelNationality.TabIndex = 38;
@@ -335,21 +336,21 @@
             // 
             // DateTimePickerHireDate
             // 
-            DateTimePickerHireDate.Location = new Point(779, 82);
+            DateTimePickerHireDate.Location = new Point(785, 123);
             DateTimePickerHireDate.Name = "DateTimePickerHireDate";
             DateTimePickerHireDate.Size = new Size(242, 27);
             DateTimePickerHireDate.TabIndex = 42;
             // 
             // DateTimePickerDateOfBirth
             // 
-            DateTimePickerDateOfBirth.Location = new Point(220, 422);
+            DateTimePickerDateOfBirth.Location = new Point(226, 463);
             DateTimePickerDateOfBirth.Name = "DateTimePickerDateOfBirth";
             DateTimePickerDateOfBirth.Size = new Size(310, 27);
             DateTimePickerDateOfBirth.TabIndex = 43;
             // 
             // DateTimePickerLeaveDate
             // 
-            DateTimePickerLeaveDate.Location = new Point(779, 115);
+            DateTimePickerLeaveDate.Location = new Point(785, 156);
             DateTimePickerLeaveDate.Name = "DateTimePickerLeaveDate";
             DateTimePickerLeaveDate.Size = new Size(242, 27);
             DateTimePickerLeaveDate.TabIndex = 44;
@@ -357,7 +358,7 @@
             // ComboBoxNationality
             // 
             ComboBoxNationality.FormattingEnabled = true;
-            ComboBoxNationality.Location = new Point(220, 465);
+            ComboBoxNationality.Location = new Point(226, 506);
             ComboBoxNationality.Name = "ComboBoxNationality";
             ComboBoxNationality.Size = new Size(310, 28);
             ComboBoxNationality.TabIndex = 45;
@@ -365,7 +366,7 @@
             // ComboBoxMaritalStatus
             // 
             ComboBoxMaritalStatus.FormattingEnabled = true;
-            ComboBoxMaritalStatus.Location = new Point(220, 388);
+            ComboBoxMaritalStatus.Location = new Point(226, 429);
             ComboBoxMaritalStatus.Name = "ComboBoxMaritalStatus";
             ComboBoxMaritalStatus.Size = new Size(312, 28);
             ComboBoxMaritalStatus.TabIndex = 46;
@@ -373,7 +374,7 @@
             // ComboBoxGender
             // 
             ComboBoxGender.FormattingEnabled = true;
-            ComboBoxGender.Location = new Point(220, 317);
+            ComboBoxGender.Location = new Point(226, 358);
             ComboBoxGender.Name = "ComboBoxGender";
             ComboBoxGender.Size = new Size(310, 28);
             ComboBoxGender.TabIndex = 47;
@@ -381,7 +382,7 @@
             // ComboBoxSaleryCategorie
             // 
             ComboBoxSaleryCategorie.FormattingEnabled = true;
-            ComboBoxSaleryCategorie.Location = new Point(776, 148);
+            ComboBoxSaleryCategorie.Location = new Point(782, 189);
             ComboBoxSaleryCategorie.Name = "ComboBoxSaleryCategorie";
             ComboBoxSaleryCategorie.Size = new Size(245, 28);
             ComboBoxSaleryCategorie.TabIndex = 48;
@@ -389,7 +390,7 @@
             // ComboBoxStudyDirection
             // 
             ComboBoxStudyDirection.FormattingEnabled = true;
-            ComboBoxStudyDirection.Location = new Point(778, 317);
+            ComboBoxStudyDirection.Location = new Point(784, 358);
             ComboBoxStudyDirection.Name = "ComboBoxStudyDirection";
             ComboBoxStudyDirection.Size = new Size(243, 28);
             ComboBoxStudyDirection.TabIndex = 49;
@@ -397,16 +398,27 @@
             // ComboBoxHighestDegree
             // 
             ComboBoxHighestDegree.FormattingEnabled = true;
-            ComboBoxHighestDegree.Location = new Point(776, 280);
+            ComboBoxHighestDegree.Location = new Point(782, 321);
             ComboBoxHighestDegree.Name = "ComboBoxHighestDegree";
             ComboBoxHighestDegree.Size = new Size(245, 28);
             ComboBoxHighestDegree.TabIndex = 50;
+            // 
+            // ButtonClose
+            // 
+            ButtonClose.Location = new Point(50, 62);
+            ButtonClose.Name = "ButtonClose";
+            ButtonClose.Size = new Size(94, 29);
+            ButtonClose.TabIndex = 51;
+            ButtonClose.Text = "Close";
+            ButtonClose.UseVisualStyleBackColor = true;
+            ButtonClose.Click += ButtonClose_Click;
             // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1058, 551);
+            ClientSize = new Size(1058, 562);
+            Controls.Add(ButtonClose);
             Controls.Add(ComboBoxHighestDegree);
             Controls.Add(ComboBoxStudyDirection);
             Controls.Add(ComboBoxSaleryCategorie);
@@ -490,6 +502,7 @@
             Controls.SetChildIndex(ComboBoxSaleryCategorie, 0);
             Controls.SetChildIndex(ComboBoxStudyDirection, 0);
             Controls.SetChildIndex(ComboBoxHighestDegree, 0);
+            Controls.SetChildIndex(ButtonClose, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -536,5 +549,6 @@
         private ComboBox ComboBoxSaleryCategorie;
         private ComboBox ComboBoxStudyDirection;
         private ComboBox ComboBoxHighestDegree;
+        private Button ButtonClose;
     }
 }

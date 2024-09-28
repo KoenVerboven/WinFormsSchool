@@ -20,6 +20,8 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
+            WindowState = FormWindowState.Maximized;
+            
             LabelMessage.Text = string.Empty;
             LabelMessage.Font = new Font(Font, FontStyle.Italic);
             LabelMessage.ForeColor = Color.Red;
@@ -37,7 +39,7 @@ namespace WinFormsSchool
 
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
-           
+
             CheckBoxFragile.AutoCheck = false;
 
         }
@@ -101,7 +103,7 @@ namespace WinFormsSchool
                   { "selectedArticleId", selectedArticleId.ToString() }
                 };
                 var logError = new LogError();
-                LogError.LogException(oEx, dictErrorData );
+                LogError.LogException(oEx, dictErrorData);
 
                 ShowErrorMessage();
             }
@@ -115,5 +117,9 @@ namespace WinFormsSchool
             customErrorForm.ShowDialog();
         }
 
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

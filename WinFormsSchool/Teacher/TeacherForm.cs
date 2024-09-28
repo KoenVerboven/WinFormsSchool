@@ -10,7 +10,7 @@ namespace WinFormsSchool
     public partial class TeacherForm : Base.BaseForm1
     {
         readonly TeacherBLL Teacher;
-        
+
         public TeacherForm()
         {
             InitializeComponent();
@@ -20,12 +20,13 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
+            WindowState = FormWindowState.Maximized;   
+
             SetAllTextboxesOnFormReadOnly(true);
-            Height = 610;
-            Width = 1100;
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
+
             LabelPageTitle.Text = "Student Detail";
-            
+
             ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
             ComboBoxMaritalStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
             ComboBoxNationality.DataSource = Enum.GetValues(typeof(Nationality));
@@ -72,7 +73,7 @@ namespace WinFormsSchool
             try
             {
                 var selectedTeacher = Teacher.GetTeacherById(selectedTeacherId);
-                
+
                 TextBoxFirstname.Text = selectedTeacher.Firstname;
                 TextBoxMiddeleName.Text = selectedTeacher.MiddleName;
                 TextBoxLastName.Text = selectedTeacher.LastName;
@@ -85,11 +86,11 @@ namespace WinFormsSchool
                 DateTimePickerDateOfBirth.Value = selectedTeacher.DateOfBirth;
                 DateTimePickerHireDate.Value = selectedTeacher.HireDate;
                 DateTimePickerLeaveDate.Value = ((selectedTeacher.LeaveDate) ?? new DateTime(1900, 1, 1)); // null-coalescing operator
-               
+
                 TextBoxSeniorityYears.Text = Convert.ToString(selectedTeacher.SeniorityYears);
                 TextBoxWorkSchedule.Text = Convert.ToString(selectedTeacher.WorkSchedule);
                 TextBoxWorkingHoursPerWeek.Text = Convert.ToString(selectedTeacher.WorkingHoursPerWeek);
-                
+
                 ComboBoxGender.Text = Convert.ToString(selectedTeacher.Gender);
                 ComboBoxMaritalStatus.Text = Convert.ToString(selectedTeacher.MaritalStatus);
                 ComboBoxNationality.Text = Convert.ToString(selectedTeacher.Nationality);
@@ -123,5 +124,9 @@ namespace WinFormsSchool
             customErrorForm.ShowDialog();
         }
 
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
