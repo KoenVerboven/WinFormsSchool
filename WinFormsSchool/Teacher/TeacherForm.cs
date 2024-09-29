@@ -27,6 +27,11 @@ namespace WinFormsSchool
 
             LabelPageTitle.Text = "Student Detail";
 
+            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 35;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
+
             ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
             ComboBoxMaritalStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
             ComboBoxNationality.DataSource = Enum.GetValues(typeof(Nationality));

@@ -5,7 +5,8 @@ namespace WinFormsSchool
 {
     public partial class MainForm : Form
     {
-        // ToDo  check student age min 7 year old (dateofbirth)
+        /// <summary>
+        //  ToDo  check student age min 7 year old (dateofbirth)
         // ToDo  student is loged in : page with student courses + examendates
         // ToDo  write error log to file
         // ToDo  try a popular error log prog, such as Log4Net
@@ -16,6 +17,7 @@ namespace WinFormsSchool
         // ToDo User and group security/rights
         // ToDo check the DIRTY state by closing a form
         // ToDo Settings form Only the admin user can access these form; settings such as database connection settings ....
+        /// </summary>
 
         User _validUser;
 

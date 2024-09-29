@@ -64,7 +64,7 @@
             ComboBoxMartialStatus = new ComboBox();
             ComboBoxGender = new ComboBox();
             ComboBoxNationality = new ComboBox();
-            buttonClose = new Button();
+            ButtonClose = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -376,22 +376,22 @@
             ComboBoxNationality.Size = new Size(345, 28);
             ComboBoxNationality.TabIndex = 62;
             // 
-            // buttonClose
+            // ButtonClose
             // 
-            buttonClose.Location = new Point(44, 53);
-            buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(94, 29);
-            buttonClose.TabIndex = 63;
-            buttonClose.Text = "Close";
-            buttonClose.UseVisualStyleBackColor = true;
-            buttonClose.Click += buttonClose_Click;
+            ButtonClose.Location = new Point(44, 53);
+            ButtonClose.Name = "ButtonClose";
+            ButtonClose.Size = new Size(94, 29);
+            ButtonClose.TabIndex = 63;
+            ButtonClose.Text = "Close";
+            ButtonClose.UseVisualStyleBackColor = true;
+            ButtonClose.Click += ButtonClose_Click;
             // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 763);
-            Controls.Add(buttonClose);
+            Controls.Add(ButtonClose);
             Controls.Add(ComboBoxNationality);
             Controls.Add(ComboBoxGender);
             Controls.Add(ComboBoxMartialStatus);
@@ -464,7 +464,7 @@
             Controls.SetChildIndex(ComboBoxMartialStatus, 0);
             Controls.SetChildIndex(ComboBoxGender, 0);
             Controls.SetChildIndex(ComboBoxNationality, 0);
-            Controls.SetChildIndex(buttonClose, 0);
+            Controls.SetChildIndex(ButtonClose, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewCourses).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -510,6 +510,6 @@
         private ComboBox ComboBoxMartialStatus;
         private ComboBox ComboBoxGender;
         private ComboBox ComboBoxNationality;
-        private Button buttonClose;
+        private Button ButtonClose;
     }
 }

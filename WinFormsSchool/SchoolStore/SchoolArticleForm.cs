@@ -26,6 +26,11 @@ namespace WinFormsSchool
             LabelMessage.Font = new Font(Font, FontStyle.Italic);
             LabelMessage.ForeColor = Color.Red;
 
+            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 35;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
+
             PictureBoxArticle.BackColor = Color.LightGray;
 
             ToolStripStatusLabel1.Text = string.Empty;

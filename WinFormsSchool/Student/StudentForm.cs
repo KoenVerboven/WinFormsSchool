@@ -1,10 +1,8 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Enums;
 using AppCode.BLL.GeneralClasses;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using WinFormsSchool.GeneralForms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace WinFormsSchool
@@ -13,6 +11,24 @@ namespace WinFormsSchool
     {
         readonly StudentBLL Student;
         private readonly DetailFormType _detailFormType;
+
+        #region cleanFields
+
+        /// <summary>
+        /// ToDo -> place the isDirty logic in a class
+        /// ToDo -> check each textbox, chechbox, combobox, datetimepicker,  ..?
+        /// </summary>
+
+        string _cleanLastName = "";
+        string _cleanMiddleName = "";
+        string _cleanFirstName = "";
+        string _cleanStreetAndNumber = "";
+        string _cleanZipCode = "";
+        string _cleanPhoneNumber = "";
+        string _cleanEmailAddress = "";
+        string _cleanNationalRegisterNr = "";
+
+        #endregion
 
         public StudentForm(DetailFormType detailFormType)
         {
@@ -29,7 +45,7 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            WindowState = FormWindowState.Maximized;   
+            WindowState = FormWindowState.Maximized;
             LabelErrorMessage.Visible = false;
 
             DataGridViewCourses.Visible = false;
@@ -39,14 +55,24 @@ namespace WinFormsSchool
             PanelYellow.BackColor = Color.Yellow;
             PanelYellow.BorderStyle = BorderStyle.FixedSingle;
 
+            SetLabelProperties(Color.White, new Font("Helvetica", 10));
+
+            #region ToolStripStatus
+
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
-
-            SetLabelProperties(Color.White, new Font("Helvetica", 10));
-
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
+
+            #endregion
+
+            #region ButtonControls
+
+            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 35;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
 
             ButtonSave.BackColor = Color.FromArgb(160, 150, 55);
             ButtonSave.ForeColor = Color.White;
@@ -57,6 +83,8 @@ namespace WinFormsSchool
             ButtonCancel.ForeColor = Color.White;
             ButtonCancel.Height = 35;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
+
+            #endregion
 
             ComboBoxMartialStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
             ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
@@ -139,6 +167,8 @@ namespace WinFormsSchool
 
                 if (selectedStudent != null)
                 {
+                    #region FillInControls
+
                     TextBoxFirstname.Text = selectedStudent.Firstname;
                     TextBoxMiddeleName.Text = selectedStudent.MiddleName;
                     TextBoxLastName.Text = selectedStudent.LastName;
@@ -153,9 +183,26 @@ namespace WinFormsSchool
                     ComboBoxNationality.Text = Convert.ToString(selectedStudent.Nationality);
                     DateTimePickerRegistrationdate.Value = selectedStudent.RegistrationDate;
 
+                    #endregion
+
+                    #region SetCleanFields
+
+                    _cleanLastName = TextBoxLastName.Text.Trim();
+                    _cleanMiddleName = TextBoxMiddeleName.Text.Trim();
+                    _cleanFirstName = TextBoxFirstname.Text.Trim();
+                    _cleanStreetAndNumber = TextBoxStreetAndNumber.Text.Trim();
+                    _cleanZipCode = TextBoxZipCode.Text.Trim();
+                    _cleanPhoneNumber = TextBoxPhoneNumber.Text.Trim();
+                    _cleanEmailAddress = TextBoxEmailAddress.Text.Trim();
+                    _cleanNationalRegisterNr = TextBoxNationalRegisterNumber.Text.Trim();   
+
+                    #endregion
+
                     if (selectedStudent.EnrolledCourse != null)
                     {
                         ToolStripStatusLabel1.Text = selectedStudent.EnrolledCourse.Count + " course(s) found for student " + selectedStudent.LastName + " " + selectedStudent.Firstname;
+                        #region DataGridViewCourses
+
                         DataGridViewCourses.DataSource = ((selectedStudent.EnrolledCourse).ToList().OrderByDescending(p => p.StartDate)).ToList();
                         DataGridViewCourses.Columns["TestPassed"].DisplayIndex = 6;
                         DataGridViewCourses.Visible = true;
@@ -167,6 +214,7 @@ namespace WinFormsSchool
                         DataGridViewCourses.Columns["CourseName"].Width = 260;
                         DataGridViewCourses.Columns["TestPassed"].Width = 90;
 
+                        #endregion
                     }
                     else
                     {
@@ -361,9 +409,63 @@ namespace WinFormsSchool
             //ToDo : insert of update student code
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
-            Close();
+            if 
+                (  IsDirty()  && 
+                   (_detailFormType == DetailFormType.UpdateForm || _detailFormType == DetailFormType.InsertForm)
+                )
+            {
+                DialogResult result
+                    = (MessageBox.Show(
+                       "Would you like to save changes before closing?"
+                       , "Save Changes"
+                       , MessageBoxButtons.YesNoCancel
+                       , MessageBoxIcon.Question));
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        SaveStudentData();
+                        Close();
+                        break;
+                    case DialogResult.No:
+                        Close();
+                        break;
+                    case DialogResult.Cancel:
+                        // cancel the close
+                        //e.Cancel
+                        break;
+                }
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private bool IsDirty()
+        {
+            #region CheckTextboxes
+
+            if (TextBoxLastName.Text.Trim() != _cleanLastName) return true;
+            if (TextBoxFirstname.Text.Trim() != _cleanFirstName) return true;
+            if (TextBoxMiddeleName.Text.Trim() != _cleanMiddleName) return true;
+            if (TextBoxStreetAndNumber.Text.Trim() != _cleanStreetAndNumber) return true;
+            if (TextBoxZipCode.Text.Trim() != _cleanZipCode) return true;
+            if (TextBoxPhoneNumber.Text.Trim() != _cleanPhoneNumber) return true;
+            if (TextBoxEmailAddress.Text.Trim() != _cleanEmailAddress) return true;
+            if (TextBoxNationalRegisterNumber.Text.Trim() != _cleanNationalRegisterNr) return true; 
+
+            #endregion
+
+            return false;
+        }
+
+
+        private void SaveStudentData()
+        {
+            //savedata
         }
     }
 }
