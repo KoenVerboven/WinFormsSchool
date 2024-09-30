@@ -14,10 +14,10 @@ namespace AppCode.BLL.BLLClasses
             FillStudentList();
         }
 
-        public bool AddStudent()//(Student student) //ToDo student meegeven
+        public bool AddStudent(Student student)
         {
             var studentDal = new StudentDal();
-            return studentDal.AddNewStudent(); 
+            return studentDal.AddNewStudent(student); 
         }
 
         public bool DeleteStudent(int StudentId)
@@ -39,10 +39,10 @@ namespace AppCode.BLL.BLLClasses
             return students;
         }
 
-        public bool UpdateStudent()//(Student student) //ToDo student meegeven
+        public bool UpdateStudent(Student student)
         {
             var studentDal = new StudentDal();
-            return studentDal.UpdateStudent();
+            return studentDal.UpdateStudent(student);
         }
 
         private void FillStudentList()

@@ -1,6 +1,7 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Enums;
 using AppCode.BLL.GeneralClasses;
+using AppCode.BLL.Models;
 using System.Text.RegularExpressions;
 using WinFormsSchool.GeneralForms;
 
@@ -496,13 +497,30 @@ namespace WinFormsSchool
         private void SaveStudentData()
         {
             var studentBLL = new StudentBLL();
+
+            var student = new Student() { 
+                LastName = TextBoxLastName.Text.Trim(),
+                MiddleName = TextBoxMiddeleName.Text.Trim(),    
+                Firstname = TextBoxFirstname.Text.Trim(),
+                StreetAndNumber = TextBoxStreetAndNumber.Text.Trim(),
+                ZipCode = TextBoxZipCode.Text.Trim(),
+                PhoneNumber = TextBoxPhoneNumber.Text.Trim(),
+                EmailAddress = TextBoxEmailAddress.Text.Trim(),
+                //Gender = ComboBoxGender.SelectedIndex
+                DateOfBirth = DateTimePickerDateOfBirth.Value,
+                MoederTongueId = 1,
+                // = ComboBoxNationality.SelectedIndex,
+                RegistrationDate = DateTimePickerRegistrationdate.Value
+            };
+
             if(_detailFormType == DetailFormType.InsertForm)
             {
-                studentBLL.AddStudent();
+                studentBLL.AddStudent(student);
             }
+
             if(_detailFormType == DetailFormType.UpdateForm)
             {
-                studentBLL.UpdateStudent();    
+                studentBLL.UpdateStudent(student);    
             }
         }
     }
