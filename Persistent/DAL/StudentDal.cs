@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿
+using System.Data.SqlClient;
 
 namespace AppCode.DAL
 {
@@ -8,9 +9,8 @@ namespace AppCode.DAL
         {
             try
             {
-                string connectionString = "Data Source=.;Initial Catalog=;Integrated Security=True";
-                string query = "Insert into Student values (";
-
+                var connectionString = "Data Source=KOENI7;Initial Catalog=School1;Integrated Security=True";
+                var query = "Insert into Student(FirstName, MiddleName, LastName, StreetAndNumber, ZipCode, PhoneNumber, Gender, DateOfBirth, MaritalStatusId, NationalRegisterNumber, Nationality, [MoederTongueId], Registrationdate ) values ('Koentje', 'Maria Frans', 'Verboven', 'Mpad 3', '2350', '08123445', 'M', '1966-06-01', 2, 1783278328, 1, 1, '2024-06-01  10:00:00')";
                 CreateCommand(connectionString, query);
 
                 return true;    
@@ -28,16 +28,14 @@ namespace AppCode.DAL
             return true;
         }
 
-        private static void CreateCommand(string queryString, string connectionString)
+        private static void CreateCommand(string connectionString, string queryString)
         {
             try
             {
-                using (var connection = new SqlConnection(connectionString))
-                {
-                    var command = new SqlCommand(queryString, connection);
-                    command.Connection.Open();
-                    command.ExecuteNonQuery();
-                }
+                using var connection = new SqlConnection(connectionString);
+                var command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
             }
             catch (Exception)
             {
