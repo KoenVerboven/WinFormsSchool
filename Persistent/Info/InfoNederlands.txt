@@ -2,19 +2,55 @@
 ------------
 Verboven Koen 
 Vosselaar
+Mpad
 België
 
 Versie:
 ---------
 Dit programma is geprogrammeerd in Visual Studio Community 2022
 Version 17.7.4
+
 Target framework:
 .NET8.0
 
-Tip:
+Tips:
 -----
 Als u een form in design-mode ziet op het scherm,
 klik dan op F7 om naar de code-behind te gaan.
+
+druk Ctrl-S voor bewaren file
+
+In code : verwijder de 'using' die niet gebruikt worden (staan in het licht grijs)
+
+Werk sneller met Shortcuts:
+handige site met Visual Studio shortcuts:
+https://devblogs.microsoft.com/premier-developer/visual-studio-shortcuts-and-add-on-tools/
+
+Volg de naming conventions van Microsoft:
+https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules
+
+In Visual Studio : zie onderaan tabblad Warnings en Messages:
+Los deze warnings en messages weg !
+
+In code : 
+let op de inspringingen en lege regels ! Belanrijk
+dan krijg je een properder programma.
+
+Gebruik Unit testen !
+In dit programma nog niet toegepast maar staat op de doto lijst
+
+Gebruik een goed naamgeving (voor alles variabelen, objecten, ...), kies goed namen:
+vermijd bv Button1, dit zegt niets.
+Gebruik dan bv ButtonSave
+
+Don't repeat your self.
+Als je regelmatig dezelfde code schrijft:
+maak deze dan herbruikbaar door hier voor een classe of een functie voor te maken.
+
+zie ook sites :
+https://hapy.co/journal/principles-of-coding/
+https://www.datacamp.com/tutorial/coding-best-practices-and-guidelines
+https://www.geeksforgeeks.org/coding-standards-and-guidelines/
 
 Person.cs
 ---------
@@ -48,6 +84,9 @@ gelijk aan null (we weten de prijs dan gewoon niet).
 Een property in een klassen maken we aan met de snippet :
 tikin : prop 
 druk dan op de tab-toets
+
+site met uitleg over Properties:
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
 
 
 ArticleBLL.cs
@@ -85,3 +124,14 @@ new Teacher
                         HighestDegree = HighestDegree.HighSchool,
                         StudyDirection = StudyDirection.Chemistry
 },
+
+
+DAL-layer:
+----------
+
+Install SystemDataSqlClient:
+Ga naar menu
+kies project
+kies hierin Manage Nuget Packages
+zoek naar System.DataSqlClient
+install

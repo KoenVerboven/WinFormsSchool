@@ -419,7 +419,7 @@ namespace WinFormsSchool
             if (InputValidation())
             {
                 LabelErrorMessage.Visible = false;
-                MessageBox.Show("InputValidation is ok", "validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SaveStudentData();
             }
             //ToDo : insert of update student code
         }
@@ -496,6 +496,17 @@ namespace WinFormsSchool
         private void SaveStudentData()
         {
             //savedata
+            //_detailFormType == DetailFormType.UpdateForm || _detailFormType == DetailFormType.InsertForm
+            var studentBLL = new StudentBLL();
+            if(_detailFormType == DetailFormType.InsertForm)
+            {
+                studentBLL.AddStudent();
+            }
+            if(_detailFormType == DetailFormType.UpdateForm)
+            {
+                studentBLL.UpdateStudent();    
+            }
+
         }
     }
 }

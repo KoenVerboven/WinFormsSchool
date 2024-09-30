@@ -10,7 +10,7 @@ namespace AppCode.BLL.Interfaces
 
         public bool AddStudent();
 
-        public bool UpdateStudent(Student Student);
+        public bool UpdateStudent();
 
         public bool DeleteStudent(int StudentId);
     }

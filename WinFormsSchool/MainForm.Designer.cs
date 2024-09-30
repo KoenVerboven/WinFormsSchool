@@ -36,8 +36,6 @@
             SchoolShopToolStripMenuItem = new ToolStripMenuItem();
             InfoToolStripMenuItem = new ToolStripMenuItem();
             CloseToolStripMenuItem = new ToolStripMenuItem();
-            windowsToolStripMenuItem = new ToolStripMenuItem();
-            CloseAllFormsToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
@@ -49,7 +47,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem, windowsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 5, 0, 5);
@@ -129,24 +127,6 @@
             CloseToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             CloseToolStripMenuItem.Click += CloseToolStripMenuItem_Click;
             // 
-            // windowsToolStripMenuItem
-            // 
-            windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CloseAllFormsToolStripMenuItem });
-            windowsToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
-            windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            windowsToolStripMenuItem.Size = new Size(163, 24);
-            windowsToolStripMenuItem.Text = "Windows";
-            windowsToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // CloseAllFormsToolStripMenuItem
-            // 
-            CloseAllFormsToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
-            CloseAllFormsToolStripMenuItem.ForeColor = Color.White;
-            CloseAllFormsToolStripMenuItem.Name = "CloseAllFormsToolStripMenuItem";
-            CloseAllFormsToolStripMenuItem.Size = new Size(186, 26);
-            CloseAllFormsToolStripMenuItem.Text = "CloseAllForms";
-            CloseAllFormsToolStripMenuItem.Click += CloseAllFormsToolStripMenuItem_Click;
-            // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
@@ -194,8 +174,6 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem windowsToolStripMenuItem;
-        private ToolStripMenuItem CloseAllFormsToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
