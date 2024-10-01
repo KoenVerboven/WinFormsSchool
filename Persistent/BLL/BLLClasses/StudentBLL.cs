@@ -11,7 +11,6 @@ namespace AppCode.BLL.BLLClasses
 
         public StudentBLL()//ctor tab tab
         {
-            FillStudentList();
         }
 
         public bool AddStudent(Student student)
@@ -27,16 +26,14 @@ namespace AppCode.BLL.BLLClasses
 
         public Student? GetStudentById(int StudentId)
         {
-            if (students == null)
-            {
-                return null;
-            }
-            return students.Single(p => p.PersonId == StudentId);
+            var studentDal = new StudentDal();
+            return studentDal.GetStudentById(StudentId);
         }
 
         public List<Student>? GetStudents()
         {
-            return students;
+            var studentDal = new StudentDal();
+            return studentDal.GetStudents();
         }
 
         public bool UpdateStudent(Student student)
@@ -45,6 +42,7 @@ namespace AppCode.BLL.BLLClasses
             return studentDal.UpdateStudent(student);
         }
 
+        [Obsolete]
         private void FillStudentList()
         {
             students =

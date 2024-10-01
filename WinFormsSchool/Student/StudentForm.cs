@@ -49,7 +49,6 @@ namespace WinFormsSchool
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-            //InitializeControls();
         }
 
         private void InitializeControls()
@@ -497,6 +496,7 @@ namespace WinFormsSchool
         private void SaveStudentData()
         {
             var studentBLL = new StudentBLL();
+            bool ok = false;
 
             var student = new Student() { 
                 LastName = TextBoxLastName.Text.Trim(),
@@ -515,12 +515,16 @@ namespace WinFormsSchool
 
             if(_detailFormType == DetailFormType.InsertForm)
             {
-                studentBLL.AddStudent(student);
+                ok = studentBLL.AddStudent(student);
             }
 
             if(_detailFormType == DetailFormType.UpdateForm)
             {
-                studentBLL.UpdateStudent(student);    
+                ok = studentBLL.UpdateStudent(student);    
+            }
+            if(ok)
+            {
+                Close();
             }
         }
     }

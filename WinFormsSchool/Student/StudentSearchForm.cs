@@ -160,7 +160,7 @@ namespace WinFormsSchool
                 {
                     personId = GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString();
                 }
- 
+
                 var dictErrorData = new Dictionary<string, string>()
                 {
                   { "UserName", "" },
