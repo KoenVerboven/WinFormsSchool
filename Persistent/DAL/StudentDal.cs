@@ -5,6 +5,15 @@ using System.Data.SqlClient;
 
 namespace AppCode.DAL
 {
+
+    public enum RecordAction
+    {
+        insert,
+        update,
+        delete,
+    }
+
+
     internal class StudentDal
     {
         const string connectionString = "Data Source=KOENI7;Initial Catalog=School1;Integrated Security=True";
@@ -109,7 +118,7 @@ namespace AppCode.DAL
                                         " @NationalRegisterNumber,@Nationality,@MoederTongueId, @Registrationdate" +
                                     ")";
                 
-                CreateCommand(connectionString, query, student);
+                CreateCommand(connectionString, query, student, RecordAction.insert);
 
                 return true;    
             }
@@ -123,6 +132,7 @@ namespace AppCode.DAL
 
         public bool UpdateStudent(Student student) 
         {
+            
             var query = "UPDATE student " +
                         "SET "+
                         "FirstName = @FirstName, " +
@@ -137,15 +147,10 @@ namespace AppCode.DAL
                         "MaritalStatusId = @MaritalStatusId, " +
                         "NationalRegisterNumber = @NationalRegisterNumber, " +
                         "Nationality = @Nationality, " +
-                        "MoederTongueId = @MoederTongueId, " +
+                        "MoederTongueId = @MoederTongueId " +
                         "WHERE StudentId = @StudentId ";
 
-            using var connection = new SqlConnection(connectionString);
-            SqlCommand command = new(query, connection);
-            //command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = studentId;
-            command.Connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+            CreateCommand(connectionString, query, student, RecordAction.update);
 
             return true;
         }
@@ -165,12 +170,21 @@ namespace AppCode.DAL
 
 
 
-        private static void CreateCommand(string connectionString, string queryString, Student student)
+        private static void CreateCommand(string connectionString, string queryString, Student student, RecordAction action)
         {
             try
             {
                 using var connection = new SqlConnection(connectionString);
                 var command = new SqlCommand(queryString, connection);
+
+                if(action == RecordAction.update)
+                {
+                    command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = student.PersonId;
+                }
+                if (action == RecordAction.insert)
+                {
+                    command.Parameters.Add("@Registrationdate", SqlDbType.DateTime).Value = student.RegistrationDate;
+                }
 
                 command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = student.Firstname;
                 command.Parameters.Add("@MiddleName", SqlDbType.VarChar, 50).Value = student.MiddleName;
@@ -185,7 +199,6 @@ namespace AppCode.DAL
                 command.Parameters.Add("@NationalRegisterNumber", SqlDbType.VarChar, 50).Value = student.NationalRegisterNumber;
                 command.Parameters.Add("@Nationality", SqlDbType.Int).Value = 1;// student.Nationality; 
                 command.Parameters.Add("@MoederTongueId", SqlDbType.Int).Value = 1; // student.MoederTongueId;
-                command.Parameters.Add("@Registrationdate", SqlDbType.DateTime).Value = student.RegistrationDate;
 
                 command.Connection.Open();
                 command.ExecuteNonQuery();

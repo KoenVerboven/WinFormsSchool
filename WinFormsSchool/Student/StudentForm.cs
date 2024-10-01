@@ -12,6 +12,7 @@ namespace WinFormsSchool
     {
         readonly StudentBLL Student;
         private readonly DetailFormType _detailFormType;
+        int _studentId = 0;
 
         #region cleanFields
 
@@ -177,6 +178,8 @@ namespace WinFormsSchool
                 {
                     #region FillInControls
 
+                    LabelStudentIdValue.Text = selectedStudent.PersonId.ToString();
+                    _studentId = selectedStudent.PersonId;
                     TextBoxFirstname.Text = selectedStudent.Firstname;
                     TextBoxMiddeleName.Text = selectedStudent.MiddleName;
                     TextBoxLastName.Text = selectedStudent.LastName;
@@ -498,7 +501,8 @@ namespace WinFormsSchool
             var studentBLL = new StudentBLL();
             bool ok = false;
 
-            var student = new Student() { 
+            var student = new Student() {
+                PersonId = _studentId,
                 LastName = TextBoxLastName.Text.Trim(),
                 MiddleName = TextBoxMiddeleName.Text.Trim(),    
                 Firstname = TextBoxFirstname.Text.Trim(),
