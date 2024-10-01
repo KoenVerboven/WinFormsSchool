@@ -138,7 +138,7 @@ namespace AppCode.DAL
                         "NationalRegisterNumber = @NationalRegisterNumber, " +
                         "Nationality = @Nationality, " +
                         "MoederTongueId = @MoederTongueId, " +
-                        "WHERE StudentId = 35 ";
+                        "WHERE StudentId = @StudentId ";
 
             using var connection = new SqlConnection(connectionString);
             SqlCommand command = new(query, connection);
@@ -165,7 +165,7 @@ namespace AppCode.DAL
 
 
 
-            private static void CreateCommand(string connectionString, string queryString, Student student)
+        private static void CreateCommand(string connectionString, string queryString, Student student)
         {
             try
             {

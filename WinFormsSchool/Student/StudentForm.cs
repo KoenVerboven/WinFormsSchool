@@ -33,8 +33,8 @@ namespace WinFormsSchool
         int _cleanMartialStatus = 0;
         int _cleanNationality = 0;
 
-        DateTime _cleanDateOfBirth;
-        DateTime _cleanRegistrationDate;
+        DateTime _cleanDateOfBirth = DateTime.Now;
+        DateTime _cleanRegistrationDate = DateTime.Now;
 
 
         #endregion
@@ -484,8 +484,8 @@ namespace WinFormsSchool
 
             #region DateTimePicker
 
-            if (DateTimePickerDateOfBirth.Value != _cleanDateOfBirth) return true;
-            if (DateTimePickerRegistrationdate.Value != _cleanRegistrationDate) return true;
+            if ( DateTimePickerDateOfBirth.Value.ToShortDateString() != _cleanDateOfBirth.ToShortDateString()) return true;
+            if ( DateTimePickerRegistrationdate.Value.ToShortDateString() != _cleanRegistrationDate.ToShortDateString()) return true;
 
             #endregion
 

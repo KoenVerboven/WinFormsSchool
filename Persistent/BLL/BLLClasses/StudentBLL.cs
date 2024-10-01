@@ -21,7 +21,8 @@ namespace AppCode.BLL.BLLClasses
 
         public bool DeleteStudent(int StudentId)
         {
-            throw new NotImplementedException();
+            var studentDal = new StudentDal();
+            return studentDal.DeleteStudent(StudentId);
         }
 
         public Student? GetStudentById(int StudentId)

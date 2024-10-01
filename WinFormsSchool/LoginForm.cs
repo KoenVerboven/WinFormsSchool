@@ -20,6 +20,7 @@ namespace WinFormsSchool
 
             if (ValidUser() is not null)
             {
+                Hide();   
                 mainForm.SetUser(ValidUser());
                 mainForm.ShowDialog();
                 Close();

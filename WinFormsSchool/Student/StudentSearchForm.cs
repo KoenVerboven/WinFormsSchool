@@ -81,19 +81,7 @@ namespace WinFormsSchool
 
             if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
             {
-                _ = int.TryParse(TextboxSearch.Text, out int personId);
-                students = Student.GetStudents();
-                if (students is not null)
-                {
-                    students = students
-                                 .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextboxSearch.Text.ToLower())
-                                           || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextboxSearch.Text.ToLower())
-                                           || (X.PersonId == personId)
-                                           ).ToList();
-
-                    FillGridView();
-                }
-
+                FilterStudents();
             }
             else
             {
@@ -101,6 +89,22 @@ namespace WinFormsSchool
                 GridViewStudents.Visible = false;
             }
 
+        }
+
+        private void FilterStudents()
+        {
+            _ = int.TryParse(TextboxSearch.Text, out int personId);
+            students = Student.GetStudents();
+            if (students is not null)
+            {
+                students = students
+                             .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextboxSearch.Text.ToLower())
+                                       || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextboxSearch.Text.ToLower())
+                                       || (X.PersonId == personId)
+                                       ).ToList();
+
+                FillGridView();
+            }
         }
 
         private void dgrStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -138,7 +142,11 @@ namespace WinFormsSchool
 
                             if (itemRemove.EnrolledCourse == null)
                             {
-                                students.Remove(itemRemove);
+                                
+                                var studentBLL = new StudentBLL();
+                                var ok = false;
+                                ok = studentBLL.DeleteStudent(itemRemove.PersonId);
+                                if (ok) FilterStudents();
                             }
                             else
                             {
