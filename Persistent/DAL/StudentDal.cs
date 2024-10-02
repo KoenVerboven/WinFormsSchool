@@ -13,7 +13,6 @@ namespace AppCode.DAL
         delete,
     }
 
-
     internal class StudentDal
     {
         const string connectionString = "Data Source=KOENI7;Initial Catalog=School1;Integrated Security=True";
@@ -71,40 +70,46 @@ namespace AppCode.DAL
             query += "FROM Student ";
             query += "WHERE StudentId = @StudentId";
 
-            using var connection = new SqlConnection(connectionString);
-            SqlCommand command = new(query, connection);
-            command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = studentId;
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            try
             {
-                while (reader.Read())
+                using var connection = new SqlConnection(connectionString);
+                SqlCommand command = new(query, connection);
+                command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = studentId;
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    var student = new Student()
+                    while (reader.Read())
                     {
-                        PersonId = Convert.ToInt32(reader["StudentId"]),
-                        LastName = Convert.ToString(reader["LastName"]),
-                        MiddleName = Convert.ToString(reader["MiddleName"]),
-                        Firstname = Convert.ToString(reader["FirstName"]),
-                        StreetAndNumber = Convert.ToString(reader["StreetAndNumber"]),
-                        ZipCode = Convert.ToString(reader["ZipCode"]),
-                        PhoneNumber = Convert.ToString(reader["PhoneNumber"]),
-                        EmailAddress = Convert.ToString(reader["EmailAddress"]),
-                        //Gender = ComboBoxGender.SelectedIndex
-                        DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
-                        MoederTongueId = 1,
-                        // = ComboBoxNationality.SelectedIndex,
-                        RegistrationDate = Convert.ToDateTime(reader["Registrationdate"])
-                    };
-                    return student;
+                        var student = new Student()
+                        {
+                            PersonId = Convert.ToInt32(reader["StudentId"]),
+                            LastName = Convert.ToString(reader["LastName"]),
+                            MiddleName = Convert.ToString(reader["MiddleName"]),
+                            Firstname = Convert.ToString(reader["FirstName"]),
+                            StreetAndNumber = Convert.ToString(reader["StreetAndNumber"]),
+                            ZipCode = Convert.ToString(reader["ZipCode"]),
+                            PhoneNumber = Convert.ToString(reader["PhoneNumber"]),
+                            EmailAddress = Convert.ToString(reader["EmailAddress"]),
+                            //Gender = ComboBoxGender.SelectedIndex
+                            DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
+                            MoederTongueId = 1,
+                            // = ComboBoxNationality.SelectedIndex,
+                            RegistrationDate = Convert.ToDateTime(reader["Registrationdate"])
+                        };
+                        return student;
+                    }
                 }
             }
-
+            catch (Exception)
+            {
+                throw;
+            }
             return null;
         }
 
-            public bool AddNewStudent(Student student)
+        public bool AddNewStudent(Student student)
         {
             try
             {
@@ -132,9 +137,8 @@ namespace AppCode.DAL
 
         public bool UpdateStudent(Student student) 
         {
-            
             var query = "UPDATE student " +
-                        "SET "+
+                        "SET " +
                         "FirstName = @FirstName, " +
                         "LastName = @LastName, " +
                         "MiddleName = @MiddleName, " +
@@ -150,23 +154,39 @@ namespace AppCode.DAL
                         "MoederTongueId = @MoederTongueId " +
                         "WHERE StudentId = @StudentId ";
 
-            CreateCommand(connectionString, query, student, RecordAction.update);
-
-            return true;
+            try
+            {
+                CreateCommand(connectionString, query, student, RecordAction.update);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
         }
 
         public bool DeleteStudent(int studentId)
         {
             var query = "delete from student where StudentId = @StudentId";
             using var connection = new SqlConnection(connectionString);
-            SqlCommand command = new(query, connection);
-            command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = studentId;
-            command.Connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
 
-            return true;
-        }
+            try
+            {
+                
+                SqlCommand command = new(query, connection);
+                command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = studentId;
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+         }
 
 
 
