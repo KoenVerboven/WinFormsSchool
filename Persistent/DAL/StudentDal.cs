@@ -72,6 +72,9 @@ namespace AppCode.DAL
 
             try
             {
+                var courseDal = new CourseDal();
+                var courses =courseDal.GetCoursesByStudentId(studentId);
+
                 using var connection = new SqlConnection(connectionString);
                 SqlCommand command = new(query, connection);
                 command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = studentId;
@@ -96,7 +99,8 @@ namespace AppCode.DAL
                             DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
                             MoederTongueId = 1,
                             // = ComboBoxNationality.SelectedIndex,
-                            RegistrationDate = Convert.ToDateTime(reader["Registrationdate"])
+                            RegistrationDate = Convert.ToDateTime(reader["Registrationdate"]),
+                            EnrolledCourse = courses
                         };
                         return student;
                     }
