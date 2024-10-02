@@ -26,7 +26,7 @@ namespace AppCode.DAL
             query += "PhoneNumber ,EmailAddress ,Gender ,DateOfBirth ,MaritalStatusId  ,NationalRegisterNumber,";
             query += "Nationality ,MoederTongueId ,LanguageSkill ,Registrationdate ";
             query += "FROM Student ";
-            query += "ORDER BY LastName ";
+            query += "ORDER BY StudentId ";
 
             using var connection = new SqlConnection(connectionString);
             SqlCommand command = new(query, connection);

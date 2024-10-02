@@ -43,13 +43,26 @@
 	Insert into StudentCourse(StudentId,CourseId,CourseTestGrade)
 	values
 	(1,1,null),
-	(2,1,null),
-	(3,1,null),
-	(4,1,null),
 	(1,2,null),
+	(1,3,null),
+	(2,1,null),
+	(2,2,null),
+	(3,1,null),
+	(3,7,null),
+	(3,8,null),
+	(3,9,null),
 	(2,2,null),
 	(3,2,null),
-	(4,2,null)
+	(4,5,null),
+	(4,6,null)
+
+
+	Insert into InlogUser(UserName, UserPassword,SecurityGroupId,ActiveFrom,Blocked,PersonId)
+	values 
+	('admin','schoolSoft4you', 0,'2024-06-01  10:00:00',0,0),
+	('koenverboven','rgSeg@45',1,'2024-06-01  10:00:00',0,1),
+	('mariapoels','regreT@488',1,'2024-06-01  10:00:00',0,2),
+	('johanverboven','threM@566',1,'2024-06-01  10:00:00',0,3)
 
 
 

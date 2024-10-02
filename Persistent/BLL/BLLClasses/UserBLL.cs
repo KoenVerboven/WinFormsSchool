@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.Models;
+using AppCode.DAL;
 
 namespace AppCode.BLL.BLLClasses
 {
@@ -12,12 +13,15 @@ namespace AppCode.BLL.BLLClasses
             FillUserList();
         }
 
-        public User? GetUserByUserNameAndPassword(String UserName,String PassWord)
+        public User? GetUserByUserNameAndPassword(String userName,String passWord)
         {
             User? user = null;
-            if (UserName != string.Empty)
+            if (userName != string.Empty)
             {
-                user = Users.SingleOrDefault(p => p.UserName == UserName);
+                var userDal = new UserDal();
+                return userDal.GetValidUser(userName, passWord);
+
+                //user = Users.SingleOrDefault(p => p.UserName == UserName);
                 //user = Users.SingleOrDefault(p => p.UserName == UserName && p.Password == PassWord); ToDo comment this out
             }
             return user;

@@ -91,3 +91,18 @@
 				references Course(CourseId)
 		);
 	end
+
+	if object_id('User') is null
+	begin
+		create table InlogUser
+		(
+			UserId int identity(1,1) not null,
+			UserName varchar(30) not null,
+			UserPassword varchar(30) not null,
+			SecurityGroupId smallint not null,
+			ActiveFrom datetime null,
+			Blocked bit not null,
+			PersonId int not null
+			constraint PK_User primary key(UserId),
+		)
+	end
