@@ -130,8 +130,6 @@ namespace WinFormsSchool
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        => Close();
     }
 }

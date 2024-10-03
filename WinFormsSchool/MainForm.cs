@@ -55,6 +55,7 @@ namespace WinFormsSchool
                 StudentsToolStripMenuItem.Visible = true;
                 SchoolShopToolStripMenuItem.Visible = true;
                 TeachersToolStripMenuItem.Visible = true;
+                UserAdministraionToolStripMenuItem.Visible = true;  
             }
 
             if (validUser.SecurityGroupId == 1)
@@ -63,6 +64,7 @@ namespace WinFormsSchool
                 StudentsToolStripMenuItem.Visible = false;
                 SchoolShopToolStripMenuItem.Visible = false;
                 TeachersToolStripMenuItem.Visible = false;
+                UserAdministraionToolStripMenuItem.Visible = false;
             }
 
         }
@@ -163,6 +165,16 @@ namespace WinFormsSchool
             studentForm.LoadSelectedStudent(_validUser.PersonId);
             studentForm.Show();
         }
+
+        private void UserAdministraionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllForms();
+            var userAdministrationForm = new UserSearchForm()
+            {
+                MdiParent = this
+            };
+            userAdministrationForm.Show();
+        }
     }
 
     internal class MyRender : ToolStripProfessionalRenderer
@@ -248,3 +260,8 @@ namespace WinFormsSchool
 //<a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Stockio - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by Leremy - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/figure" title="figure icons">Figure icons created by heisenberg_jr - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/administration" title = "administration icons" > Administration icons created by wuizo - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/administrator" title = "administrator icons" > Administrator icons created by smashingstocks - Flaticon</a>
+
+
+

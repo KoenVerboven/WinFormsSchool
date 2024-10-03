@@ -122,9 +122,7 @@ namespace WinFormsSchool
             customErrorForm.ShowDialog();
         }
 
-        private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void ButtonClose_Click(object sender, EventArgs e) => Close();
+
     }
 }

@@ -331,11 +331,8 @@ namespace WinFormsSchool
             }
         }
 
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        private void ButtonCancel_Click(object sender, EventArgs e) => Close();
+         
         private void MarkRequiredFields()
         {
             var colorRequiredField = Color.FromArgb(200, 200, 251);

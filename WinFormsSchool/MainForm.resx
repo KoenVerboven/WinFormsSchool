@@ -121,6 +121,30 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="UserAdministraionToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAABDtJREFUaEPV2VnIrVMcx/HXeI65k1OmuDDPSuTClDKUSA45ic6hiFCSIcp0IXOG
+        CyWzG4WUOBniHEOESC7MmSUyj5mH7/fN87as/s/zrPWc/Z69/epz87TX2mvtZ/qvtadmKat2WBkTn/Wx
+        DL/h9xZf4FhMdK7E3wW+hWdnYvMQooFHtsfE5nVEg44cg7HkNLyEa7GWB7JsjJ8RDTpyI1ZBnnVwNR7D
+        iR4YZS5GOojXsAN8Ai3Ec/gL6WdKfIorsDnMXngX6Wf87pEkn0TjJ7ycHRvqDyzFn8mx1HJPpm0S4zB4
+        MpM0iUb1ZM5C1FEJX3rP4FIcjX2wO/bEETgfj6DmwZA6HUVZCZ8j6qSLb+wLsCFKsh58En6AqL82H6M4
+        PpWiTiLeoNdjXQzJHHiWfkXUf86xFWdveIlEHaW+xkEYRXaDv3b0PQ1rOC/RqpyLqLPGZ9gRo8xmyN8j
+        qTNQnbn4DlGHP2JXdGVf3IRn/3ULDkRftsRXyL/zeXj/Vuck5J01jkNb1sBdiNppCbzRu3IY8nZeVk6y
+        Oq8g70yPoi3+YvcjapdyzRLVWWnuQd7uBlRlC+SdyHpqZ7TlKETtIsejK1vB0iVt48NldXRmWxyOM9G2
+        rug6G+ZxRO0iT6Mv0dn1frsGi7E1/hPfwnmDSNcawkrYQjJqF/kefTfvkYjaNrxCfKlOx2u1ZACe5nlo
+        i0vX/FLoYonStxHh97VVxA0r8OmshpIBvIm+vIOobeQtlOQNRO0bLvamUzqRB9EXr92obeQylOQBRO0b
+        1RO5HX1xufsNovYpq4L5KInfG/XRqJ7IzSjJ/vgBUR/yrb0HSnM3on4a1ROxw9L4WLwXv6Bpb1lzJzZF
+        Td5DOo5c9UReQG2s1yws3ajofZEFsYiMxpKamYiP3/SXa+Mv6qRXZE5GNJaUOzgzuRXRh3L7oStrwjfu
+        KVjbA1ksKA+B5bhlUF+eRDSOlMuNmXhW3J+6BFauPuOjRpblURy0y9y0/PYl+wTuwG2wUExfvL7o7kPb
+        1uk2iPbK3At7GJfjYHRmJ+QdyMvLHfc0rjE+QvT5EpbnFyKvhn1K5p+1Iq9ek7yIvCO5ndnkbPSVEKX8
+        lZvLcTtES23XSNVZhLwj+QvugnOSY6NiRexknkqONbykfApWx90N6/+8Q7lJMKozkXs/OKarMCgHYMjG
+        9Gz5EhuhKu5RfYiow3FywVd1s1+HqKNJ4DZscXztR51MAt8fxTkVUSfj5rZqTeU8nYsQdTYuPvbdHBmU
+        SZmMk1iA5UrXZKKtzSFcRrStLEcyiSb5ZCwfzoM7J27KDX04WERaeVsgboB8fe49Mfhyaosbd5YJr8K/
+        HfJ4E5b8FdHwb+5oD/gEWDm4I3OoB8aRtxENOtK3thlr/G8wGnSkdu2+QlO6r2Xd1LcbP9ZsAv+Q8Sb1
+        aRP5BC53/xexsGszC5ma+gdoh7CMiMvLlQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="StudentsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

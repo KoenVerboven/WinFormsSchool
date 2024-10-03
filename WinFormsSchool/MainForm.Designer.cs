@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
             MyPersonalDataToolStripMenuItem = new ToolStripMenuItem();
+            UserAdministraionToolStripMenuItem = new ToolStripMenuItem();
             StudentsToolStripMenuItem = new ToolStripMenuItem();
             TeachersToolStripMenuItem = new ToolStripMenuItem();
             SchoolShopToolStripMenuItem = new ToolStripMenuItem();
@@ -47,7 +48,7 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, UserAdministraionToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 5, 0, 5);
@@ -64,6 +65,16 @@
             MyPersonalDataToolStripMenuItem.Size = new Size(163, 54);
             MyPersonalDataToolStripMenuItem.Text = "Personal Data";
             MyPersonalDataToolStripMenuItem.Click += MyPersonalDataToolStripMenuItem_Click;
+            // 
+            // UserAdministraionToolStripMenuItem
+            // 
+            UserAdministraionToolStripMenuItem.Image = (Image)resources.GetObject("UserAdministraionToolStripMenuItem.Image");
+            UserAdministraionToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            UserAdministraionToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            UserAdministraionToolStripMenuItem.Name = "UserAdministraionToolStripMenuItem";
+            UserAdministraionToolStripMenuItem.Size = new Size(163, 54);
+            UserAdministraionToolStripMenuItem.Text = "User";
+            UserAdministraionToolStripMenuItem.Click += UserAdministraionToolStripMenuItem_Click;
             // 
             // StudentsToolStripMenuItem
             // 
@@ -183,5 +194,6 @@
         private ToolStripMenuItem CloseToolStripMenuItem;
         private ToolStripMenuItem InfoToolStripMenuItem;
         private ToolStripMenuItem MyPersonalDataToolStripMenuItem;
+        private ToolStripMenuItem UserAdministraionToolStripMenuItem;
     }
 }

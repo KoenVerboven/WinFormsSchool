@@ -10,7 +10,7 @@ namespace WinFormsSchool
     public partial class StudentSearchForm : Base.BaseForm1
     {
         readonly StudentBLL Student;
-        List<Student> students; // rename to students
+        List<Student> students; 
 
         public StudentSearchForm()
         {

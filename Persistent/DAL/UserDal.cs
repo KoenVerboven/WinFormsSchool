@@ -8,6 +8,41 @@ namespace AppCode.DAL
     {
         const string connectionString = "Data Source=KOENI7;Initial Catalog=School1;Integrated Security=True";
 
+        public List<User>? GetUsers()
+        {
+            var userList = new List<User>();
+
+            var query = "SELECT UserId, UserName, UserPassword, SecurityGroupId, ActiveFrom, Blocked, PersonId " ;
+            query += "FROM InlogUser ";
+            query += "ORDER BY UserId ";
+
+            using var connection = new SqlConnection(connectionString);
+            SqlCommand command = new(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    var user = new User()
+                    {
+                        UserId = Convert.ToInt32(reader["UserId"]),
+                        UserName = Convert.ToString(reader["UserName"]),
+                        SecurityGroupId = Convert.ToInt32(reader["SecurityGroupId"]),
+                        ActiveFrom = Convert.ToDateTime(reader["ActiveFrom"]),
+                        Blocked = Convert.ToBoolean(reader["Blocked"]),
+                        PersonId = Convert.ToInt32(reader["PersonId"]),
+                    };
+                    userList.Add(user);
+                }
+            }
+            reader.Close();
+            return userList;
+        }
+
+
+
         public User GetValidUser(string userName, string password)
         {
 

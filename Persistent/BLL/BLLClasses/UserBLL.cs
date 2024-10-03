@@ -1,16 +1,23 @@
-﻿using AppCode.BLL.Models;
+﻿using AppCode.BLL.Interfaces;
+using AppCode.BLL.Models;
 using AppCode.DAL;
 
 namespace AppCode.BLL.BLLClasses
 {
-    public class UserBLL
+    public class UserBLL : IUserBLL
     {
 
         List<User>? Users;
 
         public UserBLL()
         {
-            FillUserList();
+        }
+
+
+        public List<User>? GetUsers()
+        {
+            var userDal = new UserDal();
+            return userDal.GetUsers();
         }
 
         public User? GetUserByUserNameAndPassword(String userName,String passWord)
@@ -20,13 +27,11 @@ namespace AppCode.BLL.BLLClasses
             {
                 var userDal = new UserDal();
                 return userDal.GetValidUser(userName, passWord);
-
-                //user = Users.SingleOrDefault(p => p.UserName == UserName);
-                //user = Users.SingleOrDefault(p => p.UserName == UserName && p.Password == PassWord); ToDo comment this out
             }
             return user;
         }
 
+        [Obsolete]
         private void FillUserList()
         {
             Users =
