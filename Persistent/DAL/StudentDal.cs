@@ -194,45 +194,45 @@ namespace AppCode.DAL
 
 
 
-        private static void CreateCommand(string connectionString, string queryString, Student student, RecordAction action)
-        {
-            try
+            private static void CreateCommand(string connectionString, string queryString, Student student, RecordAction action)
             {
-                using var connection = new SqlConnection(connectionString);
-                var command = new SqlCommand(queryString, connection);
-
-                if(action == RecordAction.update)
+                try
                 {
-                    command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = student.PersonId;
+                    using var connection = new SqlConnection(connectionString);
+                    var command = new SqlCommand(queryString, connection);
+
+                    if(action == RecordAction.update)
+                    {
+                        command.Parameters.Add("@StudentId", SqlDbType.Int, 50).Value = student.PersonId;
+                    }
+                    if (action == RecordAction.insert)
+                    {
+                        command.Parameters.Add("@Registrationdate", SqlDbType.DateTime).Value = student.RegistrationDate;
+                    }
+
+                    command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = student.Firstname;
+                    command.Parameters.Add("@MiddleName", SqlDbType.VarChar, 50).Value = student.MiddleName;
+                    command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = student.LastName;
+                    command.Parameters.Add("@StreetAndNumber", SqlDbType.VarChar, 50).Value = student.StreetAndNumber;
+                    command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = student.ZipCode;
+                    command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = student.PhoneNumber;
+                    command.Parameters.Add("@EmailAddress", SqlDbType.VarChar, 50).Value = student.EmailAddress;
+                    command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = 'M'; //student.Gender;
+                    command.Parameters.Add("@DateOfBirth", SqlDbType.DateTime, 50).Value = student.DateOfBirth;
+                    command.Parameters.Add("@MaritalStatusId", SqlDbType.Int, 50).Value = 1;//
+                    command.Parameters.Add("@NationalRegisterNumber", SqlDbType.VarChar, 50).Value = student.NationalRegisterNumber;
+                    command.Parameters.Add("@Nationality", SqlDbType.Int).Value = 1;// student.Nationality; 
+                    command.Parameters.Add("@MoederTongueId", SqlDbType.Int).Value = 1; // student.MoederTongueId;
+
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
                 }
-                if (action == RecordAction.insert)
+                catch (Exception)
                 {
-                    command.Parameters.Add("@Registrationdate", SqlDbType.DateTime).Value = student.RegistrationDate;
+                    throw;
                 }
-
-                command.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = student.Firstname;
-                command.Parameters.Add("@MiddleName", SqlDbType.VarChar, 50).Value = student.MiddleName;
-                command.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = student.LastName;
-                command.Parameters.Add("@StreetAndNumber", SqlDbType.VarChar, 50).Value = student.StreetAndNumber;
-                command.Parameters.Add("@ZipCode", SqlDbType.VarChar, 50).Value = student.ZipCode;
-                command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar, 50).Value = student.PhoneNumber;
-                command.Parameters.Add("@EmailAddress", SqlDbType.VarChar, 50).Value = student.EmailAddress;
-                command.Parameters.Add("@Gender", SqlDbType.VarChar, 50).Value = 'M'; //student.Gender;
-                command.Parameters.Add("@DateOfBirth", SqlDbType.DateTime, 50).Value = student.DateOfBirth;
-                command.Parameters.Add("@MaritalStatusId", SqlDbType.Int, 50).Value = 1;//
-                command.Parameters.Add("@NationalRegisterNumber", SqlDbType.VarChar, 50).Value = student.NationalRegisterNumber;
-                command.Parameters.Add("@Nationality", SqlDbType.Int).Value = 1;// student.Nationality; 
-                command.Parameters.Add("@MoederTongueId", SqlDbType.Int).Value = 1; // student.MoederTongueId;
-
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
             }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
     }
 }

@@ -20,6 +20,13 @@ namespace AppCode.BLL.BLLClasses
             return userDal.GetUsers();
         }
 
+
+        public User GetUserById(int userId)
+        {
+            var userDal = new UserDal();
+            return userDal.GetUserById(userId);
+        }
+
         public User? GetUserByUserNameAndPassword(String userName,String passWord)
         {
             User? user = null;

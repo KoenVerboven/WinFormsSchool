@@ -38,10 +38,11 @@
             TextBoxUserName = new TextBox();
             CheckBoxBlocked = new CheckBox();
             DateTimePickerActiveFrom = new DateTimePicker();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            TextBoxSecurityGroupId = new TextBox();
+            TextBoxPersonId = new TextBox();
             ButtonCancel = new Button();
             ButtonSave = new Button();
+            LabelUserIdValue = new Label();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -137,19 +138,19 @@
             DateTimePickerActiveFrom.Size = new Size(250, 27);
             DateTimePickerActiveFrom.TabIndex = 73;
             // 
-            // textBox1
+            // TextBoxSecurityGroupId
             // 
-            textBox1.Location = new Point(174, 211);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(246, 27);
-            textBox1.TabIndex = 74;
+            TextBoxSecurityGroupId.Location = new Point(174, 211);
+            TextBoxSecurityGroupId.Name = "TextBoxSecurityGroupId";
+            TextBoxSecurityGroupId.Size = new Size(246, 27);
+            TextBoxSecurityGroupId.TabIndex = 74;
             // 
-            // textBox2
+            // TextBoxPersonId
             // 
-            textBox2.Location = new Point(170, 305);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 75;
+            TextBoxPersonId.Location = new Point(170, 305);
+            TextBoxPersonId.Name = "TextBoxPersonId";
+            TextBoxPersonId.Size = new Size(250, 27);
+            TextBoxPersonId.TabIndex = 75;
             // 
             // ButtonCancel
             // 
@@ -171,15 +172,25 @@
             ButtonSave.UseVisualStyleBackColor = true;
             ButtonSave.Visible = false;
             // 
+            // LabelUserIdValue
+            // 
+            LabelUserIdValue.AutoSize = true;
+            LabelUserIdValue.Location = new Point(174, 118);
+            LabelUserIdValue.Name = "LabelUserIdValue";
+            LabelUserIdValue.Size = new Size(87, 20);
+            LabelUserIdValue.TabIndex = 78;
+            LabelUserIdValue.Text = "UserIdValue";
+            // 
             // UserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 510);
+            Controls.Add(LabelUserIdValue);
             Controls.Add(ButtonCancel);
             Controls.Add(ButtonSave);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TextBoxPersonId);
+            Controls.Add(TextBoxSecurityGroupId);
             Controls.Add(DateTimePickerActiveFrom);
             Controls.Add(CheckBoxBlocked);
             Controls.Add(TextBoxUserName);
@@ -203,10 +214,11 @@
             Controls.SetChildIndex(TextBoxUserName, 0);
             Controls.SetChildIndex(CheckBoxBlocked, 0);
             Controls.SetChildIndex(DateTimePickerActiveFrom, 0);
-            Controls.SetChildIndex(textBox1, 0);
-            Controls.SetChildIndex(textBox2, 0);
+            Controls.SetChildIndex(TextBoxSecurityGroupId, 0);
+            Controls.SetChildIndex(TextBoxPersonId, 0);
             Controls.SetChildIndex(ButtonSave, 0);
             Controls.SetChildIndex(ButtonCancel, 0);
+            Controls.SetChildIndex(LabelUserIdValue, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -223,9 +235,10 @@
         private TextBox TextBoxUserName;
         private CheckBox CheckBoxBlocked;
         private DateTimePicker DateTimePickerActiveFrom;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox TextBoxSecurityGroupId;
+        private TextBox TextBoxPersonId;
         public Button ButtonCancel;
         public Button ButtonSave;
+        private Label LabelUserIdValue;
     }
 }
