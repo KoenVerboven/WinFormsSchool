@@ -92,7 +92,7 @@
 		);
 	end
 
-	if object_id('User') is null
+	if object_id('InlogUser') is null
 	begin
 		create table InlogUser
 		(

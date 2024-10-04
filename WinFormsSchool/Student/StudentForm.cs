@@ -421,7 +421,6 @@ namespace WinFormsSchool
                 LabelErrorMessage.Visible = false;
                 SaveStudentData();
             }
-            //ToDo : insert of update student code
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)

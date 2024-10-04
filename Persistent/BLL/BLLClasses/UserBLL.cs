@@ -13,11 +13,29 @@ namespace AppCode.BLL.BLLClasses
         {
         }
 
+        public bool AddUser(User user)
+        {
+            var userDal = new UserDal();
+            return userDal.AddNewUser(user);
+        }
+        
+        public bool UpdateUser(User user)
+        {
+            var userDal = new UserDal(); 
+            return userDal.UpdateUser(user);
+        }
+
 
         public List<User>? GetUsers()
         {
             var userDal = new UserDal();
             return userDal.GetUsers();
+        }
+
+        public bool DeleteUser(int userId)
+        {
+            var userDal = new UserDal();
+            return userDal.DeleteUser(userId);
         }
 
 

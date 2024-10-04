@@ -25,7 +25,7 @@ namespace WinFormsSchool
             SetAllTextboxesOnFormReadOnly(true);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
 
-            LabelPageTitle.Text = "Student Detail";
+            LabelPageTitle.Text = "Teacher Detail";
 
             ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
             ButtonClose.ForeColor = Color.White;

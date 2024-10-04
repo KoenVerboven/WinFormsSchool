@@ -90,7 +90,7 @@ namespace AppCode.DAL
                 var query = "INSERT into InlogUser " +
                             "(UserName, UserPassword, SecurityGroupId, ActiveFrom, Blocked, PersonId)" +
                             "VALUES (" +
-                            "@UserName, @UserPassword', @SecurityGroupId, @ActiveFrom, @Blocked, @PersonId" +
+                            "@UserName, @UserPassword, @SecurityGroupId, @ActiveFrom, @Blocked, @PersonId" +
                             ")";
 
                 CreateCommand(connectionString, query, user, RecordAction.insert);
@@ -110,11 +110,10 @@ namespace AppCode.DAL
             var query = "UPDATE InlogUser " +
                         "SET " +
                         "UserName = @UserName, " +
-                        "UserPassword = @UserPassword, " +
                         "SecurityGroupId = @SecurityGroupId, " +
                         "ActiveFrom = @ActiveFrom, " +
                         "Blocked = @Blocked, " +
-                        "PersonId = @PersonId, " +
+                        "PersonId = @PersonId " +
                         "WHERE UserId = @UserId ";
 
             try
@@ -140,15 +139,18 @@ namespace AppCode.DAL
                 {
                     command.Parameters.Add("@UserId", SqlDbType.Int).Value = user.UserId;
                 }
+
                 if (action == RecordAction.insert)
                 {
-                    command.Parameters.Add("@UserName", SqlDbType.VarChar).Value = user.UserName;
                     command.Parameters.Add("@UserPassword", SqlDbType.VarChar).Value = user.Password;
-                    command.Parameters.Add("@SecurityGroupId", SqlDbType.Int).Value = user.SecurityGroupId;
-                    command.Parameters.Add("@ActiveFrom", SqlDbType.DateTime).Value = user.ActiveFrom;
-                    command.Parameters.Add("@Blocked", SqlDbType.Bit).Value = user.Blocked;
-                    command.Parameters.Add("@PersonId", SqlDbType.Int).Value = user.PersonId;
                 }
+
+                command.Parameters.Add("@UserName", SqlDbType.VarChar).Value = user.UserName;
+                command.Parameters.Add("@SecurityGroupId", SqlDbType.Int).Value = user.SecurityGroupId;
+                command.Parameters.Add("@ActiveFrom", SqlDbType.DateTime).Value = user.ActiveFrom;
+                command.Parameters.Add("@Blocked", SqlDbType.Bit).Value = user.Blocked;
+                command.Parameters.Add("@PersonId", SqlDbType.Int).Value = user.PersonId;
+                
                 command.Connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -160,12 +162,11 @@ namespace AppCode.DAL
         }
 
         public bool DeleteUser(int userId) {
-            var query = "DELETE FROM user WHERE UserId = @UserId";
+            var query = "DELETE FROM InlogUser WHERE UserId = @UserId";
             using var connection = new SqlConnection(connectionString);
 
             try
             {
-
                 SqlCommand command = new(query, connection);
                 command.Parameters.Add("@UserId", SqlDbType.Int, 50).Value = userId;
                 command.Connection.Open();
@@ -195,7 +196,7 @@ namespace AppCode.DAL
             command.Parameters.Add("@UserName", SqlDbType.VarChar, 50).Value = userName;
             command.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = password;
             connection.Open();
-            SqlDataReader reader = command.ExecuteReader();//executenonquery
+            SqlDataReader reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {

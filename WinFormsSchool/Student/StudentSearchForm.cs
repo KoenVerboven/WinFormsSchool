@@ -25,6 +25,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
+            
             GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewStudents.Visible = false;
             GridViewStudents.ReadOnly = true;
@@ -34,28 +35,34 @@ namespace WinFormsSchool
             GridViewStudents.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
             GridViewStudents.EnableHeadersVisualStyles = false;
             splitContainer1.Panel2.Padding = new Padding(16);
+            
             ButtonSearch.BackColor = Color.FromArgb(55, 150, 55);
             ButtonSearch.ForeColor = Color.White;
             ButtonSearch.Height = 35;
             ButtonSearch.Image = Properties.Resources.SearchIcon;
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
+          
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
+            
             ButtonInsertNewStudent.BackColor = Color.FromArgb(150, 150, 30);
             ButtonInsertNewStudent.ForeColor = Color.White;
             ButtonInsertNewStudent.Height = 35;
             ButtonInsertNewStudent.FlatStyle = FlatStyle.Flat;
             ButtonInsertNewStudent.Visible = true;
+           
             ButtonUpdateStudent.BackColor = Color.FromArgb(30, 150, 150);
             ButtonUpdateStudent.ForeColor = Color.White;
             ButtonUpdateStudent.Height = 35;
             ButtonUpdateStudent.FlatStyle = FlatStyle.Flat;
             ButtonUpdateStudent.Visible = false;
+           
             ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
             ButtonDelete.ForeColor = Color.White;
             ButtonDelete.Height = 35;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
+            
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;

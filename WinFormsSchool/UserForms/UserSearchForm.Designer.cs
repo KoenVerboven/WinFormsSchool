@@ -31,6 +31,9 @@
             DataGridViewUsers = new DataGridView();
             TextboxSearch = new TextBox();
             ButtonSearch = new Button();
+            ButtonUpdateUser = new Button();
+            ButtonInsertNewUser = new Button();
+            ButtonDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridViewUsers).BeginInit();
             SuspendLayout();
             // 
@@ -67,11 +70,44 @@
             ButtonSearch.UseVisualStyleBackColor = true;
             ButtonSearch.Click += ButtonSearch_Click_1;
             // 
+            // ButtonUpdateUser
+            // 
+            ButtonUpdateUser.Location = new Point(741, 65);
+            ButtonUpdateUser.Name = "ButtonUpdateUser";
+            ButtonUpdateUser.Size = new Size(154, 29);
+            ButtonUpdateUser.TabIndex = 48;
+            ButtonUpdateUser.Text = "Update User";
+            ButtonUpdateUser.UseVisualStyleBackColor = true;
+            ButtonUpdateUser.Click += ButtonUpdateUser_Click;
+            // 
+            // ButtonInsertNewUser
+            // 
+            ButtonInsertNewUser.Location = new Point(569, 65);
+            ButtonInsertNewUser.Name = "ButtonInsertNewUser";
+            ButtonInsertNewUser.Size = new Size(154, 29);
+            ButtonInsertNewUser.TabIndex = 47;
+            ButtonInsertNewUser.Text = "Insert new User";
+            ButtonInsertNewUser.UseVisualStyleBackColor = true;
+            ButtonInsertNewUser.Click += ButtonInsertNewUser_Click;
+            // 
+            // ButtonDelete
+            // 
+            ButtonDelete.Location = new Point(921, 66);
+            ButtonDelete.Name = "ButtonDelete";
+            ButtonDelete.Size = new Size(124, 27);
+            ButtonDelete.TabIndex = 46;
+            ButtonDelete.Text = "Delete";
+            ButtonDelete.UseVisualStyleBackColor = true;
+            ButtonDelete.Click += ButtonDelete_Click;
+            // 
             // UserSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1296, 708);
+            Controls.Add(ButtonUpdateUser);
+            Controls.Add(ButtonInsertNewUser);
+            Controls.Add(ButtonDelete);
             Controls.Add(ButtonSearch);
             Controls.Add(TextboxSearch);
             Controls.Add(DataGridViewUsers);
@@ -81,6 +117,9 @@
             Controls.SetChildIndex(DataGridViewUsers, 0);
             Controls.SetChildIndex(TextboxSearch, 0);
             Controls.SetChildIndex(ButtonSearch, 0);
+            Controls.SetChildIndex(ButtonDelete, 0);
+            Controls.SetChildIndex(ButtonInsertNewUser, 0);
+            Controls.SetChildIndex(ButtonUpdateUser, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -90,5 +129,8 @@
         private DataGridView DataGridViewUsers;
         private TextBox TextboxSearch;
         private Button ButtonSearch;
+        private Button ButtonUpdateUser;
+        private Button ButtonInsertNewUser;
+        private Button ButtonDelete;
     }
 }

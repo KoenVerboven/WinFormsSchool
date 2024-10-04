@@ -43,6 +43,7 @@
             ButtonCancel = new Button();
             ButtonSave = new Button();
             LabelUserIdValue = new Label();
+            LabelErrorMessage = new Label();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -171,6 +172,7 @@
             ButtonSave.Text = "Save";
             ButtonSave.UseVisualStyleBackColor = true;
             ButtonSave.Visible = false;
+            ButtonSave.Click += ButtonSave_Click;
             // 
             // LabelUserIdValue
             // 
@@ -181,11 +183,21 @@
             LabelUserIdValue.TabIndex = 78;
             LabelUserIdValue.Text = "UserIdValue";
             // 
+            // LabelErrorMessage
+            // 
+            LabelErrorMessage.AutoSize = true;
+            LabelErrorMessage.Location = new Point(503, 71);
+            LabelErrorMessage.Name = "LabelErrorMessage";
+            LabelErrorMessage.Size = new Size(99, 20);
+            LabelErrorMessage.TabIndex = 79;
+            LabelErrorMessage.Text = "ErrorMessage";
+            // 
             // UserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 510);
+            Controls.Add(LabelErrorMessage);
             Controls.Add(LabelUserIdValue);
             Controls.Add(ButtonCancel);
             Controls.Add(ButtonSave);
@@ -219,6 +231,7 @@
             Controls.SetChildIndex(ButtonSave, 0);
             Controls.SetChildIndex(ButtonCancel, 0);
             Controls.SetChildIndex(LabelUserIdValue, 0);
+            Controls.SetChildIndex(LabelErrorMessage, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +253,6 @@
         public Button ButtonCancel;
         public Button ButtonSave;
         private Label LabelUserIdValue;
+        private Label LabelErrorMessage;
     }
 }

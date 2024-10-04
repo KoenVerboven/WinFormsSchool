@@ -1,6 +1,10 @@
 ﻿
 
 using AppCode.BLL.BLLClasses;
+using AppCode.BLL.Models;
+using System.Runtime.InteropServices;
+
+
 
 namespace WinFormsSchool.UserForms
 {
@@ -39,6 +43,8 @@ namespace WinFormsSchool.UserForms
             ButtonCancel.ForeColor = Color.White;
             ButtonCancel.Height = 35;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
+
+            LabelErrorMessage.Visible = false;
 
             #endregion
 
@@ -108,6 +114,7 @@ namespace WinFormsSchool.UserForms
             if (selectedUser != null)
             {
                 LabelUserIdValue.Text = selectedUser.UserId.ToString();
+                _userId = selectedUser.UserId;
                 TextBoxUserName.Text = selectedUser.UserName;
                 DateTimePickerActiveFrom.Value = (DateTime)selectedUser.ActiveFrom;
                 CheckBoxBlocked.Checked = selectedUser.Blocked;
@@ -120,5 +127,86 @@ namespace WinFormsSchool.UserForms
         {
             Close();
         }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+           if(InputValidation())
+            {
+                LabelErrorMessage.Visible = false; 
+                SaveUserData();
+            }
+        }
+
+        private bool InputValidation()
+        {
+            LabelErrorMessage.ForeColor = Color.Red;
+
+            if (TextBoxUserName.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "Username is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            if (TextBoxUserName.Text.Trim().Length > 50)
+            {
+                LabelErrorMessage.Text = "Username maximum lenght is 50 characters";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            if(TextBoxSecurityGroupId.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "SecurityGroupId is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            if (TextBoxPersonId.Text.Trim() == string.Empty)
+            {
+                LabelErrorMessage.Text = "PersonId is a required field";
+                LabelErrorMessage.Visible = true;
+                return false;
+            }
+
+            //ToDo check securtigroupid and personid is numeric
+
+            return true; 
+        }
+
+
+        private void SaveUserData()
+        {
+            var userBLL = new UserBLL();
+            bool ok = false;
+
+            var user = new User()
+            {
+                UserId = _userId,
+                UserName = TextBoxUserName.Text.Trim(),
+                Password = "",
+                SecurityGroupId = Convert.ToInt32(TextBoxSecurityGroupId.Text.Trim()), //ToDo test op input is een getal
+                ActiveFrom = DateTimePickerActiveFrom.Value,
+                Blocked = CheckBoxBlocked.Checked,
+                PersonId = Convert.ToInt32(TextBoxPersonId.Text.Trim()) // ToDo test op input is een getal
+            };
+
+            if (_detailFormType == DetailFormType.InsertForm)
+            {
+                ok = userBLL.AddUser(user);
+            }
+
+            if (_detailFormType == DetailFormType.UpdateForm)
+            {
+                ok = userBLL.UpdateUser(user);
+            }
+            if (ok)
+            {
+                Close();
+            }
+        }
+
+
+
     }
 }

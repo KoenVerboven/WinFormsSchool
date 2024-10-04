@@ -19,6 +19,7 @@ Als u een form in design-mode ziet op het scherm,
 klik dan op F7 om naar de code-behind te gaan.
 
 druk Ctrl-S voor bewaren file
+druk Ctrl-D voor het dupliceren van een lijn code
 
 In code : verwijder de 'using' die niet gebruikt worden (staan in het licht grijs)
 
