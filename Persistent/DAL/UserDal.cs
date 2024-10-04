@@ -1,4 +1,5 @@
 ﻿using AppCode.BLL.Models;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,7 +7,7 @@ namespace AppCode.DAL
 {
     internal class UserDal
     {
-        const string connectionString = "Data Source=KOENI7;Initial Catalog=School1;Integrated Security=True";
+        readonly string connectionString = ConfigurationManager.ConnectionStrings["school"].ConnectionString;
 
         public List<User>? GetUsers()
         {

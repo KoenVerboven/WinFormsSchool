@@ -1,13 +1,14 @@
 ﻿using AppCode.BLL.Models;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+
 
 namespace AppCode.DAL
 {
     internal class CourseDal
     {
-
-        const string connectionString = "Data Source=KOENI7;Initial Catalog=School1;Integrated Security=True";
+        readonly string connectionString = ConfigurationManager.ConnectionStrings["school"].ConnectionString;
 
         public List<Course> GetCoursesByStudentId(int studentId)
         {
