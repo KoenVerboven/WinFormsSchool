@@ -287,9 +287,10 @@ namespace WinFormsSchool
 //< a href = "https://www.flaticon.com/free-icons/new" title = "new icons" > New icons created by Muhammad Yafinuha - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/add-post" title = "add post icons" > Add post icons created by QudaDesign - Flaticon</a>
 
+//< a href = "https://www.freepik.com/search" > Icon by HideMaru</a>
 
-
-
-
-
-
+//<a href="https://www.freeiconspng.com/img/3099" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/check-yes-ok-icon-10.png" width="350" alt="check yes ok icon" /></a>
+//< a href = "https://www.freeiconspng.com/img/28577" title = "Image from freeiconspng.com" >< img src = "https://www.freeiconspng.com/uploads/delete-button-png-26.png" width = "350" alt = "High Resolution Delete Button Png Icon" /></ a >
+//< a href = "https://www.freeiconspng.com/img/28565" title = "Image from freeiconspng.com" >< img src = "https://www.freeiconspng.com/uploads/delete-button-png-13.png" width = "350" alt = "Hd Delete Button Image In Our System" /></ a >
+//<a href="https://www.freeiconspng.com/img/7298" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/hospital-plus-icon-15.png" width="350" alt="hospital plus icon" /></a>
+//<a href="https://www.freeiconspng.com/img/3602" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/edit-new-icon-22.png" width="350" alt="Edit, new, icon" /></a>

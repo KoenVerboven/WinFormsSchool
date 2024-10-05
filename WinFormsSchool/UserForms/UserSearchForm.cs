@@ -56,7 +56,7 @@ namespace WinFormsSchool
             ButtonInsertNewUser.BackColor = Color.White;
             ButtonInsertNewUser.Height = 45;
             ButtonInsertNewUser.Width = 45;
-            ButtonInsertNewUser.Image = Properties.Resources.add2;
+            ButtonInsertNewUser.Image = Properties.Resources.Plus1;
             ButtonInsertNewUser.FlatStyle = FlatStyle.Flat;
             ButtonInsertNewUser.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonInsertNewUser.Text = string.Empty;
@@ -64,14 +64,18 @@ namespace WinFormsSchool
             ButtonUpdateUser.BackColor = Color.White;
             ButtonUpdateUser.Height = 45;
             ButtonUpdateUser.Width = 45;
+            ButtonUpdateUser.Image = Properties.Resources.edit1;
             ButtonUpdateUser.FlatStyle = FlatStyle.Flat;
             ButtonUpdateUser.Visible = false;
+            ButtonUpdateUser.Text = string.Empty;
 
             ButtonDelete.BackColor = Color.White;
             ButtonDelete.Height = 45;
             ButtonDelete.Width = 45;
+            ButtonDelete.Image = Properties.Resources.delete1;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
+            ButtonDelete.Text = string.Empty;
 
             var tooltip = new ToolTip();
             tooltip.SetToolTip(ButtonSearch, "Search");

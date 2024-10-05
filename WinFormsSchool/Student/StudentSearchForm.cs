@@ -58,7 +58,7 @@ namespace WinFormsSchool
             ButtonInsertNewStudent.BackColor = Color.White;
             ButtonInsertNewStudent.Height = 45;
             ButtonInsertNewStudent.Width = 45;
-            ButtonInsertNewStudent.Image = Properties.Resources.add2;
+            ButtonInsertNewStudent.Image = Properties.Resources.Plus1;
             ButtonInsertNewStudent.FlatStyle = FlatStyle.Flat;
             ButtonInsertNewStudent.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonInsertNewStudent.Text = string.Empty;
@@ -66,15 +66,19 @@ namespace WinFormsSchool
             ButtonUpdateStudent.BackColor = Color.White;
             ButtonUpdateStudent.Height = 45;
             ButtonUpdateStudent.Width = 45;
+            ButtonUpdateStudent.Image = Properties.Resources.edit1;
             ButtonUpdateStudent.FlatStyle = FlatStyle.Flat;
             ButtonUpdateStudent.Visible = false;
+            ButtonUpdateStudent.Text = string.Empty;
 
             ButtonDelete.BackColor = Color.White;
             ButtonDelete.Height = 45;
             ButtonDelete.Width = 45;
+            ButtonDelete.Image = Properties.Resources.delete1;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
-
+            ButtonDelete.Text = string.Empty;  
+            
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;

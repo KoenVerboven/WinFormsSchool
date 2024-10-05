@@ -30,7 +30,7 @@ namespace WinFormsSchool
             ButtonClose.ForeColor = Color.White;
             ButtonClose.Height = 45;
             ButtonClose.Width = 45;
-            ButtonClose.Image = Properties.Resources.Close4;
+            ButtonClose.Image = Properties.Resources.back1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;

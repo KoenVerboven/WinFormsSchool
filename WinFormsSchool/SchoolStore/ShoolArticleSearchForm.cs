@@ -56,8 +56,10 @@ namespace WinFormsSchool
             ButtonDelete.BackColor = Color.White;
             ButtonDelete.Height = 45;
             ButtonDelete.Width = 45;
+            ButtonDelete.Image = Properties.Resources.delete1;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
+            ButtonDelete.Text = string.Empty;
 
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             LabelPageTitle.Text = "Search Article";
