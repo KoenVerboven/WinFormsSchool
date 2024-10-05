@@ -264,7 +264,20 @@ namespace WinFormsSchool
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
-            Close();
+            if(DataGridViewUsers.Visible)
+            {
+                var result = MessageBox.Show("Are you sure closing the User Search Form? You loosing the search results.", "closing",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+            else 
+            {
+                Close();
+            }
         }
     }
 }

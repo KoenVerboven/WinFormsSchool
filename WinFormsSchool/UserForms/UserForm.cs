@@ -143,19 +143,19 @@ namespace WinFormsSchool.UserForms
             {
 
                 #region FillInControls
-                    LabelUserIdValue.Text = selectedUser.UserId.ToString();
-                    _userId = selectedUser.UserId;
-                    TextBoxUserName.Text = selectedUser.UserName;
-                    DateTimePickerActiveFrom.Value = (DateTime)selectedUser.ActiveFrom;
-                    CheckBoxBlocked.Checked = selectedUser.Blocked;
-                    TextBoxPersonId.Text = selectedUser.PersonId.ToString();
-                    TextBoxSecurityGroupId.Text = selectedUser.SecurityGroupId.ToString();
+                LabelUserIdValue.Text = selectedUser.UserId.ToString();
+                _userId = selectedUser.UserId;
+                TextBoxUserName.Text = selectedUser.UserName;
+                DateTimePickerActiveFrom.Value = (DateTime)selectedUser.ActiveFrom;
+                CheckBoxBlocked.Checked = selectedUser.Blocked;
+                TextBoxPersonId.Text = selectedUser.PersonId.ToString();
+                TextBoxSecurityGroupId.Text = selectedUser.SecurityGroupId.ToString();
                 #endregion
 
                 #region MyRegion
                 _cleanUserName = TextBoxUserName.Text.Trim();
                 _cleanPersonId = TextBoxPersonId.Text.Trim();
-                _cleanSecurityGroupId = TextBoxSecurityGroupId.Text.Trim(); 
+                _cleanSecurityGroupId = TextBoxSecurityGroupId.Text.Trim();
                 #endregion
 
             }
@@ -166,7 +166,7 @@ namespace WinFormsSchool.UserForms
             #region CheckTextboxes
 
             if (TextBoxUserName.Text.Trim() != _cleanUserName) return true;
-            if (TextBoxSecurityGroupId.Text.Trim() != _cleanSecurityGroupId) return true; 
+            if (TextBoxSecurityGroupId.Text.Trim() != _cleanSecurityGroupId) return true;
             if (TextBoxPersonId.Text.Trim() != _cleanPersonId) return true;
 
             #endregion
@@ -292,11 +292,16 @@ namespace WinFormsSchool.UserForms
         {
             var result = MessageBox.Show("Are you sure to reset the password for this user?", "reset password",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            
+
             if (result == DialogResult.Yes)
             {
                 //ToDo ResetPassword  + enscrypt password before writing to database
             }
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

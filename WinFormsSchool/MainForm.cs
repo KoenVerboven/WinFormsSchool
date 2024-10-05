@@ -131,7 +131,7 @@ namespace WinFormsSchool
 
         private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure clossing the program?", "closing program",
+            var result = MessageBox.Show("Are you sure closing the program?", "closing program",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {

@@ -163,6 +163,7 @@
             ButtonCancel.Text = "Cancel";
             ButtonCancel.UseVisualStyleBackColor = true;
             ButtonCancel.Visible = false;
+            ButtonCancel.Click += ButtonCancel_Click;
             // 
             // ButtonSave
             // 
