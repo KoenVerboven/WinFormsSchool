@@ -65,10 +65,10 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
 
-            var ToolTip1 = new ToolTip();
-            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
-            var ToolTip2 = new ToolTip();
-            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(ButtonSearch, "Search");
+            tooltip.SetToolTip(ButtonClose, "Close this page");
+            tooltip.SetToolTip(ButtonDelete, "Delete article");
         }
 
         private void SetLabelProperties(Color color, Font font)

@@ -69,7 +69,7 @@
             GridViewStudents.Location = new Point(0, 0);
             GridViewStudents.Name = "GridViewStudents";
             GridViewStudents.RowHeadersWidth = 51;
-            GridViewStudents.Size = new Size(1320, 443);
+            GridViewStudents.Size = new Size(1320, 458);
             GridViewStudents.TabIndex = 22;
             GridViewStudents.CellDoubleClick += dgrStudents_CellDoubleClick;
             // 
@@ -127,7 +127,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(GridViewStudents);
             splitContainer1.Size = new Size(1320, 600);
-            splitContainer1.SplitterDistance = 153;
+            splitContainer1.SplitterDistance = 138;
             splitContainer1.TabIndex = 27;
             // 
             // ButtonClose

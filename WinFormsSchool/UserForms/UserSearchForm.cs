@@ -73,16 +73,12 @@ namespace WinFormsSchool
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
 
-            var ToolTip1 = new ToolTip();
-            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
-            var ToolTip2 = new ToolTip();
-            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
-            var ToolTip3 = new ToolTip();
-            ToolTip3.SetToolTip(this.ButtonInsertNewUser, "Add new User");
-            var ToolTip4 = new ToolTip();
-            ToolTip4.SetToolTip(this.ButtonUpdateUser, "Update User");
-            var ToolTip5 = new ToolTip();
-            ToolTip5.SetToolTip(this.ButtonDelete, "Delete User");
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(ButtonSearch, "Search");
+            tooltip.SetToolTip(ButtonClose, "Close this page");
+            tooltip.SetToolTip(ButtonInsertNewUser, "Add new User");
+            tooltip.SetToolTip(ButtonUpdateUser, "Update User");
+            tooltip.SetToolTip(ButtonDelete, "Delete User");
 
         }
 

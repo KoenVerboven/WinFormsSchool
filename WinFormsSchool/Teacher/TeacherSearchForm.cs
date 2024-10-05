@@ -63,10 +63,9 @@ namespace WinFormsSchool
             label2.ForeColor = Color.White;
             LabelPageTitle.Text = "Search Teacher";
 
-            var ToolTip1 = new ToolTip();
-            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
-            var ToolTip2 = new ToolTip();
-            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(this.ButtonSearch, "Search");
+            tooltip.SetToolTip(this.ButtonClose, "Close this page");
         }
 
         private void SetLabelProperties(Color color, Font font)

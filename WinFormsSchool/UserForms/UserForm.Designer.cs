@@ -66,7 +66,7 @@
             // LabelUserId
             // 
             LabelUserId.AutoSize = true;
-            LabelUserId.Location = new Point(34, 124);
+            LabelUserId.Location = new Point(39, 152);
             LabelUserId.Name = "LabelUserId";
             LabelUserId.Size = new Size(58, 20);
             LabelUserId.TabIndex = 65;
@@ -75,7 +75,7 @@
             // LabelUserName
             // 
             LabelUserName.AutoSize = true;
-            LabelUserName.Location = new Point(34, 166);
+            LabelUserName.Location = new Point(39, 200);
             LabelUserName.Name = "LabelUserName";
             LabelUserName.Size = new Size(78, 20);
             LabelUserName.TabIndex = 66;
@@ -84,7 +84,7 @@
             // LabelSecurityGroupId
             // 
             LabelSecurityGroupId.AutoSize = true;
-            LabelSecurityGroupId.Location = new Point(37, 211);
+            LabelSecurityGroupId.Location = new Point(42, 245);
             LabelSecurityGroupId.Name = "LabelSecurityGroupId";
             LabelSecurityGroupId.Size = new Size(115, 20);
             LabelSecurityGroupId.TabIndex = 67;
@@ -93,7 +93,7 @@
             // LabelActiveFrom
             // 
             LabelActiveFrom.AutoSize = true;
-            LabelActiveFrom.Location = new Point(38, 257);
+            LabelActiveFrom.Location = new Point(43, 291);
             LabelActiveFrom.Name = "LabelActiveFrom";
             LabelActiveFrom.Size = new Size(84, 20);
             LabelActiveFrom.TabIndex = 68;
@@ -102,7 +102,7 @@
             // LabelBlocked
             // 
             LabelBlocked.AutoSize = true;
-            LabelBlocked.Location = new Point(42, 353);
+            LabelBlocked.Location = new Point(47, 387);
             LabelBlocked.Name = "LabelBlocked";
             LabelBlocked.Size = new Size(62, 20);
             LabelBlocked.TabIndex = 69;
@@ -111,7 +111,7 @@
             // LabelPersonId
             // 
             LabelPersonId.AutoSize = true;
-            LabelPersonId.Location = new Point(39, 308);
+            LabelPersonId.Location = new Point(44, 342);
             LabelPersonId.Name = "LabelPersonId";
             LabelPersonId.Size = new Size(65, 20);
             LabelPersonId.TabIndex = 70;
@@ -119,7 +119,7 @@
             // 
             // TextBoxUserName
             // 
-            TextBoxUserName.Location = new Point(174, 164);
+            TextBoxUserName.Location = new Point(179, 198);
             TextBoxUserName.Name = "TextBoxUserName";
             TextBoxUserName.Size = new Size(249, 27);
             TextBoxUserName.TabIndex = 71;
@@ -127,7 +127,7 @@
             // CheckBoxBlocked
             // 
             CheckBoxBlocked.AutoSize = true;
-            CheckBoxBlocked.Location = new Point(170, 353);
+            CheckBoxBlocked.Location = new Point(175, 387);
             CheckBoxBlocked.Name = "CheckBoxBlocked";
             CheckBoxBlocked.Size = new Size(18, 17);
             CheckBoxBlocked.TabIndex = 72;
@@ -135,30 +135,30 @@
             // 
             // DateTimePickerActiveFrom
             // 
-            DateTimePickerActiveFrom.Location = new Point(170, 256);
+            DateTimePickerActiveFrom.Location = new Point(175, 290);
             DateTimePickerActiveFrom.Name = "DateTimePickerActiveFrom";
             DateTimePickerActiveFrom.Size = new Size(250, 27);
             DateTimePickerActiveFrom.TabIndex = 73;
             // 
             // TextBoxSecurityGroupId
             // 
-            TextBoxSecurityGroupId.Location = new Point(174, 211);
+            TextBoxSecurityGroupId.Location = new Point(179, 245);
             TextBoxSecurityGroupId.Name = "TextBoxSecurityGroupId";
             TextBoxSecurityGroupId.Size = new Size(246, 27);
             TextBoxSecurityGroupId.TabIndex = 74;
             // 
             // TextBoxPersonId
             // 
-            TextBoxPersonId.Location = new Point(170, 305);
+            TextBoxPersonId.Location = new Point(175, 339);
             TextBoxPersonId.Name = "TextBoxPersonId";
             TextBoxPersonId.Size = new Size(250, 27);
             TextBoxPersonId.TabIndex = 75;
             // 
             // ButtonCancel
             // 
-            ButtonCancel.Location = new Point(301, 62);
+            ButtonCancel.Location = new Point(266, 62);
             ButtonCancel.Name = "ButtonCancel";
-            ButtonCancel.Size = new Size(94, 29);
+            ButtonCancel.Size = new Size(57, 29);
             ButtonCancel.TabIndex = 77;
             ButtonCancel.Text = "Cancel";
             ButtonCancel.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             // 
             ButtonSave.Location = new Point(195, 61);
             ButtonSave.Name = "ButtonSave";
-            ButtonSave.Size = new Size(89, 30);
+            ButtonSave.Size = new Size(56, 30);
             ButtonSave.TabIndex = 76;
             ButtonSave.Text = "Save";
             ButtonSave.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             // LabelUserIdValue
             // 
             LabelUserIdValue.AutoSize = true;
-            LabelUserIdValue.Location = new Point(174, 118);
+            LabelUserIdValue.Location = new Point(179, 152);
             LabelUserIdValue.Name = "LabelUserIdValue";
             LabelUserIdValue.Size = new Size(87, 20);
             LabelUserIdValue.TabIndex = 78;
@@ -195,7 +195,7 @@
             // 
             // ButtonResetPassword
             // 
-            ButtonResetPassword.Location = new Point(167, 407);
+            ButtonResetPassword.Location = new Point(172, 441);
             ButtonResetPassword.Name = "ButtonResetPassword";
             ButtonResetPassword.Size = new Size(253, 29);
             ButtonResetPassword.TabIndex = 80;

@@ -20,7 +20,7 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            WindowState = FormWindowState.Maximized;   
+            WindowState = FormWindowState.Maximized;
 
             SetAllTextboxesOnFormReadOnly(true);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
@@ -43,8 +43,8 @@ namespace WinFormsSchool
             ComboBoxHighestDegree.DataSource = Enum.GetValues(typeof(HighestDegree));
             ComboBoxStudyDirection.DataSource = Enum.GetValues(typeof(StudyDirection));
 
-            var ToolTip2 = new ToolTip();
-            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(this.ButtonClose, "Close this page");
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -138,5 +138,6 @@ namespace WinFormsSchool
 
         private void ButtonClose_Click(object sender, EventArgs e)
         => Close();
+
     }
 }

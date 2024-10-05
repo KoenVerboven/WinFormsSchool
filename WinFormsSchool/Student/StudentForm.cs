@@ -87,18 +87,22 @@ namespace WinFormsSchool
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;
 
-            ButtonSave.BackColor = Color.FromArgb(160, 150, 55);
-            ButtonSave.ForeColor = Color.White;
-            ButtonSave.Height = 35;
+            ButtonSave.BackColor = Color.White;
+            ButtonSave.Height = 45;
+            ButtonSave.Width = 45;
             ButtonSave.FlatStyle = FlatStyle.Flat;
+            ButtonSave.Text = "V";
 
-            ButtonCancel.BackColor = Color.FromArgb(160, 150, 55);
-            ButtonCancel.ForeColor = Color.White;
-            ButtonCancel.Height = 35;
+            ButtonCancel.BackColor = Color.White;
+            ButtonCancel.Height = 45;
+            ButtonCancel.Width = 45;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
+            ButtonCancel.Text = "X";    
 
-            var ToolTip2 = new ToolTip();
-            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(ButtonClose, "Close this page");
+            tooltip.SetToolTip(ButtonSave, "Save");
+            tooltip.SetToolTip(ButtonCancel, "Cancel");
 
             #endregion
 
