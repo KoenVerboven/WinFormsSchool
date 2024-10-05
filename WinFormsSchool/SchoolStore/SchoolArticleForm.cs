@@ -26,10 +26,14 @@ namespace WinFormsSchool
             LabelMessage.Font = new Font(Font, FontStyle.Italic);
             LabelMessage.ForeColor = Color.Red;
 
-            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 35;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
 
             PictureBoxArticle.BackColor = Color.LightGray;
 
@@ -46,6 +50,9 @@ namespace WinFormsSchool
             ToolStripStatusLabel2.BackColor = Color.White;
 
             CheckBoxFragile.AutoCheck = false;
+
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
 
         }
 

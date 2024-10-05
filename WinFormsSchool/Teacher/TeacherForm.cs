@@ -27,10 +27,14 @@ namespace WinFormsSchool
 
             LabelPageTitle.Text = "Teacher Detail";
 
-            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 35;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
 
             ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
             ComboBoxMaritalStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
@@ -38,6 +42,9 @@ namespace WinFormsSchool
             ComboBoxSaleryCategorie.DataSource = Enum.GetValues(typeof(SaleryCategorie));
             ComboBoxHighestDegree.DataSource = Enum.GetValues(typeof(HighestDegree));
             ComboBoxStudyDirection.DataSource = Enum.GetValues(typeof(StudyDirection));
+
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)

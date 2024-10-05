@@ -1,5 +1,7 @@
 ﻿
 using AppCode.BLL.Models;
+using WinFormsSchool.Course;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace WinFormsSchool
 {
@@ -55,7 +57,7 @@ namespace WinFormsSchool
                 StudentsToolStripMenuItem.Visible = true;
                 SchoolShopToolStripMenuItem.Visible = true;
                 TeachersToolStripMenuItem.Visible = true;
-                UserAdministraionToolStripMenuItem.Visible = true;  
+                UserAdministraionToolStripMenuItem.Visible = true;
             }
 
             if (validUser.SecurityGroupId == 1)
@@ -175,6 +177,16 @@ namespace WinFormsSchool
             };
             userAdministrationForm.Show();
         }
+
+        private void CourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllForms();
+            var courseForm = new CourseSearchForm()
+            {
+                MdiParent = this
+            };
+            courseForm.Show();
+        }
     }
 
     internal class MyRender : ToolStripProfessionalRenderer
@@ -254,6 +266,7 @@ namespace WinFormsSchool
     }
 }
 
+//icons source:
 //<a href="https://www.flaticon.com/free-icons/teacher" title="teacher icons">Teacher icons created by Bert Flint - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/student"title="student icons"> Student icons created by RIkas Dzihab- Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/smart-cart" title="smart cart icons">Smart cart icons created by Freepik - Flaticon</a>
@@ -262,6 +275,17 @@ namespace WinFormsSchool
 //<a href="https://www.flaticon.com/free-icons/figure" title="figure icons">Figure icons created by heisenberg_jr - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/administration" title = "administration icons" > Administration icons created by wuizo - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/administrator" title = "administrator icons" > Administrator icons created by smashingstocks - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/semester" title = "semester icons" > Semester icons created by zero_wing - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/secure-user" title="secure user icons">Secure user icons created by Muhammad Atif - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Smashicons - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/male" title = "male icons" > Male icons created by sonnycandra - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/discover" title = "discover icons" > Discover icons created by Smashicons - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by VectorPortal - Flaticon</a>
+
+
+
 
 
 

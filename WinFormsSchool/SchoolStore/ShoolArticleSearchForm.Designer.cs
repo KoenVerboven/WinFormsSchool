@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             GridViewArticles = new DataGridView();
-            ButtonSearch = new Button();
             TextboxSearch = new TextBox();
             label1 = new Label();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            ButtonClose = new Button();
+            ButtonSearch = new Button();
             ButtonDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)GridViewArticles).BeginInit();
             statusStrip1.SuspendLayout();
@@ -61,16 +62,6 @@
             GridViewArticles.Size = new Size(873, 436);
             GridViewArticles.TabIndex = 0;
             GridViewArticles.CellDoubleClick += DataGridView1_CellDoubleClick;
-            // 
-            // ButtonSearch
-            // 
-            ButtonSearch.Location = new Point(326, 85);
-            ButtonSearch.Name = "ButtonSearch";
-            ButtonSearch.Size = new Size(139, 38);
-            ButtonSearch.TabIndex = 16;
-            ButtonSearch.Text = "Search";
-            ButtonSearch.UseVisualStyleBackColor = true;
-            ButtonSearch.Click += ButtonGetAllArticles_Click;
             // 
             // TextboxSearch
             // 
@@ -120,9 +111,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(ButtonClose);
+            splitContainer1.Panel1.Controls.Add(ButtonSearch);
             splitContainer1.Panel1.Controls.Add(ButtonDelete);
             splitContainer1.Panel1.Controls.Add(label1);
-            splitContainer1.Panel1.Controls.Add(ButtonSearch);
             splitContainer1.Panel1.Controls.Add(TextboxSearch);
             // 
             // splitContainer1.Panel2
@@ -131,6 +123,25 @@
             splitContainer1.Size = new Size(873, 584);
             splitContainer1.SplitterDistance = 144;
             splitContainer1.TabIndex = 32;
+            // 
+            // ButtonClose
+            // 
+            ButtonClose.Location = new Point(407, 89);
+            ButtonClose.Name = "ButtonClose";
+            ButtonClose.Size = new Size(51, 30);
+            ButtonClose.TabIndex = 50;
+            ButtonClose.Text = "Close";
+            ButtonClose.UseVisualStyleBackColor = true;
+            ButtonClose.Click += ButtonClose_Click;
+            // 
+            // ButtonSearch
+            // 
+            ButtonSearch.Location = new Point(324, 90);
+            ButtonSearch.Name = "ButtonSearch";
+            ButtonSearch.Size = new Size(52, 29);
+            ButtonSearch.TabIndex = 46;
+            ButtonSearch.UseVisualStyleBackColor = true;
+            ButtonSearch.Click += ButtonSearch_Click;
             // 
             // ButtonDelete
             // 
@@ -169,7 +180,6 @@
         #endregion
 
         private DataGridView GridViewArticles;
-        private Button ButtonSearch;
         private TextBox TextboxSearch;
         private Label label1;
         private StatusStrip statusStrip1;
@@ -177,5 +187,7 @@
         private ToolStripStatusLabel ToolStripStatusLabel2;
         private SplitContainer splitContainer1;
         private Button ButtonDelete;
+        private Button ButtonSearch;
+        private Button ButtonClose;
     }
 }

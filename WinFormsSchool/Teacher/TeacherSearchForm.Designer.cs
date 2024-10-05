@@ -30,13 +30,14 @@
         {
             GridViewTeachers = new DataGridView();
             label1 = new Label();
-            ButtonSearch = new Button();
             TextBoxSearch = new TextBox();
             label2 = new Label();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            ButtonClose = new Button();
+            ButtonSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)GridViewTeachers).BeginInit();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -71,16 +72,6 @@
             label1.Size = new Size(327, 20);
             label1.TabIndex = 25;
             label1.Text = "Give the full teacher name or a part of the name";
-            // 
-            // ButtonSearch
-            // 
-            ButtonSearch.Location = new Point(337, 100);
-            ButtonSearch.Name = "ButtonSearch";
-            ButtonSearch.Size = new Size(171, 29);
-            ButtonSearch.TabIndex = 24;
-            ButtonSearch.Text = "Search";
-            ButtonSearch.UseVisualStyleBackColor = true;
-            ButtonSearch.Click += ButtonSearch_Click;
             // 
             // TextBoxSearch
             // 
@@ -131,9 +122,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(ButtonClose);
+            splitContainer1.Panel1.Controls.Add(ButtonSearch);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(label2);
-            splitContainer1.Panel1.Controls.Add(ButtonSearch);
             splitContainer1.Panel1.Controls.Add(TextBoxSearch);
             // 
             // splitContainer1.Panel2
@@ -142,6 +134,25 @@
             splitContainer1.Size = new Size(1081, 524);
             splitContainer1.SplitterDistance = 147;
             splitContainer1.TabIndex = 31;
+            // 
+            // ButtonClose
+            // 
+            ButtonClose.Location = new Point(403, 99);
+            ButtonClose.Name = "ButtonClose";
+            ButtonClose.Size = new Size(51, 30);
+            ButtonClose.TabIndex = 50;
+            ButtonClose.Text = "Close";
+            ButtonClose.UseVisualStyleBackColor = true;
+            ButtonClose.Click += ButtonClose_Click;
+            // 
+            // ButtonSearch
+            // 
+            ButtonSearch.Location = new Point(324, 100);
+            ButtonSearch.Name = "ButtonSearch";
+            ButtonSearch.Size = new Size(52, 29);
+            ButtonSearch.TabIndex = 47;
+            ButtonSearch.UseVisualStyleBackColor = true;
+            ButtonSearch.Click += ButtonSearch_Click_1;
             // 
             // TeacherSearchForm
             // 
@@ -171,12 +182,13 @@
 
         private DataGridView GridViewTeachers;
         private Label label1;
-        private Button ButtonSearch;
         private TextBox TextBoxSearch;
         private Label label2;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
         private SplitContainer splitContainer1;
+        private Button ButtonSearch;
+        private Button ButtonClose;
     }
 }

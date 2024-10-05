@@ -10,7 +10,7 @@ namespace WinFormsSchool
     public partial class StudentSearchForm : Base.BaseForm1
     {
         readonly StudentBLL Student;
-        List<Student> students; 
+        List<Student> students;
 
         public StudentSearchForm()
         {
@@ -25,7 +25,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
-            
+
             GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewStudents.Visible = false;
             GridViewStudents.ReadOnly = true;
@@ -35,39 +35,54 @@ namespace WinFormsSchool
             GridViewStudents.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
             GridViewStudents.EnableHeadersVisualStyles = false;
             splitContainer1.Panel2.Padding = new Padding(16);
-            
-            ButtonSearch.BackColor = Color.FromArgb(55, 150, 55);
+
+            ButtonSearch.BackColor = Color.FromArgb(190, 190, 190);
             ButtonSearch.ForeColor = Color.White;
-            ButtonSearch.Height = 35;
-            ButtonSearch.Image = Properties.Resources.SearchIcon;
+            ButtonSearch.Height = 27;
+            ButtonSearch.Width = 29;
+            ButtonSearch.Image = Properties.Resources.search1;
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
-          
+
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
+
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
-            
+
             ButtonInsertNewStudent.BackColor = Color.FromArgb(150, 150, 30);
             ButtonInsertNewStudent.ForeColor = Color.White;
             ButtonInsertNewStudent.Height = 35;
             ButtonInsertNewStudent.FlatStyle = FlatStyle.Flat;
             ButtonInsertNewStudent.Visible = true;
-           
+
             ButtonUpdateStudent.BackColor = Color.FromArgb(30, 150, 150);
             ButtonUpdateStudent.ForeColor = Color.White;
             ButtonUpdateStudent.Height = 35;
             ButtonUpdateStudent.FlatStyle = FlatStyle.Flat;
             ButtonUpdateStudent.Visible = false;
-           
+
             ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
             ButtonDelete.ForeColor = Color.White;
             ButtonDelete.Height = 35;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
-            
+
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
             LabelPageTitle.Text = "Search Student";
+
+            var ToolTip1 = new ToolTip();
+            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -80,22 +95,6 @@ namespace WinFormsSchool
                     labelEdit.Font = font;
                 }
             }
-        }
-
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            const int MinimumCharactersSearchCommand = 1;
-
-            if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
-            {
-                FilterStudents();
-            }
-            else
-            {
-                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
-                GridViewStudents.Visible = false;
-            }
-
         }
 
         private void FilterStudents()
@@ -149,7 +148,7 @@ namespace WinFormsSchool
 
                             if (itemRemove.EnrolledCourse == null)
                             {
-                                
+
                                 var studentBLL = new StudentBLL();
                                 var ok = false;
                                 ok = studentBLL.DeleteStudent(itemRemove.PersonId);
@@ -251,6 +250,26 @@ namespace WinFormsSchool
                 studentForm.LoadSelectedStudent(selectedId);
                 studentForm.Show();
             }
+        }
+
+        private void ButtonSearch_Click_1(object sender, EventArgs e)
+        {
+            const int MinimumCharactersSearchCommand = 1;
+
+            if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+            {
+                FilterStudents();
+            }
+            else
+            {
+                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                GridViewStudents.Visible = false;
+            }
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -36,12 +36,23 @@ namespace WinFormsSchool
             DataGridViewUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
             DataGridViewUsers.EnableHeadersVisualStyles = false;
 
-            ButtonSearch.BackColor = Color.FromArgb(55, 150, 55);
+            ButtonSearch.BackColor = Color.FromArgb(190, 190, 190);
             ButtonSearch.ForeColor = Color.White;
-            ButtonSearch.Height = 35;
-            ButtonSearch.Image = Properties.Resources.SearchIcon;
+            ButtonSearch.Height = 27;
+            ButtonSearch.Width = 29;
+            ButtonSearch.Image = Properties.Resources.search1;
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
+
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
+
 
             ButtonInsertNewUser.BackColor = Color.FromArgb(150, 150, 30);
             ButtonInsertNewUser.ForeColor = Color.White;
@@ -60,6 +71,12 @@ namespace WinFormsSchool
             ButtonDelete.Height = 35;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
+
+            var ToolTip1 = new ToolTip();
+            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -164,10 +181,10 @@ namespace WinFormsSchool
 
                         if (itemRemove != null)
                         {
-                               var userBLL = new UserBLL();
-                                var ok = false;
-                                ok = userBLL.DeleteUser(itemRemove.UserId);
-                                if (ok) FilterUsers();
+                            var userBLL = new UserBLL();
+                            var ok = false;
+                            ok = userBLL.DeleteUser(itemRemove.UserId);
+                            if (ok) FilterUsers();
                         }
 
                         //FillGridView();
@@ -215,13 +232,13 @@ namespace WinFormsSchool
                 }
             }
         }
-        
-       
+
+
 
         private void FilterUsers()
         {
             _ = int.TryParse(TextboxSearch.Text, out int personId);
-         
+
             UserBLL user = new();
             users = user.GetUsers();
             if (users is not null)
@@ -240,6 +257,11 @@ namespace WinFormsSchool
                              new("An error occurred. Please try again later.", "", "", "", false, null, DateTime.Now)
                                                  );
             customErrorForm.ShowDialog();
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -78,10 +78,14 @@ namespace WinFormsSchool
 
             #region ButtonControls
 
-            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 35;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
 
             ButtonSave.BackColor = Color.FromArgb(160, 150, 55);
             ButtonSave.ForeColor = Color.White;
@@ -92,6 +96,9 @@ namespace WinFormsSchool
             ButtonCancel.ForeColor = Color.White;
             ButtonCancel.Height = 35;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
+
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
 
             #endregion
 

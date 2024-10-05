@@ -1,10 +1,6 @@
 ﻿
-
 using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Models;
-using System.Runtime.InteropServices;
-
-
 
 namespace WinFormsSchool.UserForms
 {
@@ -13,6 +9,19 @@ namespace WinFormsSchool.UserForms
         readonly UserBLL user;
         private readonly DetailFormType _detailFormType;
         int _userId = 0;
+
+        #region cleanFields
+
+        /// <summary>
+        /// ToDo -> place the isDirty logic in a class
+        /// ToDo -> check each textbox, chechbox, combobox, datetimepicker,  ..?
+        /// </summary>
+
+        string _cleanUserName = "";
+        string _cleanPersonId = ""; //Todo make int
+        string _cleanSecurityGroupId = ""; //Todo make int
+
+        #endregion
 
         public UserForm(DetailFormType detailFormType)
         {
@@ -29,10 +38,14 @@ namespace WinFormsSchool.UserForms
 
             #region ButtonControls
 
-            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 35;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
 
             ButtonSave.BackColor = Color.FromArgb(160, 150, 55);
             ButtonSave.ForeColor = Color.White;
@@ -44,6 +57,14 @@ namespace WinFormsSchool.UserForms
             ButtonCancel.Height = 35;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
 
+            ButtonResetPassword.BackColor = Color.FromArgb(200, 80, 80);
+            ButtonResetPassword.ForeColor = Color.White;
+            ButtonResetPassword.Height = 35;
+            ButtonResetPassword.FlatStyle = FlatStyle.Flat;
+
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+
             LabelErrorMessage.Visible = false;
 
             #endregion
@@ -52,6 +73,7 @@ namespace WinFormsSchool.UserForms
             {
                 case DetailFormType.ShowDetailForm:
                     SetAllTextboxesOnFormReadOnly(true);
+                    ButtonResetPassword.Visible = false;
                     LabelPageTitle.Text = "User Detail";
                     break;
                 case DetailFormType.UpdateForm:
@@ -59,15 +81,18 @@ namespace WinFormsSchool.UserForms
                     LabelPageTitle.Text = "Update User";
                     ButtonSave.Visible = true;
                     ButtonCancel.Visible = true;
+                    ButtonResetPassword.Visible = true;
                     break;
                 case DetailFormType.InsertForm:
                     SetAllTextboxesOnFormReadOnly(false);
                     LabelPageTitle.Text = "Insert User";
                     ButtonSave.Visible = true;
                     ButtonCancel.Visible = true;
+                    ButtonResetPassword.Visible = false;
                     break;
                 default:
                     SetAllTextboxesOnFormReadOnly(true);
+                    ButtonResetPassword.Visible = false;
                     LabelPageTitle.Text = "Student User";
                     break;
             }
@@ -107,32 +132,85 @@ namespace WinFormsSchool.UserForms
             }
         }
 
-
         public void LoadSelectedUser(int selectedUserId)
         {
             var selectedUser = user.GetUserById(selectedUserId);
             if (selectedUser != null)
             {
-                LabelUserIdValue.Text = selectedUser.UserId.ToString();
-                _userId = selectedUser.UserId;
-                TextBoxUserName.Text = selectedUser.UserName;
-                DateTimePickerActiveFrom.Value = (DateTime)selectedUser.ActiveFrom;
-                CheckBoxBlocked.Checked = selectedUser.Blocked;
-                TextBoxPersonId.Text = selectedUser.PersonId.ToString();
-                TextBoxSecurityGroupId.Text = selectedUser.SecurityGroupId.ToString();
+
+                #region FillInControls
+                    LabelUserIdValue.Text = selectedUser.UserId.ToString();
+                    _userId = selectedUser.UserId;
+                    TextBoxUserName.Text = selectedUser.UserName;
+                    DateTimePickerActiveFrom.Value = (DateTime)selectedUser.ActiveFrom;
+                    CheckBoxBlocked.Checked = selectedUser.Blocked;
+                    TextBoxPersonId.Text = selectedUser.PersonId.ToString();
+                    TextBoxSecurityGroupId.Text = selectedUser.SecurityGroupId.ToString();
+                #endregion
+
+                #region MyRegion
+                _cleanUserName = TextBoxUserName.Text.Trim();
+                _cleanPersonId = TextBoxPersonId.Text.Trim();
+                _cleanSecurityGroupId = TextBoxSecurityGroupId.Text.Trim(); 
+                #endregion
+
             }
         }
 
+        private bool IsDirty()
+        {
+            #region CheckTextboxes
+
+            if (TextBoxUserName.Text.Trim() != _cleanUserName) return true;
+            if (TextBoxSecurityGroupId.Text.Trim() != _cleanSecurityGroupId) return true; 
+            if (TextBoxPersonId.Text.Trim() != _cleanPersonId) return true;
+
+            #endregion
+
+            return false;
+        }
+
+
         private void ButtonClose_Click(object sender, EventArgs e)
         {
-            Close();
+            if
+              (IsDirty() &&
+                 (_detailFormType == DetailFormType.UpdateForm || _detailFormType == DetailFormType.InsertForm)
+              )
+            {
+                DialogResult result
+                    = (MessageBox.Show(
+                       "Would you like to save changes before closing?"
+                       , "Save Changes"
+                       , MessageBoxButtons.YesNoCancel
+                       , MessageBoxIcon.Question));
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        SaveUserData();
+                        Close();
+                        break;
+                    case DialogResult.No:
+                        Close();
+                        break;
+                    case DialogResult.Cancel:
+                        // cancel the close
+                        //e.Cancel
+                        break;
+                }
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-           if(InputValidation())
+            if (InputValidation())
             {
-                LabelErrorMessage.Visible = false; 
+                LabelErrorMessage.Visible = false;
                 SaveUserData();
             }
         }
@@ -155,7 +233,7 @@ namespace WinFormsSchool.UserForms
                 return false;
             }
 
-            if(TextBoxSecurityGroupId.Text.Trim() == string.Empty)
+            if (TextBoxSecurityGroupId.Text.Trim() == string.Empty)
             {
                 LabelErrorMessage.Text = "SecurityGroupId is a required field";
                 LabelErrorMessage.Visible = true;
@@ -171,7 +249,7 @@ namespace WinFormsSchool.UserForms
 
             //ToDo check securtigroupid and personid is numeric
 
-            return true; 
+            return true;
         }
 
 
@@ -206,7 +284,15 @@ namespace WinFormsSchool.UserForms
             }
         }
 
-
-
+        private void ButtonResetPassword_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure to reset the password for this user?", "reset password",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            
+            if (result == DialogResult.Yes)
+            {
+                //ToDo ResetPassword  + enscrypt password before writing to database
+            }
+        }
     }
 }

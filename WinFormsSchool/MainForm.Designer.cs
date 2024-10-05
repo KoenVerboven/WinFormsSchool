@@ -40,6 +40,7 @@
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            CourseToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -48,11 +49,11 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, UserAdministraionToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, UserAdministraionToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, CourseToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 5, 0, 5);
-            menuStrip1.Size = new Size(176, 510);
+            menuStrip1.Size = new Size(176, 597);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "MenuStripSideBar";
             // 
@@ -142,9 +143,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
-            statusStrip1.Location = new Point(176, 484);
+            statusStrip1.Location = new Point(176, 571);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(766, 26);
+            statusStrip1.Size = new Size(966, 26);
             statusStrip1.TabIndex = 31;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -161,11 +162,21 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // CourseToolStripMenuItem
+            // 
+            CourseToolStripMenuItem.Image = Properties.Resources.Course;
+            CourseToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            CourseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            CourseToolStripMenuItem.Name = "CourseToolStripMenuItem";
+            CourseToolStripMenuItem.Size = new Size(163, 54);
+            CourseToolStripMenuItem.Text = "Course";
+            CourseToolStripMenuItem.Click += CourseToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 510);
+            ClientSize = new Size(1142, 597);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
@@ -195,5 +206,6 @@
         private ToolStripMenuItem InfoToolStripMenuItem;
         private ToolStripMenuItem MyPersonalDataToolStripMenuItem;
         private ToolStripMenuItem UserAdministraionToolStripMenuItem;
+        private ToolStripMenuItem CourseToolStripMenuItem;
     }
 }

@@ -44,6 +44,7 @@
             ButtonSave = new Button();
             LabelUserIdValue = new Label();
             LabelErrorMessage = new Label();
+            ButtonResetPassword = new Button();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -192,11 +193,22 @@
             LabelErrorMessage.TabIndex = 79;
             LabelErrorMessage.Text = "ErrorMessage";
             // 
+            // ButtonResetPassword
+            // 
+            ButtonResetPassword.Location = new Point(167, 407);
+            ButtonResetPassword.Name = "ButtonResetPassword";
+            ButtonResetPassword.Size = new Size(253, 29);
+            ButtonResetPassword.TabIndex = 80;
+            ButtonResetPassword.Text = "Reset Password";
+            ButtonResetPassword.UseVisualStyleBackColor = true;
+            ButtonResetPassword.Click += ButtonResetPassword_Click;
+            // 
             // UserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 510);
+            Controls.Add(ButtonResetPassword);
             Controls.Add(LabelErrorMessage);
             Controls.Add(LabelUserIdValue);
             Controls.Add(ButtonCancel);
@@ -232,6 +244,7 @@
             Controls.SetChildIndex(ButtonCancel, 0);
             Controls.SetChildIndex(LabelUserIdValue, 0);
             Controls.SetChildIndex(LabelErrorMessage, 0);
+            Controls.SetChildIndex(ButtonResetPassword, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,5 +267,6 @@
         public Button ButtonSave;
         private Label LabelUserIdValue;
         private Label LabelErrorMessage;
+        private Button ButtonResetPassword;
     }
 }

@@ -34,6 +34,7 @@
             ButtonUpdateUser = new Button();
             ButtonInsertNewUser = new Button();
             ButtonDelete = new Button();
+            ButtonClose = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridViewUsers).BeginInit();
             SuspendLayout();
             // 
@@ -62,17 +63,16 @@
             // 
             // ButtonSearch
             // 
-            ButtonSearch.Location = new Point(375, 65);
+            ButtonSearch.Location = new Point(324, 64);
             ButtonSearch.Name = "ButtonSearch";
-            ButtonSearch.Size = new Size(171, 29);
+            ButtonSearch.Size = new Size(52, 29);
             ButtonSearch.TabIndex = 45;
-            ButtonSearch.Text = "Search";
             ButtonSearch.UseVisualStyleBackColor = true;
             ButtonSearch.Click += ButtonSearch_Click_1;
             // 
             // ButtonUpdateUser
             // 
-            ButtonUpdateUser.Location = new Point(741, 65);
+            ButtonUpdateUser.Location = new Point(671, 63);
             ButtonUpdateUser.Name = "ButtonUpdateUser";
             ButtonUpdateUser.Size = new Size(154, 29);
             ButtonUpdateUser.TabIndex = 48;
@@ -82,7 +82,7 @@
             // 
             // ButtonInsertNewUser
             // 
-            ButtonInsertNewUser.Location = new Point(569, 65);
+            ButtonInsertNewUser.Location = new Point(500, 63);
             ButtonInsertNewUser.Name = "ButtonInsertNewUser";
             ButtonInsertNewUser.Size = new Size(154, 29);
             ButtonInsertNewUser.TabIndex = 47;
@@ -92,7 +92,7 @@
             // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(921, 66);
+            ButtonDelete.Location = new Point(843, 64);
             ButtonDelete.Name = "ButtonDelete";
             ButtonDelete.Size = new Size(124, 27);
             ButtonDelete.TabIndex = 46;
@@ -100,11 +100,22 @@
             ButtonDelete.UseVisualStyleBackColor = true;
             ButtonDelete.Click += ButtonDelete_Click;
             // 
+            // ButtonClose
+            // 
+            ButtonClose.Location = new Point(393, 63);
+            ButtonClose.Name = "ButtonClose";
+            ButtonClose.Size = new Size(51, 30);
+            ButtonClose.TabIndex = 49;
+            ButtonClose.Text = "Close";
+            ButtonClose.UseVisualStyleBackColor = true;
+            ButtonClose.Click += ButtonClose_Click;
+            // 
             // UserSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1296, 708);
+            Controls.Add(ButtonClose);
             Controls.Add(ButtonUpdateUser);
             Controls.Add(ButtonInsertNewUser);
             Controls.Add(ButtonDelete);
@@ -120,6 +131,7 @@
             Controls.SetChildIndex(ButtonDelete, 0);
             Controls.SetChildIndex(ButtonInsertNewUser, 0);
             Controls.SetChildIndex(ButtonUpdateUser, 0);
+            Controls.SetChildIndex(ButtonClose, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -132,5 +144,6 @@
         private Button ButtonUpdateUser;
         private Button ButtonInsertNewUser;
         private Button ButtonDelete;
+        private Button ButtonClose;
     }
 }

@@ -24,28 +24,49 @@ namespace WinFormsSchool
             WindowState = FormWindowState.Maximized;
             GridViewTeachers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewTeachers.Visible = false;
+
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
+
             GridViewTeachers.ReadOnly = true;
             GridViewTeachers.ColumnHeadersDefaultCellStyle.Padding = new Padding(6);
             GridViewTeachers.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkCyan;
             GridViewTeachers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             GridViewTeachers.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
+
             splitContainer1.Panel2.Padding = new Padding(16);
+
             GridViewTeachers.EnableHeadersVisualStyles = false;
-            ButtonSearch.BackColor = Color.FromArgb(55, 150, 55);
+
+            ButtonSearch.BackColor = Color.FromArgb(190, 190, 190);
             ButtonSearch.ForeColor = Color.White;
-            ButtonSearch.Height = 35;
-            ButtonSearch.Image = Properties.Resources.SearchIcon;
+            ButtonSearch.Height = 27;
+            ButtonSearch.Width = 29;
+            ButtonSearch.Image = Properties.Resources.search1;
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
+
+            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 27;
+            ButtonClose.Width = 29;
+            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
+
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
             LabelPageTitle.Text = "Search Teacher";
+
+            var ToolTip1 = new ToolTip();
+            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -60,33 +81,6 @@ namespace WinFormsSchool
             }
         }
 
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            const int MinimumCharactersSearchCommand = 1;
-
-            if (TextBoxSearch.Text.Length >= MinimumCharactersSearchCommand)
-            {
-                _ = int.TryParse(TextBoxSearch.Text, out int teacherId);
-                teachers = Teacher.GetTeachers();
-
-                if (teachers is not null)
-                {
-                    teachers = teachers
-                                 .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextBoxSearch.Text.ToLower())
-                                        || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextBoxSearch.Text.ToLower())
-                                        || (X.PersonId == teacherId)
-                                        ).ToList();
-
-                    FillGridView();
-                }
-
-            }
-            else
-            {
-                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
-                GridViewTeachers.Visible = false;
-            }
-        }
 
         private void GridViewTeachers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -134,5 +128,38 @@ namespace WinFormsSchool
                 ToolStripStatusLabel2.Text = string.Empty;
             }
         }
-    }   
+
+        private void ButtonSearch_Click_1(object sender, EventArgs e)
+        {
+            const int MinimumCharactersSearchCommand = 1;
+
+            if (TextBoxSearch.Text.Length >= MinimumCharactersSearchCommand)
+            {
+                _ = int.TryParse(TextBoxSearch.Text, out int teacherId);
+                teachers = Teacher.GetTeachers();
+
+                if (teachers is not null)
+                {
+                    teachers = teachers
+                                 .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextBoxSearch.Text.ToLower())
+                                        || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextBoxSearch.Text.ToLower())
+                                        || (X.PersonId == teacherId)
+                                        ).ToList();
+
+                    FillGridView();
+                }
+
+            }
+            else
+            {
+                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                GridViewTeachers.Visible = false;
+            }
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
 }
