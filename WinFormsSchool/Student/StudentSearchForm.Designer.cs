@@ -132,7 +132,7 @@
             // 
             // ButtonClose
             // 
-            ButtonClose.Location = new Point(400, 96);
+            ButtonClose.Location = new Point(492, 96);
             ButtonClose.Name = "ButtonClose";
             ButtonClose.Size = new Size(51, 30);
             ButtonClose.TabIndex = 50;
@@ -161,9 +161,9 @@
             // 
             // ButtonInsertNewStudent
             // 
-            ButtonInsertNewStudent.Location = new Point(568, 97);
+            ButtonInsertNewStudent.Location = new Point(394, 97);
             ButtonInsertNewStudent.Name = "ButtonInsertNewStudent";
-            ButtonInsertNewStudent.Size = new Size(154, 29);
+            ButtonInsertNewStudent.Size = new Size(68, 29);
             ButtonInsertNewStudent.TabIndex = 28;
             ButtonInsertNewStudent.Text = "Insert new Student";
             ButtonInsertNewStudent.UseVisualStyleBackColor = true;

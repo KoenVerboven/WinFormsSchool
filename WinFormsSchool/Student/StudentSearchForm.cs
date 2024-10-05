@@ -46,8 +46,8 @@ namespace WinFormsSchool
 
             ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 27;
-            ButtonClose.Width = 29;
+            ButtonClose.Height = 45;
+            ButtonClose.Width = 45;
             ButtonClose.Image = Properties.Resources.cross1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
@@ -55,11 +55,14 @@ namespace WinFormsSchool
 
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
 
-            ButtonInsertNewStudent.BackColor = Color.FromArgb(150, 150, 30);
+            ButtonInsertNewStudent.BackColor = Color.FromArgb(190, 190, 220);
             ButtonInsertNewStudent.ForeColor = Color.White;
-            ButtonInsertNewStudent.Height = 35;
+            ButtonInsertNewStudent.Height = 45;
+            ButtonInsertNewStudent.Width = 45;
+            ButtonInsertNewStudent.Image = Properties.Resources.add2;
             ButtonInsertNewStudent.FlatStyle = FlatStyle.Flat;
-            ButtonInsertNewStudent.Visible = true;
+            ButtonInsertNewStudent.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonInsertNewStudent.Text = string.Empty;
 
             ButtonUpdateStudent.BackColor = Color.FromArgb(30, 150, 150);
             ButtonUpdateStudent.ForeColor = Color.White;
@@ -83,6 +86,8 @@ namespace WinFormsSchool
             ToolTip1.SetToolTip(this.ButtonSearch, "Search");
             var ToolTip2 = new ToolTip();
             ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var ToolTip3 = new ToolTip();
+            ToolTip3.SetToolTip(this.ButtonInsertNewStudent, "Add new student");
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -109,8 +114,21 @@ namespace WinFormsSchool
                                        || (X.PersonId == personId)
                                        ).ToList();
 
-                FillGridView();
+                if(students.Count > 0)
+                {
+                    FillGridView();
+                }
+                else
+                {
+                    GridViewStudents.Visible = false;
+                    ToolStripStatusLabel1.Text = "No students found";
+                    ToolStripStatusLabel2.Text = string.Empty;
+                    ButtonUpdateStudent.Visible = false;    
+                    ButtonDelete.Visible = false;
+                }
+                
             }
+       
         }
 
         private void dgrStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -199,11 +217,9 @@ namespace WinFormsSchool
 
         private void FillGridView()
         {
-            if (students.Count > 0)
-            {
+       
                 GridViewStudents.DataSource = students;
-                if (students.Count > 0)
-                {
+              
                     GridViewStudents.DataSource = null;
                     GridViewStudents.DataSource = students;
                     GridViewStudents.Visible = true;
@@ -217,16 +233,8 @@ namespace WinFormsSchool
                     else { ToolStripStatusLabel1.Text += " student found"; }
                     ButtonDelete.Visible = true;
                     ButtonUpdateStudent.Visible = true;
-                }
-                else
-                {
-                    GridViewStudents.Visible = false;
-                    ToolStripStatusLabel1.Text = "No students found";
-                    ToolStripStatusLabel2.Text = string.Empty;
-                    ButtonDelete.Visible = false;
-                }
-
-            }
+               
+           
         }
 
         private void ButtonInsertNewStudent_Click(object sender, EventArgs e)
@@ -264,6 +272,7 @@ namespace WinFormsSchool
             {
                 ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
                 GridViewStudents.Visible = false;
+                ButtonUpdateStudent.Visible = false;
             }
         }
 

@@ -46,19 +46,22 @@ namespace WinFormsSchool
 
             ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 27;
-            ButtonClose.Width = 29;
+            ButtonClose.Height = 45;
+            ButtonClose.Width = 45;
             ButtonClose.Image = Properties.Resources.cross1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;
 
 
-            ButtonInsertNewUser.BackColor = Color.FromArgb(150, 150, 30);
+            ButtonInsertNewUser.BackColor = Color.FromArgb(190, 190, 220);
             ButtonInsertNewUser.ForeColor = Color.White;
-            ButtonInsertNewUser.Height = 35;
+            ButtonInsertNewUser.Height = 45;
+            ButtonInsertNewUser.Width = 45;
+            ButtonInsertNewUser.Image = Properties.Resources.add2;
             ButtonInsertNewUser.FlatStyle = FlatStyle.Flat;
-            ButtonInsertNewUser.Visible = true;
+            ButtonInsertNewUser.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonInsertNewUser.Text = string.Empty;
 
             ButtonUpdateUser.BackColor = Color.FromArgb(30, 150, 150);
             ButtonUpdateUser.ForeColor = Color.White;
@@ -76,6 +79,8 @@ namespace WinFormsSchool
             ToolTip1.SetToolTip(this.ButtonSearch, "Search");
             var ToolTip2 = new ToolTip();
             ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var ToolTip3 = new ToolTip();
+            ToolTip3.SetToolTip(this.ButtonInsertNewUser, "Add new User");
 
         }
 

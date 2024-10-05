@@ -1,5 +1,6 @@
 ﻿
 using AppCode.BLL.Models;
+using Microsoft.Win32;
 using WinFormsSchool.Course;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
@@ -283,6 +284,9 @@ namespace WinFormsSchool
 //< a href = "https://www.flaticon.com/free-icons/male" title = "male icons" > Male icons created by sonnycandra - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/discover" title = "discover icons" > Discover icons created by Smashicons - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by VectorPortal - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/new" title = "new icons" > New icons created by Muhammad Yafinuha - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/add-post" title = "add post icons" > Add post icons created by QudaDesign - Flaticon</a>
+
 
 
 
