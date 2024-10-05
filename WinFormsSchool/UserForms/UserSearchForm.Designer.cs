@@ -72,17 +72,17 @@
             // 
             // ButtonUpdateUser
             // 
-            ButtonUpdateUser.Location = new Point(671, 63);
+            ButtonUpdateUser.Location = new Point(549, 64);
             ButtonUpdateUser.Name = "ButtonUpdateUser";
-            ButtonUpdateUser.Size = new Size(154, 29);
+            ButtonUpdateUser.Size = new Size(46, 29);
             ButtonUpdateUser.TabIndex = 48;
-            ButtonUpdateUser.Text = "Update User";
+            ButtonUpdateUser.Text = "U";
             ButtonUpdateUser.UseVisualStyleBackColor = true;
             ButtonUpdateUser.Click += ButtonUpdateUser_Click;
             // 
             // ButtonInsertNewUser
             // 
-            ButtonInsertNewUser.Location = new Point(400, 64);
+            ButtonInsertNewUser.Location = new Point(495, 64);
             ButtonInsertNewUser.Name = "ButtonInsertNewUser";
             ButtonInsertNewUser.Size = new Size(48, 29);
             ButtonInsertNewUser.TabIndex = 47;
@@ -92,17 +92,17 @@
             // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(843, 64);
+            ButtonDelete.Location = new Point(601, 65);
             ButtonDelete.Name = "ButtonDelete";
-            ButtonDelete.Size = new Size(124, 27);
+            ButtonDelete.Size = new Size(44, 27);
             ButtonDelete.TabIndex = 46;
-            ButtonDelete.Text = "Delete";
+            ButtonDelete.Text = "-";
             ButtonDelete.UseVisualStyleBackColor = true;
             ButtonDelete.Click += ButtonDelete_Click;
             // 
             // ButtonClose
             // 
-            ButtonClose.Location = new Point(468, 64);
+            ButtonClose.Location = new Point(409, 64);
             ButtonClose.Name = "ButtonClose";
             ButtonClose.Size = new Size(51, 30);
             ButtonClose.TabIndex = 49;

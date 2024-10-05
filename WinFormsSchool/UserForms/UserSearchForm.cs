@@ -44,18 +44,16 @@ namespace WinFormsSchool
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
 
-            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
-            ButtonClose.ForeColor = Color.White;
+            ButtonClose.BackColor = Color.White;
             ButtonClose.Height = 45;
             ButtonClose.Width = 45;
-            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.Image = Properties.Resources.Close4;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;
 
 
-            ButtonInsertNewUser.BackColor = Color.FromArgb(190, 190, 220);
-            ButtonInsertNewUser.ForeColor = Color.White;
+            ButtonInsertNewUser.BackColor = Color.White;
             ButtonInsertNewUser.Height = 45;
             ButtonInsertNewUser.Width = 45;
             ButtonInsertNewUser.Image = Properties.Resources.add2;
@@ -63,15 +61,15 @@ namespace WinFormsSchool
             ButtonInsertNewUser.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonInsertNewUser.Text = string.Empty;
 
-            ButtonUpdateUser.BackColor = Color.FromArgb(30, 150, 150);
-            ButtonUpdateUser.ForeColor = Color.White;
-            ButtonUpdateUser.Height = 35;
+            ButtonUpdateUser.BackColor = Color.White;
+            ButtonUpdateUser.Height = 45;
+            ButtonUpdateUser.Width = 45;
             ButtonUpdateUser.FlatStyle = FlatStyle.Flat;
             ButtonUpdateUser.Visible = false;
 
-            ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
-            ButtonDelete.ForeColor = Color.White;
-            ButtonDelete.Height = 35;
+            ButtonDelete.BackColor = Color.White;
+            ButtonDelete.Height = 45;
+            ButtonDelete.Width = 45;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
 
@@ -81,6 +79,10 @@ namespace WinFormsSchool
             ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
             var ToolTip3 = new ToolTip();
             ToolTip3.SetToolTip(this.ButtonInsertNewUser, "Add new User");
+            var ToolTip4 = new ToolTip();
+            ToolTip4.SetToolTip(this.ButtonUpdateUser, "Update User");
+            var ToolTip5 = new ToolTip();
+            ToolTip5.SetToolTip(this.ButtonDelete, "Delete User");
 
         }
 

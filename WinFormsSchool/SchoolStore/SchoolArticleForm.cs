@@ -26,11 +26,11 @@ namespace WinFormsSchool
             LabelMessage.Font = new Font(Font, FontStyle.Italic);
             LabelMessage.ForeColor = Color.Red;
 
-            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
+            ButtonClose.BackColor = Color.White;
             ButtonClose.ForeColor = Color.White;
             ButtonClose.Height = 45;
             ButtonClose.Width = 45;
-            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.Image = Properties.Resources.Close4;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;

@@ -44,19 +44,18 @@ namespace WinFormsSchool
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
 
-            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
+            ButtonClose.BackColor = Color.White;
             ButtonClose.ForeColor = Color.White;
             ButtonClose.Height = 45;
             ButtonClose.Width = 45;
-            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.Image = Properties.Resources.Close4;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;
 
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
 
-            ButtonInsertNewStudent.BackColor = Color.FromArgb(190, 190, 220);
-            ButtonInsertNewStudent.ForeColor = Color.White;
+            ButtonInsertNewStudent.BackColor = Color.White;
             ButtonInsertNewStudent.Height = 45;
             ButtonInsertNewStudent.Width = 45;
             ButtonInsertNewStudent.Image = Properties.Resources.add2;
@@ -64,15 +63,15 @@ namespace WinFormsSchool
             ButtonInsertNewStudent.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonInsertNewStudent.Text = string.Empty;
 
-            ButtonUpdateStudent.BackColor = Color.FromArgb(30, 150, 150);
-            ButtonUpdateStudent.ForeColor = Color.White;
-            ButtonUpdateStudent.Height = 35;
+            ButtonUpdateStudent.BackColor = Color.White;
+            ButtonUpdateStudent.Height = 45;
+            ButtonUpdateStudent.Width = 45;
             ButtonUpdateStudent.FlatStyle = FlatStyle.Flat;
             ButtonUpdateStudent.Visible = false;
 
-            ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
-            ButtonDelete.ForeColor = Color.White;
-            ButtonDelete.Height = 35;
+            ButtonDelete.BackColor = Color.White;
+            ButtonDelete.Height = 45;
+            ButtonDelete.Width = 45;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
 
@@ -88,6 +87,10 @@ namespace WinFormsSchool
             ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
             var ToolTip3 = new ToolTip();
             ToolTip3.SetToolTip(this.ButtonInsertNewStudent, "Add new student");
+            var ToolTip4 = new ToolTip();
+            ToolTip4.SetToolTip(this.ButtonUpdateStudent, "Update Student");
+            var ToolTip5 = new ToolTip();
+            ToolTip5.SetToolTip(this.ButtonDelete, "Delete Student");
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -114,7 +117,7 @@ namespace WinFormsSchool
                                        || (X.PersonId == personId)
                                        ).ToList();
 
-                if(students.Count > 0)
+                if (students.Count > 0)
                 {
                     FillGridView();
                 }
@@ -123,12 +126,12 @@ namespace WinFormsSchool
                     GridViewStudents.Visible = false;
                     ToolStripStatusLabel1.Text = "No students found";
                     ToolStripStatusLabel2.Text = string.Empty;
-                    ButtonUpdateStudent.Visible = false;    
+                    ButtonUpdateStudent.Visible = false;
                     ButtonDelete.Visible = false;
                 }
-                
+
             }
-       
+
         }
 
         private void dgrStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -217,24 +220,24 @@ namespace WinFormsSchool
 
         private void FillGridView()
         {
-       
-                GridViewStudents.DataSource = students;
-              
-                    GridViewStudents.DataSource = null;
-                    GridViewStudents.DataSource = students;
-                    GridViewStudents.Visible = true;
-                    GridViewStudents.Columns["PersonId"].DisplayIndex = 0;
-                    GridViewStudents.Columns["FirstName"].DisplayIndex = 1;
-                    GridViewStudents.Columns["LastName"].DisplayIndex = 2;
-                    GridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
-                    ToolStripStatusLabel1.Text = students.Count.ToString();
-                    ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
-                    if (students.Count > 1) { ToolStripStatusLabel1.Text += " students found"; }
-                    else { ToolStripStatusLabel1.Text += " student found"; }
-                    ButtonDelete.Visible = true;
-                    ButtonUpdateStudent.Visible = true;
-               
-           
+
+            GridViewStudents.DataSource = students;
+
+            GridViewStudents.DataSource = null;
+            GridViewStudents.DataSource = students;
+            GridViewStudents.Visible = true;
+            GridViewStudents.Columns["PersonId"].DisplayIndex = 0;
+            GridViewStudents.Columns["FirstName"].DisplayIndex = 1;
+            GridViewStudents.Columns["LastName"].DisplayIndex = 2;
+            GridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
+            ToolStripStatusLabel1.Text = students.Count.ToString();
+            ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
+            if (students.Count > 1) { ToolStripStatusLabel1.Text += " students found"; }
+            else { ToolStripStatusLabel1.Text += " student found"; }
+            ButtonDelete.Visible = true;
+            ButtonUpdateStudent.Visible = true;
+
+
         }
 
         private void ButtonInsertNewStudent_Click(object sender, EventArgs e)
@@ -280,6 +283,7 @@ namespace WinFormsSchool
         {
             Close();
         }
+    
     }
 }
 

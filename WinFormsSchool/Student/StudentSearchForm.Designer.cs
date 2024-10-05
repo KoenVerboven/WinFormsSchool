@@ -132,7 +132,7 @@
             // 
             // ButtonClose
             // 
-            ButtonClose.Location = new Point(492, 96);
+            ButtonClose.Location = new Point(405, 96);
             ButtonClose.Name = "ButtonClose";
             ButtonClose.Size = new Size(51, 30);
             ButtonClose.TabIndex = 50;
@@ -151,31 +151,31 @@
             // 
             // ButtonUpdateStudent
             // 
-            ButtonUpdateStudent.Location = new Point(740, 96);
+            ButtonUpdateStudent.Location = new Point(539, 97);
             ButtonUpdateStudent.Name = "ButtonUpdateStudent";
-            ButtonUpdateStudent.Size = new Size(154, 29);
+            ButtonUpdateStudent.Size = new Size(48, 28);
             ButtonUpdateStudent.TabIndex = 29;
-            ButtonUpdateStudent.Text = "Update Student";
+            ButtonUpdateStudent.Text = "U";
             ButtonUpdateStudent.UseVisualStyleBackColor = true;
             ButtonUpdateStudent.Click += ButtonUpdateStudent_Click;
             // 
             // ButtonInsertNewStudent
             // 
-            ButtonInsertNewStudent.Location = new Point(394, 97);
+            ButtonInsertNewStudent.Location = new Point(489, 97);
             ButtonInsertNewStudent.Name = "ButtonInsertNewStudent";
-            ButtonInsertNewStudent.Size = new Size(68, 29);
+            ButtonInsertNewStudent.Size = new Size(44, 29);
             ButtonInsertNewStudent.TabIndex = 28;
-            ButtonInsertNewStudent.Text = "Insert new Student";
+            ButtonInsertNewStudent.Text = "I";
             ButtonInsertNewStudent.UseVisualStyleBackColor = true;
             ButtonInsertNewStudent.Click += ButtonInsertNewStudent_Click;
             // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(920, 96);
+            ButtonDelete.Location = new Point(593, 98);
             ButtonDelete.Name = "ButtonDelete";
-            ButtonDelete.Size = new Size(124, 27);
+            ButtonDelete.Size = new Size(45, 27);
             ButtonDelete.TabIndex = 27;
-            ButtonDelete.Text = "Delete";
+            ButtonDelete.Text = "-";
             ButtonDelete.UseVisualStyleBackColor = true;
             ButtonDelete.Click += ButtonDelete_Click;
             // 

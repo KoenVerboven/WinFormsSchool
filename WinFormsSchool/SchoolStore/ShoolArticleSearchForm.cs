@@ -45,18 +45,17 @@ namespace WinFormsSchool
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
 
-            ButtonClose.BackColor = Color.FromArgb(240, 100, 100);
-            ButtonClose.ForeColor = Color.White;
+            ButtonClose.BackColor = Color.White;
             ButtonClose.Height = 45;
             ButtonClose.Width = 45;
-            ButtonClose.Image = Properties.Resources.cross1;
+            ButtonClose.Image = Properties.Resources.Close4;
             ButtonClose.FlatStyle = FlatStyle.Flat;
             ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonClose.Text = string.Empty;
 
-            ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
-            ButtonDelete.ForeColor = Color.White;
-            ButtonDelete.Height = 35;
+            ButtonDelete.BackColor = Color.White;
+            ButtonDelete.Height = 45;
+            ButtonDelete.Width = 45;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
 
