@@ -15,6 +15,9 @@ Version 17.7.4
 
 Target framework: .NET8.0
 
+Backend : DotNet Core
+Database : SQL-Server
+
 Ideal for to start programming with C# and WinForms.
 
 This are a few things that you will learn:
