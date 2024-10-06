@@ -24,6 +24,13 @@ namespace WinFormsSchool
         private void InitializeControls()
         {
             WindowState = FormWindowState.Maximized;
+
+            ToolStripStatusLabel1.Text = string.Empty;
+            ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
+            ToolStripStatusLabel2.Text = string.Empty;
+            ToolStripStatusLabel1.BackColor = Color.White;
+            ToolStripStatusLabel2.BackColor = Color.White;
+
             LabelPageTitle.Text = "Search User";
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
 
@@ -101,26 +108,36 @@ namespace WinFormsSchool
 
         private void ButtonSearch_Click_1(object sender, EventArgs e)
         {
-            //UserBLL user = new();
-            //users = user.GetUsers();
-            //if (users is not null)
-            //{
-            //    users = users.Where(X => (X.UserName.ToLower()).Contains(TextboxSearch.Text.ToLower())).ToList();
-            //}
-
-            //if (users.Count > 0)
-            //{
-            //    DataGridViewUsers.DataSource = null;
-            //    DataGridViewUsers.DataSource = users;
-            //    DataGridViewUsers.Visible = true;
-            //}
-            //else
-            //{
-            //    DataGridViewUsers.Visible = false;
-            //}
-
-
             const int MinimumCharactersSearchCommand = 1;
+
+            try
+            {
+                ButtonSearch.Enabled = false;
+                UseWaitCursor = true;
+
+                if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+                {
+                    FilterUsers();
+                }
+                else
+                {
+                    ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                    DataGridViewUsers.Visible = false;
+                    ButtonUpdateUser.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                ButtonSearch.Enabled = true;
+                UseWaitCursor = false;
+            }
+
+
 
             if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
             {
@@ -128,8 +145,9 @@ namespace WinFormsSchool
             }
             else
             {
-                // ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
                 DataGridViewUsers.Visible = false;
+                ButtonUpdateUser.Visible = false;
             }
         }
 
@@ -229,14 +247,16 @@ namespace WinFormsSchool
                     DataGridViewUsers.DataSource = null;
                     DataGridViewUsers.DataSource = users;
                     DataGridViewUsers.Visible = true;
+
+                    ToolStripStatusLabel1.Text = users.Count.ToString();
+                    ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
+                    if (users.Count > 1) { ToolStripStatusLabel1.Text += " users found"; }
+                    else { ToolStripStatusLabel1.Text += " user found"; }
+
                     ButtonDelete.Visible = true;
                     ButtonUpdateUser.Visible = true;
                 }
-                else
-                {
-                    DataGridViewUsers.Visible = false;
-                    ButtonDelete.Visible = false;
-                }
+           
             }
         }
 
@@ -253,6 +273,14 @@ namespace WinFormsSchool
                 users = users.Where(X => (X.UserName.ToLower()).Contains(TextboxSearch.Text.ToLower())).ToList();
 
                 FillGridView();
+            }
+            else
+            {
+                DataGridViewUsers.Visible = false;
+                ToolStripStatusLabel1.Text = "No users found";
+                ToolStripStatusLabel2.Text = string.Empty;
+                ButtonUpdateUser.Visible = false;
+                ButtonDelete.Visible = false;
             }
 
         }

@@ -35,7 +35,11 @@
             ButtonInsertNewUser = new Button();
             ButtonDelete = new Button();
             ButtonClose = new Button();
+            statusStrip1 = new StatusStrip();
+            ToolStripStatusLabel1 = new ToolStripStatusLabel();
+            ToolStripStatusLabel2 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)DataGridViewUsers).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -110,11 +114,35 @@
             ButtonClose.UseVisualStyleBackColor = true;
             ButtonClose.Click += ButtonClose_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 682);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1296, 26);
+            statusStrip1.TabIndex = 50;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // ToolStripStatusLabel1
+            // 
+            ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
+            ToolStripStatusLabel1.Padding = new Padding(0, 0, 50, 0);
+            ToolStripStatusLabel1.Size = new Size(201, 20);
+            ToolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // ToolStripStatusLabel2
+            // 
+            ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
+            ToolStripStatusLabel2.Size = new Size(151, 20);
+            ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
             // UserSearchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1296, 708);
+            Controls.Add(statusStrip1);
             Controls.Add(ButtonClose);
             Controls.Add(ButtonUpdateUser);
             Controls.Add(ButtonInsertNewUser);
@@ -132,7 +160,10 @@
             Controls.SetChildIndex(ButtonInsertNewUser, 0);
             Controls.SetChildIndex(ButtonUpdateUser, 0);
             Controls.SetChildIndex(ButtonClose, 0);
+            Controls.SetChildIndex(statusStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)DataGridViewUsers).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,5 +176,8 @@
         private Button ButtonInsertNewUser;
         private Button ButtonDelete;
         private Button ButtonClose;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel ToolStripStatusLabel1;
+        private ToolStripStatusLabel ToolStripStatusLabel2;
     }
 }

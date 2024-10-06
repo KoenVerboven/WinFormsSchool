@@ -1,8 +1,7 @@
 ﻿
 using AppCode.BLL.Models;
-using Microsoft.Win32;
 using WinFormsSchool.Course;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+
 
 namespace WinFormsSchool
 {
@@ -20,6 +19,7 @@ namespace WinFormsSchool
         // ToDo User and group security/rights
         // ToDo check the DIRTY state by closing a form
         // ToDo Settings form Only the admin user can access these form; settings such as database connection settings ....
+        // ToDo add Age fields to Person, readonly field , calculatated field
         /// </summary>
 
         User _validUser;

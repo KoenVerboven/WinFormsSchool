@@ -271,15 +271,31 @@ namespace WinFormsSchool
         {
             const int MinimumCharactersSearchCommand = 1;
 
-            if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+            try
             {
-                FilterStudents();
+                ButtonSearch.Enabled = false;
+                UseWaitCursor = true;
+
+                if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+                {
+                    FilterStudents();
+                }
+                else
+                {
+                    ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                    GridViewStudents.Visible = false;
+                    ButtonUpdateStudent.Visible = false;
+                }
             }
-            else
+            catch (Exception)
             {
-                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
-                GridViewStudents.Visible = false;
-                ButtonUpdateStudent.Visible = false;
+
+                throw;
+            }
+            finally
+            {
+                ButtonSearch.Enabled = true;
+                UseWaitCursor = false;
             }
         }
 
