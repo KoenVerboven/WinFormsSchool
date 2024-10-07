@@ -5,14 +5,13 @@
 						NationalRegisterNumber,Nationality, [MoederTongueId],Registrationdate
 						)
 	values 
-	('Koen','Maria Frans','Verboven','Mpad 3' , '2350','08123445','M','1966-06-01',2,17832,1,1,'2024-06-01  10:00:00'),
-	('Johan',null,'Verboven','Mpad 3' , '2350','08123445','M','1969-01-31',2,13737,1,1,'2024-06-01  10:00:00'),
-	('Maria',null,'Poels','Mpad 3' , '2350','08123445','V','1944-04-12',2,17838,1,1,'2024-06-01  10:00:00'),
+	('Johan',null,'Verboven','Mpad 30' , '2351','08123445','M','2000-01-31',2,13737,1,1,'2024-06-01  10:00:00'),
+	('Maria',null,'Poels','Mpad 30' , '2351','08123445','V','1999-04-12',2,17838,1,1,'2024-06-01  10:00:00'),
 	('Leen',null,'Peeters','Eigenaarsstraat 45 bus7' , '4000','08123445','M','1986-01-15',2,1252872,1,1,'2024-06-01  10:00:00'),
 	('Gert','Frans','Peeters','Molenpad' , '4000','08123445','M','1956-02-01',2,178,1,1,'2024-06-01  10:00:00'),
 	('Jos',null,'Verhoeven','Guldensporenweg 501' , '4000','08123445','M','1944-03-19',2,1886,1,1,'2024-06-01  10:00:00'),
-	('Koen',null,'Peeters','Molenpad'  , '4000','08123445','M','1935-08-07',2,18528758,1,1,'2024-06-01  10:00:00')
-	
+	('Koen',null,'Peeters','Molenstraat 23'  , '4000','08123445','M','1935-08-07',2,18528758,1,1,'2024-06-01  10:00:00'),
+	('Koen','Maria Frans','Verboven','Mpad 30' , '2351','08123445','M','1966-06-01',2,17832,1,1,'2024-06-01  10:00:00')
 
 	Insert into Course(CourseName ,CourseStartDate,CourseEndDate ,MinimumGradeToPassTheCourse,
 	MaximumTestCourseGrade, CourseIsActive, CourseTypeId, CostPrice  
