@@ -9,14 +9,14 @@ namespace WinFormsSchool
 {
     public partial class StudentSearchForm : Base.BaseForm1
     {
-        readonly StudentBLL Student;
+        readonly StudentBLL studentBLL;
         List<Student> students;
 
         public StudentSearchForm()
         {
             InitializeComponent();
             InitializeControls();
-            Student = new StudentBLL();
+            studentBLL = new StudentBLL();
         }
 
         private void InitializeControls()
@@ -112,7 +112,7 @@ namespace WinFormsSchool
         private void FilterStudents()
         {
             _ = int.TryParse(TextboxSearch.Text, out int personId);
-            students = Student.GetStudents();
+            students = studentBLL.GetStudents();
             if (students is not null)
             {
                 students = students

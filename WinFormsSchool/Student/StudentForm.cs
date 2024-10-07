@@ -10,7 +10,7 @@ namespace WinFormsSchool
 {
     public partial class StudentForm : Base.BaseForm1
     {
-        readonly StudentBLL Student;
+        readonly StudentBLL studentBLL;
         private readonly DetailFormType _detailFormType;
         int _studentId = 0;
 
@@ -45,7 +45,7 @@ namespace WinFormsSchool
             InitializeComponent();
             _detailFormType = detailFormType;
             InitializeControls();
-            Student = new StudentBLL();
+            studentBLL = new StudentBLL();
         }
 
         private void StudentForm_Load(object sender, EventArgs e)
@@ -185,7 +185,7 @@ namespace WinFormsSchool
         {
             try
             {
-                var selectedStudent = Student.GetStudentById(selectedStudentId);
+                var selectedStudent = studentBLL.GetStudentById(selectedStudentId);
 
                 if (selectedStudent != null)
                 {
@@ -265,7 +265,7 @@ namespace WinFormsSchool
                   { "MoreInfo", "ArgumentOutOfRangeException" },
                   { "Form", "StudentForm" },
                   { "Method", "LoadSelectedStudent" },
-                  { "selectedArticleId", selectedStudentId.ToString() }
+                  { "selectedStudentId", selectedStudentId.ToString() }
                 };
                 var logError = new LogError();
                 LogError.LogException(oEx, dictErrorData);
@@ -279,7 +279,7 @@ namespace WinFormsSchool
                   { "UserName", "" },
                   { "Form", "StudentForm" },
                   { "Method", "LoadSelectedStudent" },
-                  { "selectedArticleId", selectedStudentId.ToString() }
+                  { "selectedStudentId", selectedStudentId.ToString() }
                 };
                 var logError = new LogError();
                 LogError.LogException(oEx, dictErrorData);
