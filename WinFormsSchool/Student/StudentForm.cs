@@ -28,6 +28,14 @@ namespace WinFormsSchool
         string _cleanEmailAddress = "";
         string _cleanNationalRegisterNr = "";
 
+        int _cleanGender = 0;
+        int _cleanMartialStatus = 0;
+        int _cleanNationality = 0;
+
+        DateTime _cleanDateOfBirth;
+        DateTime _cleanRegistrationDate;
+
+
         #endregion
 
         public StudentForm(DetailFormType detailFormType)
@@ -194,7 +202,14 @@ namespace WinFormsSchool
                     _cleanZipCode = TextBoxZipCode.Text.Trim();
                     _cleanPhoneNumber = TextBoxPhoneNumber.Text.Trim();
                     _cleanEmailAddress = TextBoxEmailAddress.Text.Trim();
-                    _cleanNationalRegisterNr = TextBoxNationalRegisterNumber.Text.Trim();   
+                    _cleanNationalRegisterNr = TextBoxNationalRegisterNumber.Text.Trim();
+
+                     _cleanGender = ComboBoxGender.SelectedIndex;
+                     _cleanMartialStatus = ComboBoxMartialStatus.SelectedIndex;
+                     _cleanNationality = ComboBoxNationality.SelectedIndex;
+
+                    _cleanDateOfBirth = DateTimePickerDateOfBirth.Value;
+                    _cleanRegistrationDate = DateTimePickerRegistrationdate.Value;
 
                     #endregion
 
@@ -455,7 +470,22 @@ namespace WinFormsSchool
             if (TextBoxZipCode.Text.Trim() != _cleanZipCode) return true;
             if (TextBoxPhoneNumber.Text.Trim() != _cleanPhoneNumber) return true;
             if (TextBoxEmailAddress.Text.Trim() != _cleanEmailAddress) return true;
-            if (TextBoxNationalRegisterNumber.Text.Trim() != _cleanNationalRegisterNr) return true; 
+            if (TextBoxNationalRegisterNumber.Text.Trim() != _cleanNationalRegisterNr) return true;
+
+            #endregion
+
+            #region CheckComboBox
+
+            if (ComboBoxGender.SelectedIndex != _cleanGender) return true;
+            if (ComboBoxMartialStatus.SelectedIndex != _cleanMartialStatus) return true;
+            if (ComboBoxNationality.SelectedIndex != _cleanNationality) return true;
+
+            #endregion
+
+            #region DateTimePicker
+
+            if (DateTimePickerDateOfBirth.Value != _cleanDateOfBirth) return true;
+            if (DateTimePickerRegistrationdate.Value != _cleanRegistrationDate) return true;
 
             #endregion
 
