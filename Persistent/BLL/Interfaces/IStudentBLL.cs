@@ -8,9 +8,9 @@ namespace AppCode.BLL.Interfaces
 
         public List<Student>? GetStudents();
 
-        public bool AddStudent();
+        public bool AddStudent(Student student);
 
-        public bool UpdateStudent(Student Student);
+        public bool UpdateStudent(Student student);
 
         public bool DeleteStudent(int StudentId);
     }

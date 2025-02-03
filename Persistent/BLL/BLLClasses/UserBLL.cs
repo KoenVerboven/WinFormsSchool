@@ -1,28 +1,62 @@
-﻿using AppCode.BLL.Models;
+﻿using AppCode.BLL.Interfaces;
+using AppCode.BLL.Models;
+using AppCode.DAL;
 
 namespace AppCode.BLL.BLLClasses
 {
-    public class UserBLL
+    public class UserBLL : IUserBLL
     {
 
         List<User>? Users;
 
         public UserBLL()
         {
-            FillUserList();
         }
 
-        public User? GetUserByUserNameAndPassword(String UserName,String PassWord)
+        public bool AddUser(User user)
+        {
+            var userDal = new UserDal();
+            return userDal.AddNewUser(user);
+        }
+        
+        public bool UpdateUser(User user)
+        {
+            var userDal = new UserDal(); 
+            return userDal.UpdateUser(user);
+        }
+
+
+        public List<User>? GetUsers()
+        {
+            var userDal = new UserDal();
+            return userDal.GetUsers();
+        }
+
+        public bool DeleteUser(int userId)
+        {
+            var userDal = new UserDal();
+            return userDal.DeleteUser(userId);
+        }
+
+
+        public User GetUserById(int userId)
+        {
+            var userDal = new UserDal();
+            return userDal.GetUserById(userId);
+        }
+
+        public User? GetUserByUserNameAndPassword(String userName,String passWord)
         {
             User? user = null;
-            if (UserName != string.Empty)
+            if (userName != string.Empty)
             {
-                user = Users.SingleOrDefault(p => p.UserName == UserName);
-                //user = Users.SingleOrDefault(p => p.UserName == UserName && p.Password == PassWord); ToDo comment this out
+                var userDal = new UserDal();
+                return userDal.GetValidUser(userName, passWord);
             }
             return user;
         }
 
+        [Obsolete]
         private void FillUserList()
         {
             Users =

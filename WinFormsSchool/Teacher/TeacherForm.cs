@@ -20,17 +20,21 @@ namespace WinFormsSchool
 
         private void InitializeControls()
         {
-            WindowState = FormWindowState.Maximized;   
+            WindowState = FormWindowState.Maximized;
 
             SetAllTextboxesOnFormReadOnly(true);
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
 
-            LabelPageTitle.Text = "Student Detail";
+            LabelPageTitle.Text = "Teacher Detail";
 
-            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.BackColor = Color.White;
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 35;
+            ButtonClose.Height = 45;
+            ButtonClose.Width = 45;
+            ButtonClose.Image = Properties.Resources.back1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
 
             ComboBoxGender.DataSource = Enum.GetValues(typeof(Gender));
             ComboBoxMaritalStatus.DataSource = Enum.GetValues(typeof(MaritalStatus));
@@ -38,6 +42,9 @@ namespace WinFormsSchool
             ComboBoxSaleryCategorie.DataSource = Enum.GetValues(typeof(SaleryCategorie));
             ComboBoxHighestDegree.DataSource = Enum.GetValues(typeof(HighestDegree));
             ComboBoxStudyDirection.DataSource = Enum.GetValues(typeof(StudyDirection));
+
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(this.ButtonClose, "Close this page");
         }
 
         private void SetAllTextboxesOnFormReadOnly(bool readOnly)
@@ -130,8 +137,7 @@ namespace WinFormsSchool
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        => Close();
+
     }
 }

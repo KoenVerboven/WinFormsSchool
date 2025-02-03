@@ -33,7 +33,9 @@
             label1 = new Label();
             LabelVersioning = new Label();
             LabelInfo = new Label();
+
             ButtonClose = new Button();
+
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -47,7 +49,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13F);
             label3.ForeColor = Color.RoyalBlue;
+
+            label3.Location = new Point(39, 132);
+
             label3.Location = new Point(39, 196);
+
             label3.Name = "label3";
             label3.Size = new Size(92, 30);
             label3.TabIndex = 44;
@@ -58,7 +64,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13F);
             label2.ForeColor = Color.RoyalBlue;
+
+            label2.Location = new Point(444, 132);
+
             label2.Location = new Point(444, 196);
+
             label2.Name = "label2";
             label2.Size = new Size(104, 30);
             label2.TabIndex = 43;
@@ -80,7 +90,11 @@
             LabelVersioning.AutoSize = true;
             LabelVersioning.Font = new Font("Segoe UI", 12F);
             LabelVersioning.ForeColor = Color.Cyan;
+
+            LabelVersioning.Location = new Point(39, 194);
+
             LabelVersioning.Location = new Point(39, 258);
+
             LabelVersioning.Name = "LabelVersioning";
             LabelVersioning.Size = new Size(104, 28);
             LabelVersioning.TabIndex = 45;
@@ -91,11 +105,16 @@
             LabelInfo.AutoSize = true;
             LabelInfo.Font = new Font("Segoe UI", 12F);
             LabelInfo.ForeColor = Color.Cyan;
+
+            LabelInfo.Location = new Point(43, 248);
+
             LabelInfo.Location = new Point(43, 312);
+
             LabelInfo.Name = "LabelInfo";
             LabelInfo.Size = new Size(46, 28);
             LabelInfo.TabIndex = 46;
             LabelInfo.Text = "Info";
+
             // 
             // ButtonClose
             // 
@@ -106,13 +125,16 @@
             ButtonClose.Text = "Close";
             ButtonClose.UseVisualStyleBackColor = true;
             ButtonClose.Click += ButtonClose_Click;
+
             // 
             // InfoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 410);
+
             Controls.Add(ButtonClose);
+
             Controls.Add(LabelInfo);
             Controls.Add(LabelVersioning);
             Controls.Add(label3);
@@ -127,7 +149,9 @@
             Controls.SetChildIndex(label3, 0);
             Controls.SetChildIndex(LabelVersioning, 0);
             Controls.SetChildIndex(LabelInfo, 0);
+
             Controls.SetChildIndex(ButtonClose, 0);
+
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,6 +162,8 @@
         private Label label1;
         private Label LabelVersioning;
         private Label LabelInfo;
+
         private Button ButtonClose;
+
     }
 }

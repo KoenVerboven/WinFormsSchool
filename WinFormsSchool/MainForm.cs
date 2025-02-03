@@ -1,5 +1,7 @@
 ﻿
 using AppCode.BLL.Models;
+using WinFormsSchool.Course;
+
 
 namespace WinFormsSchool
 {
@@ -17,6 +19,7 @@ namespace WinFormsSchool
         // ToDo User and group security/rights
         // ToDo check the DIRTY state by closing a form
         // ToDo Settings form Only the admin user can access these form; settings such as database connection settings ....
+        // ToDo add Age fields to Person, readonly field , calculatated field
         /// </summary>
 
         User _validUser;
@@ -55,6 +58,7 @@ namespace WinFormsSchool
                 StudentsToolStripMenuItem.Visible = true;
                 SchoolShopToolStripMenuItem.Visible = true;
                 TeachersToolStripMenuItem.Visible = true;
+                UserAdministraionToolStripMenuItem.Visible = true;
             }
 
             if (validUser.SecurityGroupId == 1)
@@ -63,6 +67,7 @@ namespace WinFormsSchool
                 StudentsToolStripMenuItem.Visible = false;
                 SchoolShopToolStripMenuItem.Visible = false;
                 TeachersToolStripMenuItem.Visible = false;
+                UserAdministraionToolStripMenuItem.Visible = false;
             }
 
         }
@@ -126,7 +131,7 @@ namespace WinFormsSchool
 
         private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure clossing the program?", "closing program",
+            var result = MessageBox.Show("Are you sure closing the program?", "closing program",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
@@ -162,6 +167,26 @@ namespace WinFormsSchool
             };
             studentForm.LoadSelectedStudent(_validUser.PersonId);
             studentForm.Show();
+        }
+
+        private void UserAdministraionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllForms();
+            var userAdministrationForm = new UserSearchForm()
+            {
+                MdiParent = this
+            };
+            userAdministrationForm.Show();
+        }
+
+        private void CourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllForms();
+            var courseForm = new CourseSearchForm()
+            {
+                MdiParent = this
+            };
+            courseForm.Show();
         }
     }
 
@@ -242,9 +267,30 @@ namespace WinFormsSchool
     }
 }
 
+//icons source:
 //<a href="https://www.flaticon.com/free-icons/teacher" title="teacher icons">Teacher icons created by Bert Flint - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/student"title="student icons"> Student icons created by RIkas Dzihab- Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/smart-cart" title="smart cart icons">Smart cart icons created by Freepik - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Stockio - Flaticon</a>
 //< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by Leremy - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/figure" title="figure icons">Figure icons created by heisenberg_jr - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/administration" title = "administration icons" > Administration icons created by wuizo - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/administrator" title = "administrator icons" > Administrator icons created by smashingstocks - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/semester" title = "semester icons" > Semester icons created by zero_wing - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/secure-user" title="secure user icons">Secure user icons created by Muhammad Atif - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Smashicons - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/male" title = "male icons" > Male icons created by sonnycandra - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/discover" title = "discover icons" > Discover icons created by Smashicons - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/close" title = "close icons" > Close icons created by VectorPortal - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/new" title = "new icons" > New icons created by Muhammad Yafinuha - Flaticon</a>
+//< a href = "https://www.flaticon.com/free-icons/add-post" title = "add post icons" > Add post icons created by QudaDesign - Flaticon</a>
+
+//< a href = "https://www.freepik.com/search" > Icon by HideMaru</a>
+
+//<a href="https://www.freeiconspng.com/img/3099" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/check-yes-ok-icon-10.png" width="350" alt="check yes ok icon" /></a>
+//< a href = "https://www.freeiconspng.com/img/28577" title = "Image from freeiconspng.com" >< img src = "https://www.freeiconspng.com/uploads/delete-button-png-26.png" width = "350" alt = "High Resolution Delete Button Png Icon" /></ a >
+//< a href = "https://www.freeiconspng.com/img/28565" title = "Image from freeiconspng.com" >< img src = "https://www.freeiconspng.com/uploads/delete-button-png-13.png" width = "350" alt = "Hd Delete Button Image In Our System" /></ a >
+//<a href="https://www.freeiconspng.com/img/7298" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/hospital-plus-icon-15.png" width="350" alt="hospital plus icon" /></a>
+//<a href="https://www.freeiconspng.com/img/3602" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/edit-new-icon-22.png" width="350" alt="Edit, new, icon" /></a>

@@ -9,14 +9,14 @@ namespace WinFormsSchool
 {
     public partial class StudentSearchForm : Base.BaseForm1
     {
-        readonly StudentBLL Student;
-        List<Student> students; // rename to students
+        readonly StudentBLL studentBLL;
+        List<Student> students;
 
         public StudentSearchForm()
         {
             InitializeComponent();
             InitializeControls();
-            Student = new StudentBLL();
+            studentBLL = new StudentBLL();
         }
 
         private void InitializeControls()
@@ -25,6 +25,7 @@ namespace WinFormsSchool
             ToolStripStatusLabel1.Text = string.Empty;
             ToolStripStatusLabel1.Font = new Font(Font, FontStyle.Italic);
             ToolStripStatusLabel2.Text = string.Empty;
+
             GridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridViewStudents.Visible = false;
             GridViewStudents.ReadOnly = true;
@@ -34,33 +35,66 @@ namespace WinFormsSchool
             GridViewStudents.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 10);
             GridViewStudents.EnableHeadersVisualStyles = false;
             splitContainer1.Panel2.Padding = new Padding(16);
-            ButtonSearch.BackColor = Color.FromArgb(55, 150, 55);
+
+            ButtonSearch.BackColor = Color.FromArgb(190, 190, 190);
             ButtonSearch.ForeColor = Color.White;
-            ButtonSearch.Height = 35;
-            ButtonSearch.Image = Properties.Resources.SearchIcon;
+            ButtonSearch.Height = 27;
+            ButtonSearch.Width = 29;
+            ButtonSearch.Image = Properties.Resources.search1;
             ButtonSearch.FlatStyle = FlatStyle.Flat;
             ButtonSearch.ImageAlign = ContentAlignment.MiddleLeft;
+
+            ButtonClose.BackColor = Color.White;
+            ButtonClose.ForeColor = Color.White;
+            ButtonClose.Height = 45;
+            ButtonClose.Width = 45;
+            ButtonClose.Image = Properties.Resources.Close4;
+            ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
+
             SetLabelProperties(Color.White, new Font("Helvetica", 10));
-            ButtonInsertNewStudent.BackColor = Color.FromArgb(150, 150, 30);
-            ButtonInsertNewStudent.ForeColor = Color.White;
-            ButtonInsertNewStudent.Height = 35;
+
+            ButtonInsertNewStudent.BackColor = Color.White;
+            ButtonInsertNewStudent.Height = 45;
+            ButtonInsertNewStudent.Width = 45;
+            ButtonInsertNewStudent.Image = Properties.Resources.Plus1;
             ButtonInsertNewStudent.FlatStyle = FlatStyle.Flat;
-            ButtonInsertNewStudent.Visible = true;
-            ButtonUpdateStudent.BackColor = Color.FromArgb(30, 150, 150);
-            ButtonUpdateStudent.ForeColor = Color.White;
-            ButtonUpdateStudent.Height = 35;
+            ButtonInsertNewStudent.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonInsertNewStudent.Text = string.Empty;
+
+            ButtonUpdateStudent.BackColor = Color.White;
+            ButtonUpdateStudent.Height = 45;
+            ButtonUpdateStudent.Width = 45;
+            ButtonUpdateStudent.Image = Properties.Resources.edit1;
             ButtonUpdateStudent.FlatStyle = FlatStyle.Flat;
             ButtonUpdateStudent.Visible = false;
-            ButtonDelete.BackColor = Color.FromArgb(200, 50, 50);
-            ButtonDelete.ForeColor = Color.White;
-            ButtonDelete.Height = 35;
+            ButtonUpdateStudent.Text = string.Empty;
+
+            ButtonDelete.BackColor = Color.White;
+            ButtonDelete.Height = 45;
+            ButtonDelete.Width = 45;
+            ButtonDelete.Image = Properties.Resources.delete1;
             ButtonDelete.FlatStyle = FlatStyle.Flat;
             ButtonDelete.Visible = false;
+            ButtonDelete.Text = string.Empty;  
+            
             ToolStripStatusLabel1.BackColor = Color.White;
             ToolStripStatusLabel2.BackColor = Color.White;
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
             LabelPageTitle.Text = "Search Student";
+
+            var ToolTip1 = new ToolTip();
+            ToolTip1.SetToolTip(this.ButtonSearch, "Search");
+            var ToolTip2 = new ToolTip();
+            ToolTip2.SetToolTip(this.ButtonClose, "Close this page");
+            var ToolTip3 = new ToolTip();
+            ToolTip3.SetToolTip(this.ButtonInsertNewStudent, "Add new student");
+            var ToolTip4 = new ToolTip();
+            ToolTip4.SetToolTip(this.ButtonUpdateStudent, "Update Student");
+            var ToolTip5 = new ToolTip();
+            ToolTip5.SetToolTip(this.ButtonDelete, "Delete Student");
         }
 
         private void SetLabelProperties(Color color, Font font)
@@ -75,30 +109,31 @@ namespace WinFormsSchool
             }
         }
 
-        private void ButtonSearch_Click(object sender, EventArgs e)
+        private void FilterStudents()
         {
-            const int MinimumCharactersSearchCommand = 1;
-
-            if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+            _ = int.TryParse(TextboxSearch.Text, out int personId);
+            students = studentBLL.GetStudents();
+            if (students is not null)
             {
-                _ = int.TryParse(TextboxSearch.Text, out int personId);
-                students = Student.GetStudents();
-                if (students is not null)
-                {
-                    students = students
-                                 .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextboxSearch.Text.ToLower())
-                                           || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextboxSearch.Text.ToLower())
-                                           || (X.PersonId == personId)
-                                           ).ToList();
+                students = students
+                             .Where(X => (X.LastName.ToLower() + " " + X.Firstname.ToLower()).Contains(TextboxSearch.Text.ToLower())
+                                       || (X.Firstname.ToLower() + " " + X.LastName.ToLower()).Contains(TextboxSearch.Text.ToLower())
+                                       || (X.PersonId == personId)
+                                       ).ToList();
 
+                if (students.Count > 0)
+                {
                     FillGridView();
                 }
+                else
+                {
+                    GridViewStudents.Visible = false;
+                    ToolStripStatusLabel1.Text = "No students found";
+                    ToolStripStatusLabel2.Text = string.Empty;
+                    ButtonUpdateStudent.Visible = false;
+                    ButtonDelete.Visible = false;
+                }
 
-            }
-            else
-            {
-                ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
-                GridViewStudents.Visible = false;
             }
 
         }
@@ -138,7 +173,11 @@ namespace WinFormsSchool
 
                             if (itemRemove.EnrolledCourse == null)
                             {
-                                students.Remove(itemRemove);
+
+                                var studentBLL = new StudentBLL();
+                                var ok = false;
+                                ok = studentBLL.DeleteStudent(itemRemove.PersonId);
+                                if (ok) FilterStudents();
                             }
                             else
                             {
@@ -160,7 +199,7 @@ namespace WinFormsSchool
                 {
                     personId = GridViewStudents.SelectedRows[0].Cells["PersonId"].Value.ToString();
                 }
- 
+
                 var dictErrorData = new Dictionary<string, string>()
                 {
                   { "UserName", "" },
@@ -185,34 +224,24 @@ namespace WinFormsSchool
 
         private void FillGridView()
         {
-            if (students.Count > 0)
-            {
-                GridViewStudents.DataSource = students;
-                if (students.Count > 0)
-                {
-                    GridViewStudents.DataSource = null;
-                    GridViewStudents.DataSource = students;
-                    GridViewStudents.Visible = true;
-                    GridViewStudents.Columns["PersonId"].DisplayIndex = 0;
-                    GridViewStudents.Columns["FirstName"].DisplayIndex = 1;
-                    GridViewStudents.Columns["LastName"].DisplayIndex = 2;
-                    GridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
-                    ToolStripStatusLabel1.Text = students.Count.ToString();
-                    ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
-                    if (students.Count > 1) { ToolStripStatusLabel1.Text += " students found"; }
-                    else { ToolStripStatusLabel1.Text += " student found"; }
-                    ButtonDelete.Visible = true;
-                    ButtonUpdateStudent.Visible = true;
-                }
-                else
-                {
-                    GridViewStudents.Visible = false;
-                    ToolStripStatusLabel1.Text = "No students found";
-                    ToolStripStatusLabel2.Text = string.Empty;
-                    ButtonDelete.Visible = false;
-                }
 
-            }
+            GridViewStudents.DataSource = students;
+
+            GridViewStudents.DataSource = null;
+            GridViewStudents.DataSource = students;
+            GridViewStudents.Visible = true;
+            GridViewStudents.Columns["PersonId"].DisplayIndex = 0;
+            GridViewStudents.Columns["FirstName"].DisplayIndex = 1;
+            GridViewStudents.Columns["LastName"].DisplayIndex = 2;
+            GridViewStudents.Columns["DateOfBirth"].DisplayIndex = 3;
+            ToolStripStatusLabel1.Text = students.Count.ToString();
+            ToolStripStatusLabel2.Text = "Double click on GridRow to open detailscreen";
+            if (students.Count > 1) { ToolStripStatusLabel1.Text += " students found"; }
+            else { ToolStripStatusLabel1.Text += " student found"; }
+            ButtonDelete.Visible = true;
+            ButtonUpdateStudent.Visible = true;
+
+
         }
 
         private void ButtonInsertNewStudent_Click(object sender, EventArgs e)
@@ -237,6 +266,57 @@ namespace WinFormsSchool
                 studentForm.Show();
             }
         }
+
+        private void ButtonSearch_Click_1(object sender, EventArgs e)
+        {
+            const int MinimumCharactersSearchCommand = 1;
+
+            try
+            {
+                ButtonSearch.Enabled = false;
+                UseWaitCursor = true;
+
+                if (TextboxSearch.Text.Length >= MinimumCharactersSearchCommand)
+                {
+                    FilterStudents();
+                }
+                else
+                {
+                    ToolStripStatusLabel1.Text = "Search text must contain at least " + MinimumCharactersSearchCommand + "Character(s).";
+                    GridViewStudents.Visible = false;
+                    ButtonUpdateStudent.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                ButtonSearch.Enabled = true;
+                UseWaitCursor = false;
+            }
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            if (GridViewStudents.Visible)
+            {
+                var result = MessageBox.Show("Are you sure closing the Student Search Form? You loosing the search results.", "closing",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                Close();
+            }
+        }
+    
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using AppCode.BLL.Enums;
 using AppCode.BLL.Interfaces;
 using AppCode.BLL.Models;
+using AppCode.DAL;
 
 namespace AppCode.BLL.BLLClasses
 {
@@ -10,38 +11,39 @@ namespace AppCode.BLL.BLLClasses
 
         public StudentBLL()//ctor tab tab
         {
-            FillStudentList();
         }
 
-        public bool AddStudent()
+        public bool AddStudent(Student student)
         {
-            throw new NotImplementedException();
+            var studentDal = new StudentDal();
+            return studentDal.AddNewStudent(student); 
         }
 
         public bool DeleteStudent(int StudentId)
         {
-            throw new NotImplementedException();
+            var studentDal = new StudentDal();
+            return studentDal.DeleteStudent(StudentId);
         }
 
         public Student? GetStudentById(int StudentId)
         {
-            if (students == null)
-            {
-                return null;
-            }
-            return students.Single(p => p.PersonId == StudentId);
+            var studentDal = new StudentDal();
+            return studentDal.GetStudentById(StudentId);
         }
 
         public List<Student>? GetStudents()
         {
-            return students;
+            var studentDal = new StudentDal();
+            return studentDal.GetStudents();
         }
 
-        public bool UpdateStudent(Student Student)
+        public bool UpdateStudent(Student student)
         {
-            throw new NotImplementedException();
+            var studentDal = new StudentDal();
+            return studentDal.UpdateStudent(student);
         }
 
+        [Obsolete]
         private void FillStudentList()
         {
             students =

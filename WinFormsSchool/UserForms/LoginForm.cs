@@ -20,6 +20,7 @@ namespace WinFormsSchool
 
             if (ValidUser() is not null)
             {
+                Hide();   
                 mainForm.SetUser(ValidUser());
                 mainForm.ShowDialog();
                 Close();
@@ -44,8 +45,6 @@ namespace WinFormsSchool
             Width = 850;
             Height = 400;
 
-            labelUserName.ForeColor = Color.White;
-            labelPassWord.ForeColor = Color.White;
             labelMessage.Text = string.Empty;
             labelMessage.ForeColor = Color.Red;
             LabelNumberOfAttemps.Text = string.Empty;

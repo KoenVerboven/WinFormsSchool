@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             ButtonLogin = new Button();
-            labelUserName = new Label();
-            labelPassWord = new Label();
             TextBoxUserName = new TextBox();
             TextBoxPassWord = new TextBox();
             labelMessage = new Label();
             splitContainer1 = new SplitContainer();
+            pictureBox1 = new PictureBox();
             CheckBoxShowPassWord = new CheckBox();
             LabelNumberOfAttemps = new Label();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // LabelPageTitle
@@ -50,7 +52,7 @@
             // 
             // ButtonLogin
             // 
-            ButtonLogin.Location = new Point(283, 255);
+            ButtonLogin.Location = new Point(245, 249);
             ButtonLogin.Name = "ButtonLogin";
             ButtonLogin.Size = new Size(123, 29);
             ButtonLogin.TabIndex = 0;
@@ -58,42 +60,24 @@
             ButtonLogin.UseVisualStyleBackColor = true;
             ButtonLogin.Click += ButtonLogin_Click;
             // 
-            // labelUserName
-            // 
-            labelUserName.AutoSize = true;
-            labelUserName.Location = new Point(72, 60);
-            labelUserName.Name = "labelUserName";
-            labelUserName.Size = new Size(85, 20);
-            labelUserName.TabIndex = 43;
-            labelUserName.Text = "UserName :";
-            // 
-            // labelPassWord
-            // 
-            labelPassWord.AutoSize = true;
-            labelPassWord.Location = new Point(79, 111);
-            labelPassWord.Name = "labelPassWord";
-            labelPassWord.Size = new Size(79, 20);
-            labelPassWord.TabIndex = 44;
-            labelPassWord.Text = "PassWord :";
-            // 
             // TextBoxUserName
             // 
-            TextBoxUserName.Location = new Point(178, 61);
+            TextBoxUserName.Location = new Point(111, 60);
             TextBoxUserName.Name = "TextBoxUserName";
-            TextBoxUserName.Size = new Size(240, 27);
+            TextBoxUserName.Size = new Size(266, 27);
             TextBoxUserName.TabIndex = 45;
             // 
             // TextBoxPassWord
             // 
-            TextBoxPassWord.Location = new Point(179, 111);
+            TextBoxPassWord.Location = new Point(112, 111);
             TextBoxPassWord.Name = "TextBoxPassWord";
-            TextBoxPassWord.Size = new Size(239, 27);
+            TextBoxPassWord.Size = new Size(265, 27);
             TextBoxPassWord.TabIndex = 46;
             // 
             // labelMessage
             // 
             labelMessage.AutoSize = true;
-            labelMessage.Location = new Point(79, 210);
+            labelMessage.Location = new Point(59, 210);
             labelMessage.Name = "labelMessage";
             labelMessage.Size = new Size(100, 20);
             labelMessage.TabIndex = 47;
@@ -107,23 +91,32 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(pictureBox2);
+            splitContainer1.Panel2.Controls.Add(pictureBox1);
             splitContainer1.Panel2.Controls.Add(CheckBoxShowPassWord);
             splitContainer1.Panel2.Controls.Add(LabelNumberOfAttemps);
-            splitContainer1.Panel2.Controls.Add(labelUserName);
             splitContainer1.Panel2.Controls.Add(labelMessage);
             splitContainer1.Panel2.Controls.Add(ButtonLogin);
             splitContainer1.Panel2.Controls.Add(TextBoxPassWord);
-            splitContainer1.Panel2.Controls.Add(labelPassWord);
             splitContainer1.Panel2.Controls.Add(TextBoxUserName);
             splitContainer1.Size = new Size(781, 397);
             splitContainer1.SplitterDistance = 260;
             splitContainer1.TabIndex = 48;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.key1;
+            pictureBox1.Location = new Point(59, 111);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(43, 35);
+            pictureBox1.TabIndex = 51;
+            pictureBox1.TabStop = false;
+            // 
             // CheckBoxShowPassWord
             // 
             CheckBoxShowPassWord.AutoSize = true;
             CheckBoxShowPassWord.ForeColor = Color.Cornsilk;
-            CheckBoxShowPassWord.Location = new Point(180, 154);
+            CheckBoxShowPassWord.Location = new Point(112, 156);
             CheckBoxShowPassWord.Name = "CheckBoxShowPassWord";
             CheckBoxShowPassWord.Size = new Size(134, 24);
             CheckBoxShowPassWord.TabIndex = 50;
@@ -134,11 +127,20 @@
             // LabelNumberOfAttemps
             // 
             LabelNumberOfAttemps.AutoSize = true;
-            LabelNumberOfAttemps.Location = new Point(79, 230);
+            LabelNumberOfAttemps.Location = new Point(59, 230);
             LabelNumberOfAttemps.Name = "LabelNumberOfAttemps";
             LabelNumberOfAttemps.Size = new Size(50, 20);
             LabelNumberOfAttemps.TabIndex = 49;
             LabelNumberOfAttemps.Text = "label1";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.user2;
+            pictureBox2.Location = new Point(59, 60);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(34, 45);
+            pictureBox2.TabIndex = 52;
+            pictureBox2.TabStop = false;
             // 
             // LoginForm
             // 
@@ -155,6 +157,8 @@
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,13 +166,13 @@
         #endregion
 
         private Button ButtonLogin;
-        private Label labelUserName;
-        private Label labelPassWord;
         private TextBox TextBoxUserName;
         private TextBox TextBoxPassWord;
         private Label labelMessage;
         private SplitContainer splitContainer1;
         private Label LabelNumberOfAttemps;
         private CheckBox CheckBoxShowPassWord;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

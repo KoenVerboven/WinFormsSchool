@@ -1,7 +1,8 @@
 C#
-WinForms
-Application for School administration
 
+WinForms
+
+Application for School administration
 
 Programmer :
 ------------
@@ -9,16 +10,14 @@ Verboven Koen  Vosselaar Mpad  België
 
 Version :
 ---------
-This programma is programmed in Visual Studio Community 2022
+Visual Studio Community 2022
 
 Version 17.7.4
 
 Target framework: .NET8.0
 
-Ideal for to start programming with C# and WinForms.
+Backend : DotNet Core
 
-This are a few things that you will learn:
-------------------------------------------
-C#: OO, Classes, Make a object ,Inhertitance,  Interfaces, readonly fields ,Enums , ErrorHandeling, objectInitilizer, IF-Els, TryParse , for-loop                    
+Database : SQL-Server
 
-Winforms:  MDI-Form, Gridview, Collor Cell of a GridView ,MenuControl, MasterDetailScreen, StatusTrip, DataGridViewCellStyle
+

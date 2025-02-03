@@ -240,7 +240,7 @@ namespace WinFormsSchool
                         DataGridViewCourses.Columns["CourseId"].Visible = true;
                         DataGridViewCourses.Columns["CourseDescription"].Visible = false;
                         DataGridViewCourses.Columns["CourseName"].ToolTipText = "Yellow means the course is still active";
-                        DataGridViewCourses.Columns["CourseIsActive"].Visible = false;
+                     //   DataGridViewCourses.Columns["CourseIsActive"].Visible = false;
                         DataGridViewCourses.Columns["CourseId"].Width = 50;
                         DataGridViewCourses.Columns["CourseName"].Width = 260;
                         DataGridViewCourses.Columns["TestPassed"].Width = 90;

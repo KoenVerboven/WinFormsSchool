@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
             MyPersonalDataToolStripMenuItem = new ToolStripMenuItem();
+            UserAdministraionToolStripMenuItem = new ToolStripMenuItem();
             StudentsToolStripMenuItem = new ToolStripMenuItem();
             TeachersToolStripMenuItem = new ToolStripMenuItem();
             SchoolShopToolStripMenuItem = new ToolStripMenuItem();
             InfoToolStripMenuItem = new ToolStripMenuItem();
             CloseToolStripMenuItem = new ToolStripMenuItem();
-            windowsToolStripMenuItem = new ToolStripMenuItem();
-            CloseAllFormsToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
+            CourseToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -49,11 +49,11 @@
             // 
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem, windowsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MyPersonalDataToolStripMenuItem, UserAdministraionToolStripMenuItem, StudentsToolStripMenuItem, TeachersToolStripMenuItem, CourseToolStripMenuItem, SchoolShopToolStripMenuItem, InfoToolStripMenuItem, CloseToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 5, 0, 5);
-            menuStrip1.Size = new Size(176, 510);
+            menuStrip1.Size = new Size(176, 597);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "MenuStripSideBar";
             // 
@@ -66,6 +66,16 @@
             MyPersonalDataToolStripMenuItem.Size = new Size(163, 54);
             MyPersonalDataToolStripMenuItem.Text = "Personal Data";
             MyPersonalDataToolStripMenuItem.Click += MyPersonalDataToolStripMenuItem_Click;
+            // 
+            // UserAdministraionToolStripMenuItem
+            // 
+            UserAdministraionToolStripMenuItem.Image = (Image)resources.GetObject("UserAdministraionToolStripMenuItem.Image");
+            UserAdministraionToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            UserAdministraionToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            UserAdministraionToolStripMenuItem.Name = "UserAdministraionToolStripMenuItem";
+            UserAdministraionToolStripMenuItem.Size = new Size(163, 54);
+            UserAdministraionToolStripMenuItem.Text = "User";
+            UserAdministraionToolStripMenuItem.Click += UserAdministraionToolStripMenuItem_Click;
             // 
             // StudentsToolStripMenuItem
             // 
@@ -129,31 +139,13 @@
             CloseToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
             CloseToolStripMenuItem.Click += CloseToolStripMenuItem_Click;
             // 
-            // windowsToolStripMenuItem
-            // 
-            windowsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CloseAllFormsToolStripMenuItem });
-            windowsToolStripMenuItem.Margin = new Padding(0, 5, 0, 5);
-            windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            windowsToolStripMenuItem.Size = new Size(163, 24);
-            windowsToolStripMenuItem.Text = "Windows";
-            windowsToolStripMenuItem.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // CloseAllFormsToolStripMenuItem
-            // 
-            CloseAllFormsToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
-            CloseAllFormsToolStripMenuItem.ForeColor = Color.White;
-            CloseAllFormsToolStripMenuItem.Name = "CloseAllFormsToolStripMenuItem";
-            CloseAllFormsToolStripMenuItem.Size = new Size(186, 26);
-            CloseAllFormsToolStripMenuItem.Text = "CloseAllForms";
-            CloseAllFormsToolStripMenuItem.Click += CloseAllFormsToolStripMenuItem_Click;
-            // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { ToolStripStatusLabel1, ToolStripStatusLabel2 });
-            statusStrip1.Location = new Point(176, 484);
+            statusStrip1.Location = new Point(176, 571);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(766, 26);
+            statusStrip1.Size = new Size(966, 26);
             statusStrip1.TabIndex = 31;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -170,11 +162,21 @@
             ToolStripStatusLabel2.Size = new Size(151, 20);
             ToolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // CourseToolStripMenuItem
+            // 
+            CourseToolStripMenuItem.Image = Properties.Resources.Course;
+            CourseToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            CourseToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            CourseToolStripMenuItem.Name = "CourseToolStripMenuItem";
+            CourseToolStripMenuItem.Size = new Size(163, 54);
+            CourseToolStripMenuItem.Text = "Course";
+            CourseToolStripMenuItem.Click += CourseToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 510);
+            ClientSize = new Size(1142, 597);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
@@ -194,8 +196,6 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem windowsToolStripMenuItem;
-        private ToolStripMenuItem CloseAllFormsToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel ToolStripStatusLabel1;
         private ToolStripStatusLabel ToolStripStatusLabel2;
@@ -205,5 +205,7 @@
         private ToolStripMenuItem CloseToolStripMenuItem;
         private ToolStripMenuItem InfoToolStripMenuItem;
         private ToolStripMenuItem MyPersonalDataToolStripMenuItem;
+        private ToolStripMenuItem UserAdministraionToolStripMenuItem;
+        private ToolStripMenuItem CourseToolStripMenuItem;
     }
 }

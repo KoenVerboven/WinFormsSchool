@@ -36,8 +36,6 @@ namespace WinFormsSchool.GeneralForms
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        => Close();
     }
 }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             TextboxSearch = new TextBox();
-            ButtonSearch = new Button();
             GridViewStudents = new DataGridView();
             label2 = new Label();
             statusStrip1 = new StatusStrip();
             ToolStripStatusLabel1 = new ToolStripStatusLabel();
             ToolStripStatusLabel2 = new ToolStripStatusLabel();
             splitContainer1 = new SplitContainer();
+            ButtonClose = new Button();
+            ButtonSearch = new Button();
             ButtonUpdateStudent = new Button();
             ButtonInsertNewStudent = new Button();
             ButtonDelete = new Button();
@@ -61,16 +62,6 @@
             TextboxSearch.Size = new Size(279, 27);
             TextboxSearch.TabIndex = 19;
             // 
-            // ButtonSearch
-            // 
-            ButtonSearch.Location = new Point(350, 96);
-            ButtonSearch.Name = "ButtonSearch";
-            ButtonSearch.Size = new Size(171, 29);
-            ButtonSearch.TabIndex = 20;
-            ButtonSearch.Text = "Search";
-            ButtonSearch.UseVisualStyleBackColor = true;
-            ButtonSearch.Click += ButtonSearch_Click;
-            // 
             // GridViewStudents
             // 
             GridViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,7 +69,7 @@
             GridViewStudents.Location = new Point(0, 0);
             GridViewStudents.Name = "GridViewStudents";
             GridViewStudents.RowHeadersWidth = 51;
-            GridViewStudents.Size = new Size(1320, 443);
+            GridViewStudents.Size = new Size(1320, 472);
             GridViewStudents.TabIndex = 22;
             GridViewStudents.CellDoubleClick += dgrStudents_CellDoubleClick;
             // 
@@ -123,48 +114,68 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(ButtonClose);
+            splitContainer1.Panel1.Controls.Add(ButtonSearch);
             splitContainer1.Panel1.Controls.Add(ButtonUpdateStudent);
             splitContainer1.Panel1.Controls.Add(ButtonInsertNewStudent);
             splitContainer1.Panel1.Controls.Add(ButtonDelete);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(label2);
             splitContainer1.Panel1.Controls.Add(TextboxSearch);
-            splitContainer1.Panel1.Controls.Add(ButtonSearch);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(GridViewStudents);
             splitContainer1.Size = new Size(1320, 600);
-            splitContainer1.SplitterDistance = 153;
+            splitContainer1.SplitterDistance = 124;
             splitContainer1.TabIndex = 27;
+            // 
+            // ButtonClose
+            // 
+            ButtonClose.Location = new Point(405, 96);
+            ButtonClose.Name = "ButtonClose";
+            ButtonClose.Size = new Size(51, 30);
+            ButtonClose.TabIndex = 50;
+            ButtonClose.Text = "Close";
+            ButtonClose.UseVisualStyleBackColor = true;
+            ButtonClose.Click += ButtonClose_Click;
+            // 
+            // ButtonSearch
+            // 
+            ButtonSearch.Location = new Point(324, 97);
+            ButtonSearch.Name = "ButtonSearch";
+            ButtonSearch.Size = new Size(52, 29);
+            ButtonSearch.TabIndex = 47;
+            ButtonSearch.UseVisualStyleBackColor = true;
+            ButtonSearch.Click += ButtonSearch_Click_1;
             // 
             // ButtonUpdateStudent
             // 
-            ButtonUpdateStudent.Location = new Point(740, 96);
+            ButtonUpdateStudent.Location = new Point(539, 97);
             ButtonUpdateStudent.Name = "ButtonUpdateStudent";
-            ButtonUpdateStudent.Size = new Size(154, 29);
+            ButtonUpdateStudent.Size = new Size(48, 28);
             ButtonUpdateStudent.TabIndex = 29;
-            ButtonUpdateStudent.Text = "Update Student";
+            ButtonUpdateStudent.Text = "U";
             ButtonUpdateStudent.UseVisualStyleBackColor = true;
             ButtonUpdateStudent.Click += ButtonUpdateStudent_Click;
             // 
             // ButtonInsertNewStudent
             // 
-            ButtonInsertNewStudent.Location = new Point(568, 97);
+            ButtonInsertNewStudent.Location = new Point(489, 97);
             ButtonInsertNewStudent.Name = "ButtonInsertNewStudent";
-            ButtonInsertNewStudent.Size = new Size(154, 29);
+            ButtonInsertNewStudent.Size = new Size(44, 29);
             ButtonInsertNewStudent.TabIndex = 28;
-            ButtonInsertNewStudent.Text = "Insert new Student";
+            ButtonInsertNewStudent.Text = "I";
             ButtonInsertNewStudent.UseVisualStyleBackColor = true;
             ButtonInsertNewStudent.Click += ButtonInsertNewStudent_Click;
             // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(920, 96);
+            ButtonDelete.Location = new Point(593, 98);
             ButtonDelete.Name = "ButtonDelete";
-            ButtonDelete.Size = new Size(124, 27);
+            ButtonDelete.Size = new Size(45, 27);
             ButtonDelete.TabIndex = 27;
-            ButtonDelete.Text = "Delete";
+            ButtonDelete.Text = "-";
             ButtonDelete.UseVisualStyleBackColor = true;
             ButtonDelete.Click += ButtonDelete_Click;
             // 
@@ -204,7 +215,6 @@
 
         #endregion
         private TextBox TextboxSearch;
-        private Button ButtonSearch;
         private DataGridView GridViewStudents;
         private Label label2;
         private StatusStrip statusStrip1;
@@ -215,5 +225,7 @@
         private Button ButtonDelete;
         private Button ButtonInsertNewStudent;
         private Button ButtonUpdateStudent;
+        private Button ButtonSearch;
+        private Button ButtonClose;
     }
 }
