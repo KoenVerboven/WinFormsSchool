@@ -1,6 +1,7 @@
 ﻿using AppCode.BLL.BLLClasses;
 using AppCode.BLL.Enums;
 using AppCode.BLL.GeneralClasses;
+using AppCode.BLL.Models;
 using System.Text.RegularExpressions;
 using WinFormsSchool.GeneralForms;
 
@@ -9,8 +10,9 @@ namespace WinFormsSchool
 {
     public partial class StudentForm : Base.BaseForm1
     {
-        readonly StudentBLL Student;
+        readonly StudentBLL studentBLL;
         private readonly DetailFormType _detailFormType;
+        int _studentId = 0;
 
         #region cleanFields
 
@@ -32,8 +34,8 @@ namespace WinFormsSchool
         int _cleanMartialStatus = 0;
         int _cleanNationality = 0;
 
-        DateTime _cleanDateOfBirth;
-        DateTime _cleanRegistrationDate;
+        DateTime _cleanDateOfBirth = DateTime.Now;
+        DateTime _cleanRegistrationDate = DateTime.Now;
 
 
         #endregion
@@ -43,12 +45,11 @@ namespace WinFormsSchool
             InitializeComponent();
             _detailFormType = detailFormType;
             InitializeControls();
-            Student = new StudentBLL();
+            studentBLL = new StudentBLL();
         }
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-            //InitializeControls();
         }
 
         private void InitializeControls()
@@ -77,20 +78,33 @@ namespace WinFormsSchool
 
             #region ButtonControls
 
-            ButtonClose.BackColor = Color.FromArgb(100, 100, 200);
+            ButtonClose.BackColor = Color.White;
             ButtonClose.ForeColor = Color.White;
-            ButtonClose.Height = 35;
+            ButtonClose.Height = 45;
+            ButtonClose.Width = 45;
+            ButtonClose.Image = Properties.Resources.back1;
             ButtonClose.FlatStyle = FlatStyle.Flat;
+            ButtonClose.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonClose.Text = string.Empty;
 
-            ButtonSave.BackColor = Color.FromArgb(160, 150, 55);
-            ButtonSave.ForeColor = Color.White;
-            ButtonSave.Height = 35;
+            ButtonSave.BackColor = Color.White;
+            ButtonSave.Height = 45;
+            ButtonSave.Width = 45;
+            ButtonSave.Image = Properties.Resources.ok1;
             ButtonSave.FlatStyle = FlatStyle.Flat;
+            ButtonSave.Text = "";
 
-            ButtonCancel.BackColor = Color.FromArgb(160, 150, 55);
-            ButtonCancel.ForeColor = Color.White;
-            ButtonCancel.Height = 35;
+            ButtonCancel.BackColor = Color.White;
+            ButtonCancel.Height = 45;
+            ButtonCancel.Width = 45;
+            ButtonCancel.Image = Properties.Resources.Cancel4;
             ButtonCancel.FlatStyle = FlatStyle.Flat;
+            ButtonCancel.Text = string.Empty;
+
+            var tooltip = new ToolTip();
+            tooltip.SetToolTip(ButtonClose, "Close this page");
+            tooltip.SetToolTip(ButtonSave, "Save");
+            tooltip.SetToolTip(ButtonCancel, "Cancel");
 
             #endregion
 
@@ -171,12 +185,14 @@ namespace WinFormsSchool
         {
             try
             {
-                var selectedStudent = Student.GetStudentById(selectedStudentId);
+                var selectedStudent = studentBLL.GetStudentById(selectedStudentId);
 
                 if (selectedStudent != null)
                 {
                     #region FillInControls
 
+                    LabelStudentIdValue.Text = selectedStudent.PersonId.ToString();
+                    _studentId = selectedStudent.PersonId;
                     TextBoxFirstname.Text = selectedStudent.Firstname;
                     TextBoxMiddeleName.Text = selectedStudent.MiddleName;
                     TextBoxLastName.Text = selectedStudent.LastName;
@@ -249,7 +265,7 @@ namespace WinFormsSchool
                   { "MoreInfo", "ArgumentOutOfRangeException" },
                   { "Form", "StudentForm" },
                   { "Method", "LoadSelectedStudent" },
-                  { "selectedArticleId", selectedStudentId.ToString() }
+                  { "selectedStudentId", selectedStudentId.ToString() }
                 };
                 var logError = new LogError();
                 LogError.LogException(oEx, dictErrorData);
@@ -263,7 +279,7 @@ namespace WinFormsSchool
                   { "UserName", "" },
                   { "Form", "StudentForm" },
                   { "Method", "LoadSelectedStudent" },
-                  { "selectedArticleId", selectedStudentId.ToString() }
+                  { "selectedStudentId", selectedStudentId.ToString() }
                 };
                 var logError = new LogError();
                 LogError.LogException(oEx, dictErrorData);
@@ -328,11 +344,8 @@ namespace WinFormsSchool
             }
         }
 
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        private void ButtonCancel_Click(object sender, EventArgs e) => Close();
+         
         private void MarkRequiredFields()
         {
             var colorRequiredField = Color.FromArgb(200, 200, 251);
@@ -419,9 +432,8 @@ namespace WinFormsSchool
             if (InputValidation())
             {
                 LabelErrorMessage.Visible = false;
-                MessageBox.Show("InputValidation is ok", "validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SaveStudentData();
             }
-            //ToDo : insert of update student code
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
@@ -474,28 +486,44 @@ namespace WinFormsSchool
 
             #endregion
 
-            #region CheckComboBox
-
-            if (ComboBoxGender.SelectedIndex != _cleanGender) return true;
-            if (ComboBoxMartialStatus.SelectedIndex != _cleanMartialStatus) return true;
-            if (ComboBoxNationality.SelectedIndex != _cleanNationality) return true;
-
-            #endregion
-
-            #region DateTimePicker
-
-            if (DateTimePickerDateOfBirth.Value != _cleanDateOfBirth) return true;
-            if (DateTimePickerRegistrationdate.Value != _cleanRegistrationDate) return true;
-
-            #endregion
-
             return false;
         }
 
 
         private void SaveStudentData()
         {
-            //savedata
+            var studentBLL = new StudentBLL();
+            bool ok = false;
+
+            var student = new Student() {
+                PersonId = _studentId,
+                LastName = TextBoxLastName.Text.Trim(),
+                MiddleName = TextBoxMiddeleName.Text.Trim(),    
+                Firstname = TextBoxFirstname.Text.Trim(),
+                StreetAndNumber = TextBoxStreetAndNumber.Text.Trim(),
+                ZipCode = TextBoxZipCode.Text.Trim(),
+                PhoneNumber = TextBoxPhoneNumber.Text.Trim(),
+                EmailAddress = TextBoxEmailAddress.Text.Trim(),
+                //Gender = ComboBoxGender.SelectedIndex
+                DateOfBirth = DateTimePickerDateOfBirth.Value,
+                MoederTongueId = 1,
+                // = ComboBoxNationality.SelectedIndex,
+                RegistrationDate = DateTimePickerRegistrationdate.Value
+            };
+
+            if(_detailFormType == DetailFormType.InsertForm)
+            {
+                ok = studentBLL.AddStudent(student);
+            }
+
+            if(_detailFormType == DetailFormType.UpdateForm)
+            {
+                ok = studentBLL.UpdateStudent(student);    
+            }
+            if(ok)
+            {
+                Close();
+            }
         }
     }
 }
